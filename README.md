@@ -1,7 +1,6 @@
 # Flamingo
 Minimalist Hacker News Reader
 
-<br/>
 <p align="center">
   <img src="https://i.imgur.com/rYp9ajL.png" height="500">
 </p>
@@ -12,7 +11,9 @@ I'm an avid reader of Hacker News, which to me is one of the best news aggregato
 - It only show titles and source
 - Overall, it's not very appealing
 
-The purpose of this project is to provide the best experience possible for reading HN top stories.
+The purpose of this project is to provide the best experience possible for reading HN top stories. I've open-sourced both the code and the design file (.sketch).
+
+You can find this app on the AppStore here : https://itunes.apple.com/app/id817164332
 
 ## Basic principle
 Here is what the app currently does :
