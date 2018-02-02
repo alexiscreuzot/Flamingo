@@ -32,4 +32,4 @@ Here are a few :
 - [ ] Allow infinite loading
 
 ## One more thing
-How did I find this cool name you ask? I actually used [the Qolor app](https://itunes.apple.com/app/id973492333) on the Hacker News orange, and it was the result :)
+Flamingo, what a cool name! How did I find it you ask? I actually used [the Qolor app](https://itunes.apple.com/app/id973492333) on the Hacker News orange, and it was the result :)
