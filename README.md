@@ -30,3 +30,6 @@ Here are a few :
 - [ ] Display individual stories in custom webview
 - [ ] Provide a way to switch between top and new stories
 - [ ] Allow infinite loading
+
+## One more thing
+How did I find this cool name you ask? I actually used [the Qolor app](https://itunes.apple.com/app/id973492333) on the Hacker News orange, and it was the result :)
