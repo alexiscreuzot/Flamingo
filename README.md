@@ -7,12 +7,12 @@ Minimalist Hacker News Reader
 
 ## Purpose
 I'm an avid reader of Hacker News, which to me is one of the best news aggregator in relation to my interests (Tech, Science, World News). HN as some flaws though :
-- It's ugly as hell
 - It doesn't provide any excerpt or summary
 - There are no images
 - There are no indicator of article length
+- It's overall quite unappealing to the reader
 
-The purpose of this project is to provide the best experience possible for reading HN top stories, similar to what Medium offers. I've open-sourced both the code and the design file (.sketch).
+The purpose of this project is to provide the best experience possible for reading HN top stories, similar to what Yahoo Digest did offer before being discontinued. I've open-sourced both the code and the design file (.sketch).
 
 You can find this app on the AppStore here : https://itunes.apple.com/app/id817164332
 
