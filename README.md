@@ -2,7 +2,7 @@
 Minimalist Hacker News Reader
 
 <p align="center">
-  <img src="https://i.imgur.com/rYp9ajL.png" height="500">
+  <img src="https://i.imgur.com/rYp9ajL.png" style="max-height:400px;">
 </p>
 
 ## Purpose
