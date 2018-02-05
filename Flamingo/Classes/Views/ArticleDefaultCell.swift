@@ -60,14 +60,29 @@ class ArticleDefaultCell: UITableViewCell{
         self.topInfoLabel.text = String(row + 1)
         self.titleLabel.text = post.title
         
-        var bottomText = "\(post.urlDomain)"
-        if let minutes = preview?.readTimeInMinutes {
-            bottomText += " • \(minutes) min read"
-        }
-        self.bottomLabel.text = bottomText
+        let attributes: [NSAttributedStringKey : Any] = [.font : self.bottomLabel.font,
+                                                         .foregroundColor : self.bottomLabel.textColor]
+        let bottomAttString = NSMutableAttributedString(string: "\(post.urlDomain)", attributes: attributes)
         
-        let commentString = post.commentCount == 1 ? "comment" : "comments"
-        self.commentsButton.setTitle("• \(post.commentCount) \(commentString)", for: .normal)
+        // Readtime
+        if let minutes = preview?.readTimeInMinutes {
+            let readAttString = NSMutableAttributedString(string: " • ", attributes: attributes)
+            let icon = FontIcon(.clock)
+            icon.color = self.bottomLabel.textColor
+            readAttString.append(icon.attributedString)
+            readAttString.append(NSAttributedString(string: " \(minutes) min"))
+            bottomAttString.append(readAttString)
+        }
+        self.bottomLabel.attributedText = bottomAttString
+        
+        // Comments
+        let commentsAttString = NSMutableAttributedString(string: " • ", attributes: attributes)
+        let icon = FontIcon(.commentBubble)
+        icon.color = self.bottomLabel.textColor
+        commentsAttString.append(icon.attributedString)
+        
+        commentsAttString.append(NSAttributedString(string: " \(post.commentCount)  ", attributes : attributes))
+        self.commentsButton.setAttributedTitle(commentsAttString, for: .normal)
         self.commentsButton.isHidden = (post.commentCount  == 0)
     }
 

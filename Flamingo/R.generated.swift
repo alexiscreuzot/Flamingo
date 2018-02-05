@@ -13,6 +13,7 @@ struct R: Rswift.Validatable {
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
   
   static func validate() throws {
+    try font.validate()
     try intern.validate()
   }
   
@@ -21,13 +22,34 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 0 files.
+  /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
+    /// Resource file `icomoon.ttf`.
+    static let icomoonTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "icomoon", pathExtension: "ttf")
+    
+    /// `bundle.url(forResource: "icomoon", withExtension: "ttf")`
+    static func icomoonTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.icomoonTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.font` struct is generated, and contains static references to 0 fonts.
-  struct font {
+  /// This `R.font` struct is generated, and contains static references to 1 fonts.
+  struct font: Rswift.Validatable {
+    /// Font `icomoon`.
+    static let icomoon = Rswift.FontResource(fontName: "icomoon")
+    
+    /// `UIFont(name: "icomoon", size: ...)`
+    static func icomoon(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: icomoon, size: size)
+    }
+    
+    static func validate() throws {
+      if R.font.icomoon(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'icomoon' could not be loaded, is 'icomoon.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+    }
+    
     fileprivate init() {}
   }
   
