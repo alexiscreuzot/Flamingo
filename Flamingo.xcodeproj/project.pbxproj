@@ -22,6 +22,8 @@
 		FAB838E5202899AF00DBFEF7 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838E4202899AF00DBFEF7 /* CommentCell.swift */; };
 		FAB838E72028B6EC00DBFEF7 /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAB838E62028B6EC00DBFEF7 /* icomoon.ttf */; };
 		FAB838E92028B70700DBFEF7 /* FontIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838E82028B70700DBFEF7 /* FontIcon.swift */; };
+		FAB838EB2028CFF500DBFEF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EA2028CFF500DBFEF7 /* Constants.swift */; };
+		FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */; };
 		FACE2FEA2020C0E4003BBAD0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE2FE92020C0E4003BBAD0 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		FAB838E4202899AF00DBFEF7 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		FAB838E62028B6EC00DBFEF7 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		FAB838E82028B70700DBFEF7 /* FontIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontIcon.swift; sourceTree = "<group>"; };
+		FAB838EA2028CFF500DBFEF7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamingoPost.swift; sourceTree = "<group>"; };
 		FACE2FE92020C0E4003BBAD0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				FA50E796200670D2008C28C1 /* AppDelegate.swift */,
+				FAB838EA2028CFF500DBFEF7 /* Constants.swift */,
 				FA0C8FE32024A77400818EB4 /* API */,
 				FAB10E1520213F1500F60594 /* Models */,
 				FA50E7A8200677AA008C28C1 /* Controllers */,
@@ -180,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB10E1320213F0C00F60594 /* Preview.swift */,
+				FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,9 +359,11 @@
 				FAB10E1720213F3700F60594 /* MercuryAPI.swift in Sources */,
 				FAB838E5202899AF00DBFEF7 /* CommentCell.swift in Sources */,
 				FAB10E1420213F0C00F60594 /* Preview.swift in Sources */,
+				FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */,
 				FAB838E3202893E500DBFEF7 /* ArticleCommentsVC.swift in Sources */,
 				FAB10E1B20214C2600F60594 /* Response+ModelMapper.swift in Sources */,
 				FAA4E4262007829E00D2D88C /* ArticlesListVC.swift in Sources */,
+				FAB838EB2028CFF500DBFEF7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,22 +12,30 @@ import HNScraper
 
 enum State {
     case loading
-    case empty
-    case error(error: Error)
+    case error(message: String)
     case loaded
 }
 
 class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    
+    
     @IBOutlet var headerView: UIView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var summaryLabel: UILabel!
+    @IBOutlet var footLabel: UILabel!
+    
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet var stateLabel: UILabel!
+    
     @IBOutlet var tableView: UITableView!
     
     var post : FlamingoPost!
     var currentState : State = .loading {
         didSet {
-            self.updateUI()
+            UIView.animate(withDuration: 0.4) {
+               self.updateUI()
+            }
         }
     }
     var comments = [HNComment]()
@@ -35,6 +43,12 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Header
+        let attributes: [NSAttributedStringKey : Any] = [.font : self.footLabel.font,
+                                                         .foregroundColor : self.footLabel.textColor]
+        self.titleLabel.text = self.post.hnPost.title
+        self.summaryLabel.text = self.post.preview?.excerpt
+        self.footLabel.attributedText = self.post.infosAttributedString(attributes: attributes, withComments: true)
         self.view.sendSubview(toBack: self.headerView)
         
         // TableView
@@ -58,14 +72,14 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         
         HNScraper.shared.getComments(ForPost: post.hnPost, buildHierarchy: false) { (_, comments, error) in
             if let error = error  {
-                self.currentState = .error(error: error)
+                self.currentState = .error(message: error.localizedDescription)
                 return
             }
             self.comments = comments
-            if self.comments.isEmpty {
-                self.currentState = .empty
-            } else {
+            if !self.comments.isEmpty {
                 self.currentState = .loaded
+            } else {
+                self.currentState = .error(message: "Nothing to show")
             }
         }
     }
@@ -77,15 +91,10 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
             tableView.alpha = 0
             stateLabel.text = "Loading comments"
             break
-        case .empty :
-            loadingIndicator.stopAnimating()
-            tableView.alpha = 0
-            stateLabel.text = "Nothing to show"
-            break
-        case .error(let error) :
+        case .error(let message) :
             tableView.alpha = 0
             loadingIndicator.stopAnimating()
-            stateLabel.text = error.localizedDescription
+            stateLabel.text = message
             break
         case .loaded :
             loadingIndicator.stopAnimating()

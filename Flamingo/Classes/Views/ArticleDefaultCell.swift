@@ -60,27 +60,8 @@ class ArticleDefaultCell: UITableViewCell{
         
         let attributes: [NSAttributedStringKey : Any] = [.font : self.bottomLabel.font,
                                                          .foregroundColor : self.bottomLabel.textColor]
-        let bottomAttString = NSMutableAttributedString(string: "\(post.hnPost.urlDomain)", attributes: attributes)
-        
-        // Readtime
-        if let minutes = post.preview?.readTimeInMinutes {
-            let readAttString = NSMutableAttributedString(string: " • ", attributes: attributes)
-            let icon = FontIcon(.clock)
-            icon.color = self.bottomLabel.textColor
-            readAttString.append(icon.attributedString)
-            readAttString.append(NSAttributedString(string: " \(minutes) min"))
-            bottomAttString.append(readAttString)
-        }
-        self.bottomLabel.attributedText = bottomAttString
-        
-        // Comments
-        let commentsAttString = NSMutableAttributedString(string: " • ", attributes: attributes)
-        let icon = FontIcon(.commentBubble)
-        icon.color = self.bottomLabel.textColor
-        commentsAttString.append(icon.attributedString)
-        
-        commentsAttString.append(NSAttributedString(string: " \(post.hnPost.commentCount)  ", attributes : attributes))
-        self.commentsButton.setAttributedTitle(commentsAttString, for: .normal)
+        self.bottomLabel.attributedText = post.infosAttributedString(attributes: attributes)
+        self.commentsButton.setAttributedTitle(post.commentsAttributedString(attributes: attributes), for: .normal)
         self.commentsButton.isHidden = (post.hnPost.commentCount  == 0)
     }
 

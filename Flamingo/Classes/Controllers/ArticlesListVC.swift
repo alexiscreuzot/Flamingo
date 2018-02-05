@@ -12,18 +12,6 @@ import SDWebImage
 import SafariServices
 import Moya
 
-struct FlamingoPost {
-    var hnPost : HNPost!
-    var preview : Preview?
-    var row : Int
-    
-    init(hnPost: HNPost, preview: Preview? = nil, row : Int) {
-        self.hnPost = hnPost
-        self.preview = preview
-        self.row = row
-    }
-}
-
 class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate, ArticleDefaultCellDelegate {
     
     static let HeaderHeight: CGFloat = UIScreen.main.bounds.height.goldenRatio.short
