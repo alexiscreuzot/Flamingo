@@ -17,9 +17,7 @@ enum State {
 }
 
 class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    
-    
+
     @IBOutlet var headerView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!

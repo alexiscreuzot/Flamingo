@@ -24,6 +24,7 @@
 		FAB838E92028B70700DBFEF7 /* FontIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838E82028B70700DBFEF7 /* FontIcon.swift */; };
 		FAB838EB2028CFF500DBFEF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EA2028CFF500DBFEF7 /* Constants.swift */; };
 		FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */; };
+		FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */; };
 		FACE2FEA2020C0E4003BBAD0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE2FE92020C0E4003BBAD0 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		FAB838E82028B70700DBFEF7 /* FontIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontIcon.swift; sourceTree = "<group>"; };
 		FAB838EA2028CFF500DBFEF7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamingoPost.swift; sourceTree = "<group>"; };
+		FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamingoNVC.swift; sourceTree = "<group>"; };
 		FACE2FE92020C0E4003BBAD0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 		FA50E7A8200677AA008C28C1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */,
 				FA50E798200670D2008C28C1 /* ArticlesListVC.swift */,
 				FAB838E2202893E500DBFEF7 /* ArticleCommentsVC.swift */,
 			);
@@ -355,6 +358,7 @@
 				FAB838E92028B70700DBFEF7 /* FontIcon.swift in Sources */,
 				FACE2FEA2020C0E4003BBAD0 /* Extensions.swift in Sources */,
 				FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */,
+				FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */,
 				FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */,
 				FAB10E1720213F3700F60594 /* MercuryAPI.swift in Sources */,
 				FAB838E5202899AF00DBFEF7 /* CommentCell.swift in Sources */,

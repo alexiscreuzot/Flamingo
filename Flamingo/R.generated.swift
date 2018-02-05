@@ -157,7 +157,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = UIKit.UINavigationController
+      typealias InitialController = FlamingoNVC
       
       let articleCommentsVC = StoryboardViewControllerResource<ArticleCommentsVC>(identifier: "ArticleCommentsVC")
       let articleListVC = StoryboardViewControllerResource<ArticleListVC>(identifier: "ArticleListVC")

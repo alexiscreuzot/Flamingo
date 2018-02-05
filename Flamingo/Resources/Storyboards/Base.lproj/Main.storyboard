@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Navigation Controller-->
+        <!--FlamingoNVC-->
         <scene sceneID="epp-Kf-2zf">
             <objects>
-                <navigationController id="nVH-b9-DrX" sceneMemberID="viewController">
+                <navigationController id="nVH-b9-DrX" customClass="FlamingoNVC" customModule="Flamingo" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="C0X-BY-Qvz">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
