@@ -12,6 +12,18 @@ import SDWebImage
 import SafariServices
 import Moya
 
+struct FlamingoPost {
+    var hnPost : HNPost!
+    var preview : Preview?
+    var row : Int
+    
+    init(hnPost: HNPost, preview: Preview? = nil, row : Int) {
+        self.hnPost = hnPost
+        self.preview = preview
+        self.row = row
+    }
+}
+
 class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate, ArticleDefaultCellDelegate {
     
     static let HeaderHeight: CGFloat = UIScreen.main.bounds.height.goldenRatio.short
@@ -218,7 +230,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     // MARK: - ArticleDefaultCellDelegate
     
-    func didSelectComments(post: HNPost) {
+    func didSelectComments(post: FlamingoPost) {
         let commentsController = R.storyboard.main.articleCommentsVC()!
         commentsController.post = post
         self.navigationController?.pushViewController(commentsController, animated: true)
@@ -267,9 +279,11 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post: HNPost = self.posts[indexPath.row]
         let prev: Preview? = self.postPreviews[post.id]
+        
+        let fpost = FlamingoPost(hnPost: post, preview: prev, row: indexPath.row)
         let cell : ArticleDefaultCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.articleDefaultCell,
                                                  for: indexPath)!
-        cell.setPost(post, preview: prev, row: indexPath.row)
+        cell.setPost(fpost)
         cell.delegate = self
         return cell
     }

@@ -10,15 +10,14 @@ import UIKit
 import HNScraper
 
 protocol ArticleDefaultCellDelegate {
-    func didSelectComments(post: HNPost)
+    func didSelectComments(post: FlamingoPost)
 }
 
 class ArticleDefaultCell: UITableViewCell{
     
-    typealias OnCommentsAction = ((HNPost) -> ())
+    typealias OnCommentsAction = ((FlamingoPost) -> ())
     
-    var post : HNPost?
-    var row : Int?
+    var post : FlamingoPost?
     var delegate: ArticleDefaultCellDelegate?
     let maskLayer = CAShapeLayer()
     
@@ -41,13 +40,12 @@ class ArticleDefaultCell: UITableViewCell{
         self.selectedBackgroundView = selView
     }
     
-    func setPost(_ post: HNPost, preview: Preview?, row: Int) {
-        self.row = row
+    func setPost(_ post : FlamingoPost) {
         
-        self.topInfoTopMarginConstraint.constant = (row == 0) ? 30 : 16
+        self.topInfoTopMarginConstraint.constant = (post.row == 0) ? 30 : 16
         self.contentView.backgroundColor = UIColor.white
         
-        if let subtitle = preview?.excerpt, !subtitle.isEmpty, subtitle != "null" {
+        if let subtitle = post.preview?.excerpt, !subtitle.isEmpty, subtitle != "null" {
             self.middleLabelTopMarginConstraint.constant = 10
             self.middleLabel.text = subtitle
         } else {
@@ -57,15 +55,15 @@ class ArticleDefaultCell: UITableViewCell{
                 
         self.post = post
         self.topInfoLabel.isHidden = false
-        self.topInfoLabel.text = String(row + 1)
-        self.titleLabel.text = post.title
+        self.topInfoLabel.text = String(post.row + 1)
+        self.titleLabel.text = post.hnPost.title
         
         let attributes: [NSAttributedStringKey : Any] = [.font : self.bottomLabel.font,
                                                          .foregroundColor : self.bottomLabel.textColor]
-        let bottomAttString = NSMutableAttributedString(string: "\(post.urlDomain)", attributes: attributes)
+        let bottomAttString = NSMutableAttributedString(string: "\(post.hnPost.urlDomain)", attributes: attributes)
         
         // Readtime
-        if let minutes = preview?.readTimeInMinutes {
+        if let minutes = post.preview?.readTimeInMinutes {
             let readAttString = NSMutableAttributedString(string: " • ", attributes: attributes)
             let icon = FontIcon(.clock)
             icon.color = self.bottomLabel.textColor
@@ -81,9 +79,9 @@ class ArticleDefaultCell: UITableViewCell{
         icon.color = self.bottomLabel.textColor
         commentsAttString.append(icon.attributedString)
         
-        commentsAttString.append(NSAttributedString(string: " \(post.commentCount)  ", attributes : attributes))
+        commentsAttString.append(NSAttributedString(string: " \(post.hnPost.commentCount)  ", attributes : attributes))
         self.commentsButton.setAttributedTitle(commentsAttString, for: .normal)
-        self.commentsButton.isHidden = (post.commentCount  == 0)
+        self.commentsButton.isHidden = (post.hnPost.commentCount  == 0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

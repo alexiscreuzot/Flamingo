@@ -20,10 +20,11 @@ enum State {
 class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet var headerView: UIView!
     @IBOutlet var stateLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
-    var post : HNPost!
+    var post : FlamingoPost!
     var currentState : State = .loading {
         didSet {
             self.updateUI()
@@ -34,19 +35,28 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.sendSubview(toBack: self.headerView)
+        
         // TableView
         self.tableView.estimatedRowHeight = 999
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.alpha = 0
         self.tableView.tableFooterView = UIView()
+        self.tableView.backgroundColor = UIColor.clear
+        self.tableView.backgroundView?.backgroundColor = UIColor.clear
         
         self.refreshComments()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.bounds.height, 0, 0, 0)
     }
     
     func refreshComments() {
         self.currentState = .loading
         
-        HNScraper.shared.getComments(ForPost: post, buildHierarchy: false) { (_, comments, error) in
+        HNScraper.shared.getComments(ForPost: post.hnPost, buildHierarchy: false) { (_, comments, error) in
             if let error = error  {
                 self.currentState = .error(error: error)
                 return
@@ -93,7 +103,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let comment = self.comments[indexPath.row]
+        let comment = self.comments[indexPath.row ]
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.commentCell, for: indexPath)!
         cell.setComment(comment)
         return cell
