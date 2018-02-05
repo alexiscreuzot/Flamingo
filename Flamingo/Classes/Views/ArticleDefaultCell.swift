@@ -67,7 +67,7 @@ class ArticleDefaultCell: UITableViewCell{
         self.bottomLabel.text = bottomText
         
         let commentString = post.commentCount == 1 ? "comment" : "comments"
-        self.commentsButton.setTitle("\(post.commentCount) \(commentString)", for: .normal)
+        self.commentsButton.setTitle("• \(post.commentCount) \(commentString)", for: .normal)
         self.commentsButton.isHidden = (post.commentCount  == 0)
     }
 
