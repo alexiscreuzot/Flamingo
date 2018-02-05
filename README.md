@@ -18,11 +18,11 @@ You can find this app on the AppStore here : https://itunes.apple.com/app/id8171
 
 ## Basic principle
 Here is what the app currently does :
-- [x] Fetch HN top stories
-- [x] Get curated previews of each story through [Mercury API](https://mercury.postlight.com/)
-- [x] Load sotries images and grab the first to finish. This is our head article
-- [x] Display stories "readtime" based on the content word count
-- [x] Show individual stories using `SFSafariViewController` with reader mod on
+- [x] Fetch HN top stories.
+- [x] Get curated previews of each story through [Mercury API](https://mercury.postlight.com/).
+- [x] Downloads stories images. When the first one (with high enough quality) finished to load we make it our header.
+- [x] Display stories "readtime" based on the content word count.
+- [x] Show individual stories using `SFSafariViewController` with reader mod on.
 
 ## Roadmap
 There are a lot of ways to improve the experience even further. I'm open to any ideas the community may have!
