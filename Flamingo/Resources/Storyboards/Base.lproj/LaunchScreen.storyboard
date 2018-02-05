@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,20 +17,7 @@
                     <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_empty" translatesAutoresizingMaskIntoConstraints="NO" id="I62-I8-ISQ">
-                                <rect key="frame" x="0.0" y="-15" width="375" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="Ukg-nr-IIH"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="I62-I8-ISQ" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" constant="-15" id="dDE-CV-mfn"/>
-                            <constraint firstAttribute="trailing" secondItem="I62-I8-ISQ" secondAttribute="trailing" id="jDi-sn-NeC"/>
-                            <constraint firstItem="I62-I8-ISQ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="oCT-yJ-2SI"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OVu-5t-9Lo"/>
                     </view>
                 </viewController>
@@ -40,7 +26,4 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="header_empty" width="375" height="300"/>
-    </resources>
 </document>

@@ -9,6 +9,8 @@ def shared_pods
     # Util
     pod 'R.swift', '~> 4.0'
     pod 'SDWebImage', '~> 4.2'
+    pod 'HTMLString', '~> 4.0'
+    pod 'Attributed', '~> 4.0'
 
     # Networking
     pod 'HNScraper', '~> 0.1.1'

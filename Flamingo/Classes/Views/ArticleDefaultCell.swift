@@ -9,10 +9,17 @@
 import UIKit
 import HNScraper
 
+protocol ArticleDefaultCellDelegate {
+    func didSelectComments(post: HNPost)
+}
+
 class ArticleDefaultCell: UITableViewCell{
+    
+    typealias OnCommentsAction = ((HNPost) -> ())
     
     var post : HNPost?
     var row : Int?
+    var delegate: ArticleDefaultCellDelegate?
     let maskLayer = CAShapeLayer()
     
     @IBOutlet var topInfoTopMarginConstraint : NSLayoutConstraint!
@@ -21,6 +28,7 @@ class ArticleDefaultCell: UITableViewCell{
     @IBOutlet var middleLabel : UILabel!
     @IBOutlet var middleLabelTopMarginConstraint : NSLayoutConstraint!
     @IBOutlet var bottomLabel : UILabel!
+    @IBOutlet var commentsButton : UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,6 +65,10 @@ class ArticleDefaultCell: UITableViewCell{
             bottomText += " • \(minutes) min read"
         }
         self.bottomLabel.text = bottomText
+        
+        let commentString = post.commentCount == 1 ? "comment" : "comments"
+        self.commentsButton.setTitle("\(post.commentCount) \(commentString)", for: .normal)
+        self.commentsButton.isHidden = (post.commentCount  == 0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -67,5 +79,12 @@ class ArticleDefaultCell: UITableViewCell{
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         self.topInfoLabel.backgroundColor = UIColor.black.withAlphaComponent(0.95)
+    }
+    
+    @IBAction func selectComments() {
+        guard let post = self.post else {
+            return
+        }
+        self.delegate?.didSelectComments(post: post)
     }
 }

@@ -18,6 +18,8 @@
 		FAB10E1420213F0C00F60594 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1320213F0C00F60594 /* Preview.swift */; };
 		FAB10E1720213F3700F60594 /* MercuryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1620213F3700F60594 /* MercuryAPI.swift */; };
 		FAB10E1B20214C2600F60594 /* Response+ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */; };
+		FAB838E3202893E500DBFEF7 /* ArticleCommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838E2202893E500DBFEF7 /* ArticleCommentsVC.swift */; };
+		FAB838E5202899AF00DBFEF7 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838E4202899AF00DBFEF7 /* CommentCell.swift */; };
 		FACE2FEA2020C0E4003BBAD0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE2FE92020C0E4003BBAD0 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		FAB10E1320213F0C00F60594 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		FAB10E1620213F3700F60594 /* MercuryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryAPI.swift; sourceTree = "<group>"; };
 		FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ModelMapper.swift"; sourceTree = "<group>"; };
+		FAB838E2202893E500DBFEF7 /* ArticleCommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCommentsVC.swift; sourceTree = "<group>"; };
+		FAB838E4202899AF00DBFEF7 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		FACE2FE92020C0E4003BBAD0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				FA50E798200670D2008C28C1 /* ArticlesListVC.swift */,
+				FAB838E2202893E500DBFEF7 /* ArticleCommentsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */,
+				FAB838E4202899AF00DBFEF7 /* CommentCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,7 +291,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Flamingo/Pods-Flamingo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Attributed/Attributed.framework",
 				"${BUILT_PRODUCTS_DIR}/HNScraper/HNScraper.framework",
+				"${BUILT_PRODUCTS_DIR}/HTMLString/HTMLString.framework",
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
@@ -295,7 +303,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Attributed.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HNScraper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTMLString.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
@@ -333,7 +343,9 @@
 				FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */,
 				FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */,
 				FAB10E1720213F3700F60594 /* MercuryAPI.swift in Sources */,
+				FAB838E5202899AF00DBFEF7 /* CommentCell.swift in Sources */,
 				FAB10E1420213F0C00F60594 /* Preview.swift in Sources */,
+				FAB838E3202893E500DBFEF7 /* ArticleCommentsVC.swift in Sources */,
 				FAB10E1B20214C2600F60594 /* Response+ModelMapper.swift in Sources */,
 				FAA4E4262007829E00D2D88C /* ArticlesListVC.swift in Sources */,
 			);

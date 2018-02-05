@@ -1,0 +1,6 @@
+framework module Attributed {
+  umbrella header "Attributed-umbrella.h"
+
+  export *
+  module * { export * }
+}

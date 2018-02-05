@@ -56,10 +56,12 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 2 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `ArticleDefaultCell`.
     static let articleDefaultCell: Rswift.ReuseIdentifier<ArticleDefaultCell> = Rswift.ReuseIdentifier(identifier: "ArticleDefaultCell")
+    /// Reuse identifier `CommentCell`.
+    static let commentCell: Rswift.ReuseIdentifier<CommentCell> = Rswift.ReuseIdentifier(identifier: "CommentCell")
     /// Reuse identifier `fake`.
     static let fake: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "fake")
     
@@ -121,18 +123,13 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try main.validate()
-      try launchScreen.validate()
     }
     
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
       typealias InitialController = UIKit.UIViewController
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "header_empty") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'header_empty' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
-      }
       
       fileprivate init() {}
     }
@@ -140,9 +137,14 @@ struct _R: Rswift.Validatable {
     struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UINavigationController
       
+      let articleCommentsVC = StoryboardViewControllerResource<ArticleCommentsVC>(identifier: "ArticleCommentsVC")
       let articleListVC = StoryboardViewControllerResource<ArticleListVC>(identifier: "ArticleListVC")
       let bundle = R.hostingBundle
       let name = "Main"
+      
+      func articleCommentsVC(_: Void = ()) -> ArticleCommentsVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articleCommentsVC)
+      }
       
       func articleListVC(_: Void = ()) -> ArticleListVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articleListVC)
@@ -151,6 +153,7 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "circle") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'circle' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "color_gradient") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'color_gradient' is used in storyboard 'Main', but couldn't be loaded.") }
+        if _R.storyboard.main().articleCommentsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleCommentsVC' could not be loaded from storyboard 'Main' as 'ArticleCommentsVC'.") }
         if _R.storyboard.main().articleListVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleListVC' could not be loaded from storyboard 'Main' as 'ArticleListVC'.") }
       }
       

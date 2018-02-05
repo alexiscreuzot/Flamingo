@@ -12,7 +12,7 @@ import SDWebImage
 import SafariServices
 import Moya
 
-class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate {
+class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate, ArticleDefaultCellDelegate {
     
     static let HeaderHeight: CGFloat = UIScreen.main.bounds.height.goldenRatio.short
     static let CutHeight: CGFloat = 38
@@ -39,6 +39,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         // Header
+        self.title = ""
         self.headerView.layer.mask = self.maskLayer
         
         // TableView
@@ -66,11 +67,10 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.resetBlur()
-        
-        print(self.headerView.safeAreaInsets.top)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let selectedRow = self.tableView.indexPathForSelectedRow{
@@ -88,6 +88,11 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         path.addLine(to: CGPoint(x: self.headerView.bounds.maxX, y: 0))
         path.close()
         self.maskLayer.path = path.cgPath
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated);
+        super.viewWillDisappear(animated)
     }
     
     // MARK: - Logic
@@ -211,6 +216,14 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         }
     }
     
+    // MARK: - ArticleDefaultCellDelegate
+    
+    func didSelectComments(post: HNPost) {
+        let commentsController = R.storyboard.main.articleCommentsVC()!
+        commentsController.post = post
+        self.navigationController?.pushViewController(commentsController, animated: true)
+    }
+    
     // MARK: - UIScrollViewDelegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -257,6 +270,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         let cell : ArticleDefaultCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.articleDefaultCell,
                                                  for: indexPath)!
         cell.setPost(post, preview: prev, row: indexPath.row)
+        cell.delegate = self
         return cell
     }
     
