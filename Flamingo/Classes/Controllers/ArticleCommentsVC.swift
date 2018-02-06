@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import HNScraper
+import SDWebImage
 
 enum State {
     case loading
@@ -18,7 +19,10 @@ enum State {
 
 class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet var headerTopConstraint: NSLayoutConstraint!
     @IBOutlet var headerView: UIView!
+    @IBOutlet var headerImageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var headerImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!
     @IBOutlet var footLabel: UILabel!
@@ -37,6 +41,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     var comments = [HNComment]()
+    var isFirstLayout = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,12 +62,32 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.backgroundColor = UIColor.clear
         self.tableView.backgroundView?.backgroundColor = UIColor.clear
         
+        self.fetchHeaderImage()
         self.refreshComments()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.bounds.height, 0, 0, 0)
+        if isFirstLayout {
+            self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.bounds.height - 20, 0, 0, 0)
+            isFirstLayout = false
+        }
+        
+    }
+    
+    func fetchHeaderImage() {
+        guard   let imageUrlString = post.preview?.lead_image_url,
+                let url = URL(string: imageUrlString) else {
+                    self.headerImageHeightConstraint.constant = 0
+            return
+        }
+        
+        SDWebImageDownloader.shared().downloadImage(with: url, options: [.allowInvalidSSLCertificates], progress: nil) { (image, _, _, _) in
+            
+            if  let image = image {
+                self.headerImageView.image = image.blend(image: R.image.color_gradient()!, with: .hardLight)
+            }
+        }
     }
     
     func refreshComments() {
@@ -101,6 +126,19 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
             self.tableView.reloadData()
             break
         }
+    }
+    
+    // MARK: - UIScrollViewDelegate
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        let contentOffset =     -(self.tableView.contentOffset.y
+                                + self.tableView.contentInset.top
+                                + self.tableView.layoutMargins.top)
+        
+        // Header image bounce & blur
+        headerTopConstraint.constant = contentOffset * 0.5
+        self.view.layoutIfNeeded()
     }
     
     // MARK:- UITableViewDatasource

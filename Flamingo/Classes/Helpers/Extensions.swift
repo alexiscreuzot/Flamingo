@@ -40,8 +40,18 @@ extension CGFloat {
 }
 
 extension UIImage {
+    
+    public convenience init(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+        let rect = CGRect(origin: .zero, size: size)
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
+        color.setFill()
+        UIRectFill(rect)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.init(cgImage: image!.cgImage!)
+    }
+    
     func blend(image : UIImage, with blendMode:CGBlendMode) -> UIImage {
-
         UIGraphicsBeginImageContext(self.size)
         self.draw(at:  CGPoint.zero)
         image.draw(in: CGRect(origin: CGPoint.zero, size: self.size), blendMode: blendMode, alpha: 0.9)

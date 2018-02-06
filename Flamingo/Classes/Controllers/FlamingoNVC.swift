@@ -43,6 +43,8 @@ class FlamingoNVC : UINavigationController {
         case .main:
             color = UIColor.black
             self.navigationBar.isTranslucent = true
+            self.navigationBar.setBackgroundImage(UIImage(color: UIColor.clear), for: .default)
+            self.navigationBar.shadowImage = UIImage()
             break
         }
         
