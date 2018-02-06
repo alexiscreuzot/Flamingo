@@ -326,12 +326,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0l-xB-p2C">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="358.33333333333331"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="1" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="1" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="180" image="color_gradient" translatesAutoresizingMaskIntoConstraints="NO" id="wtz-n6-VbE">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" priority="600" constant="180" id="4Sq-mx-ScB"/>
-                                        </constraints>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FzR-FF-pI1">
                                         <rect key="frame" x="0.0" y="180" width="375" height="178.33333333333337"/>
                                         <subviews>
@@ -372,6 +366,12 @@
                                             <constraint firstItem="DEa-4V-2lD" firstAttribute="leading" secondItem="Wdi-9M-dRu" secondAttribute="leading" id="mQ7-TM-2gG"/>
                                         </constraints>
                                     </view>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="1" horizontalCompressionResistancePriority="251" verticalCompressionResistancePriority="1" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="180" image="flamingo-back" translatesAutoresizingMaskIntoConstraints="NO" id="wtz-n6-VbE">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="600" constant="180" id="4Sq-mx-ScB"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
@@ -424,5 +424,6 @@
     <resources>
         <image name="circle" width="99" height="99"/>
         <image name="color_gradient" width="194" height="145"/>
+        <image name="flamingo-back" width="1400" height="900"/>
     </resources>
 </document>

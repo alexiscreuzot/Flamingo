@@ -53,12 +53,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
     /// Image `circle`.
     static let circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "circle")
     /// Image `color_gradient`.
     static let color_gradient = Rswift.ImageResource(bundle: R.hostingBundle, name: "color_gradient")
+    /// Image `flamingo-back`.
+    static let flamingoBack = Rswift.ImageResource(bundle: R.hostingBundle, name: "flamingo-back")
     
     /// `UIImage(named: "circle", bundle: ..., traitCollection: ...)`
     static func circle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -68,6 +70,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "color_gradient", bundle: ..., traitCollection: ...)`
     static func color_gradient(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.color_gradient, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "flamingo-back", bundle: ..., traitCollection: ...)`
+    static func flamingoBack(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.flamingoBack, compatibleWith: traitCollection)
     }
     
     fileprivate init() {}
@@ -173,6 +180,7 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
+        if UIKit.UIImage(named: "flamingo-back") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'flamingo-back' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "circle") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'circle' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "color_gradient") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'color_gradient' is used in storyboard 'Main', but couldn't be loaded.") }
         if _R.storyboard.main().articleCommentsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleCommentsVC' could not be loaded from storyboard 'Main' as 'ArticleCommentsVC'.") }

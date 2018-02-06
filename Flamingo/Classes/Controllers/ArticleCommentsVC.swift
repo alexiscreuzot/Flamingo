@@ -32,6 +32,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet var tableView: UITableView!
     
+    let maskLayer = CAShapeLayer()
     var post : FlamingoPost!
     var currentState : State = .loading {
         didSet {
@@ -47,6 +48,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         // Header
+        self.headerImageView.layer.mask = self.maskLayer
         let attributes: [NSAttributedStringKey : Any] = [.font : self.footLabel.font,
                                                          .foregroundColor : self.footLabel.textColor]
         self.titleLabel.text = self.post.hnPost.title
@@ -73,12 +75,18 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
             isFirstLayout = false
         }
         
+        let path = UIBezierPath()
+        path.move(to: CGPoint.zero)
+        path.addLine(to: CGPoint(x: 0, y: self.headerImageView.bounds.maxY - 20))
+        path.addLine(to: CGPoint(x: self.headerImageView.bounds.maxX, y: self.headerImageView.bounds.maxY))
+        path.addLine(to: CGPoint(x: self.headerImageView.bounds.maxX, y: 0))
+        path.close()
+        self.maskLayer.path = path.cgPath
     }
     
     func fetchHeaderImage() {
         guard   let imageUrlString = post.preview?.lead_image_url,
                 let url = URL(string: imageUrlString) else {
-                    self.headerImageHeightConstraint.constant = 0
             return
         }
         
