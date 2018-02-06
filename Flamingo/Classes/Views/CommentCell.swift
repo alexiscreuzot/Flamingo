@@ -14,6 +14,7 @@ import Attributed
 
 class CommentCell: UITableViewCell{
     
+    static let MaxLevels : Int = 6
     static let LevelOffset : CGFloat = 10
     static let LevelWidth : CGFloat = 3
     
@@ -26,6 +27,7 @@ class CommentCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+
     }
     
     override func prepareForReuse() {
@@ -39,9 +41,9 @@ class CommentCell: UITableViewCell{
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        for level in self.levelViews {
+        for level in levelViews {
             guard let index = self.levelViews.index(of: level) else { continue }
-            let indexFloat = CGFloat(index)
+            let indexFloat = CGFloat(index + 1)
             var frame = self.bounds
             frame.origin.x = (indexFloat * CommentCell.LevelOffset) - CommentCell.LevelWidth
             frame.size.width = CommentCell.LevelWidth
@@ -50,7 +52,7 @@ class CommentCell: UITableViewCell{
     }
     
     func setComment(_ comment: HNComment) {
-        let level = min(comment.level + 1, 6)
+        let level = min(comment.level + 1, CommentCell.MaxLevels)
         let leftInset = CGFloat(level) * CommentCell.LevelOffset
         self.leftMarginConstraint.constant = leftInset
         
@@ -69,7 +71,7 @@ class CommentCell: UITableViewCell{
         
         for _ in 1...level {
             let v = UIView()
-            v.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+            v.backgroundColor = UIColor.groupTableViewBackground
             self.levelViews.append(v)
             self.addSubview(v)
         }

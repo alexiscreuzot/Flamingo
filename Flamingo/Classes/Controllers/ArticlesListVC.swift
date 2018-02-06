@@ -218,10 +218,14 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     // MARK: - ArticleDefaultCellDelegate
     
-    func didSelectComments(post: FlamingoPost) {
+    func didSelectComments(post: FlamingoPost, cell: ArticleDefaultCell) {
         let commentsController = R.storyboard.main.articleCommentsVC()!
         commentsController.post = post
         self.navigationController?.pushViewController(commentsController, animated: true)
+        
+        if let ip = self.tableView.indexPath(for: cell) {
+            self.tableView.selectRow(at: ip, animated: true, scrollPosition: .none)
+        }
     }
     
     // MARK: - UIScrollViewDelegate

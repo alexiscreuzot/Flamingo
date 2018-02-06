@@ -10,7 +10,7 @@ import UIKit
 import HNScraper
 
 protocol ArticleDefaultCellDelegate {
-    func didSelectComments(post: FlamingoPost)
+    func didSelectComments(post: FlamingoPost, cell: ArticleDefaultCell)
 }
 
 class ArticleDefaultCell: UITableViewCell{
@@ -36,7 +36,7 @@ class ArticleDefaultCell: UITableViewCell{
         self.topInfoLabel.layer.masksToBounds = true
         
         let selView = UIView()
-        selView.backgroundColor = UIColor.black.withAlphaComponent(0.05)
+        selView.backgroundColor = UIColor.groupTableViewBackground
         self.selectedBackgroundView = selView
     }
     
@@ -79,6 +79,6 @@ class ArticleDefaultCell: UITableViewCell{
         guard let post = self.post else {
             return
         }
-        self.delegate?.didSelectComments(post: post)
+        self.delegate?.didSelectComments(post: post, cell: self)
     }
 }

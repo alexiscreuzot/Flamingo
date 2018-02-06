@@ -71,7 +71,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if isFirstLayout {
-            self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.bounds.height - 20, 0, 0, 0)
+            self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.bounds.height - 28, 0, 0, 0)
             isFirstLayout = false
         }
         
@@ -145,7 +145,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
                                 + self.tableView.layoutMargins.top)
         
         // Header image bounce & blur
-        headerTopConstraint.constant = contentOffset * 0.5
+        headerTopConstraint.constant = contentOffset * 1.0
         self.view.layoutIfNeeded()
     }
     
