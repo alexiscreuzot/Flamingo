@@ -162,5 +162,4 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         cell.setComment(comment)
         return cell
     }
-    
 }

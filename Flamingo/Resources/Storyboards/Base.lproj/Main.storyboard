@@ -253,7 +253,7 @@
                                     <constraint firstItem="Ro8-CW-2eq" firstAttribute="centerX" secondItem="yYe-p1-uSR" secondAttribute="centerX" id="hw1-b4-fF7"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7OZ-CO-KDm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7OZ-CO-KDm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -274,7 +274,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yee-dl-dqR">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yee-dl-dqR">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="122.66666666666667"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fringilla Inceptos Lorem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2w-2g-neV">
@@ -283,7 +283,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="didunt ut labore et dolore magna aliqua. " translatesAutoresizingMaskIntoConstraints="NO" id="Dwf-xQ-kaH">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="didunt ut labore et dolore magna aliqua. " translatesAutoresizingMaskIntoConstraints="NO" id="Dwf-xQ-kaH">
                                                             <rect key="frame" x="4" y="30.333333333333332" width="367" height="36.333333333333343"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -308,7 +308,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="yee-dl-dqR" secondAttribute="trailing" id="1GW-qM-vdH"/>
                                                 <constraint firstAttribute="bottom" secondItem="yee-dl-dqR" secondAttribute="bottom" id="CoZ-os-y6z"/>
                                                 <constraint firstItem="yee-dl-dqR" firstAttribute="leading" secondItem="fch-rJ-TjR" secondAttribute="leading" id="PA5-R8-v1i"/>
-                                                <constraint firstItem="yee-dl-dqR" firstAttribute="top" secondItem="fch-rJ-TjR" secondAttribute="top" id="pXS-CG-RWB"/>
+                                                <constraint firstItem="yee-dl-dqR" firstAttribute="top" secondItem="fch-rJ-TjR" secondAttribute="top" priority="750" id="pXS-CG-RWB"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -397,7 +397,7 @@
                             <constraint firstItem="A0l-xB-p2C" firstAttribute="trailing" secondItem="xr8-JV-tF2" secondAttribute="trailing" id="c0e-qf-joH"/>
                             <constraint firstItem="xr8-JV-tF2" firstAttribute="trailing" secondItem="yYe-p1-uSR" secondAttribute="trailing" id="ipm-Kv-NfA"/>
                             <constraint firstItem="7OZ-CO-KDm" firstAttribute="top" secondItem="XiH-Jw-bg3" secondAttribute="topMargin" id="m4G-Io-HbA"/>
-                            <constraint firstAttribute="topMargin" secondItem="wtz-n6-VbE" secondAttribute="top" id="qVn-Na-lfq"/>
+                            <constraint firstAttribute="topMargin" secondItem="wtz-n6-VbE" secondAttribute="top" priority="900" id="qVn-Na-lfq"/>
                             <constraint firstItem="7OZ-CO-KDm" firstAttribute="bottom" secondItem="xr8-JV-tF2" secondAttribute="bottom" id="tut-c1-BnX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xr8-JV-tF2"/>

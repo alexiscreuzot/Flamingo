@@ -26,8 +26,10 @@ class CommentCell: UITableViewCell{
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.selectionStyle = .none
-
+        
+        let selView = UIView()
+        selView.backgroundColor = UIColor.groupTableViewBackground
+        self.selectedBackgroundView = selView
     }
     
     override func prepareForReuse() {
@@ -52,6 +54,7 @@ class CommentCell: UITableViewCell{
     }
     
     func setComment(_ comment: HNComment) {
+        
         let level = min(comment.level + 1, CommentCell.MaxLevels)
         let leftInset = CGFloat(level) * CommentCell.LevelOffset
         self.leftMarginConstraint.constant = leftInset
@@ -60,7 +63,6 @@ class CommentCell: UITableViewCell{
         var content = comment.text ?? ""
         content = content.replacingOccurrences(of: "<p>", with: "\n\n")
         content = content.replacingOccurrences(of: "</p>", with: "\n\n")
-        self.removeChevronPrefix(&content)
         
         let attributes:[NSAttributedStringKey : Any] = [.font: self.bodyTextView.font!,
                                                         .foregroundColor: UIColor.darkGray]
@@ -74,13 +76,6 @@ class CommentCell: UITableViewCell{
             v.backgroundColor = UIColor.groupTableViewBackground
             self.levelViews.append(v)
             self.addSubview(v)
-        }
-    }
-    
-    func removeChevronPrefix(_ string : inout String) {
-        if string.hasPrefix(">") {
-            string.remove(at: string.startIndex)
-            self.removeChevronPrefix(&string)
         }
     }
 }
