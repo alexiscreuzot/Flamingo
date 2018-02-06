@@ -71,17 +71,10 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if isFirstLayout {
-            self.tableView.contentInset = UIEdgeInsetsMake(self.headerView.bounds.height - 28, 0, 0, 0)
+            let top = self.headerView.bounds.height - self.view.safeAreaInsets.top - 8
+            self.tableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0)
             isFirstLayout = false
         }
-        
-        let path = UIBezierPath()
-        path.move(to: CGPoint.zero)
-        path.addLine(to: CGPoint(x: 0, y: self.headerImageView.bounds.maxY - 20))
-        path.addLine(to: CGPoint(x: self.headerImageView.bounds.maxX, y: self.headerImageView.bounds.maxY))
-        path.addLine(to: CGPoint(x: self.headerImageView.bounds.maxX, y: 0))
-        path.close()
-        self.maskLayer.path = path.cgPath
     }
     
     func fetchHeaderImage() {
@@ -147,6 +140,14 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         // Header image bounce & blur
         headerTopConstraint.constant = contentOffset * 1.0
         self.view.layoutIfNeeded()
+        
+        let path = UIBezierPath()
+        path.move(to: CGPoint.zero)
+        path.addLine(to: CGPoint(x: 0, y: self.headerImageView.bounds.maxY - 20))
+        path.addLine(to: CGPoint(x: self.headerImageView.bounds.maxX, y: self.headerImageView.bounds.maxY))
+        path.addLine(to: CGPoint(x: self.headerImageView.bounds.maxX, y: 0))
+        path.close()
+        self.maskLayer.path = path.cgPath
     }
     
     // MARK:- UITableViewDatasource

@@ -254,21 +254,21 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7OZ-CO-KDm">
-                                <rect key="frame" x="0.0" y="-44" width="375" height="822"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="332" id="PSq-gi-jph">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="332"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="296" id="PSq-gi-jph">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="296"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PSq-gi-jph" id="azh-GA-xfi">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="332"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="296"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CommentCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="123" id="vND-px-Sad" customClass="CommentCell" customModule="Flamingo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="360" width="375" height="123"/>
+                                        <rect key="frame" x="0.0" y="324" width="375" height="123"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vND-px-Sad" id="fch-rJ-TjR">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
@@ -396,7 +396,7 @@
                             <constraint firstItem="xr8-JV-tF2" firstAttribute="trailing" secondItem="7OZ-CO-KDm" secondAttribute="trailing" id="Zwk-nd-NCM"/>
                             <constraint firstItem="A0l-xB-p2C" firstAttribute="trailing" secondItem="xr8-JV-tF2" secondAttribute="trailing" id="c0e-qf-joH"/>
                             <constraint firstItem="xr8-JV-tF2" firstAttribute="trailing" secondItem="yYe-p1-uSR" secondAttribute="trailing" id="ipm-Kv-NfA"/>
-                            <constraint firstItem="7OZ-CO-KDm" firstAttribute="top" secondItem="XiH-Jw-bg3" secondAttribute="topMargin" constant="-44" id="m4G-Io-HbA"/>
+                            <constraint firstItem="7OZ-CO-KDm" firstAttribute="top" secondItem="XiH-Jw-bg3" secondAttribute="topMargin" id="m4G-Io-HbA"/>
                             <constraint firstAttribute="topMargin" secondItem="wtz-n6-VbE" secondAttribute="top" id="qVn-Na-lfq"/>
                             <constraint firstItem="7OZ-CO-KDm" firstAttribute="bottom" secondItem="xr8-JV-tF2" secondAttribute="bottom" id="tut-c1-BnX"/>
                         </constraints>
