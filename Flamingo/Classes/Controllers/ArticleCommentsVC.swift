@@ -22,7 +22,6 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet var headerTopConstraint: NSLayoutConstraint!
     @IBOutlet var headerView: UIView!
-    @IBOutlet var headerImageHeightConstraint: NSLayoutConstraint!
     @IBOutlet var headerImageView: UIImageView!
     @IBOutlet var loaderView: UIActivityIndicatorView!
     @IBOutlet var titleLabel: UILabel!
@@ -156,12 +155,8 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         headerTopConstraint.constant = contentOffset * 1.0
         self.view.layoutIfNeeded()
         
-        let path = UIBezierPath()
-        path.move(to: CGPoint.zero)
-        path.addLine(to: CGPoint(x: 0, y: self.headerImageView.bounds.maxY - 20))
-        path.addLine(to: CGPoint(x: self.headerImageView.bounds.maxX, y: self.headerImageView.bounds.maxY))
-        path.addLine(to: CGPoint(x: self.headerImageView.bounds.maxX, y: 0))
-        path.close()
+        let path = UIBezierPath.triangleMaskPath(rect: self.headerImageView.bounds,
+                                                 type: .left(height: 20))
         self.maskLayer.path = path.cgPath
     }
     

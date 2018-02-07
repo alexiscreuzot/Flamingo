@@ -67,6 +67,8 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.tableView.tableFooterView = UIView()
         let top = ArticleListVC.HeaderHeight - ArticleListVC.CutHeight
         
+        self.stateLabel.text = ""
+        self.refreshButton.alpha = 0
         self.refreshButton.layer.borderWidth = 1
         self.refreshButton.layer.borderColor = UIColor.black.withAlphaComponent(0.2).cgColor
         self.refreshButton.layer.cornerRadius = 5
@@ -103,12 +105,8 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let path = UIBezierPath()
-        path.move(to: CGPoint.zero)
-        path.addLine(to: CGPoint(x: 0, y: self.headerView.bounds.maxY - ArticleListVC.CutHeight))
-        path.addLine(to: CGPoint(x: self.headerView.bounds.maxX, y: self.headerView.bounds.maxY))
-        path.addLine(to: CGPoint(x: self.headerView.bounds.maxX, y: 0))
-        path.close()
+        let path = UIBezierPath.triangleMaskPath(rect: self.headerImageView.bounds,
+                                                 type: .left(height:  ArticleListVC.CutHeight))
         self.maskLayer.path = path.cgPath
     }
     

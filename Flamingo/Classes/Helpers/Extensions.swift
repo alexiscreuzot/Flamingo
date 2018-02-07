@@ -39,6 +39,40 @@ extension CGFloat {
     }
 }
 
+extension UIBezierPath {
+    
+    enum TriangleShape {
+        case left(height: CGFloat)
+        case middle(height: CGFloat)
+        case right(height: CGFloat)
+    }
+    
+    static func triangleMaskPath(rect: CGRect, type: TriangleShape) -> UIBezierPath{
+        let path = UIBezierPath()
+        path.move(to: CGPoint.zero)
+        path.addLine(to: CGPoint(x: rect.maxX, y: 0))
+        
+        switch type {
+        case .left(let height):
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+            path.addLine(to: CGPoint(x: 0, y: rect.maxY - height))
+            break
+        case .middle(let height):
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
+            path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY - height))
+            path.addLine(to: CGPoint(x: 0, y: rect.maxY))
+            break
+        case .right(let height):
+            path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - height))
+            path.addLine(to: CGPoint(x: 0, y: rect.maxY))
+            break
+        }
+        path.close()
+        return path
+    }
+    
+}
+
 extension UIImage {
     
     public convenience init(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
