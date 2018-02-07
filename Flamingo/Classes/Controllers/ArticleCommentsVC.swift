@@ -80,6 +80,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     func fetchHeaderImage() {
         guard   let imageUrlString = post.preview?.lead_image_url,
                 let url = URL(string: imageUrlString) else {
+                    self.headerImageView.image = R.image.flamingoBack()
             return
         }
         

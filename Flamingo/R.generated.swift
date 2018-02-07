@@ -180,7 +180,6 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "flamingo-back") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'flamingo-back' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "circle") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'circle' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "color_gradient") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'color_gradient' is used in storyboard 'Main', but couldn't be loaded.") }
         if _R.storyboard.main().articleCommentsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleCommentsVC' could not be loaded from storyboard 'Main' as 'ArticleCommentsVC'.") }
