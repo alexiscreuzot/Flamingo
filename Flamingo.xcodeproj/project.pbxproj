@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5931BBC84E43AB1A6679F48E /* Pods_Flamingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F712ADE14BD2FC3D1FD71B60 /* Pods_Flamingo.framework */; };
 		FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */; };
+		FA2F884F202B641A00603EAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2F8851202B641A00603EAF /* Localizable.strings */; };
+		FA2F8853202B677200603EAF /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8852202B677200603EAF /* UIKit+Extensions.swift */; };
 		FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E796200670D2008C28C1 /* AppDelegate.swift */; };
 		FA50E79C200670D2008C28C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA50E79A200670D2008C28C1 /* Main.storyboard */; };
 		FA50E79E200670D2008C28C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA50E79D200670D2008C28C1 /* Assets.xcassets */; };
@@ -26,7 +28,7 @@
 		FAB838EB2028CFF500DBFEF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EA2028CFF500DBFEF7 /* Constants.swift */; };
 		FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */; };
 		FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */; };
-		FACE2FEA2020C0E4003BBAD0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE2FE92020C0E4003BBAD0 /* Extensions.swift */; };
+		FACE2FEA2020C0E4003BBAD0 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		23502EE81E317663CC7E0C61 /* Pods-Flamingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flamingo/Pods-Flamingo.debug.xcconfig"; sourceTree = "<group>"; };
 		F712ADE14BD2FC3D1FD71B60 /* Pods_Flamingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flamingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Safari.swift"; sourceTree = "<group>"; };
+		FA2F8850202B641A00603EAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA2F8852202B677200603EAF /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
 		FA50E793200670D2008C28C1 /* Flamingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flamingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA50E796200670D2008C28C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA50E798200670D2008C28C1 /* ArticlesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListVC.swift; sourceTree = "<group>"; };
@@ -54,7 +58,7 @@
 		FAB838EA2028CFF500DBFEF7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamingoPost.swift; sourceTree = "<group>"; };
 		FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamingoNVC.swift; sourceTree = "<group>"; };
-		FACE2FE92020C0E4003BBAD0 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,17 @@
 				FAB10E1620213F3700F60594 /* MercuryAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		FA2F8854202B679900603EAF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */,
+				FA2F8852202B677200603EAF /* UIKit+Extensions.swift */,
+				FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */,
+				FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FA50E78A200670D2008C28C1 = {
@@ -137,9 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				FAB838E82028B70700DBFEF7 /* FontIcon.swift */,
-				FACE2FE92020C0E4003BBAD0 /* Extensions.swift */,
-				FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */,
-				FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */,
+				FA2F8854202B679900603EAF /* Extensions */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -147,6 +160,7 @@
 		FA50E7AC200677D2008C28C1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA2F8851202B641A00603EAF /* Localizable.strings */,
 				FAB838E62028B6EC00DBFEF7 /* icomoon.ttf */,
 				FA50E7B620067A3E008C28C1 /* Storyboards */,
 				FA50E79D200670D2008C28C1 /* Assets.xcassets */,
@@ -259,6 +273,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2F884F202B641A00603EAF /* Localizable.strings in Resources */,
 				FA50E7A1200670D2008C28C1 /* LaunchScreen.storyboard in Resources */,
 				FA50E79E200670D2008C28C1 /* Assets.xcassets in Resources */,
 				FA50E79C200670D2008C28C1 /* Main.storyboard in Resources */,
@@ -359,7 +374,8 @@
 			files = (
 				FA50E7BD20067ABB008C28C1 /* ArticleDefaultCell.swift in Sources */,
 				FAB838E92028B70700DBFEF7 /* FontIcon.swift in Sources */,
-				FACE2FEA2020C0E4003BBAD0 /* Extensions.swift in Sources */,
+				FA2F8853202B677200603EAF /* UIKit+Extensions.swift in Sources */,
+				FACE2FEA2020C0E4003BBAD0 /* Foundation+Extensions.swift in Sources */,
 				FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */,
 				FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */,
 				FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */,
@@ -378,6 +394,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		FA2F8851202B641A00603EAF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA2F8850202B641A00603EAF /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		FA50E79A200670D2008C28C1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -8,6 +8,8 @@
 
 import Foundation
 
+let i18n = R.string.localizable.self
+
 struct Colors {
     
 }

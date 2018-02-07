@@ -24,6 +24,7 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
     
     @IBOutlet var leftMarginConstraint : NSLayoutConstraint!
     @IBOutlet var topLabel : UILabel!
+    @IBOutlet var createdLabel : UILabel!
     @IBOutlet var bodyTextView : UITextView!
     
     var levelViews = [UIView]()
@@ -62,16 +63,25 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
         let leftInset = CGFloat(level) * CommentCell.LevelOffset
         self.leftMarginConstraint.constant = leftInset
         
-        let username = comment.username ?? "Anonymous"
-        var content = comment.text ?? ""
-        content = content.replacingOccurrences(of: "<p>", with: "\n\n")
-        content = content.replacingOccurrences(of: "</p>", with: "\n\n")
+        // Username
+        let username = comment.username ?? i18n.articleCommentsCommentAnonymous()
+        self.topLabel.text = username.removingHTMLEntities
         
+        // Creation date
+        if let created = comment.created {
+             self.createdLabel.text = "• \(created)"
+        } else {
+            self.createdLabel.text = nil
+        }
+        
+        // Body
+        var content = comment.text ?? ""
+        content.removingRegexMatches(pattern: "(<p>|</p>)", replaceWith: "\n\n")
+ 
         let attributes:[NSAttributedStringKey : Any] = [.font: self.bodyTextView.font!,
                                                         .foregroundColor: UIColor.darkGray]
         let modifier = modifierWithBaseAttributes(attributes, modifiers: [])
         let contentAttString = NSAttributedString.attributedStringFromMarkup(content, withModifier: modifier)
-        self.topLabel.text = username.removingHTMLEntities
         self.bodyTextView.attributedText = contentAttString
         
         for _ in 1...level {
@@ -85,7 +95,6 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
     // MARK: - UITextViewDelegate
     
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        print("INTERACT : \(URL)")
         self.delegate?.commentCell(self, didSelect: URL)
         return false
     }

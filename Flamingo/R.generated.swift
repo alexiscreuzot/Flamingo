@@ -122,8 +122,91 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.string` struct is generated, and contains static references to 0 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
+    struct localizable {
+      /// en translation: Anonymous
+      /// 
+      /// Locales: en
+      static let articleCommentsCommentAnonymous = Rswift.StringResource(key: "ArticleComments/Comment/Anonymous", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Couldn't load comments :(
+      /// 
+      /// Locales: en
+      static let articleCommentsLoadingFailed = Rswift.StringResource(key: "ArticleComments/LoadingFailed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Couldn't load feed :(
+      /// 
+      /// Locales: en
+      static let articlesListLoadingFailed = Rswift.StringResource(key: "ArticlesList/LoadingFailed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Loading comments...
+      /// 
+      /// Locales: en
+      static let articleCommentsLoading = Rswift.StringResource(key: "ArticleComments/Loading", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Nothing to show
+      /// 
+      /// Locales: en
+      static let commonNothingToShow = Rswift.StringResource(key: "Common/NothingToShow", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Ok
+      /// 
+      /// Locales: en
+      static let commonOk = Rswift.StringResource(key: "Common/Ok", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Something went wrong
+      /// 
+      /// Locales: en
+      static let commonSomethingWentWrong = Rswift.StringResource(key: "Common/SomethingWentWrong", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      
+      /// en translation: Anonymous
+      /// 
+      /// Locales: en
+      static func articleCommentsCommentAnonymous(_: Void = ()) -> String {
+        return NSLocalizedString("ArticleComments/Comment/Anonymous", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Couldn't load comments :(
+      /// 
+      /// Locales: en
+      static func articleCommentsLoadingFailed(_: Void = ()) -> String {
+        return NSLocalizedString("ArticleComments/LoadingFailed", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Couldn't load feed :(
+      /// 
+      /// Locales: en
+      static func articlesListLoadingFailed(_: Void = ()) -> String {
+        return NSLocalizedString("ArticlesList/LoadingFailed", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Loading comments...
+      /// 
+      /// Locales: en
+      static func articleCommentsLoading(_: Void = ()) -> String {
+        return NSLocalizedString("ArticleComments/Loading", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Nothing to show
+      /// 
+      /// Locales: en
+      static func commonNothingToShow(_: Void = ()) -> String {
+        return NSLocalizedString("Common/NothingToShow", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Ok
+      /// 
+      /// Locales: en
+      static func commonOk(_: Void = ()) -> String {
+        return NSLocalizedString("Common/Ok", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: Something went wrong
+      /// 
+      /// Locales: en
+      static func commonSomethingWentWrong(_: Void = ()) -> String {
+        return NSLocalizedString("Common/SomethingWentWrong", bundle: R.hostingBundle, comment: "")
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   

@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Flamingo
+
+  Created by Alexis Creuzot on 07/02/2018.
+  Copyright © 2018 alexiscreuzot. All rights reserved.
+*/
+
+"Common/Ok" = "Ok";
+"Common/SomethingWentWrong" = "Something went wrong";
+"Common/NothingToShow" = "Nothing to show";
+
+"ArticlesList/LoadingFailed" = "Couldn't load feed :(";
+
+"ArticleComments/Loading" = "Loading comments...";
+"ArticleComments/LoadingFailed" = "Couldn't load comments :(";
+"ArticleComments/Comment/Anonymous" = "Anonymous";

@@ -67,7 +67,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.tableView.tableFooterView = UIView()
         let top = ArticleListVC.HeaderHeight - ArticleListVC.CutHeight
         
-        self.stateLabel.text = ""
+        self.stateLabel.text = nil
         self.refreshButton.alpha = 0
         self.refreshButton.layer.borderWidth = 1
         self.refreshButton.layer.borderColor = UIColor.black.withAlphaComponent(0.2).cgColor
@@ -123,7 +123,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             self.refreshCycles = 0
             self.tableView.setContentOffset(CGPoint(x:0, y:-self.tableView.contentInset.top), animated: true)
             self.tableView.alpha = 0
-            self.stateLabel.text = ""
+            self.stateLabel.text = nil
             self.refreshButton.alpha = 0
             self.animateLoading()
             break
@@ -136,7 +136,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         case .loaded(let image) :
             self.tableView.reloadData()
             self.tableView.alpha = 1
-            self.stateLabel.text = ""
+            self.stateLabel.text = nil
             self.refreshButton.alpha = 0
             self.refreshImageView.alpha = 0
             self.headerImageView.image = image.blend(image: R.image.color_gradient()!, with: .hardLight)
@@ -147,7 +147,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func animateLoading() {
         
         if self.refreshCycles >= 10 {
-            self.currentState = .error(message: "Couldn't load feed :(")
+            self.currentState = .error(message: i18n.articlesListLoadingFailed())
             return
         }
         

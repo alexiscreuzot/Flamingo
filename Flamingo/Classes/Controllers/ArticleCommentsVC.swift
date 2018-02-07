@@ -55,16 +55,20 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         self.titleLabel.text = self.post.hnPost.title
         self.summaryLabel.text = self.post.preview?.excerpt
         self.footLabel.attributedText = self.post.infosAttributedString(attributes: attributes, withComments: true)
-        let tapToRead = UITapGestureRecognizer(target: self, action: #selector(showArticle))
-        self.headerView.addGestureRecognizer(tapToRead)
+        self.view.sendSubview(toBack: self.headerView)
         
         // TableView
         self.tableView.estimatedRowHeight = 999
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.alpha = 0
         self.tableView.tableFooterView = UIView()
-        self.tableView.backgroundColor = UIColor.clear
-        self.tableView.backgroundView?.backgroundColor = UIColor.clear
+        self.tableView.backgroundColor = .clear
+        
+        let tableBackView = UIView()
+        tableBackView.backgroundColor = .clear
+        self.tableView.backgroundView = tableBackView
+        
+        let tapToRead = UITapGestureRecognizer(target: self, action: #selector(showArticle))
+        tableBackView.addGestureRecognizer(tapToRead)
         
         self.fetchHeaderImage()
         self.refreshComments()
@@ -111,7 +115,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
             if !self.comments.isEmpty {
                 self.currentState = .loaded
             } else {
-                self.currentState = .error(message: "Nothing to show")
+                self.currentState = .error(message: i18n.commonNothingToShow())
             }
         }
     }
@@ -122,18 +126,15 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         switch currentState {
         case .loading :
             loadingIndicator.startAnimating()
-            tableView.alpha = 0
-            stateLabel.text = "Loading comments"
+            stateLabel.text = i18n.articleCommentsLoading()
             break
         case .error(let message) :
-            tableView.alpha = 0
             loadingIndicator.stopAnimating()
             stateLabel.text = message
             break
         case .loaded :
             loadingIndicator.stopAnimating()
-            tableView.alpha = 1
-            stateLabel.text = ""
+            stateLabel.text = nil
             self.tableView.reloadData()
             break
         }
@@ -158,7 +159,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
                                 + self.tableView.layoutMargins.top)
         
         // Header image bounce & blur
-        headerTopConstraint.constant = contentOffset * 1.0
+        headerTopConstraint.constant = contentOffset * 0.66
         self.view.layoutIfNeeded()
         
         let path = UIBezierPath.triangleMaskPath(rect: self.headerImageView.bounds,
