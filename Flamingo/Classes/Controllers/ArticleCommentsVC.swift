@@ -12,7 +12,7 @@ import HNScraper
 import SDWebImage
 import SafariServices
 
-class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDelegate, CommentCellDelegate {
     
     enum State {
         case loading
@@ -143,6 +143,12 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         self.showURL(self.post.hnPost.url)
     }
     
+    // MARK:- CommentCellDelegate
+    
+    func commentCell(_ cell: CommentCell, didSelect url: URL) {
+        self.showURL(url)
+    }
+    
     // MARK: - UIScrollViewDelegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -170,6 +176,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         let comment = self.comments[indexPath.row ]
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.commentCell, for: indexPath)!
         cell.setComment(comment)
+        cell.delegate = self
         return cell
     }
 

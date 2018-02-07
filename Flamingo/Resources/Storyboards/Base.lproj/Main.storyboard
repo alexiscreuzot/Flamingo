@@ -313,7 +313,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="didunt ut labore et dolore magna aliqua. " translatesAutoresizingMaskIntoConstraints="NO" id="Dwf-xQ-kaH">
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="didunt ut labore et dolore magna aliqua. " translatesAutoresizingMaskIntoConstraints="NO" id="Dwf-xQ-kaH">
                                                             <rect key="frame" x="4" y="25.333333333333329" width="367" height="34"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -438,7 +438,6 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="footLabel" destination="O2p-Dr-x9Y" id="orq-EG-euU"/>
-                        <outlet property="headerImageHeightConstraint" destination="xYh-Lj-vC6" id="iq4-9B-2aj"/>
                         <outlet property="headerImageView" destination="wtz-n6-VbE" id="JvC-4h-eZo"/>
                         <outlet property="headerTopConstraint" destination="P64-pm-6FU" id="8kJ-ox-Zem"/>
                         <outlet property="headerView" destination="A0l-xB-p2C" id="YmS-6d-OF9"/>

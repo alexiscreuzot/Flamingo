@@ -10,7 +10,7 @@ import UIKit
 import HNScraper
 
 protocol ArticleDefaultCellDelegate {
-    func didSelectComments(post: FlamingoPost, cell: ArticleDefaultCell)
+    func articleCell(_ cell: ArticleDefaultCell, didSelect post: FlamingoPost)
 }
 
 class ArticleDefaultCell: UITableViewCell{
@@ -79,6 +79,6 @@ class ArticleDefaultCell: UITableViewCell{
         guard let post = self.post else {
             return
         }
-        self.delegate?.didSelectComments(post: post, cell: self)
+        self.delegate?.articleCell(self, didSelect: post)
     }
 }

@@ -12,7 +12,11 @@ import HNScraper
 import HTMLString
 import Attributed
 
-class CommentCell: UITableViewCell{
+protocol CommentCellDelegate {
+    func commentCell(_ cell: CommentCell, didSelect url: URL)
+}
+
+class CommentCell: UITableViewCell, UITextViewDelegate {
     
     static let MaxLevels : Int = 6
     static let LevelOffset : CGFloat = 10
@@ -23,10 +27,11 @@ class CommentCell: UITableViewCell{
     @IBOutlet var bodyTextView : UITextView!
     
     var levelViews = [UIView]()
+    var delegate: CommentCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        self.bodyTextView.delegate = self
         self.selectionStyle = .none
     }
     
@@ -76,4 +81,13 @@ class CommentCell: UITableViewCell{
             self.addSubview(v)
         }
     }
+    
+    // MARK: - UITextViewDelegate
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        print("INTERACT : \(URL)")
+        self.delegate?.commentCell(self, didSelect: URL)
+        return false
+    }
+    
 }

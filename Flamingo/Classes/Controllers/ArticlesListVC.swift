@@ -252,7 +252,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     // MARK: - ArticleDefaultCellDelegate
     
-    func didSelectComments(post: FlamingoPost, cell: ArticleDefaultCell) {
+    func articleCell(_ cell: ArticleDefaultCell, didSelect post: FlamingoPost) {
         let commentsController = R.storyboard.main.articleCommentsVC()!
         commentsController.post = post
         self.navigationController?.pushViewController(commentsController, animated: true)
