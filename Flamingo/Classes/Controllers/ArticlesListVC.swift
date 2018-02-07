@@ -12,7 +12,13 @@ import SDWebImage
 import SafariServices
 import Moya
 
-class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate, ArticleDefaultCellDelegate {
+class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ArticleDefaultCellDelegate {
+    
+    enum State {
+        case loading
+        case error(message: String)
+        case loaded(headerImage: UIImage)
+    }
     
     static let HeaderHeight: CGFloat = UIScreen.main.bounds.height.goldenRatio.short
     static let CutHeight: CGFloat = 38
@@ -25,11 +31,23 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet var refreshImageView : UIImageView!
     @IBOutlet var tableView : UITableView!
     
+    @IBOutlet var stateLabel : UILabel!
+    @IBOutlet var refreshButton : UIButton!
+    
     let maskLayer = CAShapeLayer()
     var animator: UIViewPropertyAnimator?
     var linkForMore : String?
     var posts = [HNPost]()
     var postPreviews = [String : Preview]()
+    var refreshCycles = 0
+    
+    var currentState : State = .loading {
+        didSet {
+            UIView.animate(withDuration: 0.4) {
+                self.updateUI()
+            }
+        }
+    }
     
     // MARK: - Lifecycle
     
@@ -49,6 +67,10 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         self.tableView.tableFooterView = UIView()
         let top = ArticleListVC.HeaderHeight - ArticleListVC.CutHeight
         
+        self.refreshButton.layer.borderWidth = 1
+        self.refreshButton.layer.borderColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        self.refreshButton.layer.cornerRadius = 5
+        
         let bottomInset: CGFloat = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0.0
         self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottomInset, 0)
         
@@ -62,7 +84,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                                                name: .UIApplicationWillEnterForeground,
                                                object: nil)
         
-        self.selectRefreh()
+        self.selectRefresh()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,25 +119,46 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     // MARK: - Logic
     
-    @IBAction func selectRefreh() {
-        self.linkForMore = nil
-        self.headerImageView.image = nil
-        
-        self.tableView.setContentOffset(CGPoint(x:0, y:-self.tableView.contentInset.top), animated: true)
-        UIView.animate(withDuration: 0.3, delay: 0.35, options: .allowAnimatedContent, animations: {
+    func updateUI() {
+        switch currentState {
+        case .loading :
+            self.refreshCycles = 0
+            self.tableView.setContentOffset(CGPoint(x:0, y:-self.tableView.contentInset.top), animated: true)
             self.tableView.alpha = 0
-            self.refreshImageView.alpha = 1
-        })
-        self.requestNextPage()
-        self.animateLoading()
+            self.stateLabel.text = ""
+            self.refreshButton.alpha = 0
+            self.animateLoading()
+            break
+        case .error(let message) :
+            self.tableView.alpha = 0
+            self.stateLabel.text = message
+            self.refreshImageView.alpha = 0
+            self.refreshButton.alpha = 1
+            break
+        case .loaded(let image) :
+            self.tableView.reloadData()
+            self.tableView.alpha = 1
+            self.stateLabel.text = ""
+            self.refreshButton.alpha = 0
+            self.refreshImageView.alpha = 0
+            self.headerImageView.image = image.blend(image: R.image.color_gradient()!, with: .hardLight)
+            break
+        }
     }
     
     func animateLoading() {
+        
+        if self.refreshCycles >= 10 {
+            self.currentState = .error(message: "Couldn't load feed :(")
+            return
+        }
+        
         UIView.animate(withDuration: 0.5, delay: 0, options: .allowAnimatedContent, animations: {
             self.refreshImageView.transform = self.refreshImageView.transform.rotated(by: CGFloat.pi * 0.3)
             self.refreshImageView.alpha = 1
         }, completion: { _ in
             if self.headerImageView.image == nil {
+                self.refreshCycles += 1
                 self.animateLoading()
             }
         })
@@ -130,6 +173,15 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     @objc func willResignActive() {
         animator?.stopAnimation(true)
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func selectRefresh() {
+        self.linkForMore = nil
+        self.headerImageView.image = nil
+        self.requestNextPage()
+        self.currentState = .loading
     }
     
     // MARK: - Networking
@@ -195,24 +247,8 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                     self.posts.rearrange(from: oldIndex, to: 0)
                 }
                 
-                self.tableView.reloadData()
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.tableView.alpha = 1
-                    self.refreshImageView.alpha = 0
-                    self.headerImageView.image = image.blend(image: R.image.color_gradient()!, with: .hardLight)
-                })
+                self.currentState = .loaded(headerImage: image)
             }
-        }
-    }
-    
-    func showArticle(for url: URL?) {
-        if let url = url {
-            let config = SFSafariViewController.Configuration()
-            config.entersReaderIfAvailable = true
-            config.barCollapsingEnabled = true
-            let vc = SFSafariViewController(url: url, configuration: config)
-            vc.delegate = self
-            self.present(vc, animated: true, completion: nil)
         }
     }
     
@@ -258,7 +294,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         let contentOffset = self.tableView.contentOffset.y + self.tableView.contentInset.top
         if contentOffset < ArticleListVC.DeltaBlur * 0.4 {
-            self.selectRefreh()
+            self.selectRefresh()
         }
     }
     
@@ -282,12 +318,6 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = self.posts[indexPath.row]
-        self.showArticle(for: post.url)
-    }
-    
-    // MARK: - SFSafariViewControllerDelegate
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-       controller.dismiss(animated: true, completion: nil)
+        self.showURL(post.url)
     }
 }

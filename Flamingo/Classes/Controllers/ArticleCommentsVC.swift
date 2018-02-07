@@ -10,19 +10,21 @@ import Foundation
 import UIKit
 import HNScraper
 import SDWebImage
-
-enum State {
-    case loading
-    case error(message: String)
-    case loaded
-}
+import SafariServices
 
 class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    enum State {
+        case loading
+        case error(message: String)
+        case loaded
+    }
 
     @IBOutlet var headerTopConstraint: NSLayoutConstraint!
     @IBOutlet var headerView: UIView!
     @IBOutlet var headerImageHeightConstraint: NSLayoutConstraint!
     @IBOutlet var headerImageView: UIImageView!
+    @IBOutlet var loaderView: UIActivityIndicatorView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var summaryLabel: UILabel!
     @IBOutlet var footLabel: UILabel!
@@ -54,7 +56,8 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         self.titleLabel.text = self.post.hnPost.title
         self.summaryLabel.text = self.post.preview?.excerpt
         self.footLabel.attributedText = self.post.infosAttributedString(attributes: attributes, withComments: true)
-        self.view.sendSubview(toBack: self.headerView)
+        let tapToRead = UITapGestureRecognizer(target: self, action: #selector(showArticle))
+        self.headerView.addGestureRecognizer(tapToRead)
         
         // TableView
         self.tableView.estimatedRowHeight = 999
@@ -77,17 +80,22 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    // MARK: - Networking
+    
     func fetchHeaderImage() {
         guard   let imageUrlString = post.preview?.lead_image_url,
                 let url = URL(string: imageUrlString) else {
                     self.headerImageView.image = R.image.flamingoBack()
+                    self.loaderView.stopAnimating()
             return
         }
         
         SDWebImageDownloader.shared().downloadImage(with: url, options: [.allowInvalidSSLCertificates], progress: nil) { (image, _, _, _) in
-            
+            self.loaderView.stopAnimating()
             if  let image = image {
                 self.headerImageView.image = image.blend(image: R.image.color_gradient()!, with: .hardLight)
+            } else {
+                self.headerImageView.image = R.image.flamingoBack()
             }
         }
     }
@@ -109,6 +117,8 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    // MARK: - Logic
+    
     func updateUI() {
         switch currentState {
         case .loading :
@@ -128,6 +138,10 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
             self.tableView.reloadData()
             break
         }
+    }
+    
+    @objc func showArticle() {
+        self.showURL(self.post.hnPost.url)
     }
     
     // MARK: - UIScrollViewDelegate
@@ -163,4 +177,5 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         cell.setComment(comment)
         return cell
     }
+
 }

@@ -27,9 +27,7 @@ class CommentCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let selView = UIView()
-        selView.backgroundColor = UIColor.groupTableViewBackground
-        self.selectedBackgroundView = selView
+        self.selectionStyle = .none
     }
     
     override func prepareForReuse() {

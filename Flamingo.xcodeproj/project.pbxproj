@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5931BBC84E43AB1A6679F48E /* Pods_Flamingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F712ADE14BD2FC3D1FD71B60 /* Pods_Flamingo.framework */; };
+		FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */; };
 		FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E796200670D2008C28C1 /* AppDelegate.swift */; };
 		FA50E79C200670D2008C28C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA50E79A200670D2008C28C1 /* Main.storyboard */; };
 		FA50E79E200670D2008C28C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA50E79D200670D2008C28C1 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		12136E14E258A814338A7863 /* Pods_TheNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23502EE81E317663CC7E0C61 /* Pods-Flamingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flamingo/Pods-Flamingo.debug.xcconfig"; sourceTree = "<group>"; };
 		F712ADE14BD2FC3D1FD71B60 /* Pods_Flamingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flamingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Safari.swift"; sourceTree = "<group>"; };
 		FA50E793200670D2008C28C1 /* Flamingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flamingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA50E796200670D2008C28C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA50E798200670D2008C28C1 /* ArticlesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListVC.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				FAB838E82028B70700DBFEF7 /* FontIcon.swift */,
 				FACE2FE92020C0E4003BBAD0 /* Extensions.swift */,
 				FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */,
+				FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				FA50E7BD20067ABB008C28C1 /* ArticleDefaultCell.swift in Sources */,
 				FAB838E92028B70700DBFEF7 /* FontIcon.swift in Sources */,
 				FACE2FEA2020C0E4003BBAD0 /* Extensions.swift in Sources */,
+				FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */,
 				FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */,
 				FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */,
 				FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */,
