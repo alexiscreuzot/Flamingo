@@ -2,7 +2,7 @@
 Minimalist Hacker News Reader
 
 <p align="center">
-  <img src="https://i.imgur.com/rYp9ajL.png" style="max-height:400px;">
+  <img src="https://i.imgur.com/fUstrhJ.png" style="max-height:400px;">
 </p>
 
 ## Purpose
@@ -22,14 +22,15 @@ Here is what the app currently does :
 - [x] Get curated previews of each story through [Mercury API](https://mercury.postlight.com/).
 - [x] Downloads stories images. When the first one (with high enough quality) finished to load we make it our header.
 - [x] Display stories "readtime" based on the content word count.
+- [x] Display comments of a story.
 - [x] Show individual stories using `SFSafariViewController` with reader mod on.
 
 ## Roadmap
 There are a lot of ways to improve the experience even further. I'm open to any ideas the community may have!
 Here are a few :
-- [ ] Display individual stories in custom webview
+- [ ] Custom reader?
 - [ ] Provide a way to switch between top and new stories
-- [ ] Allow infinite loading
+- [ ] Infinite loading?
 
 ## One more thing
 Flamingo, what a cool name! How did I find it you ask? I actually used [the Qolor app](https://itunes.apple.com/app/id973492333) on the Hacker News orange, and it was the result :)
