@@ -16,7 +16,7 @@ class CommentCell: UITableViewCell{
     
     static let MaxLevels : Int = 6
     static let LevelOffset : CGFloat = 10
-    static let LevelWidth : CGFloat = 3
+    static let LevelWidth : CGFloat = 2
     
     @IBOutlet var leftMarginConstraint : NSLayoutConstraint!
     @IBOutlet var topLabel : UILabel!
@@ -73,7 +73,7 @@ class CommentCell: UITableViewCell{
         
         for _ in 1...level {
             let v = UIView()
-            v.backgroundColor = UIColor.groupTableViewBackground
+            v.backgroundColor = UIColor.black
             self.levelViews.append(v)
             self.addSubview(v)
         }
