@@ -33,7 +33,10 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.bodyTextView.delegate = self
-        self.selectionStyle = .default
+        
+        let selView = UIView()
+        selView.backgroundColor = UIColor.groupTableViewBackground
+        self.selectedBackgroundView = selView
         
         // Create levels
         for _ in 1...CommentCell.MaxLevels {

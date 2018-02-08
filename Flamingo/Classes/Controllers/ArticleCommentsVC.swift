@@ -49,8 +49,8 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         return self.comments.filter { c1 in !self.collapsedIds.contains(c1.id) }
     }
     var heightsDict = [String: CGFloat]()
-    
     var isFirstLayout = true
+    var isPerformingCollapse = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,7 +194,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - UIScrollViewDelegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
+        if isPerformingCollapse {return}
         let contentOffset =     -(self.tableView.contentOffset.y
                                 + self.tableView.contentInset.top
                                 + self.tableView.layoutMargins.top)

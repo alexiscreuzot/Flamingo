@@ -8,6 +8,10 @@
 
 import Foundation
 
+public func delay(_ seconds: Double, closure: @escaping () -> Void) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds, execute: closure)
+}
+
 extension String {
     var wordCount : Int {
         let words = self.components(separatedBy: .whitespacesAndNewlines)
