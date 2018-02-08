@@ -34,14 +34,18 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
         super.awakeFromNib()
         self.bodyTextView.delegate = self
         self.selectionStyle = .none
+        
+        // Create levels
+        for _ in 1...CommentCell.MaxLevels {
+            let v = UIView()
+            v.backgroundColor = UIColor.black
+            self.levelViews.append(v)
+            self.insertSubview(v, at: 0)
+        }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        for level in self.levelViews {
-            level.removeFromSuperview()
-        }
-        self.levelViews = [UIView]()
     }
     
     override func layoutSubviews() {
@@ -83,13 +87,6 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
         let modifier = modifierWithBaseAttributes(attributes, modifiers: [])
         let contentAttString = NSAttributedString.attributedStringFromMarkup(content, withModifier: modifier)
         self.bodyTextView.attributedText = contentAttString
-        
-        for _ in 1...level {
-            let v = UIView()
-            v.backgroundColor = UIColor.black
-            self.levelViews.append(v)
-            self.addSubview(v)
-        }
     }
     
     // MARK: - UITextViewDelegate
