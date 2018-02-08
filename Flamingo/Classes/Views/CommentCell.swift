@@ -47,7 +47,7 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
             let v = UIView()
             v.backgroundColor = UIColor.black
             self.levelViews.append(v)
-            self.insertSubview(v, at: 0)
+            self.contentView.insertSubview(v, at: 0)
         }
     }
     
@@ -58,8 +58,7 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        for level in levelViews {
-            guard let index = self.levelViews.index(of: level) else { continue }
+        for (index, level) in levelViews.enumerated() {
             let indexFloat = CGFloat(index + 1)
             var frame = self.bounds
             frame.origin.x = (indexFloat * CommentCell.LevelOffset) - CommentCell.LevelWidth
