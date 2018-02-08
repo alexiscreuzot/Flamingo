@@ -16,6 +16,7 @@ PODS:
   - SDWebImage (4.2.3):
     - SDWebImage/Core (= 4.2.3)
   - SDWebImage/Core (4.2.3)
+  - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
   - Attributed (~> 4.0)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - Moya (~> 9.0.0)
   - R.swift (~> 4.0)
   - SDWebImage (~> 4.2)
+  - TTTAttributedLabel (~> 2.0)
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -37,7 +39,8 @@ SPEC CHECKSUMS:
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
   SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 049e20e97c625d9f2db66b64413d7d0c6d9a5955
+PODFILE CHECKSUM: 2fb21ff2c5eae7b05fcdb6790ee5e120ede65c0b
 
 COCOAPODS: 1.3.1

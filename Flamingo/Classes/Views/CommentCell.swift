@@ -11,12 +11,13 @@ import UIKit
 import HNScraper
 import HTMLString
 import Attributed
+import TTTAttributedLabel
 
 protocol CommentCellDelegate {
     func commentCell(_ cell: CommentCell, didSelect url: URL)
 }
 
-class CommentCell: UITableViewCell, UITextViewDelegate {
+class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
     
     static let MaxLevels : Int = 6
     static let LevelOffset : CGFloat = 10
@@ -25,14 +26,17 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet var leftMarginConstraint : NSLayoutConstraint!
     @IBOutlet var topLabel : UILabel!
     @IBOutlet var createdLabel : UILabel!
-    @IBOutlet var bodyTextView : UITextView!
+    @IBOutlet var bodyTextLabel : TTTAttributedLabel!
     
     var levelViews = [UIView]()
     var delegate: CommentCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.bodyTextView.delegate = self
+        
+        self.bodyTextLabel.enabledTextCheckingTypes = NSTextCheckingResult.CheckingType.link.rawValue
+        self.bodyTextLabel.delegate = self
+        self.bodyTextLabel.linkAttributes = [NSAttributedStringKey.foregroundColor: UIColor.orange]
         
         let selView = UIView()
         selView.backgroundColor = UIColor.groupTableViewBackground
@@ -75,6 +79,7 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
         self.topLabel.text = username.removingHTMLEntities
         
         let color = isCollapser ? UIColor.orange : UIColor.black
+        self.selectionStyle = isCollapser ? .default : .none
         for level in self.levelViews {
             level.backgroundColor = color
         }
@@ -90,18 +95,17 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
         var content = comment.text ?? ""
         content.removingRegexMatches(pattern: "(<p>|</p>)", replaceWith: "\n\n")
  
-        let attributes:[NSAttributedStringKey : Any] = [.font: self.bodyTextView.font!,
+        let attributes:[NSAttributedStringKey : Any] = [.font: self.bodyTextLabel.font!,
                                                         .foregroundColor: UIColor.darkGray]
         let modifier = modifierWithBaseAttributes(attributes, modifiers: [])
         let contentAttString = NSAttributedString.attributedStringFromMarkup(content, withModifier: modifier)
-        self.bodyTextView.attributedText = contentAttString
+        self.bodyTextLabel.setText(contentAttString)
     }
     
-    // MARK: - UITextViewDelegate
+    // MARK: - TTTAttributedLabelDelegate
     
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        self.delegate?.commentCell(self, didSelect: URL)
-        return false
+    func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL!) {
+        self.delegate?.commentCell(self, didSelect: url)
     }
-    
+
 }

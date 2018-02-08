@@ -17,6 +17,9 @@ def shared_pods
     pod 'Moya', '~> 9.0.0'
     pod 'ModelMapper', '~> 7.4'
 
+    # Components
+    pod 'TTTAttributedLabel', '~> 2.0'
+
 end
 
 target 'Flamingo' do

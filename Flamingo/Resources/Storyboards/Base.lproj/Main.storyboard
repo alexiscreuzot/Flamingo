@@ -319,26 +319,28 @@
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="didunt ut labore et dolore magna aliqua. " translatesAutoresizingMaskIntoConstraints="NO" id="Dwf-xQ-kaH">
-                                                            <rect key="frame" x="4" y="25.333333333333329" width="363" height="34"/>
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMc-W2-KeQ" customClass="TTTAttributedLabel">
+                                                            <rect key="frame" x="8" y="37" width="359" height="54"/>
+                                                            <accessibility key="accessibilityConfiguration">
+                                                                <accessibilityTraits key="traits" link="YES" staticText="YES"/>
+                                                            </accessibility>
+                                                            <string key="text">Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                            <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                                                        </textView>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="d2w-2g-neV" firstAttribute="top" secondItem="yee-dl-dqR" secondAttribute="top" constant="10" id="3lD-HN-x9h"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tMc-W2-KeQ" secondAttribute="bottom" constant="10" id="60o-CH-Z7u"/>
+                                                        <constraint firstAttribute="trailing" secondItem="tMc-W2-KeQ" secondAttribute="trailing" constant="8" id="6xx-T1-nIN"/>
                                                         <constraint firstItem="d6s-yx-qLY" firstAttribute="leading" secondItem="d2w-2g-neV" secondAttribute="trailing" constant="4" id="6yu-47-xPc"/>
                                                         <constraint firstAttribute="trailing" secondItem="d6s-yx-qLY" secondAttribute="trailing" constant="8" id="EM0-Rp-FFh"/>
-                                                        <constraint firstItem="Dwf-xQ-kaH" firstAttribute="top" secondItem="d2w-2g-neV" secondAttribute="bottom" constant="-4" id="H9M-uj-bMz"/>
-                                                        <constraint firstItem="Dwf-xQ-kaH" firstAttribute="leading" secondItem="d2w-2g-neV" secondAttribute="leading" constant="-4" id="MXR-xE-bfL"/>
                                                         <constraint firstItem="d6s-yx-qLY" firstAttribute="baseline" secondItem="d2w-2g-neV" secondAttribute="baseline" id="SHs-Vg-PNd"/>
                                                         <constraint firstItem="d2w-2g-neV" firstAttribute="leading" secondItem="yee-dl-dqR" secondAttribute="leading" constant="8" id="SXZ-E6-UI8"/>
-                                                        <constraint firstAttribute="trailing" secondItem="Dwf-xQ-kaH" secondAttribute="trailing" constant="8" id="fwC-fa-LC3"/>
-                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Dwf-xQ-kaH" secondAttribute="bottom" constant="10" id="igx-3e-rti"/>
+                                                        <constraint firstItem="tMc-W2-KeQ" firstAttribute="top" secondItem="d2w-2g-neV" secondAttribute="bottom" constant="8" id="Zv5-WQ-aPU"/>
+                                                        <constraint firstItem="tMc-W2-KeQ" firstAttribute="leading" secondItem="yee-dl-dqR" secondAttribute="leading" constant="8" id="a6Z-9l-5QT"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -350,7 +352,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="bodyTextView" destination="Dwf-xQ-kaH" id="nVF-PV-yyB"/>
+                                            <outlet property="bodyTextLabel" destination="tMc-W2-KeQ" id="4Y8-YH-Ua0"/>
                                             <outlet property="createdLabel" destination="d6s-yx-qLY" id="UeB-o0-jiN"/>
                                             <outlet property="leftMarginConstraint" destination="PA5-R8-v1i" id="bJA-Hm-F8H"/>
                                             <outlet property="topLabel" destination="d2w-2g-neV" id="y4T-9d-j53"/>
