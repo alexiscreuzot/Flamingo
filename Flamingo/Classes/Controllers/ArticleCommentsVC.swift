@@ -241,8 +241,10 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
             self.collapsingIds.remove(comment.id)
             self.uncollapseUnder(comment: comment)
         } else {
-            self.collapsingIds.insert(comment.id)
-            self.collapseUnder(comment: comment)
+            if self.collapsableUnder(comment: comment).count > 0 {
+                self.collapsingIds.insert(comment.id)
+                self.collapseUnder(comment: comment)
+            }
         }
         
         self.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
