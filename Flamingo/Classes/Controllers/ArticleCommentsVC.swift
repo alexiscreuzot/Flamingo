@@ -43,6 +43,13 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     var comments = [HNComment]()
+    var collapsingIds = Set<String>()
+    var collapsedIds = Set<String>()
+    var filteredComments : [HNComment] {
+        return self.comments.filter { c1 in !self.collapsedIds.contains(c1.id) }
+    }
+    var heightsDict = [String: CGFloat]()
+    
     var isFirstLayout = true
     
     override func viewDidLoad() {
@@ -144,6 +151,40 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         self.showURL(self.post.hnPost.url)
     }
     
+    // MARK:- Comments Utils
+    
+    func isCollapser(comment: HNComment) -> Bool {
+        return self.collapsingIds.contains(comment.id)
+    }
+    
+    func collapsableUnder(comment: HNComment) -> [HNComment] {
+        var collapsableComments = [HNComment]()
+        let baseLevel = comment.level ?? 0
+        var isUnder = false
+        for com in self.comments {
+            if !isUnder {
+                isUnder = (comment.id == com.id)
+                continue
+            }
+            if com.level <= baseLevel {
+                break
+            }
+            collapsableComments.append(com)
+        }
+        return collapsableComments
+    }
+    
+    func collapseUnder(comment: HNComment) {
+        let ids = Set(self.collapsableUnder(comment: comment).map {$0.id})
+        self.collapsedIds = self.collapsedIds.union(ids)
+    }
+    
+    func uncollapseUnder(comment: HNComment) {
+        let ids = Set(self.collapsableUnder(comment: comment).map {$0.id})
+        self.collapsingIds = self.collapsingIds.subtracting(ids) // We uncollapse any collapsed inside
+        self.collapsedIds = self.collapsedIds.subtracting(ids)
+    }
+    
     // MARK:- CommentCellDelegate
     
     func commentCell(_ cell: CommentCell, didSelect url: URL) {
@@ -170,15 +211,41 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     // MARK:- UITableViewDatasource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.comments.count
+        return self.filteredComments.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let comment = self.comments[indexPath.row ]
+        let comment = self.filteredComments[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.commentCell, for: indexPath)!
-        cell.setComment(comment)
+        let isCollapser = self.isCollapser(comment: comment)
+        cell.setComment(comment, isCollapser: isCollapser)
         cell.delegate = self
         return cell
+    }
+    
+    // MARK:- UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let comment = self.filteredComments[indexPath.row]
+        self.heightsDict[comment.id] = cell.bounds.height
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        let comment = self.filteredComments[indexPath.row]
+        return self.heightsDict[comment.id] ?? UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let comment = self.filteredComments[indexPath.row]
+        if self.isCollapser(comment: comment) {
+            self.collapsingIds.remove(comment.id)
+            self.uncollapseUnder(comment: comment)
+        } else {
+            self.collapsingIds.insert(comment.id)
+            self.collapseUnder(comment: comment)
+        }
+        
+        self.tableView.reloadSections(IndexSet(integer: 0), with: .fade)
     }
 
 }

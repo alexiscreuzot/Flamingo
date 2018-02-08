@@ -33,7 +33,7 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.bodyTextView.delegate = self
-        self.selectionStyle = .none
+        self.selectionStyle = .default
         
         // Create levels
         for _ in 1...CommentCell.MaxLevels {
@@ -61,7 +61,7 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
         }
     }
     
-    func setComment(_ comment: HNComment) {
+    func setComment(_ comment: HNComment, isCollapser : Bool = false) {
         
         let level = min(comment.level + 1, CommentCell.MaxLevels)
         let leftInset = CGFloat(level) * CommentCell.LevelOffset
@@ -70,6 +70,11 @@ class CommentCell: UITableViewCell, UITextViewDelegate {
         // Username
         let username = comment.username ?? i18n.articleCommentsCommentAnonymous()
         self.topLabel.text = username.removingHTMLEntities
+        
+        let color = isCollapser ? UIColor.orange : UIColor.black
+        for level in self.levelViews {
+            level.backgroundColor = color
+        }
         
         // Creation date
         if let created = comment.created {
