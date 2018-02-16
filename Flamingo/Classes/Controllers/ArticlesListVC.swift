@@ -105,7 +105,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let path = UIBezierPath.triangleMaskPath(rect: self.headerImageView.bounds,
+        let path = UIBezierPath.triangleMaskPath(rect: self.headerView.bounds,
                                                  type: .left(height:  ArticleListVC.CutHeight))
         self.maskLayer.path = path.cgPath
     }
