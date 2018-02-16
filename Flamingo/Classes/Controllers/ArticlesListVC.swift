@@ -39,7 +39,7 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     var linkForMore : String?
     var posts = [HNPost]()
     var postPreviews = [String : Preview]()
-    var refreshCycles = 0
+    var imageQueue = Set<URL>()
     
     var currentState : State = .loading {
         didSet {
@@ -120,7 +120,6 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func updateUI() {
         switch currentState {
         case .loading :
-            self.refreshCycles = 0
             self.tableView.setContentOffset(CGPoint(x:0, y:-self.tableView.contentInset.top), animated: true)
             self.tableView.alpha = 0
             self.stateLabel.text = nil
@@ -146,17 +145,11 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func animateLoading() {
         
-        if self.refreshCycles >= 10 {
-            self.currentState = .error(message: i18n.articlesListLoadingFailed())
-            return
-        }
-        
         UIView.animate(withDuration: 0.5, delay: 0, options: .allowAnimatedContent, animations: {
             self.refreshImageView.transform = self.refreshImageView.transform.rotated(by: CGFloat.pi * 0.3)
             self.refreshImageView.alpha = 1
         }, completion: { _ in
             if self.headerImageView.image == nil {
-                self.refreshCycles += 1
                 self.animateLoading()
             }
         })
@@ -187,10 +180,23 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func requestNextPage() {
         if let linkForMore = linkForMore {
             HNScraper.shared.getMoreItems(linkForMore: linkForMore) { (posts, linkForMore, error) in
+                if let error = error {
+                    self.currentState = .error(message: error.localizedDescription)
+                    return
+                }
                 self.addPosts(posts, linkForMore: linkForMore)
+                
             }
         } else {
             HNScraper.shared.getPostsList(page: .front) { (posts, linkForMore, error) in
+                if let error = error {
+                    self.currentState = .error(message: error.localizedDescription)
+                    return
+                }
+                if posts.count == 0{
+                    self.currentState = .error(message: i18n.commonNothingToShow())
+                    return
+                }
                 self.createFeed(posts, linkForMore: linkForMore)
             }
         }
@@ -216,23 +222,25 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 if case .success(let response) = result {
                     let preview = try? response.map(to: Preview.self)
                     self.postPreviews[post.id] = preview
-                    self.downloadImage(urlString: preview?.lead_image_url, post: post)
+                    
+                    if  let urlString = preview?.lead_image_url,
+                        !urlString.contains("ycombinator"), // Don't like those
+                        let url = URL(string:urlString) {
+                            self.imageQueue.insert(url)
+                            self.downloadImage(url, post: post)
+                    }
                 }
             }
         }
     }
     
-    func downloadImage(urlString: String?, post: HNPost) {
-        
-        guard   let urlString = urlString,
-                !urlString.contains("ycombinator"), // I don't like those
-                let url = URL(string:urlString) else {
-                return
-        }
+    func downloadImage(_ url: URL, post: HNPost) {
         
         SDWebImageDownloader.shared().downloadImage(with: url, options: [.allowInvalidSSLCertificates], progress: nil) { (image, _, _, _) in
             
-            guard self.headerImageView.image == nil else { return}
+            guard self.headerImageView.image == nil else {
+                return
+            }
             
             // Check for a good enough image quality
             if  let image = image,
@@ -246,6 +254,13 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
                 }
                 
                 self.currentState = .loaded(headerImage: image)
+            } else {
+                self.imageQueue.remove(url)
+            }
+            
+            // In case there isn't anything left to load
+            if self.imageQueue.count == 0 {
+                self.currentState = .loaded(headerImage: R.image.flamingoBack()!)
             }
         }
     }
