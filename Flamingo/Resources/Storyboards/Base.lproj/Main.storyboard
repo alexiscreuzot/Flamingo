@@ -219,18 +219,30 @@
                                     <constraint firstAttribute="bottom" secondItem="Zj2-kj-qZ0" secondAttribute="bottom" id="zhS-fy-LAu"/>
                                 </constraints>
                             </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CF3-zh-e62">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="axJ-S4-bAC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="topMargin" secondItem="CF3-zh-e62" secondAttribute="top" id="7Ux-XE-ivt"/>
                             <constraint firstAttribute="topMargin" secondItem="5Qa-0P-ENb" secondAttribute="top" id="7VV-dc-HVY"/>
                             <constraint firstItem="38C-nW-7EK" firstAttribute="leading" secondItem="GoM-8n-5N8" secondAttribute="leading" id="A4j-NN-rVl"/>
                             <constraint firstItem="gZE-NE-7QU" firstAttribute="bottom" secondItem="GoM-8n-5N8" secondAttribute="bottom" id="ObA-pO-IpF"/>
+                            <constraint firstItem="GoM-8n-5N8" firstAttribute="trailing" secondItem="CF3-zh-e62" secondAttribute="trailing" id="ScC-by-b5G"/>
                             <constraint firstItem="gZE-NE-7QU" firstAttribute="top" secondItem="5Qa-0P-ENb" secondAttribute="bottom" id="UiT-iO-HaI"/>
                             <constraint firstItem="5Qa-0P-ENb" firstAttribute="leading" secondItem="gZE-NE-7QU" secondAttribute="leading" id="Y7G-jR-P1x"/>
                             <constraint firstAttribute="bottomMargin" secondItem="38C-nW-7EK" secondAttribute="bottom" id="Ykf-vk-JjW"/>
                             <constraint firstItem="GoM-8n-5N8" firstAttribute="trailing" secondItem="38C-nW-7EK" secondAttribute="trailing" id="ZBX-zA-vpA"/>
                             <constraint firstItem="GoM-8n-5N8" firstAttribute="trailing" secondItem="5Qa-0P-ENb" secondAttribute="trailing" id="ejc-K5-6g9"/>
+                            <constraint firstItem="CF3-zh-e62" firstAttribute="leading" secondItem="GoM-8n-5N8" secondAttribute="leading" id="nGC-I4-h2r"/>
                             <constraint firstAttribute="topMargin" secondItem="38C-nW-7EK" secondAttribute="top" id="skm-VX-wbq"/>
+                            <constraint firstItem="GoM-8n-5N8" firstAttribute="top" secondItem="CF3-zh-e62" secondAttribute="bottom" id="sz3-qi-RnP"/>
                             <constraint firstItem="5Qa-0P-ENb" firstAttribute="trailing" secondItem="gZE-NE-7QU" secondAttribute="trailing" id="teA-z3-37H"/>
                             <constraint firstItem="5Qa-0P-ENb" firstAttribute="leading" secondItem="GoM-8n-5N8" secondAttribute="leading" id="uil-UK-Y50"/>
                         </constraints>
@@ -246,6 +258,7 @@
                         <outlet property="refreshButton" destination="3FD-ET-1VW" id="1nE-RZ-1Bq"/>
                         <outlet property="refreshImageView" destination="53x-Gd-MRX" id="qID-C4-T0R"/>
                         <outlet property="stateLabel" destination="xit-Ny-BGa" id="kvB-Tg-gvQ"/>
+                        <outlet property="statusBarTopConstraint" destination="sz3-qi-RnP" id="rTA-Qr-EBE"/>
                         <outlet property="tableView" destination="38C-nW-7EK" id="fti-HJ-PCO"/>
                     </connections>
                 </viewController>

@@ -29,6 +29,7 @@
 		FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */; };
 		FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */; };
 		FACE2FEA2020C0E4003BBAD0 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */; };
+		FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEED4B3203AE85E00E0DCA0 /* FluidController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamingoPost.swift; sourceTree = "<group>"; };
 		FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamingoNVC.swift; sourceTree = "<group>"; };
 		FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
+		FAEED4B3203AE85E00E0DCA0 /* FluidController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 		FA50E7B720067A5F008C28C1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FAEED4B3203AE85E00E0DCA0 /* FluidController.swift */,
 				FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */,
 				FAB838E4202899AF00DBFEF7 /* CommentCell.swift */,
 			);
@@ -380,6 +383,7 @@
 				FACE2FEA2020C0E4003BBAD0 /* Foundation+Extensions.swift in Sources */,
 				FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */,
 				FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */,
+				FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */,
 				FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */,
 				FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */,
 				FAB10E1720213F3700F60594 /* MercuryAPI.swift in Sources */,

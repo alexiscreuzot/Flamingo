@@ -12,7 +12,7 @@ import SDWebImage
 import SafariServices
 import Moya
 
-class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ArticleDefaultCellDelegate {
+class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellDelegate {
     
     enum State {
         case loading
@@ -23,6 +23,8 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     static let HeaderHeight: CGFloat = UIScreen.main.bounds.height.goldenRatio.short
     static let CutHeight: CGFloat = 38
     static let DeltaBlur: CGFloat = -250
+    
+    @IBOutlet var statusBarTopConstraint : NSLayoutConstraint!
     
     @IBOutlet weak var effectView: UIVisualEffectView!
     @IBOutlet var headerView : UIView!
@@ -291,6 +293,15 @@ class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         let topInset: CGFloat = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0.0
         let percent = (contentOffset - startOffset + topInset) / ArticleListVC.DeltaBlur
         animator?.fractionComplete = (contentOffset < startOffset) ? percent : 0
+        
+        statusBarTopConstraint.constant = (headerViewHeightConstraint.constant - ArticleListVC.CutHeight <= 0)
+        ? 0
+        : UIApplication.shared.statusBarFrame.height
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+        
         
         // Refresh button
         if self.headerImageView.image != nil {
