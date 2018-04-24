@@ -28,6 +28,20 @@ DEPENDENCIES:
   - SDWebImage (~> 4.2)
   - TTTAttributedLabel (~> 2.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Attributed
+    - HNScraper
+    - HTMLString
+    - ModelMapper
+    - Moya
+    - R.swift
+    - R.swift.Library
+    - Result
+    - SDWebImage
+    - TTTAttributedLabel
+
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Attributed: e4b667d2ccf1802cde5b3011e4be0eccd1fd2911
@@ -43,4 +57,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 2fb21ff2c5eae7b05fcdb6790ee5e120ede65c0b
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0

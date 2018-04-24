@@ -120,7 +120,9 @@
 				F60C5E35E03ACE807840F665 /* Pods */,
 				F3F6561BE116E95216A0BBF9 /* Frameworks */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		FA50E794200670D2008C28C1 /* Products */ = {
 			isa = PBXGroup;
@@ -226,7 +228,6 @@
 				FA50E790200670D2008C28C1 /* Frameworks */,
 				FA50E791200670D2008C28C1 /* Resources */,
 				A76ABC43DF2A666E58352928 /* [CP] Embed Pods Frameworks */,
-				44E837EDEB99F869D4FED2E9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,21 +288,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		44E837EDEB99F869D4FED2E9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flamingo/Pods-Flamingo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		68FC8ED18123703FF3B0B2E3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
