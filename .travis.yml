@@ -6,4 +6,4 @@ branches:
  - master
 
 script:
- - xcodebuild build -project Flamingo.xcworkspace -scheme Flamingo -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=11.3' | xcpretty
+ - xcodebuild build -xcworkspace Flamingo.xcworkspace -scheme Flamingo -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=11.3' | xcpretty
