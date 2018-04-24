@@ -120,7 +120,9 @@
 				F60C5E35E03ACE807840F665 /* Pods */,
 				F3F6561BE116E95216A0BBF9 /* Frameworks */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		FA50E794200670D2008C28C1 /* Products */ = {
 			isa = PBXGroup;

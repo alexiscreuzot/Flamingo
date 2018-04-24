@@ -54,6 +54,7 @@ class ArticleDefaultCell: UITableViewCell{
         }
                 
         self.post = post
+        self.contentView.alpha = post.isRead ? 0.3 : 1.0
         self.topInfoLabel.isHidden = false
         self.topInfoLabel.text = String(post.row + 1)
         self.titleLabel.text = post.hnPost.title

@@ -342,6 +342,8 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let post = self.posts[indexPath.row]
+        post.isRead = true
         self.showURL(post.url)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
