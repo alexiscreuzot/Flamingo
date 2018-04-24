@@ -19,7 +19,7 @@ The purpose of this project is to provide the best experience possible for readi
 
 You can find this app on the AppStore here : https://itunes.apple.com/app/id817164332
 
-## Basic principle
+## Current features
 Here is what the app currently does :
 - [x] Fetch HN top stories.
 - [x] Get curated previews of each story through [Mercury API](https://mercury.postlight.com/).
@@ -27,13 +27,13 @@ Here is what the app currently does :
 - [x] Display stories "readtime" based on the content word count.
 - [x] Display comments of a story.
 - [x] Show individual stories using `SFSafariViewController` with reader mod on.
+- [x] Indicate already read stories (thanks to @iGranDav)
 
 ## Roadmap
 There are a lot of ways to improve the experience even further. I'm open to any ideas the community may have!
 Here are a few :
-- [ ] Custom reader?
-- [ ] Provide a way to switch between top and new stories
-- [ ] Infinite loading?
+- [ ] Custom reader to replace `SFSafariViewController`
+- [ ] Switch between top and new stories
 
 ## One more thing
 Flamingo, what a cool name! How did I find it you ask? I actually used [the Qolor app](https://itunes.apple.com/app/id973492333) on the Hacker News orange, and it was the result :)
