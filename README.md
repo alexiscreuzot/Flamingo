@@ -27,7 +27,7 @@ Here is what the app currently does :
 - [x] Display stories "readtime" based on the content word count.
 - [x] Display comments of a story.
 - [x] Show individual stories using `SFSafariViewController` with reader mod on.
-- [x] Indicate already read stories (thanks to @iGranDav)
+- [x] Indicate already read stories (thanks to [@iGranDav](https://github.com/iGranDav))
 
 ## Roadmap
 There are a lot of ways to improve the experience even further. I'm open to any ideas the community may have!
