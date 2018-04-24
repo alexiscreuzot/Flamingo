@@ -1,3 +1,6 @@
+[![Language](https://img.shields.io/badge/swift-4-orange.svg)](http://swift.org)
+[![Build Status](https://travis-ci.org/kirualex/Flamingo.svg?branch=master)](https://travis-ci.org/kirualex/Flamingo)
+
 # Flamingo
 Minimalist Hacker News Reader
 
