@@ -131,6 +131,23 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
             popupController.modalTransitionStyle = .crossDissolve
             popupController.post = self.selectedPost
             popupController.position = self.popupPosition
+            popupController.onShare = {
+                popupController.dismiss(animated: true, completion: {
+                    if let link = self.selectedPost?.hnPost.url {
+                        UIApplication.shared.open(link, options: [:], completionHandler: nil)
+                    }
+                })
+            }
+            popupController.onOpenInSafari = {
+                popupController.dismiss(animated: true, completion: {
+                    if  var post = self.selectedPost,
+                        let link = post.hnPost.url {
+                            post.isRead = true
+                            let activityVC = UIActivityViewController(activityItems: [link], applicationActivities: nil)
+                            self.present(activityVC, animated: true, completion: nil)
+                    }
+                })
+            }
         }
     }
     
@@ -297,7 +314,6 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     func articleCell(_ cell: ArticleDefaultCell, didSelectDeepActions post: FlamingoPost, position: CGPoint) {
         self.selectedPost = post
         self.popupPosition = self.view.convert(position, from: cell.contentView)
-        print(self.popupPosition)
         self.performSegue(withIdentifier: R.segue.articleListVC.popup, sender: self)
     }
     
