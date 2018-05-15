@@ -17,6 +17,8 @@
 		FA50E7A1200670D2008C28C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA50E79F200670D2008C28C1 /* LaunchScreen.storyboard */; };
 		FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E7B420067A24008C28C1 /* R.generated.swift */; };
 		FA50E7BD20067ABB008C28C1 /* ArticleDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */; };
+		FA79C37A20AAAF9E0055BB82 /* DeepPressPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA79C37920AAAF9E0055BB82 /* DeepPressPopupVC.swift */; };
+		FA983E6520AAA96A00A8C966 /* Popup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA983E6420AAA96A00A8C966 /* Popup.storyboard */; };
 		FAA4E4262007829E00D2D88C /* ArticlesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E798200670D2008C28C1 /* ArticlesListVC.swift */; };
 		FAB10E1420213F0C00F60594 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1320213F0C00F60594 /* Preview.swift */; };
 		FAB10E1720213F3700F60594 /* MercuryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1620213F3700F60594 /* MercuryAPI.swift */; };
@@ -49,6 +51,8 @@
 		FA50E7A2200670D2008C28C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA50E7B420067A24008C28C1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDefaultCell.swift; sourceTree = "<group>"; };
+		FA79C37920AAAF9E0055BB82 /* DeepPressPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepPressPopupVC.swift; sourceTree = "<group>"; };
+		FA983E6420AAA96A00A8C966 /* Popup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Popup.storyboard; sourceTree = "<group>"; };
 		FAB10E1320213F0C00F60594 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		FAB10E1620213F3700F60594 /* MercuryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryAPI.swift; sourceTree = "<group>"; };
 		FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ModelMapper.swift"; sourceTree = "<group>"; };
@@ -93,12 +97,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		FA0C8FE32024A77400818EB4 /* API */ = {
+		FA0C8FE32024A77400818EB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				FAB10E1620213F3700F60594 /* MercuryAPI.swift */,
 			);
-			path = API;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		FA2F8854202B679900603EAF /* Extensions */ = {
@@ -148,6 +152,7 @@
 				FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */,
 				FA50E798200670D2008C28C1 /* ArticlesListVC.swift */,
 				FAB838E2202893E500DBFEF7 /* ArticleCommentsVC.swift */,
+				FA79C37920AAAF9E0055BB82 /* DeepPressPopupVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -178,7 +183,7 @@
 			children = (
 				FA50E796200670D2008C28C1 /* AppDelegate.swift */,
 				FAB838EA2028CFF500DBFEF7 /* Constants.swift */,
-				FA0C8FE32024A77400818EB4 /* API */,
+				FA0C8FE32024A77400818EB4 /* Services */,
 				FAB10E1520213F1500F60594 /* Models */,
 				FA50E7A8200677AA008C28C1 /* Controllers */,
 				FA50E7B720067A5F008C28C1 /* Views */,
@@ -190,8 +195,9 @@
 		FA50E7B620067A3E008C28C1 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				FA50E79A200670D2008C28C1 /* Main.storyboard */,
 				FA50E79F200670D2008C28C1 /* LaunchScreen.storyboard */,
+				FA50E79A200670D2008C28C1 /* Main.storyboard */,
+				FA983E6420AAA96A00A8C966 /* Popup.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -245,12 +251,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = alexiscreuzot;
 				TargetAttributes = {
 					FA50E792200670D2008C28C1 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -280,6 +286,7 @@
 				FA2F884F202B641A00603EAF /* Localizable.strings in Resources */,
 				FA50E7A1200670D2008C28C1 /* LaunchScreen.storyboard in Resources */,
 				FA50E79E200670D2008C28C1 /* Assets.xcassets in Resources */,
+				FA983E6520AAA96A00A8C966 /* Popup.storyboard in Resources */,
 				FA50E79C200670D2008C28C1 /* Main.storyboard in Resources */,
 				FAB838E72028B6EC00DBFEF7 /* icomoon.ttf in Resources */,
 			);
@@ -376,6 +383,7 @@
 				FAB838E5202899AF00DBFEF7 /* CommentCell.swift in Sources */,
 				FAB10E1420213F0C00F60594 /* Preview.swift in Sources */,
 				FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */,
+				FA79C37A20AAAF9E0055BB82 /* DeepPressPopupVC.swift in Sources */,
 				FAB838E3202893E500DBFEF7 /* ArticleCommentsVC.swift in Sources */,
 				FAB10E1B20214C2600F60594 /* Response+ModelMapper.swift in Sources */,
 				FAA4E4262007829E00D2D88C /* ArticlesListVC.swift in Sources */,
@@ -427,6 +435,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -434,6 +443,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -484,6 +494,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -491,6 +502,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -525,15 +537,16 @@
 			baseConfigurationReference = 23502EE81E317663CC7E0C61 /* Pods-Flamingo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAMD7Q9KYY;
 				INFOPLIST_FILE = "$(SRCROOT)/Flamingo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiscreuzot.flamingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fa8bb872-15e9-403a-b9d1-a090ef4569af";
-				PROVISIONING_PROFILE_SPECIFIER = "Flamingo Dev";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -544,15 +557,16 @@
 			baseConfigurationReference = 0B6AB411FA31206017046495 /* Pods-Flamingo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAMD7Q9KYY;
 				INFOPLIST_FILE = "$(SRCROOT)/Flamingo/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiscreuzot.flamingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d298adc0-c7ce-4dbe-b054-37afa650c9fd";
-				PROVISIONING_PROFILE_SPECIFIER = "Flamingo AppStore";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

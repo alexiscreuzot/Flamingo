@@ -11,15 +11,12 @@ import HNScraper
 
 protocol ArticleDefaultCellDelegate {
     func articleCell(_ cell: ArticleDefaultCell, didSelect post: FlamingoPost)
+    func articleCell(_ cell: ArticleDefaultCell, didSelectDeepActions post: FlamingoPost, position: CGPoint)
 }
 
 class ArticleDefaultCell: UITableViewCell{
     
     typealias OnCommentsAction = ((FlamingoPost) -> ())
-    
-    var post : FlamingoPost?
-    var delegate: ArticleDefaultCellDelegate?
-    let maskLayer = CAShapeLayer()
     
     @IBOutlet var topInfoTopMarginConstraint : NSLayoutConstraint!
     @IBOutlet var topInfoLabel : UILabel!
@@ -28,6 +25,13 @@ class ArticleDefaultCell: UITableViewCell{
     @IBOutlet var middleLabelTopMarginConstraint : NSLayoutConstraint!
     @IBOutlet var bottomLabel : UILabel!
     @IBOutlet var commentsButton : UIButton!
+    
+    var post : FlamingoPost?
+    var delegate: ArticleDefaultCellDelegate?
+    let maskLayer = CAShapeLayer()
+    var is3DTouchAvailable: Bool {
+        return traitCollection.forceTouchCapability == .available
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -38,7 +42,12 @@ class ArticleDefaultCell: UITableViewCell{
         let selView = UIView()
         selView.backgroundColor = UIColor.groupTableViewBackground
         self.selectedBackgroundView = selView
+        
+        let longTouch = UILongPressGestureRecognizer.init(target: self, action: #selector(longPress))
+        self.addGestureRecognizer(longTouch)
     }
+    
+    // MARK: - Logic
     
     func setPost(_ post : FlamingoPost) {
         
@@ -65,6 +74,32 @@ class ArticleDefaultCell: UITableViewCell{
         self.commentsButton.setAttributedTitle(post.commentsAttributedString(attributes: attributes), for: .normal)
         self.commentsButton.isHidden = (post.hnPost.commentCount  == 0)
     }
+    
+    // MARK: - Force touch
+    
+    @objc func longPress(_ gesture: UITapGestureRecognizer) {
+        if let post = self.post {
+            var position = gesture.location(in: self)
+            position.x = self.frame.midX
+            self.delegate?.articleCell(self, didSelectDeepActions: post, position:position)
+        }
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        
+        if let touch = touches.first {
+            guard is3DTouchAvailable else { return }
+            if  touch.force >= touch.maximumPossibleForce * 0.8,
+                let post = self.post {
+                var position = touch.location(in: self)
+                position.x = self.frame.midX
+                self.delegate?.articleCell(self, didSelectDeepActions: post, position:position)
+            }
+        }
+    }
+    
+    // MARK: - Actions
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -77,9 +112,7 @@ class ArticleDefaultCell: UITableViewCell{
     }
     
     @IBAction func selectComments() {
-        guard let post = self.post else {
-            return
-        }
+        guard let post = self.post else { return }
         self.delegate?.articleCell(self, didSelect: post)
     }
 }

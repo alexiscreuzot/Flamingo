@@ -43,6 +43,9 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     var postPreviews = [String : Preview]()
     var imageQueue = Set<URL>()
     
+    var selectedPost : FlamingoPost?
+    var popupPosition : CGPoint?
+    
     var currentState : State = .loading {
         didSet {
             UIView.animate(withDuration: 0.4) {
@@ -115,6 +118,20 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: animated);
         super.viewWillDisappear(animated)
+    }
+    
+    // MARK: - Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let commentsController = segue.destination as? ArticleCommentsVC {
+            commentsController.post = self.selectedPost
+        } else if let popupController = segue.destination as? DeepPressPopupVC {
+            self.definesPresentationContext = true
+            popupController.modalPresentationStyle = .overCurrentContext
+            popupController.modalTransitionStyle = .crossDissolve
+            popupController.post = self.selectedPost
+            popupController.position = self.popupPosition
+        }
     }
     
     // MARK: - Logic
@@ -270,13 +287,18 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     // MARK: - ArticleDefaultCellDelegate
     
     func articleCell(_ cell: ArticleDefaultCell, didSelect post: FlamingoPost) {
-        let commentsController = R.storyboard.main.articleCommentsVC()!
-        commentsController.post = post
-        self.navigationController?.pushViewController(commentsController, animated: true)
-        
+        self.selectedPost = post
         if let ip = self.tableView.indexPath(for: cell) {
             self.tableView.selectRow(at: ip, animated: true, scrollPosition: .none)
         }
+        self.performSegue(withIdentifier: R.segue.articleListVC.comments, sender: self)
+    }
+    
+    func articleCell(_ cell: ArticleDefaultCell, didSelectDeepActions post: FlamingoPost, position: CGPoint) {
+        self.selectedPost = post
+        self.popupPosition = self.view.convert(position, from: cell.contentView)
+        print(self.popupPosition)
+        self.performSegue(withIdentifier: R.segue.articleListVC.popup, sender: self)
     }
     
     // MARK: - UIScrollViewDelegate

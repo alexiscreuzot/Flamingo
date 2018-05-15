@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="brp-4J-DjV">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Deep Press PopupVC-->
+        <scene sceneID="wkZ-T1-IDX">
+            <objects>
+                <viewController storyboardIdentifier="DeepPressPopupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="brp-4J-DjV" customClass="DeepPressPopupVC" customModule="Flamingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GAJ-E5-OFz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QdJ-fl-Bnr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="0.75206316021126762" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYJ-kH-Tqq">
+                                <rect key="frame" x="110" y="283" width="154" height="101"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Cwg-Pf-TM5">
+                                    <rect key="frame" x="0.0" y="0.0" width="154" height="101"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npy-RG-c7q">
+                                            <rect key="frame" x="0.0" y="0.0" width="154" height="50"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                            <state key="normal" title="Open in Safari"/>
+                                            <connections>
+                                                <action selector="selectOpenInSafari" destination="brp-4J-DjV" eventType="touchUpInside" id="ttC-6q-dtY"/>
+                                            </connections>
+                                        </button>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="djO-4L-Mq9">
+                                            <rect key="frame" x="0.0" y="50" width="154" height="1"/>
+                                            <color key="backgroundColor" white="1" alpha="0.1482999559859155" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="Ssb-cr-fuE"/>
+                                            </constraints>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhU-mb-xJR">
+                                            <rect key="frame" x="0.0" y="51" width="154" height="50"/>
+                                            <inset key="contentEdgeInsets" minX="20" minY="14" maxX="20" maxY="14"/>
+                                            <state key="normal" title="Share"/>
+                                            <connections>
+                                                <action selector="selectShare" destination="brp-4J-DjV" eventType="touchUpInside" id="pOM-eh-wGb"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="uhU-mb-xJR" secondAttribute="trailing" id="0PV-RE-oce"/>
+                                        <constraint firstAttribute="bottom" secondItem="uhU-mb-xJR" secondAttribute="bottom" id="4PS-Ey-f0M"/>
+                                        <constraint firstAttribute="trailing" secondItem="djO-4L-Mq9" secondAttribute="trailing" id="AmK-4m-yuH"/>
+                                        <constraint firstItem="uhU-mb-xJR" firstAttribute="leading" secondItem="Cwg-Pf-TM5" secondAttribute="leading" id="G8V-i3-rf2"/>
+                                        <constraint firstItem="djO-4L-Mq9" firstAttribute="top" secondItem="Npy-RG-c7q" secondAttribute="bottom" id="Itf-pA-amH"/>
+                                        <constraint firstItem="djO-4L-Mq9" firstAttribute="leading" secondItem="Cwg-Pf-TM5" secondAttribute="leading" id="Maq-Ip-lkS"/>
+                                        <constraint firstItem="Npy-RG-c7q" firstAttribute="top" secondItem="Cwg-Pf-TM5" secondAttribute="top" id="O2B-uE-H2t"/>
+                                        <constraint firstItem="Npy-RG-c7q" firstAttribute="leading" secondItem="Cwg-Pf-TM5" secondAttribute="leading" id="Rcd-mu-Fvo"/>
+                                        <constraint firstItem="uhU-mb-xJR" firstAttribute="top" secondItem="djO-4L-Mq9" secondAttribute="bottom" id="dVu-EE-3yj"/>
+                                        <constraint firstAttribute="trailing" secondItem="Npy-RG-c7q" secondAttribute="trailing" id="kZu-Va-dwp"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xYJ-kH-Tqq" firstAttribute="centerX" secondItem="GAJ-E5-OFz" secondAttribute="centerX" id="0UH-zT-wPg"/>
+                            <constraint firstItem="QdJ-fl-Bnr" firstAttribute="width" secondItem="GAJ-E5-OFz" secondAttribute="width" id="3Kv-0W-MZ7"/>
+                            <constraint firstItem="xYJ-kH-Tqq" firstAttribute="centerY" secondItem="GAJ-E5-OFz" secondAttribute="centerY" id="5c0-02-Wjm"/>
+                            <constraint firstItem="QdJ-fl-Bnr" firstAttribute="centerX" secondItem="GAJ-E5-OFz" secondAttribute="centerX" id="Vev-GP-NwQ"/>
+                            <constraint firstItem="QdJ-fl-Bnr" firstAttribute="height" secondItem="GAJ-E5-OFz" secondAttribute="height" id="qBG-oM-EnI"/>
+                            <constraint firstItem="QdJ-fl-Bnr" firstAttribute="centerY" secondItem="GAJ-E5-OFz" secondAttribute="centerY" id="rD8-jQ-cqT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="overlayView" destination="QdJ-fl-Bnr" id="y2Q-qg-c1B"/>
+                        <outlet property="popupView" destination="xYJ-kH-Tqq" id="1yi-7V-VTn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SdB-2k-tBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>
