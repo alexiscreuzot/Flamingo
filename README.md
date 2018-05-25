@@ -5,7 +5,7 @@
 Minimalist Hacker News Reader
 
 <p align="center">
-  <img src="https://i.imgur.com/fUstrhJ.png" style="max-height:400px;">
+  <img src="https://i.imgur.com/fUstrhJ.png" style="max-height:300px;">
 </p>
 
 ## Purpose
