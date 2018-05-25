@@ -32,8 +32,11 @@ Here is what the app currently does :
 ## Roadmap
 There are a lot of ways to improve the experience even further. I'm open to any ideas the community may have!
 Here are a few :
-- [ ] Custom reader to replace `SFSafariViewController`
-- [ ] Switch between top and new stories
+- [ ] TabBar with | Top - New - Settings |
+- [ ] RSS feed customization (URL whitelist)
+- [ ] Nigh / Day theming
+- [ ] Search
+- [ ] Custom filters ?
 
 ## One more thing
 Flamingo, what a cool name! How did I find it you ask? I actually used [the Qolor app](https://itunes.apple.com/app/id973492333) on the Hacker News orange, and it was the result :)
