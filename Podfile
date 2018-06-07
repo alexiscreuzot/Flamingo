@@ -16,6 +16,7 @@ def shared_pods
     pod 'HNScraper', '~> 0.1.1'
     pod 'Moya', '~> 9.0.0'
     pod 'ModelMapper', '~> 7.4'
+    pod 'RealmSwift'
 
     # Components
     pod 'TTTAttributedLabel', '~> 2.0'

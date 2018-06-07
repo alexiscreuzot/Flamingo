@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
 
 class SettingsVC : UIViewController {
     
     @IBOutlet var tableView : UITableView!
     var datasource: [PrototypeTableCellContent] = [PrototypeTableCellContent]()
-    var sources = Source.read()
     
+    let realm = try! Realm()    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let sources = realm.objects(Source.self)
         
         self.datasource = sources.map({ source in
             let content = SwitchTableCellContent(title: source.domain, isOn: source.allow, switchAction: nil)

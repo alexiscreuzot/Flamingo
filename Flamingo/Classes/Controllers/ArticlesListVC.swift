@@ -11,6 +11,7 @@ import HNScraper
 import SDWebImage
 import SafariServices
 import Moya
+import RealmSwift
 
 class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellDelegate {
     
@@ -36,6 +37,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     @IBOutlet var stateLabel : UILabel!
     @IBOutlet var refreshButton : UIButton!
     
+    let realm = try! Realm()
     let maskLayer = CAShapeLayer()
     
     var pageType: HNScraper.PostListPageName = .front
@@ -196,6 +198,17 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     
     // MARK: - Networking
     
+    func addSourceFromPosts(_ posts: [HNPost]) {
+        let newSources: [Source] = posts.map {
+            let source = Source()
+            source.domain = $0.urlDomain
+            return source
+        }
+        try! realm.write() {
+            realm.add(newSources, update:true)
+        }
+    }
+    
     func requestNextPage() {
         if let linkForMore = linkForMore {
             HNScraper.shared.getMoreItems(linkForMore: linkForMore) { (posts, linkForMore, error) in
@@ -203,8 +216,8 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
                     self.currentState = .error(message: error.localizedDescription)
                     return
                 }
-                let domains = posts.map {return $0.urlDomain}
-                Source.save(sourcesDomains: domains)
+                
+                self.addSourceFromPosts(posts)
                 self.addPosts(posts, linkForMore: linkForMore)
             }
         } else {
@@ -217,8 +230,8 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
                     self.currentState = .error(message: i18n.commonNothingToShow())
                     return
                 }
-                let domains = posts.map {return $0.urlDomain}
-                Source.save(sourcesDomains: domains)
+                
+                self.addSourceFromPosts(posts)
                 self.createFeed(posts, linkForMore: linkForMore)
             }
         }
