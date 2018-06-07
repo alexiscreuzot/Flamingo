@@ -12,6 +12,19 @@ public func delay(_ seconds: Double, closure: @escaping () -> Void) {
     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + seconds, execute: closure)
 }
 
+extension FileManager {
+    
+    static var documentsURL : URL? {
+        if let url = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            return url
+        } else {
+            fatalError("Could not retrieve documents directory")
+            return nil
+        }
+    }
+    
+}
+
 extension String {
     var wordCount : Int {
         let words = self.components(separatedBy: .whitespacesAndNewlines)

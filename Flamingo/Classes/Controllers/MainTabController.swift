@@ -52,7 +52,7 @@ class MainTabController : UITabBarController {
         
         self.viewControllers = [FlamingoNVC(rootViewController: topController),
                                 FlamingoNVC(rootViewController: newsController),
-                                FlamingoNVC(rootViewController: settingsController)]
+                                UINavigationController(rootViewController: settingsController)]
     }
     
 }

@@ -203,8 +203,9 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
                     self.currentState = .error(message: error.localizedDescription)
                     return
                 }
+                let domains = posts.map {return $0.urlDomain}
+                Source.save(sourcesDomains: domains)
                 self.addPosts(posts, linkForMore: linkForMore)
-                
             }
         } else {
             HNScraper.shared.getPostsList(page: self.pageType) { (posts, linkForMore, error) in
@@ -216,6 +217,8 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
                     self.currentState = .error(message: i18n.commonNothingToShow())
                     return
                 }
+                let domains = posts.map {return $0.urlDomain}
+                Source.save(sourcesDomains: domains)
                 self.createFeed(posts, linkForMore: linkForMore)
             }
         }
