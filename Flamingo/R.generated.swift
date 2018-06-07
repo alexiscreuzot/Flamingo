@@ -24,12 +24,12 @@ struct R: Rswift.Validatable {
   
   /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
-    /// Resource file `icomoon.ttf`.
-    static let icomoonTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "icomoon", pathExtension: "ttf")
+    /// Resource file `flamingo.ttf`.
+    static let flamingoTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "flamingo", pathExtension: "ttf")
     
-    /// `bundle.url(forResource: "icomoon", withExtension: "ttf")`
-    static func icomoonTtf(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.icomoonTtf
+    /// `bundle.url(forResource: "flamingo", withExtension: "ttf")`
+    static func flamingoTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.flamingoTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
     
@@ -38,25 +38,27 @@ struct R: Rswift.Validatable {
   
   /// This `R.font` struct is generated, and contains static references to 1 fonts.
   struct font: Rswift.Validatable {
-    /// Font `icomoon`.
-    static let icomoon = Rswift.FontResource(fontName: "icomoon")
+    /// Font `flamingo`.
+    static let flamingo = Rswift.FontResource(fontName: "flamingo")
     
-    /// `UIFont(name: "icomoon", size: ...)`
-    static func icomoon(size: CGFloat) -> UIKit.UIFont? {
-      return UIKit.UIFont(resource: icomoon, size: size)
+    /// `UIFont(name: "flamingo", size: ...)`
+    static func flamingo(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: flamingo, size: size)
     }
     
     static func validate() throws {
-      if R.font.icomoon(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'icomoon' could not be loaded, is 'icomoon.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.flamingo(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'flamingo' could not be loaded, is 'flamingo.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
     
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 4 images.
   struct image {
     /// Image `circle`.
     static let circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "circle")
+    /// Image `color_gradient_blue`.
+    static let color_gradient_blue = Rswift.ImageResource(bundle: R.hostingBundle, name: "color_gradient_blue")
     /// Image `color_gradient`.
     static let color_gradient = Rswift.ImageResource(bundle: R.hostingBundle, name: "color_gradient")
     /// Image `flamingo-back`.
@@ -70,6 +72,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "color_gradient", bundle: ..., traitCollection: ...)`
     static func color_gradient(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.color_gradient, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "color_gradient_blue", bundle: ..., traitCollection: ...)`
+    static func color_gradient_blue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.color_gradient_blue, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "flamingo-back", bundle: ..., traitCollection: ...)`
@@ -99,25 +106,16 @@ struct R: Rswift.Validatable {
   
   /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
-    /// This struct is generated for `ArticleListVC`, and contains static references to 2 segues.
+    /// This struct is generated for `ArticleListVC`, and contains static references to 1 segues.
     struct articleListVC {
       /// Segue identifier `comments`.
-      static let comments: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ArticleListVC, ArticleCommentsVC> = Rswift.StoryboardSegueIdentifier(identifier: "comments")
-      /// Segue identifier `popup`.
-      static let popup: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ArticleListVC, DeepPressPopupVC> = Rswift.StoryboardSegueIdentifier(identifier: "popup")
+      static let comments: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ArticleListVC, FlamingoNVC> = Rswift.StoryboardSegueIdentifier(identifier: "comments")
       
       /// Optionally returns a typed version of segue `comments`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func comments(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ArticleListVC, ArticleCommentsVC>? {
+      static func comments(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ArticleListVC, FlamingoNVC>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.articleListVC.comments, segue: segue)
-      }
-      
-      /// Optionally returns a typed version of segue `popup`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func popup(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ArticleListVC, DeepPressPopupVC>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.articleListVC.popup, segue: segue)
       }
       
       fileprivate init() {}
@@ -126,14 +124,26 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
+    /// Storyboard `ArticleComments`.
+    static let articleComments = _R.storyboard.articleComments()
+    /// Storyboard `ArticleList`.
+    static let articleList = _R.storyboard.articleList()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
-    /// Storyboard `Popup`.
-    static let popup = _R.storyboard.popup()
+    
+    /// `UIStoryboard(name: "ArticleComments", bundle: ...)`
+    static func articleComments(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.articleComments)
+    }
+    
+    /// `UIStoryboard(name: "ArticleList", bundle: ...)`
+    static func articleList(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.articleList)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -143,11 +153,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
-    }
-    
-    /// `UIStoryboard(name: "Popup", bundle: ...)`
-    static func popup(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.popup)
     }
     
     fileprivate init() {}
@@ -265,8 +270,46 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try main.validate()
-      try popup.validate()
+      try articleList.validate()
+      try articleComments.validate()
+    }
+    
+    struct articleComments: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = ArticleCommentsVC
+      
+      let articleCommentsVC = StoryboardViewControllerResource<ArticleCommentsVC>(identifier: "ArticleCommentsVC")
+      let bundle = R.hostingBundle
+      let name = "ArticleComments"
+      
+      func articleCommentsVC(_: Void = ()) -> ArticleCommentsVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articleCommentsVC)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.articleComments().articleCommentsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleCommentsVC' could not be loaded from storyboard 'ArticleComments' as 'ArticleCommentsVC'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct articleList: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = FlamingoNVC
+      
+      let articleListVC = StoryboardViewControllerResource<ArticleListVC>(identifier: "ArticleListVC")
+      let bundle = R.hostingBundle
+      let name = "ArticleList"
+      
+      func articleListVC(_: Void = ()) -> ArticleListVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articleListVC)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "circle") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'circle' is used in storyboard 'ArticleList', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "color_gradient") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'color_gradient' is used in storyboard 'ArticleList', but couldn't be loaded.") }
+        if _R.storyboard.articleList().articleListVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleListVC' could not be loaded from storyboard 'ArticleList' as 'ArticleListVC'.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
@@ -278,46 +321,11 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = FlamingoNVC
+    struct main: Rswift.StoryboardResourceWithInitialControllerType {
+      typealias InitialController = MainTabController
       
-      let articleCommentsVC = StoryboardViewControllerResource<ArticleCommentsVC>(identifier: "ArticleCommentsVC")
-      let articleListVC = StoryboardViewControllerResource<ArticleListVC>(identifier: "ArticleListVC")
       let bundle = R.hostingBundle
       let name = "Main"
-      
-      func articleCommentsVC(_: Void = ()) -> ArticleCommentsVC? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articleCommentsVC)
-      }
-      
-      func articleListVC(_: Void = ()) -> ArticleListVC? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articleListVC)
-      }
-      
-      static func validate() throws {
-        if UIKit.UIImage(named: "circle") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'circle' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "color_gradient") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'color_gradient' is used in storyboard 'Main', but couldn't be loaded.") }
-        if _R.storyboard.main().articleCommentsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleCommentsVC' could not be loaded from storyboard 'Main' as 'ArticleCommentsVC'.") }
-        if _R.storyboard.main().articleListVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleListVC' could not be loaded from storyboard 'Main' as 'ArticleListVC'.") }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct popup: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = DeepPressPopupVC
-      
-      let bundle = R.hostingBundle
-      let deepPressPopupVC = StoryboardViewControllerResource<DeepPressPopupVC>(identifier: "DeepPressPopupVC")
-      let name = "Popup"
-      
-      func deepPressPopupVC(_: Void = ()) -> DeepPressPopupVC? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: deepPressPopupVC)
-      }
-      
-      static func validate() throws {
-        if _R.storyboard.popup().deepPressPopupVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'deepPressPopupVC' could not be loaded from storyboard 'Popup' as 'DeepPressPopupVC'.") }
-      }
       
       fileprivate init() {}
     }

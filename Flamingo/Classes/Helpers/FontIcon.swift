@@ -5,14 +5,17 @@
 import UIKit
 
 
-enum PilotIcon: String {
-    case clock = "\u{e900}"
-    case commentBubble = "\u{e901}"
+enum Icon: String {
+    case star = "\u{e903}"
+    case newspaper = "\u{e900}"
+    case settings = "\u{e901}"
+    case commentBubble = "\u{e904}"
+    case clock = "\u{e902}"
 }
 
 class FontIcon {
 
-    public static var FontName = "icomoon"
+    public static var FontName = "flamingo"
 	var code: String
 	var pointSize: CGFloat = 10
 	var color: UIColor = UIColor.black
@@ -22,13 +25,14 @@ class FontIcon {
         return UIFont(name: FontIcon.FontName, size: size)!
     }
 
-    init(_ code: PilotIcon, size: CGFloat = 10, color: UIColor = .black) {
+    init(_ code: Icon, size: CGFloat = 10, color: UIColor = .black) {
 		self.code = code.rawValue
         self.pointSize = size
         self.color = color
 	}
 
     var attributes : [NSAttributedStringKey : Any] {
+  
         let iconParagraphStyle = NSMutableParagraphStyle()
         iconParagraphStyle.alignment = self.alignment
         return [

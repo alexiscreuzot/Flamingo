@@ -27,7 +27,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>icomoon.ttf</string>
+		<string>flamingo.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

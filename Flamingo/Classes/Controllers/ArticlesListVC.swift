@@ -37,6 +37,8 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     @IBOutlet var refreshButton : UIButton!
     
     let maskLayer = CAShapeLayer()
+    
+    var pageType: HNScraper.PostListPageName = .front
     var animator: UIViewPropertyAnimator?
     var linkForMore : String?
     var posts = [HNPost]()
@@ -62,7 +64,6 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         // Header
-        self.title = ""
         self.headerView.layer.mask = self.maskLayer
         
         // TableView
@@ -125,29 +126,6 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let commentsController = segue.destination as? ArticleCommentsVC {
             commentsController.post = self.selectedPost
-        } else if let popupController = segue.destination as? DeepPressPopupVC {
-            self.definesPresentationContext = true
-            popupController.modalPresentationStyle = .overCurrentContext
-            popupController.modalTransitionStyle = .crossDissolve
-            popupController.post = self.selectedPost
-            popupController.position = self.popupPosition
-            popupController.onShare = {
-                popupController.dismiss(animated: true, completion: {
-                    if let link = self.selectedPost?.hnPost.url {
-                        UIApplication.shared.open(link, options: [:], completionHandler: nil)
-                    }
-                })
-            }
-            popupController.onOpenInSafari = {
-                popupController.dismiss(animated: true, completion: {
-                    if  var post = self.selectedPost,
-                        let link = post.hnPost.url {
-                            post.isRead = true
-                            let activityVC = UIActivityViewController(activityItems: [link], applicationActivities: nil)
-                            self.present(activityVC, animated: true, completion: nil)
-                    }
-                })
-            }
         }
     }
     
@@ -174,7 +152,9 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
             self.stateLabel.text = nil
             self.refreshButton.alpha = 0
             self.refreshImageView.alpha = 0
-            self.headerImageView.image = image.blend(image: R.image.color_gradient()!, with: .hardLight)
+            
+            let blend = (self.pageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
+            self.headerImageView.image = image.blend(image: blend, with: .hardLight)
             break
         }
     }
@@ -185,8 +165,11 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
             self.refreshImageView.transform = self.refreshImageView.transform.rotated(by: CGFloat.pi * 0.3)
             self.refreshImageView.alpha = 1
         }, completion: { _ in
-            if self.headerImageView.image == nil {
+            switch self.currentState {
+            case .loading :
                 self.animateLoading()
+            default:
+                break
             }
         })
     }
@@ -224,7 +207,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
                 
             }
         } else {
-            HNScraper.shared.getPostsList(page: .front) { (posts, linkForMore, error) in
+            HNScraper.shared.getPostsList(page: self.pageType) { (posts, linkForMore, error) in
                 if let error = error {
                     self.currentState = .error(message: error.localizedDescription)
                     return
@@ -309,12 +292,6 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
             self.tableView.selectRow(at: ip, animated: true, scrollPosition: .none)
         }
         self.performSegue(withIdentifier: R.segue.articleListVC.comments, sender: self)
-    }
-    
-    func articleCell(_ cell: ArticleDefaultCell, didSelectDeepActions post: FlamingoPost, position: CGPoint) {
-        self.selectedPost = post
-        self.popupPosition = self.view.convert(position, from: cell.contentView)
-        self.performSegue(withIdentifier: R.segue.articleListVC.popup, sender: self)
     }
     
     // MARK: - UIScrollViewDelegate
