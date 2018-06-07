@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5931BBC84E43AB1A6679F48E /* Pods_Flamingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F712ADE14BD2FC3D1FD71B60 /* Pods_Flamingo.framework */; };
+		FA055AC620C97F85007FB8D3 /* SettingsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */; };
+		FA055AC820C97FA0007FB8D3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA055AC720C97FA0007FB8D3 /* SettingsVC.swift */; };
 		FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */; };
 		FA2F884F202B641A00603EAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2F8851202B641A00603EAF /* Localizable.strings */; };
 		FA2F8853202B677200603EAF /* UIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F8852202B677200603EAF /* UIKit+Extensions.swift */; };
@@ -40,6 +42,8 @@
 		12136E14E258A814338A7863 /* Pods_TheNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23502EE81E317663CC7E0C61 /* Pods-Flamingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flamingo/Pods-Flamingo.debug.xcconfig"; sourceTree = "<group>"; };
 		F712ADE14BD2FC3D1FD71B60 /* Pods_Flamingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flamingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVC.storyboard; sourceTree = "<group>"; };
+		FA055AC720C97FA0007FB8D3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Safari.swift"; sourceTree = "<group>"; };
 		FA2F8850202B641A00603EAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA2F8852202B677200603EAF /* UIKit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIKit+Extensions.swift"; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */,
 				FA50E798200670D2008C28C1 /* ArticlesListVC.swift */,
 				FAB838E2202893E500DBFEF7 /* ArticleCommentsVC.swift */,
+				FA055AC720C97FA0007FB8D3 /* SettingsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				FA50E79A200670D2008C28C1 /* Main.storyboard */,
 				FAB2599A20C728BB00B94ECA /* ArticleList.storyboard */,
 				FAB2599C20C728CC00B94ECA /* ArticleComments.storyboard */,
+				FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -292,6 +298,7 @@
 				FAB2599D20C728CC00B94ECA /* ArticleComments.storyboard in Resources */,
 				FA50E79C200670D2008C28C1 /* Main.storyboard in Resources */,
 				FAB2599B20C728BB00B94ECA /* ArticleList.storyboard in Resources */,
+				FA055AC620C97F85007FB8D3 /* SettingsVC.storyboard in Resources */,
 				FAC2E14320C9112000CFF541 /* flamingo.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA055AC820C97FA0007FB8D3 /* SettingsVC.swift in Sources */,
 				FA50E7BD20067ABB008C28C1 /* ArticleDefaultCell.swift in Sources */,
 				FAB838E92028B70700DBFEF7 /* FontIcon.swift in Sources */,
 				FA2F8853202B677200603EAF /* UIKit+Extensions.swift in Sources */,

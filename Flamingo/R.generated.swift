@@ -109,12 +109,12 @@ struct R: Rswift.Validatable {
     /// This struct is generated for `ArticleListVC`, and contains static references to 1 segues.
     struct articleListVC {
       /// Segue identifier `comments`.
-      static let comments: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ArticleListVC, FlamingoNVC> = Rswift.StoryboardSegueIdentifier(identifier: "comments")
+      static let comments: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ArticleListVC, ArticleListVC> = Rswift.StoryboardSegueIdentifier(identifier: "comments")
       
       /// Optionally returns a typed version of segue `comments`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func comments(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ArticleListVC, FlamingoNVC>? {
+      static func comments(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ArticleListVC, ArticleListVC>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.articleListVC.comments, segue: segue)
       }
       
@@ -124,7 +124,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
     /// Storyboard `ArticleComments`.
     static let articleComments = _R.storyboard.articleComments()
@@ -134,6 +134,8 @@ struct R: Rswift.Validatable {
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `SettingsVC`.
+    static let settingsVC = _R.storyboard.settingsVC()
     
     /// `UIStoryboard(name: "ArticleComments", bundle: ...)`
     static func articleComments(_: Void = ()) -> UIKit.UIStoryboard {
@@ -153,6 +155,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    
+    /// `UIStoryboard(name: "SettingsVC", bundle: ...)`
+    static func settingsVC(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.settingsVC)
     }
     
     fileprivate init() {}
@@ -270,6 +277,7 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try settingsVC.validate()
       try articleList.validate()
       try articleComments.validate()
     }
@@ -293,7 +301,7 @@ struct _R: Rswift.Validatable {
     }
     
     struct articleList: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = FlamingoNVC
+      typealias InitialController = ArticleListVC
       
       let articleListVC = StoryboardViewControllerResource<ArticleListVC>(identifier: "ArticleListVC")
       let bundle = R.hostingBundle
@@ -326,6 +334,22 @@ struct _R: Rswift.Validatable {
       
       let bundle = R.hostingBundle
       let name = "Main"
+      
+      fileprivate init() {}
+    }
+    
+    struct settingsVC: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "SettingsVC"
+      let settingsVC = StoryboardViewControllerResource<SettingsVC>(identifier: "SettingsVC")
+      
+      func settingsVC(_: Void = ()) -> SettingsVC? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: settingsVC)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.settingsVC().settingsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsVC' could not be loaded from storyboard 'SettingsVC' as 'SettingsVC'.") }
+      }
       
       fileprivate init() {}
     }
