@@ -240,13 +240,18 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     
     func createFeed(_ posts: [HNPost], linkForMore: String?) {
         self.linkForMore = linkForMore
-        self.posts = posts
+        self.posts = posts.filter({ post -> Bool in
+            return !UserDefaults.standard.unallowedDomains.contains(post.urlDomain)
+        })
         self.loadPreviews()
     }
     
     func addPosts(_ posts: [HNPost], linkForMore: String?) {
         self.linkForMore = linkForMore
-        self.posts.append(contentsOf: posts)
+        let addedPosts = posts.filter({ post -> Bool in
+            return !UserDefaults.standard.unallowedDomains.contains(post.urlDomain)
+        })
+        self.posts.append(contentsOf: addedPosts)
         self.tableView.reloadData()
     }
     

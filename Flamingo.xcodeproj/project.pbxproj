@@ -38,6 +38,7 @@
 		FAE931DB20C9929F00FB0A78 /* PrototypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */; };
 		FAE931DD20C992AA00FB0A78 /* SwitchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */; };
 		FAE931E220C9A68000FB0A78 /* TitleSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931E120C9A68000FB0A78 /* TitleSeparatorCell.swift */; };
+		FAE931E420C9AD2500FB0A78 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931E320C9AD2500FB0A78 /* UserDefaults+Extensions.swift */; };
 		FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEED4B3203AE85E00E0DCA0 /* FluidController.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeTableCell.swift; sourceTree = "<group>"; };
 		FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableCell.swift; sourceTree = "<group>"; };
 		FAE931E120C9A68000FB0A78 /* TitleSeparatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleSeparatorCell.swift; sourceTree = "<group>"; };
+		FAE931E320C9AD2500FB0A78 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		FAEED4B3203AE85E00E0DCA0 /* FluidController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				FA2F8852202B677200603EAF /* UIKit+Extensions.swift */,
 				FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */,
 				FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */,
+				FAE931E320C9AD2500FB0A78 /* UserDefaults+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */,
 				FAE931DB20C9929F00FB0A78 /* PrototypeTableCell.swift in Sources */,
 				FAE931D820C991FE00FB0A78 /* Source.swift in Sources */,
+				FAE931E420C9AD2500FB0A78 /* UserDefaults+Extensions.swift in Sources */,
 				FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */,
 				FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */,
 				FAB10E1720213F3700F60594 /* MercuryAPI.swift in Sources */,

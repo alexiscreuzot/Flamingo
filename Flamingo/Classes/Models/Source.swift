@@ -10,10 +10,25 @@ import Foundation
 import RealmSwift
 
 class Source : Object {
-        
+    
     @objc dynamic var domain : String = ""
-    @objc dynamic var allow : Bool = true
  
+    func allow() {
+        var blacklist = UserDefaults.standard.unallowedDomains
+        if let index = blacklist.index(of: self.domain){
+            blacklist.remove(at: index)
+        }
+        UserDefaults.standard.unallowedDomains = blacklist
+    }
+    
+    func block() {
+        var blacklist = UserDefaults.standard.unallowedDomains
+        if !blacklist.contains(self.domain) {
+            blacklist.append(self.domain)
+        }
+        UserDefaults.standard.unallowedDomains = blacklist
+    }
+    
     override static func primaryKey() -> String? {
         return "domain"
     }

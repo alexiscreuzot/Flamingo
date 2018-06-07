@@ -38,15 +38,14 @@ class SettingsVC : UIViewController {
         self.datasource.append(sourceTitleContent)
         
         let sourcesCells: [SwitchTableCellContent] = sources.map({ source in
-            let primKey = source.domain
+            let isBlocked = UserDefaults.standard.unallowedDomains.contains(source.domain)
             let content = SwitchTableCellContent(title: source.domain,
-                                                 isOn: source.allow,
+                                                 isOn: !isBlocked,
                                                  switchAction: { isOn in
-                                                    let foundSource = self.realm.objects(Source.self)
-                                                                            .filter("domain = '\(primKey)'")
-                                                                            .first!
-                                                    try? self.realm.write {
-                                                        foundSource.allow = isOn
+                                                    if isOn{
+                                                        source.allow()
+                                                    } else {
+                                                        source.block()
                                                     }
             })
             return content

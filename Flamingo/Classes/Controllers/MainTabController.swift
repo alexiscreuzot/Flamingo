@@ -53,6 +53,35 @@ class MainTabController : UITabBarController {
         self.viewControllers = [FlamingoNVC(rootViewController: topController),
                                 FlamingoNVC(rootViewController: newsController),
                                 UINavigationController(rootViewController: settingsController)]
+        
+        self.delegate = self
     }
     
+}
+
+extension MainTabController : UITabBarControllerDelegate {
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        
+        guard   let currentController = selectedViewController,
+            viewController != currentController else {
+                return false
+        }
+        
+        let fromView = currentController.view!
+        let toView = viewController.view!
+        UIView.transition(from: fromView, to: toView, duration: 0.12, options: [.transitionCrossDissolve], completion: nil)
+        
+        return true
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let toView: UIView? = (viewController.tabBarItem.value(forKey: "view") as? UIView)
+        toView?.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.3, options: .allowUserInteraction, animations: {() -> Void in
+            toView?.transform = CGAffineTransform.identity
+        }, completion: { _ in })
+        
+        
+    }
 }
