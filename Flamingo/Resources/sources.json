@@ -1,8 +1,0 @@
-[{
- "domain" : "atlantic.com",
- "allow" : true
- },
- {
- "domain" : "msn.com",
- "allow" : false
- }]

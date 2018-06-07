@@ -12,21 +12,48 @@ import RealmSwift
 class SettingsVC : UIViewController {
     
     @IBOutlet var tableView : UITableView!
-    var datasource: [PrototypeTableCellContent] = [PrototypeTableCellContent]()
+    var datasource = [PrototypeTableCellContent]()
     
-    let realm = try! Realm()    
+    let realm = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.reloadData()
+    }
+    
+    func reloadData() {
+        let sources = realm.objects(Source.self).sorted(byKeyPath: "domain")
         
-        let sources = realm.objects(Source.self)
+        self.datasource = [PrototypeTableCellContent]()
         
-        self.datasource = sources.map({ source in
-            let content = SwitchTableCellContent(title: source.domain, isOn: source.allow, switchAction: nil)
+        let sourceTitleContent = TitleSeparatorCellContent.init(title: "SOURCES",
+                                                                alignment: .left,
+                                                                color: .black,
+                                                                backgroundColor: .white)
+        sourceTitleContent.height = 80
+        self.datasource.append(sourceTitleContent)
+        
+        let sourcesCells: [SwitchTableCellContent] = sources.map({ source in
+            let primKey = source.domain
+            let content = SwitchTableCellContent(title: source.domain,
+                                                 isOn: source.allow,
+                                                 switchAction: { isOn in
+                                                    let foundSource = self.realm.objects(Source.self)
+                                                                            .filter("domain = '\(primKey)'")
+                                                                            .first!
+                                                    try? self.realm.write {
+                                                        foundSource.allow = isOn
+                                                    }
+            })
             return content
         })
+        self.datasource.append(contentsOf: sourcesCells)
+        self.tableView.reloadData()
     }
-
 }
 
 extension SettingsVC : UITableViewDataSource, UITableViewDelegate {

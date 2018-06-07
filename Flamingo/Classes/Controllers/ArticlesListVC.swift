@@ -204,6 +204,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
             source.domain = $0.urlDomain
             return source
         }
+        
         try! realm.write() {
             realm.add(newSources, update:true)
         }
