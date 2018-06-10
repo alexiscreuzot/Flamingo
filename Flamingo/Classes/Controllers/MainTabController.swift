@@ -12,10 +12,12 @@ class MainTabController : UITabBarController {
     
     lazy var topController: ArticleListVC = {
         let controller = R.storyboard.articleList.articleListVC()!
+        controller.title = "Top"
         controller.pageType = .front
-        let item = UITabBarItem(title: "Top",
+        let item = UITabBarItem(title: nil,
                                 image: FontIcon(.star, size: 24, color: UIColor.darkGray).image,
                                 selectedImage: FontIcon(.star, size: 24, color: UIColor.orange).image)
+        item.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
         controller.tabBarItem = item
         
         return controller
@@ -23,10 +25,12 @@ class MainTabController : UITabBarController {
     
     lazy var newsController: ArticleListVC = {
         let controller = R.storyboard.articleList.articleListVC()!
+        controller.title = "News"
         controller.pageType = .news
-        let item = UITabBarItem(title: "News",
+        let item = UITabBarItem(title: nil,
                                 image: FontIcon(.newspaper, size: 24, color: UIColor.darkGray).image,
                                 selectedImage: FontIcon(.newspaper, size: 24, color: UIColor.orange).image)
+        item.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
         controller.tabBarItem = item
         
         return controller
@@ -34,9 +38,11 @@ class MainTabController : UITabBarController {
     
     lazy var settingsController: SettingsVC = {
         let controller = R.storyboard.settingsVC.settingsVC()!
-        let item = UITabBarItem(title: "Settings",
+        controller.title = "Settings"
+        let item = UITabBarItem(title: nil,
                                 image: FontIcon(.settings, size: 24, color: UIColor.darkGray).image,
                                 selectedImage: FontIcon(.settings, size: 24, color: UIColor.orange).image)
+        item.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
         controller.tabBarItem = item
         
         return controller
@@ -45,14 +51,14 @@ class MainTabController : UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let defaultsAtts: [NSAttributedStringKey : Any] = [.foregroundColor: UIColor.darkGray]
+        let defaultsAtts: [NSAttributedStringKey : Any] = [.foregroundColor: UIColor.black]
         let selectedAtts: [NSAttributedStringKey : Any] = [NSAttributedStringKey.foregroundColor: UIColor.orange]
         UITabBarItem.appearance().setTitleTextAttributes(defaultsAtts, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(selectedAtts, for: .selected)
         
         self.viewControllers = [FlamingoNVC(rootViewController: topController),
                                 FlamingoNVC(rootViewController: newsController),
-                                UINavigationController(rootViewController: settingsController)]
+                                FlamingoNVC(rootViewController: settingsController)]
         
         self.delegate = self
     }

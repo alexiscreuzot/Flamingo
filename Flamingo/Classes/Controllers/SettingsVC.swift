@@ -18,6 +18,10 @@ class SettingsVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.navigationItem.largeTitleDisplayMode = .always
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

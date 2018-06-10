@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdt-0J-6nL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdt-0J-6nL">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -183,22 +183,32 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <blurEffect style="light"/>
                                     </visualEffectView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="200" verticalCompressionResistancePriority="1000" text="News" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9O-IZ-dYf">
+                                        <rect key="frame" x="20" y="40" width="315" height="90"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBlack" family="Helvetica Neue" pointSize="50"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle" translatesAutoresizingMaskIntoConstraints="NO" id="Q3F-ui-frw">
                                         <rect key="frame" x="138.66666666666666" y="100.66666666666669" width="99" height="99"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="m9O-IZ-dYf" secondAttribute="bottom" constant="40" id="3hw-0c-ywl"/>
                                     <constraint firstItem="Q3F-ui-frw" firstAttribute="centerX" secondItem="SUH-yc-mkU" secondAttribute="centerX" id="9ew-Op-rVj"/>
+                                    <constraint firstAttribute="trailing" secondItem="m9O-IZ-dYf" secondAttribute="trailing" constant="40" id="EDA-YA-4pO"/>
                                     <constraint firstAttribute="trailing" secondItem="qo3-tP-Jpw" secondAttribute="trailing" id="EgL-Rf-26J"/>
                                     <constraint firstItem="HUc-e5-AXe" firstAttribute="leading" secondItem="SUH-yc-mkU" secondAttribute="leading" id="NQK-S3-oYC"/>
                                     <constraint firstAttribute="bottom" secondItem="HUc-e5-AXe" secondAttribute="bottom" id="P6s-8P-FNw"/>
                                     <constraint firstItem="Q3F-ui-frw" firstAttribute="centerY" secondItem="SUH-yc-mkU" secondAttribute="centerY" id="TUk-MT-PVY"/>
                                     <constraint firstAttribute="trailing" secondItem="HUc-e5-AXe" secondAttribute="trailing" id="Vv1-rh-FgO"/>
+                                    <constraint firstItem="m9O-IZ-dYf" firstAttribute="top" secondItem="SUH-yc-mkU" secondAttribute="top" priority="900" constant="40" id="Xg2-za-QLs"/>
+                                    <constraint firstItem="m9O-IZ-dYf" firstAttribute="leading" secondItem="SUH-yc-mkU" secondAttribute="leading" constant="20" id="Ywc-tT-MM5"/>
                                     <constraint firstItem="HUc-e5-AXe" firstAttribute="top" secondItem="SUH-yc-mkU" secondAttribute="top" id="au7-sh-8Zq"/>
                                     <constraint firstItem="qo3-tP-Jpw" firstAttribute="leading" secondItem="SUH-yc-mkU" secondAttribute="leading" id="cVp-6c-iPo"/>
                                     <constraint firstAttribute="bottom" secondItem="qo3-tP-Jpw" secondAttribute="bottom" id="eLp-dZ-glP"/>
                                     <constraint firstAttribute="height" constant="300" id="knY-EE-nDc"/>
+                                    <constraint firstItem="m9O-IZ-dYf" firstAttribute="height" secondItem="SUH-yc-mkU" secondAttribute="height" multiplier="30/100" priority="950" id="tUD-va-6AX"/>
                                     <constraint firstItem="qo3-tP-Jpw" firstAttribute="top" secondItem="SUH-yc-mkU" secondAttribute="top" priority="999" id="v4E-NT-cCL"/>
                                 </constraints>
                             </view>
@@ -236,6 +246,7 @@
                     <connections>
                         <outlet property="effectView" destination="qo3-tP-Jpw" id="uCt-pB-H3b"/>
                         <outlet property="headerImageView" destination="HUc-e5-AXe" id="bm6-F9-lf8"/>
+                        <outlet property="headerTitleLabel" destination="m9O-IZ-dYf" id="FhG-TY-g3F"/>
                         <outlet property="headerView" destination="SUH-yc-mkU" id="ham-YO-gcH"/>
                         <outlet property="headerViewHeightConstraint" destination="knY-EE-nDc" id="FQc-KM-dr4"/>
                         <outlet property="refreshButton" destination="qCU-bh-oFJ" id="8hM-oo-SfN"/>
@@ -248,7 +259,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gO-aD-gnQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346" y="71"/>
+            <point key="canvasLocation" x="344.80000000000001" y="70.935960591133011"/>
         </scene>
         <!--ArticleList-->
         <scene sceneID="PkB-hK-Mhv">

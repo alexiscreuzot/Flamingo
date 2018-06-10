@@ -42,14 +42,15 @@ class FlamingoNVC : UINavigationController {
         switch theme {
         case .main:
             color = UIColor.black
-            self.navigationBar.isTranslucent = true
-            self.navigationBar.setBackgroundImage(UIImage(color: UIColor.clear), for: .default)
-            self.navigationBar.shadowImage = UIImage()
             break
         }
         
         self.navigationBar.titleTextAttributes = [.foregroundColor: color]
         self.navigationBar.tintColor = color
+    
+        self.navigationBar.largeTitleTextAttributes =
+            [NSAttributedStringKey.foregroundColor: UIColor.black,
+             NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!]
     }
 
 }

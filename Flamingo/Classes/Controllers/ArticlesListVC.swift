@@ -29,6 +29,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     
     @IBOutlet weak var effectView: UIVisualEffectView!
     @IBOutlet var headerView : UIView!
+    @IBOutlet var headerTitleLabel : UILabel!
     @IBOutlet var headerImageView : UIImageView!
     @IBOutlet var headerViewHeightConstraint : NSLayoutConstraint!
     @IBOutlet var refreshImageView : UIImageView!
@@ -66,6 +67,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         // Header
+        self.headerTitleLabel.text = self.title
         self.headerView.layer.mask = self.maskLayer
         
         // TableView
@@ -331,7 +333,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         let percent = (contentOffset - startOffset + topInset) / ArticleListVC.DeltaBlur
         animator?.fractionComplete = (contentOffset < startOffset) ? percent : 0
         
-        statusBarTopConstraint.constant = (headerViewHeightConstraint.constant - ArticleListVC.CutHeight <= 0)
+        statusBarTopConstraint.constant = (headerViewHeightConstraint.constant - ArticleListVC.CutHeight <= 60)
         ? 0
         : UIApplication.shared.statusBarFrame.height
         
