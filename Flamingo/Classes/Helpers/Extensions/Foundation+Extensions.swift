@@ -19,7 +19,6 @@ extension FileManager {
             return url
         } else {
             fatalError("Could not retrieve documents directory")
-            return nil
         }
     }
     

@@ -166,8 +166,7 @@
 		FA50E7A8200677AA008C28C1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FAB2599E20C72C6A00B94ECA /* MainTabController.swift */,
-				FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */,
+				FAFCD16420CCFB1D00BDFC5F /* Core */,
 				FA50E798200670D2008C28C1 /* ArticlesListVC.swift */,
 				FAB838E2202893E500DBFEF7 /* ArticleCommentsVC.swift */,
 				FA055AC720C97FA0007FB8D3 /* SettingsVC.swift */,
@@ -246,11 +245,20 @@
 		FAE931DE20C992B000FB0A78 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				FAE931E120C9A68000FB0A78 /* TitleSeparatorCell.swift */,
 				FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */,
+				FAE931E120C9A68000FB0A78 /* TitleSeparatorCell.swift */,
 				FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		FAFCD16420CCFB1D00BDFC5F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FAB2599E20C72C6A00B94ECA /* MainTabController.swift */,
+				FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

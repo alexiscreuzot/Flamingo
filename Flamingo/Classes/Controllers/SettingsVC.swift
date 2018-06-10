@@ -18,14 +18,15 @@ class SettingsVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationItem.largeTitleDisplayMode = .never
-        self.navigationItem.largeTitleDisplayMode = .always
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.largeTitleDisplayMode = .never
+        self.navigationItem.largeTitleDisplayMode = .always
+        
         self.reloadData()
     }
     
@@ -37,9 +38,22 @@ class SettingsVC : UIViewController {
         let sourceTitleContent = TitleSeparatorCellContent.init(title: "SOURCES",
                                                                 alignment: .left,
                                                                 color: .black,
-                                                                backgroundColor: .white)
+                                                                backgroundColor: .init(white: 0, alpha: 0.05))
         sourceTitleContent.height = 80
         self.datasource.append(sourceTitleContent)
+        
+        let switchAllContent = SwitchTableCellContent(title: "All",
+                                             isOn: UserDefaults.standard.unallowedDomains.isEmpty,
+                                             switchAction: { isOn in
+                                                if isOn{
+                                                    UserDefaults.standard.unallowedDomains = [String]()
+                                                } else {
+                                                    UserDefaults.standard.unallowedDomains = sources.map { $0.domain }
+                                                }
+                                                self.reloadData()
+        })
+        switchAllContent.tint = UIColor.red
+        self.datasource.append(switchAllContent)
         
         let sourcesCells: [SwitchTableCellContent] = sources.map({ source in
             let isBlocked = UserDefaults.standard.unallowedDomains.contains(source.domain)

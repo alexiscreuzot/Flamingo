@@ -13,8 +13,8 @@
         <!--Settings-->
         <scene sceneID="AKP-8P-qfj">
             <objects>
-                <viewController storyboardIdentifier="SettingsVC" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L2Q-lW-pOd" customClass="SettingsVC" customModule="Flamingo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lmb-3Z-sCI">
+                <viewController storyboardIdentifier="SettingsVC" title="Settings" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L2Q-lW-pOd" customClass="SettingsVC" customModule="Flamingo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lmb-3Z-sCI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -88,12 +88,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="sUl-GG-8Li" firstAttribute="trailing" secondItem="an6-uA-3tg" secondAttribute="trailing" id="1Ci-Gm-9Yp"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="an6-uA-3tg" secondAttribute="bottom" constant="-34" id="BNr-hT-IGT"/>
-                            <constraint firstItem="an6-uA-3tg" firstAttribute="leading" secondItem="sUl-GG-8Li" secondAttribute="leading" id="tAJ-tY-nuI"/>
-                            <constraint firstItem="an6-uA-3tg" firstAttribute="top" secondItem="lmb-3Z-sCI" secondAttribute="topMargin" constant="-44" id="vCi-tB-9q4"/>
+                            <constraint firstAttribute="trailing" secondItem="an6-uA-3tg" secondAttribute="trailing" id="1Ci-Gm-9Yp"/>
+                            <constraint firstItem="an6-uA-3tg" firstAttribute="top" secondItem="lmb-3Z-sCI" secondAttribute="topMargin" id="llA-Ig-mcG"/>
+                            <constraint firstItem="an6-uA-3tg" firstAttribute="leading" secondItem="lmb-3Z-sCI" secondAttribute="leading" id="tAJ-tY-nuI"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="an6-uA-3tg" secondAttribute="bottom" id="yj8-nV-4jp"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="sUl-GG-8Li"/>
+                        <viewLayoutGuide key="safeArea" id="QiN-e8-PU3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="always" id="g9U-Xu-3AS"/>
                     <connections>

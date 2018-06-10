@@ -15,6 +15,7 @@ class SwitchTableCellContent: PrototypeTableCellContent {
     var title = ""
     var isOn = false
     var switchAction : SwitchBlock?
+    var tint: UIColor = UIColor.orange
     
     convenience init(title: String, isOn : Bool, switchAction : SwitchBlock?) {
         self.init(SwitchTableCell.self)
@@ -32,8 +33,6 @@ class SwitchTableCell: PrototypeTableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.swithView.onTintColor = UIColor.orange
-        
         swithView.addTarget(self, action: #selector(switchValueDidChange(sender:)), for: .valueChanged)
     }
     
@@ -42,6 +41,7 @@ class SwitchTableCell: PrototypeTableCell {
         if let content = content as? SwitchTableCellContent {
             self.titleLabel?.text = content.title
             self.swithView.setOn(content.isOn, animated: false)
+            self.swithView.onTintColor = content.tint
         }
     }
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -98,7 +98,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B01021EF0234C96BF23CC2745091A716"
+               BlueprintIdentifier = "19A048CB7F6A4F8AD12B3CA2B83E5DEC"
                BuildableName = "Pods_Flamingo.framework"
                BlueprintName = "Pods-Flamingo"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -112,7 +112,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C35370A14003BC1348CB3BA19E562593"
+               BlueprintIdentifier = "5915261E3AD3C7E01D007CA32D40F382"
                BuildableName = "Rswift.framework"
                BlueprintName = "R.swift.Library"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -140,7 +140,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "36DCB2DFF6D8A035EE6227BAC39E10F5"
+               BlueprintIdentifier = "C85898D6F47CBC8FDD553F6AF1BB7EE7"
                BuildableName = "SDWebImage.framework"
                BlueprintName = "SDWebImage"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -154,7 +154,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "90ADFDD75CCD15EBAB2C803EFC29BEA5"
+               BlueprintIdentifier = "63B39F0E8EB733D0918CB7C0EEBD09F6"
                BuildableName = "TTTAttributedLabel.framework"
                BlueprintName = "TTTAttributedLabel"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

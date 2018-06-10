@@ -12,6 +12,11 @@ import RealmSwift
 class Source : Object {
     
     @objc dynamic var domain : String = ""
+    
+    convenience init(domain: String) {
+        self.init()
+        self.domain = domain
+    }
  
     func allow() {
         var blacklist = UserDefaults.standard.unallowedDomains

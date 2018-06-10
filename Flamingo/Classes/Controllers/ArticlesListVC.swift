@@ -74,7 +74,8 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         self.tableView.estimatedRowHeight = 200
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.alpha = 0
-        self.tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
+
         let top = ArticleListVC.HeaderHeight - ArticleListVC.CutHeight
         
         self.stateLabel.text = nil
@@ -201,10 +202,9 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     // MARK: - Networking
     
     func addSourceFromPosts(_ posts: [HNPost]) {
-        let newSources: [Source] = posts.map {
-            let source = Source()
-            source.domain = $0.urlDomain
-            return source
+        let newSources: [Source] = posts.compactMap {
+            guard !$0.urlDomain.isEmpty else { return nil }
+            return Source(domain: $0.urlDomain)
         }
         
         try! realm.write() {
@@ -220,8 +220,12 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
                     return
                 }
                 
-                self.addSourceFromPosts(posts)
-                self.addPosts(posts, linkForMore: linkForMore)
+                let filteredPosts = posts.filter({ post -> Bool in
+                    return !UserDefaults.standard.unallowedDomains.contains(post.urlDomain)
+                })
+                
+                self.addSourceFromPosts(filteredPosts)
+                self.addPosts(filteredPosts, linkForMore: linkForMore)
             }
         } else {
             HNScraper.shared.getPostsList(page: self.pageType) { (posts, linkForMore, error) in
@@ -229,13 +233,18 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
                     self.currentState = .error(message: error.localizedDescription)
                     return
                 }
-                if posts.count == 0{
+                
+                let filteredPosts = posts.filter({ post -> Bool in
+                    return !UserDefaults.standard.unallowedDomains.contains(post.urlDomain)
+                })
+                
+                if filteredPosts.count == 0 {
                     self.currentState = .error(message: i18n.commonNothingToShow())
                     return
                 }
                 
-                self.addSourceFromPosts(posts)
-                self.createFeed(posts, linkForMore: linkForMore)
+                self.addSourceFromPosts(filteredPosts)
+                self.createFeed(filteredPosts, linkForMore: linkForMore)
             }
         }
     }
