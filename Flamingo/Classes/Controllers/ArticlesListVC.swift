@@ -139,7 +139,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     func updateUI() {
         switch currentState {
         case .loading :
-            self.tableView.setContentOffset(CGPoint(x:0, y:-self.tableView.contentInset.top), animated: true)
+//            self.tableView.setContentOffset(CGPoint(x:0, y:-self.tableView.contentInset.top), animated: true)
             self.tableView.alpha = 0
             self.stateLabel.text = nil
             self.refreshButton.alpha = 0

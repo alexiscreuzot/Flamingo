@@ -52,9 +52,11 @@ struct FlamingoPost {
         // Comments
         let commentsAttString = NSMutableAttributedString(string: " • ", attributes: attributes)
         let icon = FontIcon(.commentBubble)
-        icon.color = attributes[.foregroundColor] as! UIColor
+        icon.color = UIColor.orange
+        var buttonAtts = attributes
+        buttonAtts[.foregroundColor] = UIColor.orange
         commentsAttString.append(icon.attributedString)
-        commentsAttString.append(NSAttributedString(string: " \(hnPost.commentCount)  ", attributes : attributes))
+        commentsAttString.append(NSAttributedString(string: " \(hnPost.commentCount)  ", attributes : buttonAtts))
         return commentsAttString
     }
 
