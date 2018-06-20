@@ -165,7 +165,6 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     }
     
     func animateLoading() {
-        
         UIView.animate(withDuration: 0.5, delay: 0, options: .allowAnimatedContent, animations: {
             self.refreshImageView.transform = self.refreshImageView.transform.rotated(by: CGFloat.pi * 0.3)
             self.refreshImageView.alpha = 1

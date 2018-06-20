@@ -55,6 +55,10 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let flamingoNav = self.navigationController as? FlamingoNVC {
+            flamingoNav.theme = .transparent
+        }
+        
         // Header
         self.headerImageView.layer.mask = self.maskLayer
         let attributes: [NSAttributedStringKey : Any] = [.font : self.footLabel.font,

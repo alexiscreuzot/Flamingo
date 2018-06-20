@@ -113,12 +113,12 @@ struct R: Rswift.Validatable {
     /// This struct is generated for `ArticleListVC`, and contains static references to 1 segues.
     struct articleListVC {
       /// Segue identifier `comments`.
-      static let comments: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ArticleListVC, ArticleListVC> = Rswift.StoryboardSegueIdentifier(identifier: "comments")
+      static let comments: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ArticleListVC, ArticleCommentsVC> = Rswift.StoryboardSegueIdentifier(identifier: "comments")
       
       /// Optionally returns a typed version of segue `comments`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func comments(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ArticleListVC, ArticleListVC>? {
+      static func comments(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ArticleListVC, ArticleCommentsVC>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.articleListVC.comments, segue: segue)
       }
       

@@ -254,20 +254,20 @@
                         <outlet property="stateLabel" destination="aAA-lT-IQ8" id="jNK-7e-3g9"/>
                         <outlet property="statusBarTopConstraint" destination="4g1-TD-8W0" id="UoT-C3-JGH"/>
                         <outlet property="tableView" destination="3OW-3S-iU0" id="Kkz-hW-G88"/>
-                        <segue destination="jZU-4T-nBN" kind="show" identifier="comments" id="ty8-p4-EqC"/>
+                        <segue destination="bQs-xp-3no" kind="show" identifier="comments" id="Yag-Ih-0a4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gO-aD-gnQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="344.80000000000001" y="70.935960591133011"/>
         </scene>
-        <!--ArticleList-->
-        <scene sceneID="PkB-hK-Mhv">
+        <!--ArticleComments-->
+        <scene sceneID="OVj-WF-7FA">
             <objects>
-                <viewControllerPlaceholder storyboardName="ArticleList" id="jZU-4T-nBN" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wFX-hg-bCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="ArticleComments" id="bQs-xp-3no" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qMD-bL-ll2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089" y="71"/>
+            <point key="canvasLocation" x="941" y="71"/>
         </scene>
     </scenes>
     <resources>

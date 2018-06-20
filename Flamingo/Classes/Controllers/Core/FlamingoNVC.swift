@@ -11,6 +11,7 @@ import UIKit
 
 enum FlamingoNavigationBarTheme {
     case main
+    case transparent
 }
 
 class FlamingoNVC : UINavigationController {
@@ -23,7 +24,7 @@ class FlamingoNVC : UINavigationController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         switch self.theme {
-        case .main:
+        case .main, .transparent:
             return .default
         }
     }
@@ -35,14 +36,16 @@ class FlamingoNVC : UINavigationController {
     
     func updateUI() {
         
-        self.setNeedsStatusBarAppearanceUpdate()
-        
-        var color : UIColor!
-        
+        let color = UIColor.black
         switch theme {
         case .main:
-            color = UIColor.black
+            self.navigationBar.isTranslucent = false
             break
+        case .transparent:
+            self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationBar.shadowImage = UIImage()
+            self.navigationBar.backgroundColor = UIColor.clear
+            self.navigationBar.isTranslucent = true
         }
         
         self.navigationBar.titleTextAttributes = [.foregroundColor: color]
@@ -51,6 +54,8 @@ class FlamingoNVC : UINavigationController {
         self.navigationBar.largeTitleTextAttributes =
             [NSAttributedStringKey.foregroundColor: UIColor.black,
              NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!]
+        
+        self.setNeedsStatusBarAppearanceUpdate()
     }
 
 }
