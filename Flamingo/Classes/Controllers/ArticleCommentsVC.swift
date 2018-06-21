@@ -152,6 +152,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @objc func showArticle() {
+        self.post.isRead = true
         self.showURL(self.post.hnPost.url)
     }
     
