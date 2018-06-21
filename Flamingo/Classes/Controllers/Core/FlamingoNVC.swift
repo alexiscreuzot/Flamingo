@@ -39,7 +39,6 @@ class FlamingoNVC : UINavigationController {
         let color = UIColor.black
         switch theme {
         case .main:
-            self.navigationBar.isTranslucent = false
             break
         case .transparent:
             self.navigationBar.setBackgroundImage(UIImage(), for: .default)

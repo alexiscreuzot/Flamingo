@@ -51,6 +51,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     var heightsDict = [String: CGFloat]()
     var isFirstLayout = true
     var isPerformingCollapse = false
+    var fromPageType: HNScraper.PostListPageName = .front
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,11 +107,10 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         
         SDWebImageDownloader.shared().downloadImage(with: url, options: [.allowInvalidSSLCertificates], progress: nil) { (image, _, _, _) in
             self.loaderView.stopAnimating()
-            if  let image = image {
-                self.headerImageView.image = image.blend(image: R.image.color_gradient()!, with: .hardLight)
-            } else {
-                self.headerImageView.image = R.image.flamingoBack()
-            }
+   
+            let img = image ?? R.image.flamingoBack()!
+            let blend = (self.fromPageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
+            self.headerImageView.image = img.blend(image: blend, with: .hardLight)
         }
     }
     

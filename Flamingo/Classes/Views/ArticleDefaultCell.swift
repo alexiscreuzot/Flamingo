@@ -45,7 +45,7 @@ class ArticleDefaultCell: UITableViewCell{
     
     // MARK: - Logic
     
-    func setPost(_ post : FlamingoPost) {
+    func setPost(_ post : FlamingoPost, highlightComment: Bool = true) {
         
         self.topInfoTopMarginConstraint.constant = (post.row == 0) ? 30 : 16
         self.contentView.backgroundColor = UIColor.white
@@ -66,8 +66,8 @@ class ArticleDefaultCell: UITableViewCell{
         
         let attributes: [NSAttributedStringKey : Any] = [.font : self.bottomLabel.font,
                                                          .foregroundColor : self.bottomLabel.textColor]
-        self.bottomLabel.attributedText = post.infosAttributedString(attributes: attributes)
-        self.commentsButton.setAttributedTitle(post.commentsAttributedString(attributes: attributes), for: .normal)
+        self.bottomLabel.attributedText = post.infosAttributedString(attributes: attributes, withComments: false)
+        self.commentsButton.setAttributedTitle(post.commentsAttributedString(attributes: attributes, highlightComment: true), for: .normal)
         self.commentsButton.isHidden = (post.hnPost.commentCount  == 0)
     }
     

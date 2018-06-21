@@ -130,6 +130,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let commentsController = segue.destination as? ArticleCommentsVC {
+            commentsController.fromPageType = self.pageType
             commentsController.post = self.selectedPost
         }
     }
