@@ -27,7 +27,7 @@ struct FlamingoPost {
         self.isRead = hnPost.isRead //cache it for smoothest scrolling
     }
     
-    func infosAttributedString(attributes: [NSAttributedStringKey : Any], withComments: Bool) -> NSAttributedString {
+    func infosAttributedString(attributes: [NSAttributedString.Key : Any], withComments: Bool) -> NSAttributedString {
         
         let bottomAttString = NSMutableAttributedString(string: "\(hnPost.urlDomain)", attributes: attributes)
         
@@ -48,7 +48,7 @@ struct FlamingoPost {
         return bottomAttString
     }
     
-    func commentsAttributedString(attributes: [NSAttributedStringKey : Any], highlightComment: Bool) -> NSAttributedString {
+    func commentsAttributedString(attributes: [NSAttributedString.Key : Any], highlightComment: Bool) -> NSAttributedString {
         // Comments
         let commentsAttString = NSMutableAttributedString(string: " • ", attributes: attributes)
         let icon = FontIcon(.commentBubble)

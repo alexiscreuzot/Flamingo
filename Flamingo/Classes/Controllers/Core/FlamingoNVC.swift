@@ -51,8 +51,8 @@ class FlamingoNVC : UINavigationController {
         self.navigationBar.tintColor = color
     
         self.navigationBar.largeTitleTextAttributes =
-            [NSAttributedStringKey.foregroundColor: UIColor.black,
-             NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!]
+            [NSAttributedString.Key.foregroundColor: UIColor.black,
+             NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!]
         
         self.setNeedsStatusBarAppearanceUpdate()
     }

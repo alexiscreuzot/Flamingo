@@ -72,7 +72,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         
         // TableView
         self.tableView.estimatedRowHeight = 200
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.alpha = 0
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
 
@@ -85,16 +85,16 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         self.refreshButton.layer.cornerRadius = 5
         
         let bottomInset: CGFloat = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0.0
-        self.tableView.contentInset = UIEdgeInsetsMake(top, 0, bottomInset, 0)
+        self.tableView.contentInset = UIEdgeInsets.init(top: top, left: 0, bottom: bottomInset, right: 0)
         
         // Events
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(willResignActive),
-                                               name: .UIApplicationWillResignActive,
+                                               name: UIApplication.willResignActiveNotification,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(resetBlur),
-                                               name: .UIApplicationWillEnterForeground,
+                                               name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
         
         self.selectRefresh()

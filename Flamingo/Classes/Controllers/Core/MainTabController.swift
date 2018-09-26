@@ -51,8 +51,8 @@ class MainTabController : UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let defaultsAtts: [NSAttributedStringKey : Any] = [.foregroundColor: UIColor.black]
-        let selectedAtts: [NSAttributedStringKey : Any] = [NSAttributedStringKey.foregroundColor: UIColor.orange]
+        let defaultsAtts: [NSAttributedString.Key : Any] = [.foregroundColor: UIColor.black]
+        let selectedAtts: [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.orange]
         UITabBarItem.appearance().setTitleTextAttributes(defaultsAtts, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(selectedAtts, for: .selected)
         
@@ -68,9 +68,13 @@ class MainTabController : UITabBarController {
 extension MainTabController : UITabBarControllerDelegate {
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+
         
         guard   let currentController = selectedViewController,
             viewController != currentController else {
+                
+                self.scrollToTop(viewController)
+                
                 return false
         }
         
@@ -81,7 +85,17 @@ extension MainTabController : UITabBarControllerDelegate {
         return true
     }
     
+    func scrollToTop(_ controller : UIViewController) {
+        
+        if let scrollView = controller.view.allSubViewsOf(type: UIScrollView.self).first {
+            let topPoint = CGPoint.init(x: 0, y: -scrollView.contentInset.top)
+            scrollView.setContentOffset(topPoint, animated: true)
+        }
+        
+    }
+    
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        
         let toView: UIView? = (viewController.tabBarItem.value(forKey: "view") as? UIView)
         toView?.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
         UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.3, options: .allowUserInteraction, animations: {() -> Void in
@@ -90,4 +104,5 @@ extension MainTabController : UITabBarControllerDelegate {
         
         
     }
+    
 }

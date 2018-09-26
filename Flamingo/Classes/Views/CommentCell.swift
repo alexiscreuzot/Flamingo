@@ -36,7 +36,7 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
         
         self.bodyTextLabel.enabledTextCheckingTypes = NSTextCheckingResult.CheckingType.link.rawValue
         self.bodyTextLabel.delegate = self
-        self.bodyTextLabel.linkAttributes = [NSAttributedStringKey.foregroundColor: UIColor.orange]
+        self.bodyTextLabel.linkAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
         
         let selView = UIView()
         selView.backgroundColor = UIColor.groupTableViewBackground
@@ -94,7 +94,7 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
         var content = comment.text ?? ""
         content.removingRegexMatches(pattern: "(<p>|</p>)", replaceWith: "\n\n")
  
-        let attributes:[NSAttributedStringKey : Any] = [.font: self.bodyTextLabel.font!,
+        let attributes:[NSAttributedString.Key : Any] = [.font: self.bodyTextLabel.font!,
                                                         .foregroundColor: UIColor.darkGray]
         let modifier = modifierWithBaseAttributes(attributes, modifiers: [])
         let contentAttString = NSAttributedString.attributedStringFromMarkup(content, withModifier: modifier)

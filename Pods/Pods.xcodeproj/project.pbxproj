@@ -2199,7 +2199,36 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1000;
+				TargetAttributes = {
+					131265C700D4807FD27E22FE61112FDE = {
+						LastSwiftMigration = 1000;
+					};
+					1C37510D3BADB0FEB2AFE88F555DFBFD = {
+						LastSwiftMigration = 1000;
+					};
+					2DC82BE6E8C8A91DC4EE3B363B8E0C5C = {
+						LastSwiftMigration = 1000;
+					};
+					5915261E3AD3C7E01D007CA32D40F382 = {
+						LastSwiftMigration = 1000;
+					};
+					7474A86533136ADF7C2A515898F120F6 = {
+						LastSwiftMigration = 1000;
+					};
+					7660A2E0943906F0DA490F9E89492A72 = {
+						LastSwiftMigration = 1000;
+					};
+					76F2E925AD1762D1C52939ED77C55036 = {
+						LastSwiftMigration = 1000;
+					};
+					88E9EC28B8B46C3631E6B242B50F4442 = {
+						LastSwiftMigration = 1000;
+					};
+					FBCC69D7C794145A1D1F84A3164E6083 = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -3059,6 +3088,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;

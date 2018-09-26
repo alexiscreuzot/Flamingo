@@ -31,7 +31,7 @@ class FontIcon {
         self.color = color
 	}
 
-    var attributes : [NSAttributedStringKey : Any] {
+    var attributes : [NSAttributedString.Key : Any] {
   
         let iconParagraphStyle = NSMutableParagraphStyle()
         iconParagraphStyle.alignment = self.alignment

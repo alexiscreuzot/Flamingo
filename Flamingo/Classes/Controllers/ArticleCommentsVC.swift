@@ -62,16 +62,16 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         
         // Header
         self.headerImageView.layer.mask = self.maskLayer
-        let attributes: [NSAttributedStringKey : Any] = [.font : self.footLabel.font,
+        let attributes: [NSAttributedString.Key : Any] = [.font : self.footLabel.font,
                                                          .foregroundColor : self.footLabel.textColor]
         self.titleLabel.text = self.post.hnPost.title
         self.summaryLabel.text = self.post.preview?.excerpt
         self.footLabel.attributedText = self.post.infosAttributedString(attributes: attributes, withComments: true)
-        self.view.sendSubview(toBack: self.headerView)
+        self.view.sendSubviewToBack(self.headerView)
         
         // TableView
         self.tableView.estimatedRowHeight = 999
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.tableFooterView = UIView()
         self.tableView.backgroundColor = .clear
         
@@ -90,7 +90,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLayoutSubviews()
         if isFirstLayout {
             let top = self.headerView.bounds.height - self.view.safeAreaInsets.top - 8
-            self.tableView.contentInset = UIEdgeInsetsMake(top, 0, 0, 0)
+            self.tableView.contentInset = UIEdgeInsets.init(top: top, left: 0, bottom: 0, right: 0)
             isFirstLayout = false
         }
     }
@@ -180,12 +180,12 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func collapseUnder(comment: HNComment) {
-        let ids = Set(self.collapsableUnder(comment: comment).map {$0.id})
+        let ids = Set<String>(self.collapsableUnder(comment: comment).map {$0.id})
         self.collapsedIds = self.collapsedIds.union(ids)
     }
     
     func uncollapseUnder(comment: HNComment) {
-        let ids = Set(self.collapsableUnder(comment: comment).map {$0.id})
+        let ids = Set<String>(self.collapsableUnder(comment: comment).map {$0.id})
         self.collapsingIds = self.collapsingIds.subtracting(ids) // We uncollapse any collapsed inside
         self.collapsedIds = self.collapsedIds.subtracting(ids)
     }
@@ -237,7 +237,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         let comment = self.filteredComments[indexPath.row]
-        return self.heightsDict[comment.id] ?? UITableViewAutomaticDimension
+        return self.heightsDict[comment.id] ?? UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
