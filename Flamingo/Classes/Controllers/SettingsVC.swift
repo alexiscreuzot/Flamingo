@@ -27,6 +27,8 @@ class SettingsVC : UIViewController {
         self.navigationItem.largeTitleDisplayMode = .never
         self.navigationItem.largeTitleDisplayMode = .always
         
+        self.tableView.estimatedRowHeight = 60
+        
         self.reloadData()
     }
     
@@ -35,17 +37,31 @@ class SettingsVC : UIViewController {
         
         self.datasource = [PrototypeTableCellContent]()
         
-        let sourceTitleContent = TitleSeparatorCellContent.init(title: "SOURCES",
+        let titleAttributes: [NSAttributedString.Key : Any] = [.font : UIFont.boldSystemFont(ofSize: 16),
+                                                               .foregroundColor : UIColor.black]
+        let subtitleAttributes: [NSAttributedString.Key : Any] = [.font : UIFont.systemFont(ofSize: 14),
+                                                               .foregroundColor : UIColor.black.withAlphaComponent(0.5)]
+        
+        let attString = NSMutableAttributedString.init(string: "\nSOURCES",
+                                                            attributes: titleAttributes)
+        let subtitle = "\n\nSwitch on the sources from which you would like to see content."
+        let subtitleAttString = NSMutableAttributedString.init(string: subtitle,
+                                                               attributes: subtitleAttributes)
+        attString.append(subtitleAttString)
+        
+        let sourceTitleContent = TitleSeparatorCellContent(title: "",
                                                                 alignment: .left,
                                                                 color: .black,
                                                                 backgroundColor: .init(white: 0, alpha: 0.05))
-        sourceTitleContent.height = 80
+        sourceTitleContent.attributedTitle = attString
+        sourceTitleContent.height = UITableView.automaticDimension
         self.datasource.append(sourceTitleContent)
+        
         
         let isOn = sources.reduce(true) { (res, source) -> Bool in
             return res && source.activated
         }
-        let switchAllContent = SwitchTableCellContent(title: "All",
+        let switchAllContent = SwitchTableCellContent(title: "ALL",
                                              isOn: isOn,
                                              switchAction: { isOn in
                                                 LocalData.hasSetSources = true
@@ -56,7 +72,8 @@ class SettingsVC : UIViewController {
                                                 }
                                                 self.reloadData()
         })
-        switchAllContent.tint = UIColor.red
+        switchAllContent.tint = UIColor.green
+        switchAllContent.backgroundColor = UIColor.black.withAlphaComponent(0.03)
         self.datasource.append(switchAllContent)
         
         let sourcesCells: [SwitchTableCellContent] = sources.map({ source in

@@ -11,18 +11,18 @@ import UIKit
 
 class TitleSeparatorCellContent: PrototypeTableCellContent {
     
+    var attributedTitle: NSAttributedString?
     var title: String = ""
     var alignment: NSTextAlignment
     var color: UIColor
-    var backgroundColor: UIColor
     
     init(title : String = "", alignment:NSTextAlignment = .left, color: UIColor = UIColor.black, backgroundColor: UIColor = UIColor.clear ) {
         self.title = title
         self.alignment = alignment
         self.color = color
-        self.backgroundColor = backgroundColor
         super.init(TitleSeparatorCell.self)
-        height = 48
+        self.backgroundColor = backgroundColor
+        self.height =  UITableView.automaticDimension
     }
 }
 
@@ -38,9 +38,18 @@ class TitleSeparatorCell: PrototypeTableCell {
         super.setPrototypeContent(content)
         if let content = content as? TitleSeparatorCellContent {
             self.backgroundColor = content.backgroundColor
-            titleLabel?.text = content.title
+            
+            if let attTitle = content.attributedTitle {
+                titleLabel?.attributedText = attTitle
+            } else {
+                titleLabel?.text = content.title
+            }
+            
             titleLabel?.textAlignment = content.alignment
-            titleLabel?.textColor = content.color
+            if  content.attributedTitle == nil {
+                titleLabel?.textColor = content.color
+            }
+            
         }
     }
 }

@@ -38,6 +38,7 @@
 		FAD1554B215D14AF0045001A /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554A215D14AF0045001A /* JSONSerializer.swift */; };
 		FAD1554D215D16A50045001A /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554C215D16A50045001A /* LocalDataService.swift */; };
 		FAD1554F215D24F60045001A /* Error+Flamingo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554E215D24F60045001A /* Error+Flamingo.swift */; };
+		FAD15551215D36E70045001A /* SimpleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD15550215D36E70045001A /* SimpleTableCell.swift */; };
 		FAE931D820C991FE00FB0A78 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931D720C991FE00FB0A78 /* Source.swift */; };
 		FAE931DB20C9929F00FB0A78 /* PrototypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */; };
 		FAE931DD20C992AA00FB0A78 /* SwitchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */; };
@@ -81,6 +82,7 @@
 		FAD1554A215D14AF0045001A /* JSONSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
 		FAD1554C215D16A50045001A /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
 		FAD1554E215D24F60045001A /* Error+Flamingo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Flamingo.swift"; sourceTree = "<group>"; };
+		FAD15550215D36E70045001A /* SimpleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTableCell.swift; sourceTree = "<group>"; };
 		FAE931D720C991FE00FB0A78 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeTableCell.swift; sourceTree = "<group>"; };
 		FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableCell.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */,
+				FAD15550215D36E70045001A /* SimpleTableCell.swift */,
 				FAE931E120C9A68000FB0A78 /* TitleSeparatorCell.swift */,
 				FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */,
 			);
@@ -445,6 +448,7 @@
 				FAD1554F215D24F60045001A /* Error+Flamingo.swift in Sources */,
 				FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */,
 				FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */,
+				FAD15551215D36E70045001A /* SimpleTableCell.swift in Sources */,
 				FAE931DB20C9929F00FB0A78 /* PrototypeTableCell.swift in Sources */,
 				FAE931D820C991FE00FB0A78 /* Source.swift in Sources */,
 				FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */,
