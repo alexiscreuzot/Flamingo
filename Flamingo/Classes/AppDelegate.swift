@@ -20,6 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         config.deleteRealmIfMigrationNeeded = true
         Realm.Configuration.defaultConfiguration = config
         
+        // Init sources if needed
+        let realm = try! Realm()
+        let localSources = realm.objects(Source.self)
+        if localSources.isEmpty {
+            if  let jsonData = try? Data(contentsOf: R.file.sourcesJson()!),
+                let jsonSources = try? JSONDecoder().decode(Source.self, from: jsonData) {
+                realm.add(jsonSources)
+            }
+        }
+        
         return true
     }
 

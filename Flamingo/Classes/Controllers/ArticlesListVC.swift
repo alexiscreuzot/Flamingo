@@ -111,6 +111,8 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         if let selectedRow = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRow(at: selectedRow, animated: true)
         }
+        
+        print(Sources.toJSON())
     }
 
     override func viewDidLayoutSubviews() {

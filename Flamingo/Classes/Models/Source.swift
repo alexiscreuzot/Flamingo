@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Source : Object {
+class Source : Object , Codable{
     
     @objc dynamic var domain : String = ""
     
@@ -38,4 +38,30 @@ class Source : Object {
         return "domain"
     }
     
+    func toDict() -> [String : String] {
+        return ["domain" : domain]
+    }
+    
+    func toJSON() -> String {
+        let dict = self.toDict()
+        if let jsonData = try? JSONSerialization.data(withJSONObject: dict, options: [.prettyPrinted]),
+            let jsonString = String(data: jsonData, encoding: .utf8) {
+            return jsonString
+        } else {
+            return ""
+        }
+    }
+    
+}
+
+class Sources {
+    static func toJSON() -> String {
+        if  let sources = try? Array(Realm().objects(Source.self)),
+            let jsonData = try? JSONSerialization.data(withJSONObject: sources.map {$0.toDict()}, options: [.prettyPrinted]),
+            let jsonString = String(data: jsonData, encoding: .utf8) {
+            return jsonString
+        } else {
+            return ""
+        }
+    }
 }
