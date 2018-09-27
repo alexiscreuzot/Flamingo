@@ -36,6 +36,7 @@
 		FACE2FEA2020C0E4003BBAD0 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */; };
 		FAD15549215D0DBD0045001A /* sources.json in Resources */ = {isa = PBXBuildFile; fileRef = FAD15548215D0DBD0045001A /* sources.json */; };
 		FAD1554B215D14AF0045001A /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554A215D14AF0045001A /* JSONSerializer.swift */; };
+		FAD1554D215D16A50045001A /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554C215D16A50045001A /* LocalDataService.swift */; };
 		FAE931D820C991FE00FB0A78 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931D720C991FE00FB0A78 /* Source.swift */; };
 		FAE931DB20C9929F00FB0A78 /* PrototypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */; };
 		FAE931DD20C992AA00FB0A78 /* SwitchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */; };
@@ -79,6 +80,7 @@
 		FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		FAD15548215D0DBD0045001A /* sources.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sources.json; sourceTree = "<group>"; };
 		FAD1554A215D14AF0045001A /* JSONSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
+		FAD1554C215D16A50045001A /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
 		FAE931D720C991FE00FB0A78 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeTableCell.swift; sourceTree = "<group>"; };
 		FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableCell.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 			children = (
 				FAB10E1620213F3700F60594 /* MercuryAPI.swift */,
 				FAD1554A215D14AF0045001A /* JSONSerializer.swift */,
+				FAD1554C215D16A50045001A /* LocalDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				FAB838E92028B70700DBFEF7 /* FontIcon.swift in Sources */,
 				FA2F8853202B677200603EAF /* UIKit+Extensions.swift in Sources */,
 				FACE2FEA2020C0E4003BBAD0 /* Foundation+Extensions.swift in Sources */,
+				FAD1554D215D16A50045001A /* LocalDataService.swift in Sources */,
 				FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */,
 				FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */,
 				FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */,
