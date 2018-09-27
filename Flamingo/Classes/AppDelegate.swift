@@ -24,10 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let realm = try! Realm()
         let localSources = realm.objects(Source.self)
         if localSources.isEmpty {
-            if  let jsonData = try? Data(contentsOf: R.file.sourcesJson()!),
-                let jsonSources = try? JSONDecoder().decode(Source.self, from: jsonData) {
-                realm.add(jsonSources)
-            }
+            JSONSerializer.serializeSources()
         }
         
         return true

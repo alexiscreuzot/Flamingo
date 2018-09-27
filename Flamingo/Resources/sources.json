@@ -1,3944 +1,3943 @@
-[
-    {
-        "domain" : "grunfy.com"
-    },
-    {
-        "domain" : "darpa.mil"
-    },
-    {
-        "domain" : "nautil.us"
-    },
-    {
-        "domain" : "vandenoever.info"
-    },
-    {
-        "domain" : "chronicle.com"
-    },
-    {
-        "domain" : "alexanderellis.github.io"
-    },
-    {
-        "domain" : "postmarketos.org"
-    },
-    {
-        "domain" : "nytimes.com"
-    },
-    {
-        "domain" : "youtube.com"
-    },
-    {
-        "domain" : "logger.believermag.com"
-    },
-    {
-        "domain" : "asc.upenn.edu"
-    },
-    {
-        "domain" : "arstechnica.com"
-    },
-    {
-        "domain" : "independent.co.uk"
-    },
-    {
-        "domain" : "mailman.nanog.org"
-    },
-    {
-        "domain" : "asia.nikkei.com"
-    },
-    {
-        "domain" : "hacks.mozilla.org"
-    },
-    {
-        "domain" : "gravitational.com"
-    },
-    {
-        "domain" : "chenhuijing.com"
-    },
-    {
-        "domain" : "theappendix.net"
-    },
-    {
-        "domain" : "devpen.io"
-    },
-    {
-        "domain" : "bbc.com"
-    },
-    {
-        "domain" : "anandtech.com"
-    },
-    {
-        "domain" : "arne-mertz.de"
-    },
-    {
-        "domain" : "newyorker.com"
-    },
-    {
-        "domain" : "xtof.info"
-    },
-    {
-        "domain" : "medium.com"
-    },
-    {
-        "domain" : "reddit.com"
-    },
-    {
-        "domain" : "scala-lang.org"
-    },
-    {
-        "domain" : "bbc.co.uk"
-    },
-    {
-        "domain" : "nullprogram.com"
-    },
-    {
-        "domain" : "polyaxon.com"
-    },
-    {
-        "domain" : "cowlark.com"
-    },
-    {
-        "domain" : "eff.org"
-    },
-    {
-        "domain" : "sciencemag.org"
-    },
-    {
-        "domain" : "fullstackacademy.workable.com"
-    },
-    {
-        "domain" : "blog.jamesdbloom.com"
-    },
-    {
-        "domain" : "ideas.4brad.com"
-    },
-    {
-        "domain" : "journal.stuffwithstuff.com"
-    },
-    {
-        "domain" : "blog.growthbot.org"
-    },
-    {
-        "domain" : "devuan.org"
-    },
-    {
-        "domain" : "inews.co.uk"
-    },
-    {
-        "domain" : "avc.com"
-    },
-    {
-        "domain" : "openbsd.org"
-    },
-    {
-        "domain" : "jamchamb.github.io"
-    },
-    {
-        "domain" : "lambda-the-ultimate.org"
-    },
-    {
-        "domain" : "amasad.me"
-    },
-    {
-        "domain" : "reuters.com"
-    },
-    {
-        "domain" : "seths.blog"
-    },
-    {
-        "domain" : "motherboard.vice.com"
-    },
-    {
-        "domain" : "jobs.lever.co"
-    },
-    {
-        "domain" : "satu0king.github.io"
-    },
-    {
-        "domain" : "wired.com"
-    },
-    {
-        "domain" : "faz.net"
-    },
-    {
-        "domain" : "github.com"
-    },
-    {
-        "domain" : "legacy.earlham.edu"
-    },
-    {
-        "domain" : "news.ycombinator.com"
-    },
-    {
-        "domain" : "news.nationalgeographic.com"
-    },
-    {
-        "domain" : "blog.snapeda.com"
-    },
-    {
-        "domain" : "wsj.com"
-    },
-    {
-        "domain" : "washingtonpost.com"
-    },
-    {
-        "domain" : "clipperhouse.com"
-    },
-    {
-        "domain" : "arxiv.org"
-    },
-    {
-        "domain" : "en.oxforddictionaries.com"
-    },
-    {
-        "domain" : "grnh.se"
-    },
-    {
-        "domain" : "calver.org"
-    },
-    {
-        "domain" : "pcg-random.org"
-    },
-    {
-        "domain" : "c256foenix.com"
-    },
-    {
-        "domain" : "6502.org"
-    },
-    {
-        "domain" : "elie.net"
-    },
-    {
-        "domain" : "getbitbar.com"
-        
-    },
-    {
-        "domain" : "economist.com"
-    },
-    {
-        "domain" : "rant.monkeydom.de"
-    },
-    {
-        "domain" : "lists.nongnu.org"
-    },
-    {
-        "domain" : "flexport.com"
-    },
-    {
-        "domain" : "ruder.io"
-    },
-    {
-        "domain" : "pfrazee.hashbase.io"
-    },
-    {
-        "domain" : "cloudplatform.googleblog.com"
-    },
-    {
-        "domain" : "bloomberg.com"
-    },
-    {
-        "domain" : "chinamoneynetwork.com"
-    },
-    {
-        "domain" : "wired.co.uk"
-    },
-    {
-        "domain" : "irishtimes.com"
-    },
-    {
-        "domain" : "engineering.mixpanel.com"
-    },
-    {
-        "domain" : "svnweb.freebsd.org"
-    },
-    {
-        "domain" : "nymag.com"
-    },
-    {
-        "domain" : "en.wikipedia.org"
-    },
-    {
-        "domain" : "variety.com"
-    },
-    {
-        "domain" : "aristo-demo.allenai.org"
-    },
-    {
-        "domain" : "blog.ripstech.com"
-    },
-    {
-        "domain" : "axios.com"
-    },
-    {
-        "domain" : "remotestorage.io"
-    },
-    {
-        "domain" : "developer.mozilla.org"
-    },
-    {
-        "domain" : "latacora.singles"
-    },
-    {
-        
-        "domain" : "ietf.org"
-    },
-    {
-        "domain" : "cen.acs.org"
-    },
-    {
-        "domain" : "top500.org"
-    },
-    {
-        "domain" : "macleans.ca"
-    },
-    {
-        "domain" : "shkspr.mobi"
-    },
-    {
-        "domain" : "theparisreview.org"
-    },
-    {
-        "domain" : "longreads.com"
-    },
-    {
-        "domain" : "openculture.com"
-    },
-    {
-        "domain" : "kromtech.com"
-    },
-    {
-        "domain" : "rfpose.csail.mit.edu"
-    },
-    {
-        "domain" : "techcrunch.com"
-    },
-    {
-        "domain" : "howtographql.com"
-    },
-    {
-        "domain" : "gpfault.net"
-    },
-    {
-        "domain" : "tudelft.nl"
-    },
-    {
-        "domain" : "blog.yellowant.com"
-    },
-    {
-        "domain" : "narimiran.github.io"
-    },
-    {
-        "domain" : "arrgh.tim-smith.us"
-    },
-    {
-        "domain" : "gatesnotes.com"
-    },
-    {
-        "domain" : "newcriterion.com"
-    },
-    {
-        "domain" : "newatlas.com"
-    },
-    {
-        "domain" : "nccgroup.trust"
-    },
-    {
-        "domain" : "vtdigger.org"
-    },
-    {
-        "domain" : "intel.com"
-    },
-    {
-        "domain" : "discrete.gr"
-    },
-    {
-        "domain" : "sonyaellenmann.com"
-    },
-    {
-        "domain" : "hussmanfunds.com"
-    },
-    {
-        "domain" : "rushter.com"
-    },
-    {
-        "domain" : "modelzoo.co"
-    },
-    {
-        "domain" : "biogeosciences.net"
-    },
-    {
-        "domain" : "laravelfactory.com"
-    },
-    {
-        "domain" : "clever.com"
-    },
-    {
-        "domain" : "dailycamera.com"
-    },
-    {
-        "domain" : "theguardian.com"
-    },
-    {
-        "domain" : "theverge.com"
-    },
-    {
-        "domain" : "j.ludost.net"
-    },
-    {
-        "domain" : "quillette.com"
-    },
-    {
-        "domain" : "logicmag.io"
-    },
-    {
-        "domain" : "cnet.com"
-    },
-    {
-        "domain" : "mercurynews.com"
-    },
-    {
-        "domain" : "ianhogarth.com"
-    },
-    {
-        "domain" : "react-etc.net"
-    },
-    {
-        "domain" : "weblog.rogueamoeba.com"
-    },
-    {
-        "domain" : "sec.gov"
-    },
-    {
-        "domain" : "pagerduty.com"
-    },
-    {
-        "domain" : "daveceddia.com"
-    },
-    {
-        "domain" : "linuxjournal.com"
-    },
-    {
-        "domain" : "quod.us"
-    },
-    {
-        "domain" : "anishgodha.com"
-    },
-    {
-        "domain" : "physicsworld.com"
-    },
-    {
-        "domain" : "daily.jstor.org"
-    },
-    {
-        "domain" : "objectivevgaesthetics.wordpress.com"
-    },
-    {
-        "domain" : "home.cern"
-    },
-    {
-        "domain" : "bitmovin.com"
-    },
-    {
-        "domain" : "kkimdev.github.io"
-    },
-    {
-        "domain" : "paleotronic.com"
-    },
-    {
-        "domain" : "ipwatchdog.com"
-    },
-    {
-        "domain" : "cato.org"
-    },
-    {
-        "domain" : "stripes.com"
-    },
-    {
-        "domain" : "52-insights.com"
-    },
-    {
-        "domain" : "psafe.com"
-    },
-    {
-        "domain" : "matthuisman.nz"
-    },
-    {
-        "domain" : "infoworld.com"
-    },
-    {
-        "domain" : "riter.co"
-    },
-    {
-        "domain" : "m.phys.org"
-    },
-    {
-        "domain" : "hackgnar.com"
-    },
-    {
-        "domain" : "thepythoncorner.com"
-    },
-    {
-        "domain" : "ml5js.org"
-    },
-    {
-        "domain" : "nature.com"
-    },
-    {
-        "domain" : "blog.teemya.com"
-    },
-    {
-        "domain" : "technologyreview.com"
-    },
-    {
-        "domain" : "pnnl.gov"
-    },
-    {
-        "domain" : "vulture.com"
-    },
-    {
-        "domain" : "history.nasa.gov"
-    },
-    {
-        "domain" : "medium.freecodecamp.org"
-    },
-    {
-        "domain" : "aiweirdness.com"
-    },
-    {
-        "domain" : "jasondavies.com"
-    },
-    {
-        "domain" : "pyimagesearch.com"
-    },
-    {
-        "domain" : "joeduffyblog.com"
-    },
-    {
-        "domain" : "torrentfreak.com"
-    },
-    {
-        "domain" : "wpri.com"
-    },
-    {
-        "domain" : "r2d3.us"
-    },
-    {
-        "domain" : "engblg.livingcomputers.org"
-    },
-    {
-        "domain" : "citusdata.com"
-    },
-    {
-        "domain" : "dahg.maps.arcgis.com"
-    },
-    {
-        "domain" : "highsnobiety.com"
-    },
-    {
-        "domain" : "hackaday.com"
-    },
-    {
-        "domain" : "blog.benjojo.co.uk"
-    },
-    {
-        "domain" : "rkirsling.github.io"
-    },
-    {
-        "domain" : "socratic-form-microscopy.com"
-    },
-    {
-        "domain" : "monoskop.org"
-    },
-    {
-        "domain" : "kibble.net"
-    },
-    {
-        "domain" : "severalnines.com"
-    },
-    {
-        "domain" : "theglobeandmail.com"
-    },
-    {
-        "domain" : "utcc.utoronto.ca"
-    },
-    {
-        "domain" : "bis.org"
-    },
-    {
-        "domain" : "ai.google"
-    },
-    {
-        "domain" : "hubicka.blogspot.com"
-    },
-    {
-        "domain" : "www2.cs.arizona.edu"
-    },
-    {
-        "domain" : "starterstory.com"
-    },
-    {
-        "domain" : "standuply.com"
-    },
-    {
-        "domain" : "posthook.io"
-    },
-    {
-        "domain" : "resobscura.blogspot.com"
-    },
-    {
-        "domain" : "jvns.ca"
-    },
-    {
-        "domain" : "blender.org"
-    },
-    {
-        "domain" : "developer.oculus.com"
-    },
-    {
-        "domain" : "objective-see.com"
-    },
-    {
-        "domain" : "citylab.com"
-    },
-    {
-        "domain" : "stratechery.com"
-    },
-    {
-        "domain" : "blog.qt.io"
-    },
-    {
-        "domain" : "middleeasteye.net"
-    },
-    {
-        "domain" : "thenewatlantis.com"
-    },
-    {
-        "domain" : "theatlantic.com"
-    },
-    {
-        "domain" : "depauw.edu"
-    },
-    {
-        "domain" : "cupery.net"
-    },
-    {
-        "domain" : "theinformation.com"
-    },
-    {
-        "domain" : "theregister.co.uk"
-    },
-    {
-        "domain" : "voronoi.surge.sh"
-    },
-    {
-        "domain" : "zwischenzugs.com"
-    },
-    {
-        "domain" : "www2.deloitte.com"
-    },
-    {
-        "domain" : "quora.com"
-    },
-    {
-        "domain" : "apnews.com"
-    },
-    {
-        "domain" : "businessinsider.com"
-    },
-    {
-        "domain" : "code.facebook.com"
-    },
-    {
-        "domain" : "spectator.co.uk"
-    },
-    {
-        "domain" : "idiallo.com"
-    },
-    {
-        "domain" : "mail-archive.com"
-    },
-    {
-        "domain" : "motherjones.com"
-    },
-    {
-        "domain" : "ai.googleblog.com"
-    },
-    {
-        "domain" : "timesofsandiego.com"
-    },
-    {
-        "domain" : "blog.mozvr.com"
-    },
-    {
-        "domain" : "harpers.org"
-    },
-    {
-        "domain" : "devs.cloudimmunity.com"
-    },
-    {
-        "domain" : "gizmodo.com"
-    },
-    {
-        "domain" : "cl.cam.ac.uk"
-    },
-    {
-        "domain" : "transfer.sh"
-    },
-    {
-        "domain" : "statnews.com"
-    },
-    {
-        "domain" : "log.fundamental-code.com"
-    },
-    {
-        "domain" : "dlang.org"
-    },
-    {
-        "domain" : "cs.uwaterloo.ca"
-    },
-    {
-        "domain" : "keybase.io"
-    },
-    {
-        "domain" : "arp242.net"
-    },
-    {
-        "domain" : "erlang.org"
-    },
-    {
-        "domain" : "githubengineering.com"
-    },
-    {
-        "domain" : "letsencrypt.org"
-    },
-    {
-        "domain" : "the-tls.co.uk"
-    },
-    {
-        "domain" : "quantamagazine.org"
-    },
-    {
-        "domain" : "itsblockchain.com"
-    },
-    {
-        "domain" : "pgdash.io"
-    },
-    {
-        "domain" : "atsdr.cdc.gov"
-    },
-    {
-        "domain" : "humaninterest.com"
-    },
-    {
-        "domain" : "bernat.tech"
-    },
-    {
-        "domain" : "srobb.net"
-    },
-    {
-        "domain" : "rapp.org"
-    },
-    {
-        "domain" : "tools.ietf.org"
-    },
-    {
-        "domain" : "philosophynow.org"
-    },
-    {
-        "domain" : "sanctum.geek.nz"
-    },
-    {
-        "domain" : "einstein.ai"
-    },
-    {
-        "domain" : "phys.org"
-    },
-    {
-        "domain" : "nyclu.org"
-    },
-    {
-        "domain" : "hisutton.com"
-    },
-    {
-        "domain" : "yodaiken.com"
-    },
-    {
-        "domain" : "jakearchibald.com"
-    },
-    {
-        "domain" : "v8project.blogspot.com"
-    },
-    {
-        "domain" : "whydoiprocrastinate.com"
-    },
-    {
-        "domain" : "news.rpi.edu"
-    },
-    {
-        "domain" : "queue.acm.org"
-    },
-    {
-        "domain" : "cs230.stanford.edu"
-    },
-    {
-        "domain" : "npr.org"
-    },
-    {
-        "domain" : "wende.github.io"
-    },
-    {
-        "domain" : "blog.klaehn.org"
-    },
-    {
-        "domain" : "vanguard.com"
-    },
-    {
-        "domain" : "architectural-review.com"
-    },
-    {
-        "domain" : "blog.acolyer.org"
-    },
-    {
-        "domain" : "techdirt.com"
-    },
-    {
-        "domain" : "victor.darvariu.me"
-    },
-    {
-        "domain" : "electronjs.org"
-    },
-    {
-        "domain" : "blog.rust-lang.org"
-    },
-    {
-        "domain" : "lists.opensource.org"
-    },
-    {
-        "domain" : "ualberta.ca"
-    },
-    {
-        
-        "domain" : "qz.com"
-    },
-    {
-        "domain" : "seekingalpha.com"
-    },
-    {
-        "domain" : "metro.co.uk"
-    },
-    {
-        "domain" : "thehill.com"
-    },
-    {
-        "domain" : "zenmagnets.com"
-    },
-    {
-        "domain" : "articles.fti.bi"
-    },
-    {
-        "domain" : "diego-pacheco.blogspot.com"
-    },
-    {
-        "domain" : "thecut.com"
-    },
-    {
-        "domain" : "blog.atom.io"
-    },
-    {
-        "domain" : "gravity-lang.org"
-    },
-    {
-        "domain" : "atlasobscura.com"
-    },
-    {
-        "domain" : "01.org"
-    },
-    {
-        "domain" : "mtgox.com"
-    },
-    {
-        "domain" : "cjr.org"
-    },
-    {
-        "domain" : "dragan.rocks"
-    },
-    {
-        "domain" : "irc.com"
-    },
-    {
-        "domain" : "defensecode.com"
-    },
-    {
-        "domain" : "otoro.net"
-    },
-    {
-        "domain" : "cityobservatory.org"
-    },
-    {
-        "domain" : "apple.com"
-    },
-    {
-        "domain" : "pointfree.co"
-    },
-    {
-        "domain" : "nurpax.github.io"
-    },
-    {
-        "domain" : "internals.rust-lang.org"
-    },
-    {
-        "domain" : "docs.google.com"
-    },
-    {
-        "domain" : "papers.ssrn.com"
-    },
-    {
-        "domain" : "blog.eladgil.com"
-    },
-    {
-        "domain" : "forum.filezilla-project.org"
-    },
-    {
-        "domain" : "brianketelsen.com"
-    },
-    {
-        "domain" : "psychologicalscience.org"
-    },
-    {
-        "domain" : "cs.brown.edu"
-    },
-    {
-        "domain" : "iokit.racing"
-    },
-    {
-        "domain" : "blog.openai.com"
-    },
-    {
-        "domain" : "loudnesspenalty.com"
-    },
-    {
-        "domain" : "righto.com"
-    },
-    {
-        "domain" : "anfractuosity.com"
-    },
-    {
-        "domain" : "firehydrant.io"
-    },
-    {
-        "domain" : "defenseone.com"
-    },
-    {
-        "domain" : "spectrum.ieee.org"
-    },
-    {
-        "domain" : "jsonnet.org"
-    },
-    {
-        "domain" : "auphonic.com"
-    },
-    {
-        "domain" : "sciencedaily.com"
-    },
-    {
-        "domain" : "doesitmutate.xyz"
-    },
-    {
-        "domain" : "mediarelations.uwo.ca"
-    },
-    {
-        "domain" : "freakonomics.com"
-    },
-    {
-        "domain" : "c2rust.com"
-    },
-    {
-        "domain" : "genielabs.github.io"
-    },
-    {
-        "domain" : "eartharchitecture.org"
-    },
-    {
-        "domain" : "webtoons.com"
-    },
-    {
-        "domain" : "habitatchronicles.com"
-    },
-    {
-        "domain" : "blog.gtk.org"
-    },
-    {
-        "domain" : "theoutline.com"
-    },
-    {
-        "domain" : "news.mit.edu"
-    },
-    {
-        "domain" : "mailinator.blogspot.com"
-    },
-    {
-        "domain" : "dannyguo.com"
-    },
-    {
-        "domain" : "geomesa.org"
-    },
-    {
-        "domain" : "dremio.com"
-    },
-    {
-        "domain" : "city-journal.org"
-    },
-    {
-        "domain" : "noelzach.github.io"
-    },
-    {
-        "domain" : "lvogel.free.fr"
-    },
-    {
-        "domain" : "abe-winter.github.io"
-    },
-    {
-        "domain" : "harveynick.com"
-    },
-    {
-        "domain" : "drive.google.com"
-    },
-    {
-        "domain" : "nasa.gov"
-    },
-    {
-        "domain" : "blogs.dropbox.com"
-    },
-    {
-        "domain" : "vegardno.net"
-    },
-    {
-        "domain" : "theamericanscholar.org"
-    },
-    {
-        "domain" : "taskandpurpose.com"
-    },
-    {
-        "domain" : "gov.uk"
-    },
-    {
-        "domain" : "pbs.org"
-    },
-    {
-        
-        "domain" : "jdebp.eu"
-    },
-    {
-        "domain" : "channelnewsasia.com"
-    },
-    {
-        "domain" : "universal-sci.com"
-    },
-    {
-        "domain" : "infoq.com"
-    },
-    {
-        "domain" : "itwire.com"
-    },
-    {
-        "domain" : "analog.com"
-    },
-    {
-        "domain" : "blog.ret2.io"
-    },
-    {
-        "domain" : "money.cnn.com"
-    },
-    {
-        "domain" : "greenentrepreneur.com"
-    },
-    {
-        "domain" : "certsimple.com"
-    },
-    {
-        "domain" : "dosyago-coder-0.github.io"
-    },
-    {
-        "domain" : "aholme.co.uk"
-    },
-    {
-        "domain" : "cambus.net"
-    },
-    {
-        "domain" : "ncbi.nlm.nih.gov"
-    },
-    {
-        "domain" : "bfilipek.com"
-    },
-    {
-        "domain" : "wi-fi.org"
-    },
-    {
-        "domain" : "hyperallergic.com"
-    },
-    {
-        "domain" : "filfre.net"
-    },
-    {
-        "domain" : "slate.com"
-    },
-    {
-        "domain" : "ceres1.space"
-    },
-    {
-        "domain" : "joeyh.name"
-    },
-    {
-        "domain" : "stripe.com"
-    },
-    {
-        "domain" : "groups.google.com"
-    },
-    {
-        "domain" : "allthingsdistributed.com"
-    },
-    {
-        "domain" : "blog.ycombinator.com"
-    },
-    {
-        "domain" : "bdd-data.berkeley.edu"
-    },
-    {
-        "domain" : "flightstorome.moovellab.com"
-    },
-    {
-        "domain" : "gnss-sdr.org"
-    },
-    {
-        "domain" : "google-developers.appspot.com"
-    },
-    {
-        "domain" : "potaroo.net"
-    },
-    {
-        "domain" : "blog.joinmastodon.org"
-    },
-    {
-        "domain" : "globalpolicy.ieee.org"
-    },
-    {
-        "domain" : "andrewnetwork.github.io"
-    },
-    {
-        "domain" : "ppltoast.wordpress.com"
-    },
-    {
-        "domain" : "blogs.windows.com"
-    },
-    {
-        "domain" : "mikedrivendevelopment.com"
-    },
-    {
-        "domain" : "m.huffingtonpost.in"
-    },
-    {
-        "domain" : "char.gd"
-    },
-    {
-        "domain" : "blog.danslimmon.com"
-    },
-    {
-        "domain" : "overclock3d.net"
-    },
-    {
-        "domain" : "pubweb.eng.utah.edu"
-    },
-    {
-        "domain" : "salon.com"
-    },
-    {
-        "domain" : "madore.org"
-    },
-    {
-        "domain" : "snapeda.workable.com"
-    },
-    {
-        "domain" : "kvonhorn.github.io"
-    },
-    {
-        "domain" : "robinrendle.com"
-    },
-    {
-        "domain" : "huffingtonpost.in"
-    },
-    {
-        "domain" : "cnbc.com"
-    },
-    {
-        "domain" : "lmgsecurity.com"
-    },
-    {
-        "domain" : "code.djangoproject.com"
-    },
-    {
-        "domain" : "kcsrk.info"
-    },
-    {
-        "domain" : "lwn.net"
-    },
-    {
-        "domain" : "lowtechmagazine.com"
-    },
-    {
-        "domain" : "thesoundingline.com"
-    },
-    {
-        "domain" : "digiday.com"
-    },
-    {
-        "domain" : "devonzuegel.com"
-    },
-    {
-        "domain" : "nianticlabs.com"
-    },
-    {
-        "domain" : "failory.com"
-    },
-    {
-        "domain" : "engineering.gusto.com"
-    },
-    {
-        "domain" : "intoli.com"
-    },
-    {
-        "domain" : "bair.berkeley.edu"
-    },
-    {
-        "domain" : "themuse.com"
-    },
-    {
-        "domain" : "bleepingcomputer.com"
-    },
-    {
-        "domain" : "crystal-lang.org"
-    },
-    {
-        "domain" : "gentoo.org"
-    },
-    {
-        "domain" : "alter-attack.net"
-    },
-    {
-        "domain" : "programaudioseries.com"
-    },
-    {
-        "domain" : "developer.amazon.com"
-    },
-    {
-        "domain" : "newsweek.com"
-    },
-    {
-        "domain" : "freedom-to-tinker.com"
-    },
-    {
-        "domain" : "thedailybeast.com"
-    },
-    {
-        "domain" : "read.iopipe.com"
-    },
-    {
-        "domain" : "able.bio"
-    },
-    {
-        "domain" : "eetimes.com"
-    },
-    {
-        "domain" : "kaiostech.com"
-    },
-    {
-        "domain" : "hazyresearch.github.io"
-    },
-    {
-        "domain" : "interviewcake.com"
-    },
-    {
-        "domain" : "collectorsweekly.com"
-    },
-    {
-        "domain" : "tom.preston-werner.com"
-    },
-    {
-        "domain" : "denofgeek.com"
-    },
-    {
-        "domain" : "matthewearl.github.io"
-    },
-    {
-        "domain" : "begin.re"
-    },
-    {
-        "domain" : "usenix.org"
-    },
-    {
-        "domain" : "tylermw.com"
-    },
-    {
-        "domain" : "drewdevault.com"
-    },
-    {
-        "domain" : "discuss.haiku-os.org"
-    },
-    {
-        "domain" : "medium.learningbyshipping.com"
-    },
-    {
-        "domain" : "simonmar.github.io"
-    },
-    {
-        "domain" : "cse.chalmers.se"
-    },
-    {
-        "domain" : "linuxfoundation.org"
-    },
-    {
-        "domain" : "blog.marcgravell.com"
-    },
-    {
-        "domain" : "espn.com"
-    },
-    {
-        "domain" : "eso.org"
-    },
-    {
-        "domain" : "thomas-tanay.github.io"
-    },
-    {
-        "domain" : "lists.opensuse.org"
-    },
-    {
-        "domain" : "blog.netbsd.org"
-    },
-    {
-        "domain" : "thewholestory.solutionsjournalism.org"
-    },
-    {
-        "domain" : "code.fb.com"
-    },
-    {
-        "domain" : "theweek.com"
-    },
-    {
-        "domain" : "blog.cloudflare.com"
-    },
-    {
-        "domain" : "seriouseats.com"
-    },
-    {
-        "domain" : "humus.name"
-    },
-    {
-        "domain" : "eulerarchive.maa.org"
-    },
-    {
-        "domain" : "fast.ai"
-    },
-    {
-        "domain" : "rstb.royalsocietypublishing.org"
-    },
-    {
-        "domain" : "graphcms.com"
-    },
-    {
-        "domain" : "glench.github.io"
-    },
-    {
-        "domain" : "palant.de"
-    },
-    {
-        "domain" : "andrewchen.co"
-    },
-    {
-        "domain" : "epsilontheory.com"
-    },
-    {
-        "domain" : "rollingstone.com"
-    },
-    {
-        "domain" : "ivory.idyll.org"
-    },
-    {
-        "domain" : "stats.oecd.org"
-    },
-    {
-        "domain" : "memecentral.com"
-    },
-    {
-        "domain" : "blog.headius.com"
-    },
-    {
-        "domain" : "pauladamsmith.com"
-    },
-    {
-        "domain" : "urchin.earth.li"
-    },
-    {
-        "domain" : "chinafile.com"
-    },
-    {
-        "domain" : "theindy.us"
-    },
-    {
-        "domain" : "lamport.azurewebsites.net"
-    },
-    {
-        "domain" : "news.crunchbase.com"
-    },
-    {
-        "domain" : "multimedia.scmp.com"
-    },
-    {
-        "domain" : "hbr.org"
-    },
-    {
-        "domain" : "ajolicoeur.wordpress.com"
-    },
-    {
-        "domain" : "blaseur.com"
-    },
-    {
-        "domain" : "blog.janestreet.com"
-    },
-    {
-        "domain" : "evilmadscientist.com"
-    },
-    {
-        "domain" : "hanselman.com"
-    },
-    {
-        "domain" : "wiki.gentoo.org"
-    },
-    {
-        "domain" : "cloudblogs.microsoft.com"
-    },
-    {
-        "domain" : "winand.at"
-    },
-    {
-        "domain" : "jim.tcl.tk"
-    },
-    {
-        "domain" : "idlewords.com"
-    },
-    {
-        "domain" : "es.wikipedia.org"
-    },
-    {
-        "domain" : "odditycentral.com"
-    },
-    {
-        "domain" : "gurn.io"
-    },
-    {
-        "domain" : "cbsnews.com"
-    },
-    {
-        "domain" : "itty.bitty.site"
-    },
-    {
-        "domain" : "nexocode.com"
-    },
-    {
-        "domain" : "bloomreach.com"
-    },
-    {
-        "domain" : "flightglobal.com"
-    },
-    {
-        "domain" : "haiku-os.org"
-    },
-    {
-        "domain" : "sapper.svelte.technology"
-    },
-    {
-        "domain" : "blog.poormansmath.net"
-    },
-    {
-        "domain" : "blog.trailofbits.com"
-    },
-    {
-        "domain" : "theconversation.com"
-    },
-    {
-        "domain" : "blog.conduit.io"
-    },
-    {
-        "domain" : "stackingthebricks.com"
-    },
-    {
-        "domain" : "invenia.github.io"
-    },
-    {
-        "domain" : "tmorville.github.io"
-    },
-    {
-        "domain" : "blog.polyverse.io"
-    },
-    {
-        "domain" : "gnu.org"
-    },
-    {
-        "domain" : "bostonglobe.com"
-    },
-    {
-        "domain" : "heartbeat.fritz.ai"
-    },
-    {
-        "domain" : "plato.stanford.edu"
-    },
-    {
-        "domain" : "flockport.com"
-    },
-    {
-        "domain" : "buildyourownlisp.com"
-    },
-    {
-        "domain" : "justinscholz.de"
-    },
-    {
-        "domain" : "instructables.com"
-    },
-    {
-        "domain" : "electromaker.io"
-    },
-    {
-        "domain" : "argoledo.com"
-    },
-    {
-        "domain" : "academic.oup.com"
-    },
-    {
-        "domain" : "firstround.com"
-    },
-    {
-        "domain" : "politico.com"
-    },
-    {
-        "domain" : "fermatslibrary.com"
-    },
-    {
-        "domain" : "picheta.me"
-    },
-    {
-        "domain" : "brutalist-web.design"
-    },
-    {
-        "domain" : "cloud9trader.com"
-    },
-    {
-        "domain" : "pvk.ca"
-    },
-    {
-        "domain" : "artsy.net"
-    },
-    {
-        "domain" : "1amstudios.com"
-    },
-    {
-        "domain" : "uea.ac.uk"
-    },
-    {
-        "domain" : "hollywoodreporter.com"
-    },
-    {
-        "domain" : "chicagotribune.com"
-    },
-    {
-        "domain" : "twitter.com"
-    },
-    {
-        "domain" : "site.macleans.ca"
-    },
-    {
-        "domain" : "john-millikin.com"
-    },
-    {
-        "domain" : "heraldscotland.com"
-    },
-    {
-        "domain" : "captaineinstein.org"
-    },
-    {
-        "domain" : "quaap.com"
-    },
-    {
-        "domain" : "pagetable.com"
-    },
-    {
-        "domain" : "hellowebbooks.com"
-    },
-    {
-        "domain" : "atsushisakai.github.io"
-    },
-    {
-        "domain" : "blog.quarkslab.com"
-    },
-    {
-        "domain" : "imaginarycloud.com"
-    },
-    {
-        "domain" : "twobithistory.org"
-    },
-    {
-        "domain" : "aeon.co"
-    },
-    {
-        "domain" : "post-gazette.com"
-    },
-    {
-        "domain" : "blog.makerdiary.com"
-    },
-    {
-        "domain" : "blog.jonlu.ca"
-    },
-    {
-        "domain" : "english.manoramaonline.com"
-    },
-    {
-        "domain" : "theptrk.com"
-    },
-    {
-        "domain" : "midibin.com"
-    },
-    {
-        "domain" : "kialo.com"
-    },
-    {
-        "domain" : "intercoolerjs.org"
-    },
-    {
-        "domain" : "newelectronics.co.uk"
-    },
-    {
-        "domain" : "blog.asrpo.com"
-    },
-    {
-        "domain" : "thegradient.pub"
-    },
-    {
-        "domain" : "stevelosh.com"
-    },
-    {
-        "domain" : "publicintelligence.net"
-    },
-    {
-        "domain" : "clemenswinter.com"
-    },
-    {
-        "domain" : "jeffreykegler.github.io"
-    },
-    {
-        "domain" : "apsdehal.in"
-    },
-    {
-        "domain" : "ma.rtijn.org"
-    },
-    {
-        "domain" : "iqc.ou.edu"
-    },
-    {
-        "domain" : "stories.sagefy.org"
-    },
-    {
-        "domain" : "pdfs.semanticscholar.org"
-    },
-    {
-        "domain" : "sirc.org"
-    },
-    {
-        "domain" : "gasworld.com"
-    },
-    {
-        "domain" : "oasislabs.com"
-    },
-    {
-        "domain" : "usefathom.com"
-    },
-    {
-        "domain" : "segment.com"
-    },
-    {
-        "domain" : "pubs.aeaweb.org"
-    },
-    {
-        "domain" : "tinyletter.com"
-    },
-    {
-        "domain" : "cam.ac.uk"
-    },
-    {
-        "domain" : "blog.scrapinghub.com"
-    },
-    {
-        "domain" : "homes.cs.washington.edu"
-    },
-    {
-        "domain" : "dyn.com"
-    },
-    {
-        "domain" : "forbes.com"
-    },
-    {
-        "domain" : "csiro.au"
-    },
-    {
-        "domain" : "gravwell.io"
-    },
-    {
-        "domain" : "dropbox.com"
-    },
-    {
-        "domain" : "anu.edu.au"
-    },
-    {
-        "domain" : "testpilot.firefox.com"
-    },
-    {
-        "domain" : "cnn.com"
-    },
-    {
-        "domain" : "macrumors.com"
-    },
-    {
-        "domain" : "gohugo.io"
-    },
-    {
-        "domain" : "spectrumnews.org"
-    },
-    {
-        "domain" : "sensorstechforum.com"
-    },
-    {
-        "domain" : "globalnews.ca"
-    },
-    {
-        "domain" : "nationalgeographic.com"
-    },
-    {
-        "domain" : "venturebeat.com"
-    },
-    {
-        "domain" : "jefftk.com"
-    },
-    {
-        "domain" : "strongtowns.org"
-    },
-    {
-        "domain" : "thetimes.co.uk"
-    },
-    {
-        "domain" : "openstreetmap.org"
-    },
-    {
-        "domain" : "ansuz.sooke.bc.ca"
-    },
-    {
-        "domain" : "blog.gdssecurity.com"
-    },
-    {
-        "domain" : "yarchive.net"
-    },
-    {
-        "domain" : "zeit.de"
-    },
-    {
-        "domain" : "mobilesyrup.com"
-    },
-    {
-        "domain" : "usa.streetsblog.org"
-    },
-    {
-        "domain" : "europeanfinancialreview.com"
-    },
-    {
-        "domain" : "nevalalee.wordpress.com"
-    },
-    {
-        "domain" : "dave.cheney.net"
-    },
-    {
-        "domain" : "frontiersin.org"
-    },
-    {
-        "domain" : "mwhittaker.github.io"
-    },
-    {
-        "domain" : "neil.fraser.name"
-    },
-    {
-        "domain" : "research.vu.nl"
-    },
-    {
-        "domain" : "pm.inf.ethz.ch"
-    },
-    {
-        "domain" : "ac1235.github.io"
-    },
-    {
-        "domain" : "dtic.mil"
-    },
-    {
-        "domain" : "cv.nrao.edu"
-    },
-    {
-        "domain" : "3ammagazine.com"
-    },
-    {
-        "domain" : "believermag.com"
-    },
-    {
-        "domain" : "boats.gitlab.io"
-    },
-    {
-        "domain" : "thediplomat.com"
-    },
-    {
-        "domain" : "en.tldp.org"
-    },
-    {
-        "domain" : "blog.mozilla.org"
-    },
-    {
-        "domain" : "blogs.scientificamerican.com"
-    },
-    {
-        "domain" : "freshman.tech"
-    },
-    {
-        "domain" : "medicalnewstoday.com"
-    },
-    {
-        "domain" : "vanityfair.com"
-    },
-    {
-        "domain" : "br.de"
-    },
-    {
-        "domain" : "gds.blog.gov.uk"
-    },
-    {
-        "domain" : "blog.instapaper.com"
-    },
-    {
-        "domain" : "townandcountrymag.com"
-    },
-    {
-        "domain" : "slackware.com"
-    },
-    {
-        "domain" : "obe.tv"
-    },
-    {
-        "domain" : "ifixit.com"
-    },
-    {
-        "domain" : "streak.com"
-    },
-    {
-        "domain" : "yurichev.com"
-    },
-    {
-        "domain" : "smithsonianmag.com"
-    },
-    {
-        "domain" : "scientificamerican.com"
-    },
-    {
-        "domain" : "backblaze.com"
-    },
-    {
-        "domain" : "blog.golang.org"
-    },
-    {
-        "domain" : "aws.amazon.com"
-    },
-    {
-        "domain" : "blog.paperspace.com"
-    },
-    {
-        "domain" : "feld.com"
-    },
-    {
-        "domain" : "engineering.riotgames.com"
-    },
-    {
-        "domain" : "bloombergquint.com"
-    },
-    {
-        "domain" : "lwan.ws"
-    },
-    {
-        "domain" : "press.stripe.com"
-    },
-    {
-        "domain" : "cloudforecast.io"
-    },
-    {
-        "domain" : "assafmo.github.io"
-    },
-    {
-        "domain" : "ssh.com"
-    },
-    {
-        "domain" : "tonsky.me"
-    },
-    {
-        "domain" : "status.cloud.google.com"
-    },
-    {
-        "domain" : "wiki.dlang.org"
-    },
-    {
-        "domain" : "propublica.org"
-    },
-    {
-        "domain" : "blog.timac.org"
-    },
-    {
-        "domain" : "software-lab.de"
-    },
-    {
-        "domain" : "www8.gsb.columbia.edu"
-    },
-    {
-        "domain" : "addons.mozilla.org"
-    },
-    {
-        "domain" : "trackinghappiness.com"
-    },
-    {
-        
-        "domain" : "lightbluetouchpaper.org"
-    },
-    {
-        "domain" : "smashingmagazine.com"
-    },
-    {
-        "domain" : "jenkins.io"
-    },
-    {
-        "domain" : "gaslands.com"
-    },
-    {
-        "domain" : "slatestarcodex.com"
-    },
-    {
-        "domain" : "rodneybrooks.com"
-    },
-    {
-        "domain" : "multimessenger.desy.de"
-    },
-    {
-        "domain" : "middleendian.com"
-    },
-    {
-        "domain" : "pacifict.com"
-    },
-    {
-        "domain" : "openspace.sfmoma.org"
-    },
-    {
-        "domain" : "now.tufts.edu"
-    },
-    {
-        "domain" : "huckmag.com"
-    },
-    {
-        "domain" : "picolisp.com"
-    },
-    {
-        "domain" : "fortune.com"
-    },
-    {
-        "domain" : "xxyxyz.org"
-    },
-    {
-        "domain" : "archaeology.org"
-    },
-    {
-        "domain" : "cbc.ca"
-    },
-    {
-        "domain" : "wouter.coekaerts.be"
-    },
-    {
-        "domain" : "nybooks.com"
-    },
-    {
-        "domain" : "freshonthenet.co.uk"
-    },
-    {
-        "domain" : "blog.apnic.net"
-    },
-    {
-        "domain" : "sfzoning.deapthoughts.com"
-    },
-    {
-        "domain" : "blog.wallaroolabs.com"
-    },
-    {
-        "domain" : "lily-lang.org"
-    },
-    {
-        "domain" : "lsoft.com"
-    },
-    {
-        "domain" : "instabug.com"
-    },
-    {
-        "domain" : "blog.rebased.pl"
-    },
-    {
-        "domain" : "fda.gov"
-    },
-    {
-        "domain" : "gamasutra.com"
-    },
-    {
-        "domain" : "matija.suklje.name"
-    },
-    {
-        "domain" : "robinwieruch.de"
-    },
-    {
-        "domain" : "inderapotheke.de"
-    },
-    {
-        "domain" : "vanemden.wordpress.com"
-    },
-    {
-        "domain" : "remotehabits.com"
-    },
-    {
-        "domain" : "kanbanmail.app"
-    },
-    {
-        "domain" : "opnsec.com"
-    },
-    {
-        "domain" : "growth.eladgil.com"
-    },
-    {
-        "domain" : "blog.scottlogic.com"
-    },
-    {
-        "domain" : "quariety.com"
-    },
-    {
-        "domain" : "multinational.io"
-    },
-    {
-        "domain" : "datatransferproject.dev"
-    },
-    {
-        "domain" : "hurstwic.org"
-    },
-    {
-        "domain" : "indiehackers.com"
-    },
-    {
-        "domain" : "erica.biz"
-    },
-    {
-        "domain" : "columbia.edu"
-    },
-    {
-        "domain" : "sandimetz.com"
-    },
-    {
-        "domain" : "scottaaronson.com"
-    },
-    {
-        "domain" : "unibas.ch"
-    },
-    {
-        "domain" : "lithub.com"
-    },
-    {
-        "domain" : "cadc.uscourts.gov"
-    },
-    {
-        "domain" : "cake.co"
-    },
-    {
-        "domain" : "protonmail.com"
-    },
-    {
-        "domain" : "fiercebiotech.com"
-    },
-    {
-        "domain" : "falstad.com"
-    },
-    {
-        "domain" : "guivr.github.io"
-    },
-    {
-        "domain" : "ds9a.nl"
-    },
-    {
-        "domain" : "anteru.net"
-    },
-    {
-        "domain" : "learn.adacore.com"
-    },
-    {
-        "domain" : "cyberscoop.com"
-    },
-    {
-        "domain" : "developers.google.com"
-    },
-    {
-        "domain" : "elixir-lang.org"
-    },
-    {
-        "domain" : "steveblank.com"
-    },
-    {
-        "domain" : "alexpolozov.com"
-    },
-    {
-        "domain" : "tech.instacart.com"
-    },
-    {
-        "domain" : "laphamsquarterly.org"
-    },
-    {
-        "domain" : "marketwatch.com"
-    },
-    {
-        "domain" : "bbc.godbolt.org"
-    },
-    {
-        "domain" : "webassembly.org"
-    },
-    {
-        "domain" : "cloud.google.com"
-    },
-    {
-        "domain" : "99percentinvisible.org"
-    },
-    {
-        "domain" : "info.perforce.com"
-    },
-    {
-        "domain" : "kernel.org"
-    },
-    {
-        "domain" : "historyextra.com"
-    },
-    {
-        "domain" : "warhistoryonline.com"
-    },
-    {
-        "domain" : "scaleapi.com"
-    },
-    {
-        "domain" : "s3.eurecom.fr"
-    },
-    {
-        "domain" : "knowledge.autodesk.com"
-    },
-    {
-        "domain" : "dampfkraft.com"
-    },
-    {
-        "domain" : "opensource.com"
-    },
-    {
-        "domain" : "codewith.mu"
-    },
-    {
-        "domain" : "joelw.id.au"
-    },
-    {
-        "domain" : "newneuromarketing.com"
-    },
-    {
-        "domain" : "nrempel.com"
-    },
-    {
-        "domain" : "banditalgs.com"
-    },
-    {
-        "domain" : "biorxiv.org"
-    },
-    {
-        "domain" : "refresh.study"
-    },
-    {
-        "domain" : "rob.conery.io"
-    },
-    {
-        "domain" : "betterwebtype.com"
-    },
-    {
-        "domain" : "ssw.jku.at"
-    },
-    {
-        "domain" : "composingprograms.com"
-    },
-    {
-        "domain" : "radiobruxelleslibera.com"
-    },
-    {
-        "domain" : "sbussard.github.io"
-    },
-    {
-        "domain" : "itprotoday.com"
-    },
-    {
-        "domain" : "ianlotinsky.wordpress.com"
-    },
-    {
-        "domain" : "joelsimon.net"
-    },
-    {
-        "domain" : "newsobserver.com"
-    },
-    {
-        "domain" : "hillelwayne.com"
-    },
-    {
-        "domain" : "mermaidjs.github.io"
-    },
-    {
-        "domain" : "techinasia.com"
-    },
-    {
-        "domain" : "el-tramo.be"
-    },
-    {
-        "domain" : "sbnation.com"
-    },
-    {
-        "domain" : "blog.nobugware.com"
-    },
-    {
-        "domain" : "hugoam.github.io"
-    },
-    {
-        "domain" : "docs.djangoproject.com"
-    },
-    {
-        "domain" : "mnot.net"
-    },
-    {
-        "domain" : "eng.uber.com"
-    },
-    {
-        "domain" : "our.status.im"
-    },
-    {
-        "domain" : "eclipse.org"
-    },
-    {
-        "domain" : "www2.ece.rochester.edu"
-    },
-    {
-        "domain" : "twilio.com"
-    },
-    {
-        "domain" : "twomakers.io"
-    },
-    {
-        "domain" : "atrium.co"
-    },
-    {
-        "domain" : "matthias-endler.de"
-    },
-    {
-        "domain" : "blog.floydhub.com"
-    },
-    {
-        
-        "domain" : "t3x.org"
-    },
-    {
-        "domain" : "oalley.net"
-    },
-    {
-        "domain" : "emboj.embopress.org"
-    },
-    {
-        "domain" : "businesswire.com"
-    },
-    {
-        "domain" : "rigb.org"
-    },
-    {
-        "domain" : "fastcompany.com"
-    },
-    {
-        "domain" : "mirror.co.uk"
-    },
-    {
-        "domain" : "support.hp.com"
-    },
-    {
-        "domain" : "markets.businessinsider.com"
-    },
-    {
-        "domain" : "archdaily.com"
-    },
-    {
-        "domain" : "foxnomad.com"
-    },
-    {
-        "domain" : "nrc.nl"
-    },
-    {
-        "domain" : "ephos.github.io"
-    },
-    {
-        "domain" : "brandur.org"
-    },
-    {
-        "domain" : "docs.browserless.io"
-    },
-    {
-        "domain" : "archive.org"
-    },
-    {
-        "domain" : "openjdk.java.net"
-    },
-    {
-        "domain" : "blog.coinbase.com"
-    },
-    {
-        "domain" : "blogs.findlaw.com"
-    },
-    {
-        "domain" : "semantic-domain.blogspot.com"
-    },
-    {
-        "domain" : "google.github.io"
-    },
-    {
-        "domain" : "beckyances.net"
-    },
-    {
-        "domain" : "evertpot.com"
-    },
-    {
-        "domain" : "opds.io"
-    },
-    {
-        "domain" : "codingnest.com"
-    },
-    {
-        "domain" : "bob.cs.sonoma.edu"
-    },
-    {
-        "domain" : "tox.chat"
-    },
-    {
-        "domain" : "blog.github.com"
-    },
-    {
-        "domain" : "gutenberg.org"
-    },
-    {
-        "domain" : "disneyresearch.com"
-    },
-    {
-        "domain" : "peripheryapp.com"
-    },
-    {
-        "domain" : "castling.club"
-    },
-    {
-        "domain" : "colab.research.google.com"
-    },
-    {
-        "domain" : "spinellis.gr"
-    },
-    {
-        "domain" : "lostella.github.io"
-    },
-    {
-        "domain" : "blogs.msdn.microsoft.com"
-    },
-    {
-        "domain" : "blog.watsi.org"
-    },
-    {
-        "domain" : "science.sciencemag.org"
-    },
-    {
-        "domain" : "thunderbird.net"
-    },
-    {
-        "domain" : "metalevel.at"
-    },
-    {
-        "domain" : "csmonitor.com"
-    },
-    {
-        "domain" : "pnas.org"
-    },
-    {
-        "domain" : "gianlucagimini.it"
-    },
-    {
-        "domain" : "android-developers.googleblog.com"
-    },
-    {
-        "domain" : "dinfuehr.github.io"
-    },
-    {
-        "domain" : "blog.rainway.io"
-    },
-    {
-        "domain" : "rsnous.com"
-    },
-    {
-        "domain" : "simonsfoundation.org"
-    },
-    {
-        "domain" : "crawshaw.io"
-    },
-    {
-        "domain" : "inko-lang.org"
-    },
-    {
-        "domain" : "breakingdefense.com"
-    },
-    {
-        "domain" : "lrb.co.uk"
-    },
-    {
-        "domain" : "movingfulcrum.com"
-    },
-    {
-        "domain" : "placesjournal.org"
-    },
-    {
-        "domain" : "help.twitter.com"
-    },
-    {
-        "domain" : "differentimpulse.com"
-    },
-    {
-        "domain" : "julialang.org"
-    },
-    {
-        "domain" : "apenwarr.ca"
-    },
-    {
-        "domain" : "case-podcast.org"
-    },
-    {
-        "domain" : "cookieplmonster.github.io"
-    },
-    {
-        "domain" : "cbslocal.com"
-    },
-    {
-        "domain" : "stat.wisc.edu"
-    },
-    {
-        "domain" : "rmg.co.uk"
-    },
-    {
-        "domain" : "tesla.com"
-    },
-    {
-        "domain" : "puri.sm"
-    },
-    {
-        "domain" : "ft.com"
-    },
-    {
-        "domain" : "baltimoresun.com"
-    },
-    {
-        "domain" : "tryretool.com"
-    },
-    {
-        "domain" : "eli.thegreenplace.net"
-    },
-    {
-        "domain" : "mrooding.me"
-    },
-    {
-        "domain" : "ribbonfarm.com"
-    },
-    {
-        "domain" : "reneweconomy.com.au"
-    },
-    {
-        "domain" : "leibniz-translations.com"
-    },
-    {
-        "domain" : "rszalski.github.io"
-    },
-    {
-        "domain" : "junglecoder.com"
-    },
-    {
-        "domain" : "fosdem.org"
-    },
-    {
-        "domain" : "strangesounds.org"
-    },
-    {
-        "domain" : "stefan-lesser.com"
-    },
-    {
-        "domain" : "embedded.com"
-    },
-    {
-        "domain" : "sol.gfxile.net"
-    },
-    {
-        "domain" : "blog.erratasec.com"
-    },
-    {
-        "domain" : "polygon.com"
-    },
-    {
-        "domain" : "mansionengineer.com"
-    },
-    {
-        "domain" : "charmpy.readthedocs.io"
-    },
-    {
-        "domain" : "berkeleyside.com"
-    },
-    {
-        "domain" : "muratbuffalo.blogspot.com"
-    },
-    {
-        "domain" : "blog.bugsnag.com"
-    },
-    {
-        "domain" : "news.developer.nvidia.com"
-    },
-    {
-        "domain" : "bulma.io"
-    },
-    {
-        "domain" : "meteorshowers.org"
-    },
-    {
-        "domain" : "rivten.github.io"
-    },
-    {
-        "domain" : "labguysworld.com"
-    },
-    {
-        "domain" : "visca.com"
-    },
-    {
-        "domain" : "dolphin-emu.org"
-    },
-    {
-        "domain" : "princeton.edu"
-    },
-    {
-        "domain" : "babieslearninglanguage.blogspot.com"
-    },
-    {
-        "domain" : "cattlepi.com"
-    },
-    {
-        "domain" : "popularmechanics.com"
-    },
-    {
-        "domain" : "security.googleblog.com"
-    },
-    {
-        "domain" : "christophe.rhodes.io"
-    },
-    {
-        "domain" : "mtmscientific.com"
-    },
-    {
-        "domain" : "worldbrain.io"
-    },
-    {
-        "domain" : "arcentry.com"
-    },
-    {
-        "domain" : "pcmonitors.info"
-    },
-    {
-        "domain" : "pcgamer.com"
-        
-    },
-    {
-        "domain" : "assets.publishing.service.gov.uk"
-    },
-    {
-        "domain" : "softwarepreservation.org"
-    },
-    {
-        "domain" : "danplisetsky.github.io"
-    },
-    {
-        "domain" : "python.org"
-    },
-    {
-        "domain" : "vectos.net"
-    },
-    {
-        "domain" : "smithsonianchips.si.edu"
-    },
-    {
-        "domain" : "efavdb.com"
-    },
-    {
-        "domain" : "secjuice.com"
-    },
-    {
-        "domain" : "inc.com"
-    },
-    {
-        "domain" : "kubuszok.com"
-    },
-    {
-        "domain" : "ybrikman.com"
-    },
-    {
-        "domain" : "geti2p.net"
-    },
-    {
-        "domain" : "gitlab.com"
-    },
-    {
-        "domain" : "allaboutcircuits.com"
-    },
-    {
-        "domain" : "jcgt.org"
-    },
-    {
-        "domain" : "pv-tech.org"
-    },
-    {
-        "domain" : "thelancet.com"
-    },
-    {
-        "domain" : "blog.cornelltech.io"
-    },
-    {
-        "domain" : "wealthmanagement.com"
-    },
-    {
-        "domain" : "denisdutton.com"
-    },
-    {
-        "domain" : "seanriddle.com"
-    },
-    {
-        "domain" : "gamedev.net"
-    },
-    {
-        "domain" : "mosaicscience.com"
-    },
-    {
-        "domain" : "444.hu"
-    },
-    {
-        "domain" : "sciencedirect.com"
-    },
-    {
-        "domain" : "sciencenews.org"
-    },
-    {
-        "domain" : "blog.esciencecenter.nl"
-    },
-    {
-        "domain" : "activestate.com"
-    },
-    {
-        "domain" : "ccn.com"
-    },
-    {
-        "domain" : "math.columbia.edu"
-    },
-    {
-        "domain" : "rodrigob.github.io"
-    },
-    {
-        "domain" : "zerocater.com"
-    },
-    {
-        "domain" : "interestingengineering.com"
-    },
-    {
-        "domain" : "robdobson.com"
-    },
-    {
-        "domain" : "getshogun.com"
-    },
-    {
-        "domain" : "privateinternetaccess.com"
-    },
-    {
-        "domain" : "maa.org"
-    },
-    {
-        "domain" : "bhencke.com"
-    },
-    {
-        "domain" : "news.gatech.edu"
-    },
-    {
-        "domain" : "physics.bu.edu"
-    },
-    {
-        "domain" : "edge.org"
-    },
-    {
-        "domain" : "foreignpolicy.com"
-    },
-    {
-        "domain" : "eno-lang.org"
-    },
-    {
-        "domain" : "leoeditor.com"
-    },
-    {
-        "domain" : "8thlight.com"
-    },
-    {
-        "domain" : "nikhilm.github.io"
-    },
-    {
-        "domain" : "electricitymap.org"
-    },
-    {
-        "domain" : "cacm.acm.org"
-    },
-    {
-        "domain" : "vision.cs.utexas.edu"
-    },
-    {
-        "domain" : "talks.godoc.org"
-    },
-    {
-        "domain" : "publicwww.com"
-    },
-    {
-        "domain" : "linusakesson.net"
-    },
-    {
-        "domain" : "setosa.io"
-    },
-    {
-        "domain" : "atlas.stripe.com"
-    },
-    {
-        "domain" : "gfrison.com"
-    },
-    {
-        "domain" : "chr15m.github.io"
-    },
-    {
-        "domain" : "natecull.org"
-    },
-    {
-        "domain" : "my-netdata.io"
-    },
-    {
-        "domain" : "wits.io"
-    },
-    {
-        "domain" : "towardsdatascience.com"
-    },
-    {
-        "domain" : "deepmind.com"
-    },
-    {
-        "domain" : "arm.com"
-    },
-    {
-        "domain" : "abyjames.com"
-    },
-    {
-        "domain" : "jera.com"
-    },
-    {
-        "domain" : "gq.com"
-    },
-    {
-        "domain" : "aasnova.org"
-    },
-    {
-        "domain" : "journals.plos.org"
-    },
-    {
-        "domain" : "owntrust.org"
-    },
-    {
-        "domain" : "liip.ch"
-    },
-    {
-        "domain" : "lubuntu.me"
-    },
-    {
-        "domain" : "hackernoon.com"
-    },
-    {
-        "domain" : "julesh.com"
-    },
-    {
-        "domain" : "criterion.com"
-    },
-    {
-        "domain" : "kakoune.org"
-    },
-    {
-        "domain" : "fruitmap.sk"
-    },
-    {
-        "domain" : "urban75.org"
-    },
-    {
-        "domain" : "iamjamesward.com"
-    },
-    {
-        "domain" : "codesections.com"
-    },
-    {
-        "domain" : "grahamc.com"
-    },
-    {
-        "domain" : "coloring-book.co"
-    },
-    {
-        "domain" : "smalldata.tech"
-    },
-    {
-        "domain" : "freemovement.org.uk"
-    },
-    {
-        "domain" : "maxhuibai.com"
-    },
-    {
-        "domain" : "java.com"
-    },
-    {
-        "domain" : "nbcnews.com"
-    },
-    {
-        "domain" : "csrc.nist.gov"
-    },
-    {
-        "domain" : "elm-lang.org"
-    },
-    {
-        "domain" : "givecampus.com"
-    },
-    {
-        "domain" : "zen-of-programming.com"
-    },
-    {
-        "domain" : "reason.com"
-    },
-    {
-        "domain" : "noobs-term.com"
-    },
-    {
-        "domain" : "maciek.blog"
-    },
-    {
-        "domain" : "googleblog.blogspot.com"
-    },
-    {
-        
-        "domain" : "blogs.bl.uk"
-    },
-    {
-        "domain" : "imgtranslate.com"
-    },
-    {
-        "domain" : "blogs.nvidia.com"
-    },
-    {
-        "domain" : "www-users.cs.umn.edu"
-    },
-    {
-        "domain" : "thenewstack.io"
-    },
-    {
-        "domain" : "newstatesman.com"
-    },
-    {
-        "domain" : "brownie-camera.com"
-    },
-    {
-        "domain" : "johnhw.github.io"
-    },
-    {
-        "domain" : "hazlitt.net"
-    },
-    {
-        "domain" : "hothardware.com"
-    },
-    {
-        "domain" : "haskellforall.com"
-    },
-    {
-        "domain" : "antirez.com"
-    },
-    {
-        "domain" : "blinkingcaret.com"
-    },
-    {
-        "domain" : "atdt.freeshell.org"
-    },
-    {
-        "domain" : "law.duke.edu"
-    },
-    {
-        "domain" : "pypyjs.org"
-    },
-    {
-        "domain" : "pewresearch.org"
-    },
-    {
-        "domain" : "huffingtonpost.com"
-    },
-    {
-        "domain" : "knowablemagazine.org"
-    },
-    {
-        "domain" : "ianring.com"
-    },
-    {
-        "domain" : "bl.uk"
-    },
-    {
-        "domain" : "fun-mooc.fr"
-    },
-    {
-        "domain" : "home-assistant.io"
-    },
-    {
-        "domain" : "jtolio.com"
-    },
-    {
-        "domain" : "blog.ndk.io"
-    },
-    {
-        "domain" : "a9t9.com"
-    },
-    {
-        "domain" : "p.migdal.pl"
-    },
-    {
-        "domain" : "newrepublic.com"
-    },
-    {
-        "domain" : "johnny-five.io"
-    },
-    {
-        "domain" : "hmijailblog.blogspot.com"
-    },
-    {
-        "domain" : "activesphere.com"
-    },
-    {
-        "domain" : "blog.torservers.net"
-    },
-    {
-        "domain" : "boards.greenhouse.io"
-    },
-    {
-        "domain" : "johndcook.com"
-    },
-    {
-        "domain" : "tech.buzzfeed.com"
-    },
-    {
-        "domain" : "jepsen.io"
-    },
-    {
-        "domain" : "blog.scrt.ch"
-    },
-    {
-        "domain" : "hackaday.io"
-    },
-    {
-        "domain" : "9to5mac.com"
-    },
-    {
-        "domain" : "sangoma.com"
-    },
-    {
-        "domain" : "atcommands.org"
-    },
-    {
-        "domain" : "doc.rust-lang.org"
-    },
-    {
-        "domain" : "jobenabler.org"
-    },
-    {
-        "domain" : "i.blackhat.com"
-    },
-    {
-        "domain" : "briangilham.com"
-    },
-    {
-        "domain" : "tech.firstlook.media"
-    },
-    {
-        "domain" : "honest.engineering"
-    },
-    {
-        "domain" : "megan-vo.github.io"
-    },
-    {
-        "domain" : "bitsnbites.eu"
-    },
-    {
-        "domain" : "stimulusjs.org"
-    },
-    {
-        "domain" : "80000hours.org"
-    },
-    {
-        "domain" : "devblogs.nvidia.com"
-    },
-    {
-        "domain" : "zandercutt.com"
-    },
-    {
-        "domain" : "cryptool.org"
-    },
-    {
-        "domain" : "agner.org"
-    },
-    {
-        "domain" : "craftinginterpreters.com"
-    },
-    {
-        "domain" : "blog.budgetwithbuckets.com"
-    },
-    {
-        "domain" : "go.googlesource.com"
-    },
-    {
-        "domain" : "davidhampgonsalves.com"
-    },
-    {
-        "domain" : "styluslabs.com"
-    },
-    {
-        "domain" : "recode.net"
-    },
-    {
-        "domain" : "salmon-mail.readthedocs.io"
-    },
-    {
-        "domain" : "ep.bmj.com"
-    },
-    {
-        "domain" : "codemirror.net"
-    },
-    {
-        "domain" : "lyx.org"
-    },
-    {
-        "domain" : "terenz.io"
-    },
-    {
-        "domain" : "artnome.com"
-    },
-    {
-        "domain" : "vox.com"
-    },
-    {
-        "domain" : "nycmesh.net"
-    },
-    {
-        "domain" : "thisissecurity.stormshield.com"
-    },
-    {
-        "domain" : "troyhunt.com"
-    },
-    {
-        "domain" : "mattwarren.org"
-    },
-    {
-        "domain" : "fdi.ucm.es"
-    },
-    {
-        "domain" : "latimes.com"
-    },
-    {
-        "domain" : "adguard.com"
-    },
-    {
-        "domain" : "magicleap.com"
-    },
-    {
-        "domain" : "s2geometry.io"
-    },
-    {
-        "domain" : "fivecastfinancial.com"
-    },
-    {
-        "domain" : "mason.gmu.edu"
-    },
-    {
-        "domain" : "web.media.mit.edu"
-    },
-    {
-        "domain" : "diagrams.app"
-    },
-    {
-        "domain" : "prezi.com"
-    },
-    {
-        "domain" : "marcel.is"
-    },
-    {
-        "domain" : "thenextweb.com"
-    },
-    {
-        "domain" : "emarketer.com"
-    },
-    {
-        "domain" : "realpython.com"
-    },
-    {
-        "domain" : "mashable.com"
-    },
-    {
-        "domain" : "gordonbrander.com"
-    },
-    {
-        "domain" : "beta.observablehq.com"
-    },
-    {
-        "domain" : "egr.unlv.edu"
-    },
-    {
-        "domain" : "neurosciencenews.com"
-    },
-    {
-        "domain" : "brookings.edu"
-    },
-    {
-        "domain" : "eigenfoo.xyz"
-    },
-    {
-        "domain" : "psychologytoday.com"
-    },
-    {
-        "domain" : "act.openmedia.org"
-    },
-    {
-        "domain" : "matt.diephouse.com"
-    },
-    {
-        "domain" : "drdobbs.com"
-    },
-    {
-        "domain" : "courses.csail.mit.edu"
-    },
-    {
-        "domain" : "linkedin.com"
-    },
-    {
-        "domain" : "rockpapershotgun.com"
-    },
-    {
-        "domain" : "salk.edu"
-    },
-    {
-        "domain" : "thezvi.wordpress.com"
-    },
-    {
-        "domain" : "webdesignmuseum.org"
-    },
-    {
-        "domain" : "about.sourcegraph.com"
-    },
-    {
-        "domain" : "rjlipton.wordpress.com"
-    },
-    {
-        "domain" : "duriansoftware.com"
-    },
-    {
-        "domain" : "jmoiron.net"
-    },
-    {
-        "domain" : "rutian.github.io"
-    },
-    {
-        "domain" : "geekwire.com"
-    },
-    {
-        "domain" : "ben-evans.com"
-    },
-    {
-        "domain" : "scattered-thoughts.net"
-    },
-    {
-        "domain" : "nolanlawson.com"
-    },
-    {
-        "domain" : "neugierig.org"
-    },
-    {
-        "domain" : "intensecrypto.org"
-    },
-    {
-        "domain" : "christine.website"
-    },
-    {
-        "domain" : "os2museum.com"
-    },
-    {
-        "domain" : "serverless.com"
-    },
-    {
-        "domain" : "zdnet.com"
-    },
-    {
-        "domain" : "thorstenball.com"
-    },
-    {
-        "domain" : "people.eecs.berkeley.edu"
-    },
-    {
-        "domain" : "toolbox.google.com"
-    },
-    {
-        "domain" : "github.prideout.net"
-    },
-    {
-        "domain" : "gkogan.co"
-    },
-    {
-        "domain" : "blog.lareviewofbooks.org"
-    },
-    {
-        "domain" : "phkimpel.us"
-    },
-    {
-        "domain" : "solipsys.co.uk"
-    },
-    {
-        "domain" : "people.uncw.edu"
-    },
-    {
-        "domain" : "rawgit.com"
-    },
-    {
-        "domain" : "turingtumble.com"
-    },
-    {
-        "domain" : "blog.aboutamazon.com"
-    },
-    {
-        "domain" : "bmcinfectdis.biomedcentral.com"
-    },
-    {
-        "domain" : "git.kernel.org"
-    },
-    {
-        "domain" : "saru.science"
-    },
-    {
-        "domain" : "polemicdigital.com"
-    },
-    {
-        "domain" : "mozilla.org"
-    },
-    {
-        "domain" : "boingboing.net"
-    },
-    {
-        "domain" : "cs.cmu.edu"
-    },
-    {
-        "domain" : "blog.merovius.de"
-    },
-    {
-        "domain" : "nickwignall.com"
-    },
-    {
-        "domain" : "nathanmarz.com"
-    },
-    {
-        "domain" : "cs.au.dk"
-    },
-    {
-        "domain" : "blog.torproject.org"
-    },
-    {
-        "domain" : "activewizards.com"
-    },
-    {
-        "domain" : "gimp.org"
-    },
-    {
-        "domain" : "historytoday.com"
-    },
-    {
-        "domain" : "fivethirtyeight.com"
-    },
-    {
-        "domain" : "seas.harvard.edu"
-    },
-    {
-        "domain" : "factor.niehs.nih.gov"
-    },
-    {
-        "domain" : "theintercept.com"
-    },
-    {
-        "domain" : "huffmancoding.com"
-    },
-    {
-        "domain" : "owaahh.com"
-    },
-    {
-        "domain" : "1843magazine.com"
-    },
-    {
-        "domain" : "arangodb.com"
-    },
-    {
-        "domain" : "blog.getpaint.net"
-    },
-    {
-        "domain" : "entrepidpartners.com"
-    },
-    {
-        "domain" : "f-droid.org"
-    },
-    {
-        "domain" : "carnegieendowment.org"
-    },
-    {
-        "domain" : "glassdoor.com"
-    },
-    {
-        "domain" : "creativecommons.org"
-    },
-    {
-        "domain" : "pouet.net"
-    },
-    {
-        "domain" : "cia.gov"
-    },
-    {
-        "domain" : "lists.gnu.org"
-    },
-    {
-        "domain" : "ahungry.com"
-    },
-    {
-        "domain" : "adamtornhill.com"
-    },
-    {
-        "domain" : "thecontrol.co"
-    },
-    {
-        "domain" : "blog.plover.com"
-    },
-    {
-        "domain" : "kennethreitz.org"
-    },
-    {
-        "domain" : "ajc.com"
-    },
-    {
-        "domain" : "osnews.com"
-    },
-    {
-        "domain" : "chrome.google.com"
-    },
-    {
-        "domain" : "morepypy.blogspot.com"
-    },
-    {
-        "domain" : "vicarie.in"
-    },
-    {
-        "domain" : "blog.seso.io"
-    },
-    {
-        "domain" : "huytd.github.io"
-    },
-    {
-        "domain" : "knowherenews.com"
-    },
-    {
-        "domain" : "lcamtuf.coredump.cx"
-    },
-    {
-        "domain" : "globaltimes.cn"
-    },
-    {
-        "domain" : "chrishacken.com"
-    },
-    {
-        "domain" : "mindstamp.io"
-    },
-    {
-        "domain" : "store.steampowered.com"
-    },
-    {
-        "domain" : "cs.uaf.edu"
-    },
-    {
-        "domain" : "uplink.readthedocs.io"
-    },
-    {
-        "domain" : "alemil.com"
-    },
-    {
-        "domain" : "ndpsoftware.com"
-    },
-    {
-        "domain" : "blog.timbunce.org"
-    },
-    {
-        "domain" : "smilingthax.github.io"
-    },
-    {
-        "domain" : "sayazamurai.github.io"
-    },
-    {
-        "domain" : "ntietz.com"
-    },
-    {
-        "domain" : "blog.doist.com"
-    },
-    {
-        "domain" : "guitardashboard.com"
-    },
-    {
-        "domain" : "qwant.com"
-    },
-    {
-        "domain" : "nanotechnologyworld.org"
-    },
-    {
-        "domain" : "mono-project.com"
-    },
-    {
-        "domain" : "kotlindevelopment.com"
-    },
-    {
-        "domain" : "ctolunches.com"
-    },
-    {
-        "domain" : "schneier.com"
-    },
-    {
-        "domain" : "packnback.github.io"
-    },
-    {
-        "domain" : "iopscience.iop.org"
-    },
-    {
-        "domain" : "amp.theguardian.com"
-    },
-    {
-        "domain" : "linuxize.com"
-    },
-    {
-        "domain" : "feedseer.com"
-    },
-    {
-        "domain" : "ramtin-amin.fr"
-    },
-    {
-        "domain" : "vangoghmuseum.nl"
-    },
-    {
-        "domain" : "yunohost.org"
-    },
-    {
-        "domain" : "mathenchant.wordpress.com"
-    },
-    {
-        "domain" : "thetruthaboutknives.com"
-    },
-    {
-        "domain" : "futhark-lang.org"
-    },
-    {
-        "domain" : "pentestpartners.com"
-    },
-    {
-        "domain" : "soundguys.com"
-    },
-    {
-        "domain" : "citizen.co.za"
-    },
-    {
-        "domain" : "trin.cam.ac.uk"
-    },
-    {
-        "domain" : "fennel-lang.org"
-    },
-    {
-        "domain" : "lists.gnupg.org"
-    },
-    {
-        "domain" : "cs.virginia.edu"
-    },
-    {
-        "domain" : "blogs.harvard.edu"
-    },
-    {
-        "domain" : "threatpost.com"
-    },
-    {
-        "domain" : "dtrace.org"
-    },
-    {
-        "domain" : "somethingorotherwhatever.com"
-    },
-    {
-        "domain" : "wiki.c2.com"
-    },
-    {
-        "domain" : "simpleanalytics.io"
-    },
-    {
-        "domain" : "michelenasti.com"
-    },
-    {
-        "domain" : "cdm.link"
-    },
-    {
-        "domain" : "releases.llvm.org"
-    },
-    {
-        "domain" : "gael-varoquaux.info"
-    },
-    {
-        "domain" : "a16z.com"
-    },
-    {
-        "domain" : "fsfla.org"
-    },
-    {
-        "domain" : "nextjs.org"
-    },
-    {
-        "domain" : "philsci-archive.pitt.edu"
-    },
-    {
-        "domain" : "htor.inf.ethz.ch"
-    },
-    {
-        "domain" : "framer.com"
-    },
-    {
-        "domain" : "ipfs.io"
-    },
-    {
-        "domain" : "theinquirer.net"
-    },
-    {
-        "domain" : "blog.timescale.com"
-    },
-    {
-        "domain" : "dymaxion.org"
-    },
-    {
-        "domain" : "news.un.org"
-    },
-    {
-        "domain" : "xyht.com"
-    },
-    {
-        "domain" : "vapid.com"
-    },
-    {
-        "domain" : "tongwing.woon.sg"
-    },
-    {
-        "domain" : "spcr.netlify.com"
-    },
-    {
-        "domain" : "cbinsights.com"
-    },
-    {
-        "domain" : "mmtimes.com"
-    },
-    {
-        "domain" : "mobile.abc.net.au"
-    },
-    {
-        "domain" : "ssi.gouv.fr"
-    },
-    {
-        "domain" : "cosmosmagazine.com"
-    },
-    {
-        "domain" : "freedom.press"
-    },
-    {
-        "domain" : "mattkeeter.com"
-    },
-    {
-        "domain" : "phoboslab.org"
-    },
-    {
-        "domain" : "course.fast.ai"
-    },
-    {
-        "domain" : "microsoft.github.io"
-    },
-    {
-        "domain" : "inconvergent.net"
-    },
-    {
-        "domain" : "7pace.com"
-    },
-    {
-        "domain" : "booktwo.org"
-    },
-    {
-        "domain" : "keyvalues.com"
-    },
-    {
-        "domain" : "kubernetes.io"
-    },
-    {
-        "domain" : "stashofcode.com"
-    },
-    {
-        "domain" : "ovid.github.io"
-    },
-    {
-        "domain" : "yourcalendricalfallacyis.com"
-    },
-    {
-        "domain" : "marketplace.org"
-    },
-    {
-        "domain" : "medievalists.net"
-    },
-    {
-        "domain" : "philipwalton.com"
-    },
-    {
-        "domain" : "sublimemerge.com"
-    },
-    {
-        "domain" : "sback.it"
-    },
-    {
-        "domain" : "artforum.com"
-    },
-    {
-        "domain" : "lineageos.org"
-    },
-    {
-        "domain" : "open-std.org"
-    },
-    {
-        "domain" : "ardica.com"
-    },
-    {
-        "domain" : "sharpnado.com"
-    },
-    {
-        "domain" : "daslab.seas.harvard.edu"
-    },
-    {
-        "domain" : "engadget.com"
-    },
-    {
-        "domain" : "cognitivemedium.com"
-    },
-    {
-        "domain" : "math.ualberta.ca"
-    },
-    {
-        "domain" : "herbsutter.com"
-    },
-    {
-        "domain" : "dailymail.co.uk"
-    },
-    {
-        "domain" : "story.californiasunday.com"
-    },
-    {
-        "domain" : "inf.puc-rio.br"
-    },
-    {
-        "domain" : "ineteconomics.org"
-    },
-    {
-        "domain" : "dbmsmusings.blogspot.com"
-    },
-    {
-        "domain" : "prdeving.wordpress.com"
-    },
-    {
-        "domain" : "abc.net.au"
-    },
-    {
-        "domain" : "rwgrayprojects.com"
-    },
-    {
-        "domain" : "carlmastrangelo.com"
-    },
-    {
-        "domain" : "mino-games.workable.com"
-    },
-    {
-        "domain" : "thonyc.wordpress.com"
-    },
-    {
-        "domain" : "academics.rowan.edu"
-    },
-    {
-        "domain" : "surrey.ac.uk"
-    },
-    {
-        "domain" : "haproxy.com"
-    },
-    {
-        "domain" : "developer.apple.com"
-    },
-    {
-        "domain" : "usatoday.com"
-    },
-    {
-        "domain" : "brucefwebster.com"
-    },
-    {
-        "domain" : "paulgraham.com"
-    },
-    {
-        "domain" : "opkode.com"
-    },
-    {
-        "domain" : "techsolidarity.org"
-    },
-    {
-        "domain" : "blog.smartdec.net"
-    },
-    {
-        "domain" : "statista.com"
-    },
-    {
-        "domain" : "blog.ambor.com"
-    },
-    {
-        "domain" : "warisboring.com"
-    },
-    {
-        "domain" : "247cryptonews.com"
-    },
-    {
-        "domain" : "haya2now.jp"
-    },
-    {
-        "domain" : "blog.regehr.org"
-    },
-    {
-        "domain" : "msn.com"
-    },
-    {
-        "domain" : "massmadesoul.com"
-    },
-    {
-        "domain" : "worrydream.com"
-    },
-    {
-        "domain" : "web.archive.org"
-    },
-    {
-        "domain" : "numworks.com"
-    },
-    {
-        "domain" : "spimsimulator.sourceforge.net"
-    },
-    {
-        "domain" : "djhworld.github.io"
-    },
-    {
-        "domain" : "messynessychic.com"
-    },
-    {
-        "domain" : "twin-cities.umn.edu"
-    },
-    {
-        "domain" : "popsci.com"
-    },
-    {
-        "domain" : "bunniestudios.com"
-    },
-    {
-        "domain" : "www3.nd.edu"
-    },
-    {
-        "domain" : "prn.fm"
-    },
-    {
-        "domain" : "paulmorrison.org"
-    },
-    {
-        "domain" : "blog.ideasynthesis.com"
-    },
-    {
-        "domain" : "garrett.damore.org"
-    },
-    {
-        "domain" : "thoughtspile.github.io"
-    },
-    {
-        "domain" : "media.dmm-make.com"
-    },
-    {
-        "domain" : "yubico.com"
-    },
-    {
-        "domain" : "mlcourse.ai"
-    },
-    {
-        "domain" : "aiai.ed.ac.uk"
-    },
-    {
-        "domain" : "ston.jsc.nasa.gov"
-    },
-    {
-        "domain" : "iter.org"
-    },
-    {
-        "domain" : "harvardlawreview.org"
-    },
-    {
-        "domain" : "blog.cryptographyengineering.com"
-    },
-    {
-        "domain" : "postgis.net"
-    },
-    {
-        "domain" : "ultrabookreview.com"
-    },
-    {
-        "domain" : "cnbeta.com"
-    },
-    {
-        "domain" : "yutsumura.com"
-    },
-    {
-        "domain" : "apps.bostonglobe.com"
-    },
-    {
-        "domain" : "pspdfkit.com"
-    },
-    {
-        "domain" : "veekaybee.github.io"
-    },
-    {
-        "domain" : "embeddedrelated.com"
-    },
-    {
-        "domain" : "blog.florimondmanca.com"
-    },
-    {
-        "domain" : "torch.io"
-    },
-    {
-        "domain" : "undark.org"
-    },
-    {
-        "domain" : "blog.lukaszolejnik.com"
-    },
-    {
-        "domain" : "doi.org"
-    },
-    {
-        "domain" : "slackhq.com"
-    },
-    {
-        "domain" : "iridakos.com"
-    },
-    {
-        "domain" : "themarkup.org"
-    },
-    {
-        "domain" : "ai.sensilab.monash.edu"
-    },
-    {
-        "domain" : "conorpp.com"
-    },
-    {
-        "domain" : "security.stackexchange.com"
-    },
-    {
-        "domain" : "manyver.se"
-    },
-    {
-        "domain" : "elpais.com"
-    },
-    {
-        "domain" : "nr.apple.com"
-    },
-    {
-        "domain" : "m-labs.hk"
-    },
-    {
-        "domain" : "diginomica.com"
-        
-    },
-    {
-        "domain" : "dpreview.com"
-    },
-    {
-        "domain" : "writing.kemitchell.com"
-    },
-    {
-        "domain" : "shamusyoung.com"
-    },
-    {
-        "domain" : "nuxt-box.paperchain.io"
-    },
-    {
-        "domain" : "build-system.fman.io"
-    },
-    {
-        "domain" : "nyamcenterforhistory.org"
-    },
-    {
-        "domain" : "vivaldi.com"
-    },
-    {
-        "domain" : "blog.joda.org"
-    },
-    {
-        "domain" : "massdrop.com"
-    },
-    {
-        "domain" : "blockchain.mit.edu"
-    },
-    {
-        "domain" : "solar.lowtechmagazine.com"
-    },
-    {
-        "domain" : "bytecellar.com"
-    },
-    {
-        "domain" : "ams.org"
-    },
-    {
-        "domain" : "labs.domipheus.com"
-    },
-    {
-        "domain" : "skiplang.com"
-    },
-    {
-        "domain" : "peterroelants.github.io"
-    }
+[{
+    "domain": "grunfy.com"
+},
+{
+    "domain": "darpa.mil"
+},
+{
+    "domain": "nautil.us"
+},
+{
+    "domain": "vandenoever.info"
+},
+{
+    "domain": "chronicle.com"
+},
+{
+    "domain": "alexanderellis.github.io"
+},
+{
+    "domain": "postmarketos.org"
+},
+{
+    "domain": "nytimes.com"
+},
+{
+    "domain": "youtube.com"
+},
+{
+    "domain": "logger.believermag.com"
+},
+{
+    "domain": "asc.upenn.edu"
+},
+{
+    "domain": "arstechnica.com"
+},
+{
+    "domain": "independent.co.uk"
+},
+{
+    "domain": "mailman.nanog.org"
+},
+{
+    "domain": "asia.nikkei.com"
+},
+{
+    "domain": "hacks.mozilla.org"
+},
+{
+    "domain": "gravitational.com"
+},
+{
+    "domain": "chenhuijing.com"
+},
+{
+    "domain": "theappendix.net"
+},
+{
+    "domain": "devpen.io"
+},
+{
+    "domain": "bbc.com"
+},
+{
+    "domain": "anandtech.com"
+},
+{
+    "domain": "arne-mertz.de"
+},
+{
+    "domain": "newyorker.com"
+},
+{
+    "domain": "xtof.info"
+},
+{
+    "domain": "medium.com"
+},
+{
+    "domain": "reddit.com"
+},
+{
+    "domain": "scala-lang.org"
+},
+{
+    "domain": "bbc.co.uk"
+},
+{
+    "domain": "nullprogram.com"
+},
+{
+    "domain": "polyaxon.com"
+},
+{
+    "domain": "cowlark.com"
+},
+{
+    "domain": "eff.org"
+},
+{
+    "domain": "sciencemag.org"
+},
+{
+    "domain": "fullstackacademy.workable.com"
+},
+{
+    "domain": "blog.jamesdbloom.com"
+},
+{
+    "domain": "ideas.4brad.com"
+},
+{
+    "domain": "journal.stuffwithstuff.com"
+},
+{
+    "domain": "blog.growthbot.org"
+},
+{
+    "domain": "devuan.org"
+},
+{
+    "domain": "inews.co.uk"
+},
+{
+    "domain": "avc.com"
+},
+{
+    "domain": "openbsd.org"
+},
+{
+    "domain": "jamchamb.github.io"
+},
+{
+    "domain": "lambda-the-ultimate.org"
+},
+{
+    "domain": "amasad.me"
+},
+{
+    "domain": "reuters.com"
+},
+{
+    "domain": "seths.blog"
+},
+{
+    "domain": "motherboard.vice.com"
+},
+{
+    "domain": "jobs.lever.co"
+},
+{
+    "domain": "satu0king.github.io"
+},
+{
+    "domain": "wired.com"
+},
+{
+    "domain": "faz.net"
+},
+{
+    "domain": "github.com"
+},
+{
+    "domain": "legacy.earlham.edu"
+},
+{
+    "domain": "news.ycombinator.com"
+},
+{
+    "domain": "news.nationalgeographic.com"
+},
+{
+    "domain": "blog.snapeda.com"
+},
+{
+    "domain": "wsj.com"
+},
+{
+    "domain": "washingtonpost.com"
+},
+{
+    "domain": "clipperhouse.com"
+},
+{
+    "domain": "arxiv.org"
+},
+{
+    "domain": "en.oxforddictionaries.com"
+},
+{
+    "domain": "grnh.se"
+},
+{
+    "domain": "calver.org"
+},
+{
+    "domain": "pcg-random.org"
+},
+{
+    "domain": "c256foenix.com"
+},
+{
+    "domain": "6502.org"
+},
+{
+    "domain": "elie.net"
+},
+{
+    "domain": "getbitbar.com"
+    
+},
+{
+    "domain": "economist.com"
+},
+{
+    "domain": "rant.monkeydom.de"
+},
+{
+    "domain": "lists.nongnu.org"
+},
+{
+    "domain": "flexport.com"
+},
+{
+    "domain": "ruder.io"
+},
+{
+    "domain": "pfrazee.hashbase.io"
+},
+{
+    "domain": "cloudplatform.googleblog.com"
+},
+{
+    "domain": "bloomberg.com"
+},
+{
+    "domain": "chinamoneynetwork.com"
+},
+{
+    "domain": "wired.co.uk"
+},
+{
+    "domain": "irishtimes.com"
+},
+{
+    "domain": "engineering.mixpanel.com"
+},
+{
+    "domain": "svnweb.freebsd.org"
+},
+{
+    "domain": "nymag.com"
+},
+{
+    "domain": "en.wikipedia.org"
+},
+{
+    "domain": "variety.com"
+},
+{
+    "domain": "aristo-demo.allenai.org"
+},
+{
+    "domain": "blog.ripstech.com"
+},
+{
+    "domain": "axios.com"
+},
+{
+    "domain": "remotestorage.io"
+},
+{
+    "domain": "developer.mozilla.org"
+},
+{
+    "domain": "latacora.singles"
+},
+{
+    
+    "domain": "ietf.org"
+},
+{
+    "domain": "cen.acs.org"
+},
+{
+    "domain": "top500.org"
+},
+{
+    "domain": "macleans.ca"
+},
+{
+    "domain": "shkspr.mobi"
+},
+{
+    "domain": "theparisreview.org"
+},
+{
+    "domain": "longreads.com"
+},
+{
+    "domain": "openculture.com"
+},
+{
+    "domain": "kromtech.com"
+},
+{
+    "domain": "rfpose.csail.mit.edu"
+},
+{
+    "domain": "techcrunch.com"
+},
+{
+    "domain": "howtographql.com"
+},
+{
+    "domain": "gpfault.net"
+},
+{
+    "domain": "tudelft.nl"
+},
+{
+    "domain": "blog.yellowant.com"
+},
+{
+    "domain": "narimiran.github.io"
+},
+{
+    "domain": "arrgh.tim-smith.us"
+},
+{
+    "domain": "gatesnotes.com"
+},
+{
+    "domain": "newcriterion.com"
+},
+{
+    "domain": "newatlas.com"
+},
+{
+    "domain": "nccgroup.trust"
+},
+{
+    "domain": "vtdigger.org"
+},
+{
+    "domain": "intel.com"
+},
+{
+    "domain": "discrete.gr"
+},
+{
+    "domain": "sonyaellenmann.com"
+},
+{
+    "domain": "hussmanfunds.com"
+},
+{
+    "domain": "rushter.com"
+},
+{
+    "domain": "modelzoo.co"
+},
+{
+    "domain": "biogeosciences.net"
+},
+{
+    "domain": "laravelfactory.com"
+},
+{
+    "domain": "clever.com"
+},
+{
+    "domain": "dailycamera.com"
+},
+{
+    "domain": "theguardian.com"
+},
+{
+    "domain": "theverge.com"
+},
+{
+    "domain": "j.ludost.net"
+},
+{
+    "domain": "quillette.com"
+},
+{
+    "domain": "logicmag.io"
+},
+{
+    "domain": "cnet.com"
+},
+{
+    "domain": "mercurynews.com"
+},
+{
+    "domain": "ianhogarth.com"
+},
+{
+    "domain": "react-etc.net"
+},
+{
+    "domain": "weblog.rogueamoeba.com"
+},
+{
+    "domain": "sec.gov"
+},
+{
+    "domain": "pagerduty.com"
+},
+{
+    "domain": "daveceddia.com"
+},
+{
+    "domain": "linuxjournal.com"
+},
+{
+    "domain": "quod.us"
+},
+{
+    "domain": "anishgodha.com"
+},
+{
+    "domain": "physicsworld.com"
+},
+{
+    "domain": "daily.jstor.org"
+},
+{
+    "domain": "objectivevgaesthetics.wordpress.com"
+},
+{
+    "domain": "home.cern"
+},
+{
+    "domain": "bitmovin.com"
+},
+{
+    "domain": "kkimdev.github.io"
+},
+{
+    "domain": "paleotronic.com"
+},
+{
+    "domain": "ipwatchdog.com"
+},
+{
+    "domain": "cato.org"
+},
+{
+    "domain": "stripes.com"
+},
+{
+    "domain": "52-insights.com"
+},
+{
+    "domain": "psafe.com"
+},
+{
+    "domain": "matthuisman.nz"
+},
+{
+    "domain": "infoworld.com"
+},
+{
+    "domain": "riter.co"
+},
+{
+    "domain": "m.phys.org"
+},
+{
+    "domain": "hackgnar.com"
+},
+{
+    "domain": "thepythoncorner.com"
+},
+{
+    "domain": "ml5js.org"
+},
+{
+    "domain": "nature.com"
+},
+{
+    "domain": "blog.teemya.com"
+},
+{
+    "domain": "technologyreview.com"
+},
+{
+    "domain": "pnnl.gov"
+},
+{
+    "domain": "vulture.com"
+},
+{
+    "domain": "history.nasa.gov"
+},
+{
+    "domain": "medium.freecodecamp.org"
+},
+{
+    "domain": "aiweirdness.com"
+},
+{
+    "domain": "jasondavies.com"
+},
+{
+    "domain": "pyimagesearch.com"
+},
+{
+    "domain": "joeduffyblog.com"
+},
+{
+    "domain": "torrentfreak.com"
+},
+{
+    "domain": "wpri.com"
+},
+{
+    "domain": "r2d3.us"
+},
+{
+    "domain": "engblg.livingcomputers.org"
+},
+{
+    "domain": "citusdata.com"
+},
+{
+    "domain": "dahg.maps.arcgis.com"
+},
+{
+    "domain": "highsnobiety.com"
+},
+{
+    "domain": "hackaday.com"
+},
+{
+    "domain": "blog.benjojo.co.uk"
+},
+{
+    "domain": "rkirsling.github.io"
+},
+{
+    "domain": "socratic-form-microscopy.com"
+},
+{
+    "domain": "monoskop.org"
+},
+{
+    "domain": "kibble.net"
+},
+{
+    "domain": "severalnines.com"
+},
+{
+    "domain": "theglobeandmail.com"
+},
+{
+    "domain": "utcc.utoronto.ca"
+},
+{
+    "domain": "bis.org"
+},
+{
+    "domain": "ai.google"
+},
+{
+    "domain": "hubicka.blogspot.com"
+},
+{
+    "domain": "www2.cs.arizona.edu"
+},
+{
+    "domain": "starterstory.com"
+},
+{
+    "domain": "standuply.com"
+},
+{
+    "domain": "posthook.io"
+},
+{
+    "domain": "resobscura.blogspot.com"
+},
+{
+    "domain": "jvns.ca"
+},
+{
+    "domain": "blender.org"
+},
+{
+    "domain": "developer.oculus.com"
+},
+{
+    "domain": "objective-see.com"
+},
+{
+    "domain": "citylab.com"
+},
+{
+    "domain": "stratechery.com"
+},
+{
+    "domain": "blog.qt.io"
+},
+{
+    "domain": "middleeasteye.net"
+},
+{
+    "domain": "thenewatlantis.com"
+},
+{
+    "domain": "theatlantic.com"
+},
+{
+    "domain": "depauw.edu"
+},
+{
+    "domain": "cupery.net"
+},
+{
+    "domain": "theinformation.com"
+},
+{
+    "domain": "theregister.co.uk"
+},
+{
+    "domain": "voronoi.surge.sh"
+},
+{
+    "domain": "zwischenzugs.com"
+},
+{
+    "domain": "www2.deloitte.com"
+},
+{
+    "domain": "quora.com"
+},
+{
+    "domain": "apnews.com"
+},
+{
+    "domain": "businessinsider.com"
+},
+{
+    "domain": "code.facebook.com"
+},
+{
+    "domain": "spectator.co.uk"
+},
+{
+    "domain": "idiallo.com"
+},
+{
+    "domain": "mail-archive.com"
+},
+{
+    "domain": "motherjones.com"
+},
+{
+    "domain": "ai.googleblog.com"
+},
+{
+    "domain": "timesofsandiego.com"
+},
+{
+    "domain": "blog.mozvr.com"
+},
+{
+    "domain": "harpers.org"
+},
+{
+    "domain": "devs.cloudimmunity.com"
+},
+{
+    "domain": "gizmodo.com"
+},
+{
+    "domain": "cl.cam.ac.uk"
+},
+{
+    "domain": "transfer.sh"
+},
+{
+    "domain": "statnews.com"
+},
+{
+    "domain": "log.fundamental-code.com"
+},
+{
+    "domain": "dlang.org"
+},
+{
+    "domain": "cs.uwaterloo.ca"
+},
+{
+    "domain": "keybase.io"
+},
+{
+    "domain": "arp242.net"
+},
+{
+    "domain": "erlang.org"
+},
+{
+    "domain": "githubengineering.com"
+},
+{
+    "domain": "letsencrypt.org"
+},
+{
+    "domain": "the-tls.co.uk"
+},
+{
+    "domain": "quantamagazine.org"
+},
+{
+    "domain": "itsblockchain.com"
+},
+{
+    "domain": "pgdash.io"
+},
+{
+    "domain": "atsdr.cdc.gov"
+},
+{
+    "domain": "humaninterest.com"
+},
+{
+    "domain": "bernat.tech"
+},
+{
+    "domain": "srobb.net"
+},
+{
+    "domain": "rapp.org"
+},
+{
+    "domain": "tools.ietf.org"
+},
+{
+    "domain": "philosophynow.org"
+},
+{
+    "domain": "sanctum.geek.nz"
+},
+{
+    "domain": "einstein.ai"
+},
+{
+    "domain": "phys.org"
+},
+{
+    "domain": "nyclu.org"
+},
+{
+    "domain": "hisutton.com"
+},
+{
+    "domain": "yodaiken.com"
+},
+{
+    "domain": "jakearchibald.com"
+},
+{
+    "domain": "v8project.blogspot.com"
+},
+{
+    "domain": "whydoiprocrastinate.com"
+},
+{
+    "domain": "news.rpi.edu"
+},
+{
+    "domain": "queue.acm.org"
+},
+{
+    "domain": "cs230.stanford.edu"
+},
+{
+    "domain": "npr.org"
+},
+{
+    "domain": "wende.github.io"
+},
+{
+    "domain": "blog.klaehn.org"
+},
+{
+    "domain": "vanguard.com"
+},
+{
+    "domain": "architectural-review.com"
+},
+{
+    "domain": "blog.acolyer.org"
+},
+{
+    "domain": "techdirt.com"
+},
+{
+    "domain": "victor.darvariu.me"
+},
+{
+    "domain": "electronjs.org"
+},
+{
+    "domain": "blog.rust-lang.org"
+},
+{
+    "domain": "lists.opensource.org"
+},
+{
+    "domain": "ualberta.ca"
+},
+{
+    
+    "domain": "qz.com"
+},
+{
+    "domain": "seekingalpha.com"
+},
+{
+    "domain": "metro.co.uk"
+},
+{
+    "domain": "thehill.com"
+},
+{
+    "domain": "zenmagnets.com"
+},
+{
+    "domain": "articles.fti.bi"
+},
+{
+    "domain": "diego-pacheco.blogspot.com"
+},
+{
+    "domain": "thecut.com"
+},
+{
+    "domain": "blog.atom.io"
+},
+{
+    "domain": "gravity-lang.org"
+},
+{
+    "domain": "atlasobscura.com"
+},
+{
+    "domain": "01.org"
+},
+{
+    "domain": "mtgox.com"
+},
+{
+    "domain": "cjr.org"
+},
+{
+    "domain": "dragan.rocks"
+},
+{
+    "domain": "irc.com"
+},
+{
+    "domain": "defensecode.com"
+},
+{
+    "domain": "otoro.net"
+},
+{
+    "domain": "cityobservatory.org"
+},
+{
+    "domain": "apple.com"
+},
+{
+    "domain": "pointfree.co"
+},
+{
+    "domain": "nurpax.github.io"
+},
+{
+    "domain": "internals.rust-lang.org"
+},
+{
+    "domain": "docs.google.com"
+},
+{
+    "domain": "papers.ssrn.com"
+},
+{
+    "domain": "blog.eladgil.com"
+},
+{
+    "domain": "forum.filezilla-project.org"
+},
+{
+    "domain": "brianketelsen.com"
+},
+{
+    "domain": "psychologicalscience.org"
+},
+{
+    "domain": "cs.brown.edu"
+},
+{
+    "domain": "iokit.racing"
+},
+{
+    "domain": "blog.openai.com"
+},
+{
+    "domain": "loudnesspenalty.com"
+},
+{
+    "domain": "righto.com"
+},
+{
+    "domain": "anfractuosity.com"
+},
+{
+    "domain": "firehydrant.io"
+},
+{
+    "domain": "defenseone.com"
+},
+{
+    "domain": "spectrum.ieee.org"
+},
+{
+    "domain": "jsonnet.org"
+},
+{
+    "domain": "auphonic.com"
+},
+{
+    "domain": "sciencedaily.com"
+},
+{
+    "domain": "doesitmutate.xyz"
+},
+{
+    "domain": "mediarelations.uwo.ca"
+},
+{
+    "domain": "freakonomics.com"
+},
+{
+    "domain": "c2rust.com"
+},
+{
+    "domain": "genielabs.github.io"
+},
+{
+    "domain": "eartharchitecture.org"
+},
+{
+    "domain": "webtoons.com"
+},
+{
+    "domain": "habitatchronicles.com"
+},
+{
+    "domain": "blog.gtk.org"
+},
+{
+    "domain": "theoutline.com"
+},
+{
+    "domain": "news.mit.edu"
+},
+{
+    "domain": "mailinator.blogspot.com"
+},
+{
+    "domain": "dannyguo.com"
+},
+{
+    "domain": "geomesa.org"
+},
+{
+    "domain": "dremio.com"
+},
+{
+    "domain": "city-journal.org"
+},
+{
+    "domain": "noelzach.github.io"
+},
+{
+    "domain": "lvogel.free.fr"
+},
+{
+    "domain": "abe-winter.github.io"
+},
+{
+    "domain": "harveynick.com"
+},
+{
+    "domain": "drive.google.com"
+},
+{
+    "domain": "nasa.gov"
+},
+{
+    "domain": "blogs.dropbox.com"
+},
+{
+    "domain": "vegardno.net"
+},
+{
+    "domain": "theamericanscholar.org"
+},
+{
+    "domain": "taskandpurpose.com"
+},
+{
+    "domain": "gov.uk"
+},
+{
+    "domain": "pbs.org"
+},
+{
+    
+    "domain": "jdebp.eu"
+},
+{
+    "domain": "channelnewsasia.com"
+},
+{
+    "domain": "universal-sci.com"
+},
+{
+    "domain": "infoq.com"
+},
+{
+    "domain": "itwire.com"
+},
+{
+    "domain": "analog.com"
+},
+{
+    "domain": "blog.ret2.io"
+},
+{
+    "domain": "money.cnn.com"
+},
+{
+    "domain": "greenentrepreneur.com"
+},
+{
+    "domain": "certsimple.com"
+},
+{
+    "domain": "dosyago-coder-0.github.io"
+},
+{
+    "domain": "aholme.co.uk"
+},
+{
+    "domain": "cambus.net"
+},
+{
+    "domain": "ncbi.nlm.nih.gov"
+},
+{
+    "domain": "bfilipek.com"
+},
+{
+    "domain": "wi-fi.org"
+},
+{
+    "domain": "hyperallergic.com"
+},
+{
+    "domain": "filfre.net"
+},
+{
+    "domain": "slate.com"
+},
+{
+    "domain": "ceres1.space"
+},
+{
+    "domain": "joeyh.name"
+},
+{
+    "domain": "stripe.com"
+},
+{
+    "domain": "groups.google.com"
+},
+{
+    "domain": "allthingsdistributed.com"
+},
+{
+    "domain": "blog.ycombinator.com"
+},
+{
+    "domain": "bdd-data.berkeley.edu"
+},
+{
+    "domain": "flightstorome.moovellab.com"
+},
+{
+    "domain": "gnss-sdr.org"
+},
+{
+    "domain": "google-developers.appspot.com"
+},
+{
+    "domain": "potaroo.net"
+},
+{
+    "domain": "blog.joinmastodon.org"
+},
+{
+    "domain": "globalpolicy.ieee.org"
+},
+{
+    "domain": "andrewnetwork.github.io"
+},
+{
+    "domain": "ppltoast.wordpress.com"
+},
+{
+    "domain": "blogs.windows.com"
+},
+{
+    "domain": "mikedrivendevelopment.com"
+},
+{
+    "domain": "m.huffingtonpost.in"
+},
+{
+    "domain": "char.gd"
+},
+{
+    "domain": "blog.danslimmon.com"
+},
+{
+    "domain": "overclock3d.net"
+},
+{
+    "domain": "pubweb.eng.utah.edu"
+},
+{
+    "domain": "salon.com"
+},
+{
+    "domain": "madore.org"
+},
+{
+    "domain": "snapeda.workable.com"
+},
+{
+    "domain": "kvonhorn.github.io"
+},
+{
+    "domain": "robinrendle.com"
+},
+{
+    "domain": "huffingtonpost.in"
+},
+{
+    "domain": "cnbc.com"
+},
+{
+    "domain": "lmgsecurity.com"
+},
+{
+    "domain": "code.djangoproject.com"
+},
+{
+    "domain": "kcsrk.info"
+},
+{
+    "domain": "lwn.net"
+},
+{
+    "domain": "lowtechmagazine.com"
+},
+{
+    "domain": "thesoundingline.com"
+},
+{
+    "domain": "digiday.com"
+},
+{
+    "domain": "devonzuegel.com"
+},
+{
+    "domain": "nianticlabs.com"
+},
+{
+    "domain": "failory.com"
+},
+{
+    "domain": "engineering.gusto.com"
+},
+{
+    "domain": "intoli.com"
+},
+{
+    "domain": "bair.berkeley.edu"
+},
+{
+    "domain": "themuse.com"
+},
+{
+    "domain": "bleepingcomputer.com"
+},
+{
+    "domain": "crystal-lang.org"
+},
+{
+    "domain": "gentoo.org"
+},
+{
+    "domain": "alter-attack.net"
+},
+{
+    "domain": "programaudioseries.com"
+},
+{
+    "domain": "developer.amazon.com"
+},
+{
+    "domain": "newsweek.com"
+},
+{
+    "domain": "freedom-to-tinker.com"
+},
+{
+    "domain": "thedailybeast.com"
+},
+{
+    "domain": "read.iopipe.com"
+},
+{
+    "domain": "able.bio"
+},
+{
+    "domain": "eetimes.com"
+},
+{
+    "domain": "kaiostech.com"
+},
+{
+    "domain": "hazyresearch.github.io"
+},
+{
+    "domain": "interviewcake.com"
+},
+{
+    "domain": "collectorsweekly.com"
+},
+{
+    "domain": "tom.preston-werner.com"
+},
+{
+    "domain": "denofgeek.com"
+},
+{
+    "domain": "matthewearl.github.io"
+},
+{
+    "domain": "begin.re"
+},
+{
+    "domain": "usenix.org"
+},
+{
+    "domain": "tylermw.com"
+},
+{
+    "domain": "drewdevault.com"
+},
+{
+    "domain": "discuss.haiku-os.org"
+},
+{
+    "domain": "medium.learningbyshipping.com"
+},
+{
+    "domain": "simonmar.github.io"
+},
+{
+    "domain": "cse.chalmers.se"
+},
+{
+    "domain": "linuxfoundation.org"
+},
+{
+    "domain": "blog.marcgravell.com"
+},
+{
+    "domain": "espn.com"
+},
+{
+    "domain": "eso.org"
+},
+{
+    "domain": "thomas-tanay.github.io"
+},
+{
+    "domain": "lists.opensuse.org"
+},
+{
+    "domain": "blog.netbsd.org"
+},
+{
+    "domain": "thewholestory.solutionsjournalism.org"
+},
+{
+    "domain": "code.fb.com"
+},
+{
+    "domain": "theweek.com"
+},
+{
+    "domain": "blog.cloudflare.com"
+},
+{
+    "domain": "seriouseats.com"
+},
+{
+    "domain": "humus.name"
+},
+{
+    "domain": "eulerarchive.maa.org"
+},
+{
+    "domain": "fast.ai"
+},
+{
+    "domain": "rstb.royalsocietypublishing.org"
+},
+{
+    "domain": "graphcms.com"
+},
+{
+    "domain": "glench.github.io"
+},
+{
+    "domain": "palant.de"
+},
+{
+    "domain": "andrewchen.co"
+},
+{
+    "domain": "epsilontheory.com"
+},
+{
+    "domain": "rollingstone.com"
+},
+{
+    "domain": "ivory.idyll.org"
+},
+{
+    "domain": "stats.oecd.org"
+},
+{
+    "domain": "memecentral.com"
+},
+{
+    "domain": "blog.headius.com"
+},
+{
+    "domain": "pauladamsmith.com"
+},
+{
+    "domain": "urchin.earth.li"
+},
+{
+    "domain": "chinafile.com"
+},
+{
+    "domain": "theindy.us"
+},
+{
+    "domain": "lamport.azurewebsites.net"
+},
+{
+    "domain": "news.crunchbase.com"
+},
+{
+    "domain": "multimedia.scmp.com"
+},
+{
+    "domain": "hbr.org"
+},
+{
+    "domain": "ajolicoeur.wordpress.com"
+},
+{
+    "domain": "blaseur.com"
+},
+{
+    "domain": "blog.janestreet.com"
+},
+{
+    "domain": "evilmadscientist.com"
+},
+{
+    "domain": "hanselman.com"
+},
+{
+    "domain": "wiki.gentoo.org"
+},
+{
+    "domain": "cloudblogs.microsoft.com"
+},
+{
+    "domain": "winand.at"
+},
+{
+    "domain": "jim.tcl.tk"
+},
+{
+    "domain": "idlewords.com"
+},
+{
+    "domain": "es.wikipedia.org"
+},
+{
+    "domain": "odditycentral.com"
+},
+{
+    "domain": "gurn.io"
+},
+{
+    "domain": "cbsnews.com"
+},
+{
+    "domain": "itty.bitty.site"
+},
+{
+    "domain": "nexocode.com"
+},
+{
+    "domain": "bloomreach.com"
+},
+{
+    "domain": "flightglobal.com"
+},
+{
+    "domain": "haiku-os.org"
+},
+{
+    "domain": "sapper.svelte.technology"
+},
+{
+    "domain": "blog.poormansmath.net"
+},
+{
+    "domain": "blog.trailofbits.com"
+},
+{
+    "domain": "theconversation.com"
+},
+{
+    "domain": "blog.conduit.io"
+},
+{
+    "domain": "stackingthebricks.com"
+},
+{
+    "domain": "invenia.github.io"
+},
+{
+    "domain": "tmorville.github.io"
+},
+{
+    "domain": "blog.polyverse.io"
+},
+{
+    "domain": "gnu.org"
+},
+{
+    "domain": "bostonglobe.com"
+},
+{
+    "domain": "heartbeat.fritz.ai"
+},
+{
+    "domain": "plato.stanford.edu"
+},
+{
+    "domain": "flockport.com"
+},
+{
+    "domain": "buildyourownlisp.com"
+},
+{
+    "domain": "justinscholz.de"
+},
+{
+    "domain": "instructables.com"
+},
+{
+    "domain": "electromaker.io"
+},
+{
+    "domain": "argoledo.com"
+},
+{
+    "domain": "academic.oup.com"
+},
+{
+    "domain": "firstround.com"
+},
+{
+    "domain": "politico.com"
+},
+{
+    "domain": "fermatslibrary.com"
+},
+{
+    "domain": "picheta.me"
+},
+{
+    "domain": "brutalist-web.design"
+},
+{
+    "domain": "cloud9trader.com"
+},
+{
+    "domain": "pvk.ca"
+},
+{
+    "domain": "artsy.net"
+},
+{
+    "domain": "1amstudios.com"
+},
+{
+    "domain": "uea.ac.uk"
+},
+{
+    "domain": "hollywoodreporter.com"
+},
+{
+    "domain": "chicagotribune.com"
+},
+{
+    "domain": "twitter.com"
+},
+{
+    "domain": "site.macleans.ca"
+},
+{
+    "domain": "john-millikin.com"
+},
+{
+    "domain": "heraldscotland.com"
+},
+{
+    "domain": "captaineinstein.org"
+},
+{
+    "domain": "quaap.com"
+},
+{
+    "domain": "pagetable.com"
+},
+{
+    "domain": "hellowebbooks.com"
+},
+{
+    "domain": "atsushisakai.github.io"
+},
+{
+    "domain": "blog.quarkslab.com"
+},
+{
+    "domain": "imaginarycloud.com"
+},
+{
+    "domain": "twobithistory.org"
+},
+{
+    "domain": "aeon.co"
+},
+{
+    "domain": "post-gazette.com"
+},
+{
+    "domain": "blog.makerdiary.com"
+},
+{
+    "domain": "blog.jonlu.ca"
+},
+{
+    "domain": "english.manoramaonline.com"
+},
+{
+    "domain": "theptrk.com"
+},
+{
+    "domain": "midibin.com"
+},
+{
+    "domain": "kialo.com"
+},
+{
+    "domain": "intercoolerjs.org"
+},
+{
+    "domain": "newelectronics.co.uk"
+},
+{
+    "domain": "blog.asrpo.com"
+},
+{
+    "domain": "thegradient.pub"
+},
+{
+    "domain": "stevelosh.com"
+},
+{
+    "domain": "publicintelligence.net"
+},
+{
+    "domain": "clemenswinter.com"
+},
+{
+    "domain": "jeffreykegler.github.io"
+},
+{
+    "domain": "apsdehal.in"
+},
+{
+    "domain": "ma.rtijn.org"
+},
+{
+    "domain": "iqc.ou.edu"
+},
+{
+    "domain": "stories.sagefy.org"
+},
+{
+    "domain": "pdfs.semanticscholar.org"
+},
+{
+    "domain": "sirc.org"
+},
+{
+    "domain": "gasworld.com"
+},
+{
+    "domain": "oasislabs.com"
+},
+{
+    "domain": "usefathom.com"
+},
+{
+    "domain": "segment.com"
+},
+{
+    "domain": "pubs.aeaweb.org"
+},
+{
+    "domain": "tinyletter.com"
+},
+{
+    "domain": "cam.ac.uk"
+},
+{
+    "domain": "blog.scrapinghub.com"
+},
+{
+    "domain": "homes.cs.washington.edu"
+},
+{
+    "domain": "dyn.com"
+},
+{
+    "domain": "forbes.com"
+},
+{
+    "domain": "csiro.au"
+},
+{
+    "domain": "gravwell.io"
+},
+{
+    "domain": "dropbox.com"
+},
+{
+    "domain": "anu.edu.au"
+},
+{
+    "domain": "testpilot.firefox.com"
+},
+{
+    "domain": "cnn.com"
+},
+{
+    "domain": "macrumors.com"
+},
+{
+    "domain": "gohugo.io"
+},
+{
+    "domain": "spectrumnews.org"
+},
+{
+    "domain": "sensorstechforum.com"
+},
+{
+    "domain": "globalnews.ca"
+},
+{
+    "domain": "nationalgeographic.com"
+},
+{
+    "domain": "venturebeat.com"
+},
+{
+    "domain": "jefftk.com"
+},
+{
+    "domain": "strongtowns.org"
+},
+{
+    "domain": "thetimes.co.uk"
+},
+{
+    "domain": "openstreetmap.org"
+},
+{
+    "domain": "ansuz.sooke.bc.ca"
+},
+{
+    "domain": "blog.gdssecurity.com"
+},
+{
+    "domain": "yarchive.net"
+},
+{
+    "domain": "zeit.de"
+},
+{
+    "domain": "mobilesyrup.com"
+},
+{
+    "domain": "usa.streetsblog.org"
+},
+{
+    "domain": "europeanfinancialreview.com"
+},
+{
+    "domain": "nevalalee.wordpress.com"
+},
+{
+    "domain": "dave.cheney.net"
+},
+{
+    "domain": "frontiersin.org"
+},
+{
+    "domain": "mwhittaker.github.io"
+},
+{
+    "domain": "neil.fraser.name"
+},
+{
+    "domain": "research.vu.nl"
+},
+{
+    "domain": "pm.inf.ethz.ch"
+},
+{
+    "domain": "ac1235.github.io"
+},
+{
+    "domain": "dtic.mil"
+},
+{
+    "domain": "cv.nrao.edu"
+},
+{
+    "domain": "3ammagazine.com"
+},
+{
+    "domain": "believermag.com"
+},
+{
+    "domain": "boats.gitlab.io"
+},
+{
+    "domain": "thediplomat.com"
+},
+{
+    "domain": "en.tldp.org"
+},
+{
+    "domain": "blog.mozilla.org"
+},
+{
+    "domain": "blogs.scientificamerican.com"
+},
+{
+    "domain": "freshman.tech"
+},
+{
+    "domain": "medicalnewstoday.com"
+},
+{
+    "domain": "vanityfair.com"
+},
+{
+    "domain": "br.de"
+},
+{
+    "domain": "gds.blog.gov.uk"
+},
+{
+    "domain": "blog.instapaper.com"
+},
+{
+    "domain": "townandcountrymag.com"
+},
+{
+    "domain": "slackware.com"
+},
+{
+    "domain": "obe.tv"
+},
+{
+    "domain": "ifixit.com"
+},
+{
+    "domain": "streak.com"
+},
+{
+    "domain": "yurichev.com"
+},
+{
+    "domain": "smithsonianmag.com"
+},
+{
+    "domain": "scientificamerican.com"
+},
+{
+    "domain": "backblaze.com"
+},
+{
+    "domain": "blog.golang.org"
+},
+{
+    "domain": "aws.amazon.com"
+},
+{
+    "domain": "blog.paperspace.com"
+},
+{
+    "domain": "feld.com"
+},
+{
+    "domain": "engineering.riotgames.com"
+},
+{
+    "domain": "bloombergquint.com"
+},
+{
+    "domain": "lwan.ws"
+},
+{
+    "domain": "press.stripe.com"
+},
+{
+    "domain": "cloudforecast.io"
+},
+{
+    "domain": "assafmo.github.io"
+},
+{
+    "domain": "ssh.com"
+},
+{
+    "domain": "tonsky.me"
+},
+{
+    "domain": "status.cloud.google.com"
+},
+{
+    "domain": "wiki.dlang.org"
+},
+{
+    "domain": "propublica.org"
+},
+{
+    "domain": "blog.timac.org"
+},
+{
+    "domain": "software-lab.de"
+},
+{
+    "domain": "www8.gsb.columbia.edu"
+},
+{
+    "domain": "addons.mozilla.org"
+},
+{
+    "domain": "trackinghappiness.com"
+},
+{
+    
+    "domain": "lightbluetouchpaper.org"
+},
+{
+    "domain": "smashingmagazine.com"
+},
+{
+    "domain": "jenkins.io"
+},
+{
+    "domain": "gaslands.com"
+},
+{
+    "domain": "slatestarcodex.com"
+},
+{
+    "domain": "rodneybrooks.com"
+},
+{
+    "domain": "multimessenger.desy.de"
+},
+{
+    "domain": "middleendian.com"
+},
+{
+    "domain": "pacifict.com"
+},
+{
+    "domain": "openspace.sfmoma.org"
+},
+{
+    "domain": "now.tufts.edu"
+},
+{
+    "domain": "huckmag.com"
+},
+{
+    "domain": "picolisp.com"
+},
+{
+    "domain": "fortune.com"
+},
+{
+    "domain": "xxyxyz.org"
+},
+{
+    "domain": "archaeology.org"
+},
+{
+    "domain": "cbc.ca"
+},
+{
+    "domain": "wouter.coekaerts.be"
+},
+{
+    "domain": "nybooks.com"
+},
+{
+    "domain": "freshonthenet.co.uk"
+},
+{
+    "domain": "blog.apnic.net"
+},
+{
+    "domain": "sfzoning.deapthoughts.com"
+},
+{
+    "domain": "blog.wallaroolabs.com"
+},
+{
+    "domain": "lily-lang.org"
+},
+{
+    "domain": "lsoft.com"
+},
+{
+    "domain": "instabug.com"
+},
+{
+    "domain": "blog.rebased.pl"
+},
+{
+    "domain": "fda.gov"
+},
+{
+    "domain": "gamasutra.com"
+},
+{
+    "domain": "matija.suklje.name"
+},
+{
+    "domain": "robinwieruch.de"
+},
+{
+    "domain": "inderapotheke.de"
+},
+{
+    "domain": "vanemden.wordpress.com"
+},
+{
+    "domain": "remotehabits.com"
+},
+{
+    "domain": "kanbanmail.app"
+},
+{
+    "domain": "opnsec.com"
+},
+{
+    "domain": "growth.eladgil.com"
+},
+{
+    "domain": "blog.scottlogic.com"
+},
+{
+    "domain": "quariety.com"
+},
+{
+    "domain": "multinational.io"
+},
+{
+    "domain": "datatransferproject.dev"
+},
+{
+    "domain": "hurstwic.org"
+},
+{
+    "domain": "indiehackers.com"
+},
+{
+    "domain": "erica.biz"
+},
+{
+    "domain": "columbia.edu"
+},
+{
+    "domain": "sandimetz.com"
+},
+{
+    "domain": "scottaaronson.com"
+},
+{
+    "domain": "unibas.ch"
+},
+{
+    "domain": "lithub.com"
+},
+{
+    "domain": "cadc.uscourts.gov"
+},
+{
+    "domain": "cake.co"
+},
+{
+    "domain": "protonmail.com"
+},
+{
+    "domain": "fiercebiotech.com"
+},
+{
+    "domain": "falstad.com"
+},
+{
+    "domain": "guivr.github.io"
+},
+{
+    "domain": "ds9a.nl"
+},
+{
+    "domain": "anteru.net"
+},
+{
+    "domain": "learn.adacore.com"
+},
+{
+    "domain": "cyberscoop.com"
+},
+{
+    "domain": "developers.google.com"
+},
+{
+    "domain": "elixir-lang.org"
+},
+{
+    "domain": "steveblank.com"
+},
+{
+    "domain": "alexpolozov.com"
+},
+{
+    "domain": "tech.instacart.com"
+},
+{
+    "domain": "laphamsquarterly.org"
+},
+{
+    "domain": "marketwatch.com"
+},
+{
+    "domain": "bbc.godbolt.org"
+},
+{
+    "domain": "webassembly.org"
+},
+{
+    "domain": "cloud.google.com"
+},
+{
+    "domain": "99percentinvisible.org"
+},
+{
+    "domain": "info.perforce.com"
+},
+{
+    "domain": "kernel.org"
+},
+{
+    "domain": "historyextra.com"
+},
+{
+    "domain": "warhistoryonline.com"
+},
+{
+    "domain": "scaleapi.com"
+},
+{
+    "domain": "s3.eurecom.fr"
+},
+{
+    "domain": "knowledge.autodesk.com"
+},
+{
+    "domain": "dampfkraft.com"
+},
+{
+    "domain": "opensource.com"
+},
+{
+    "domain": "codewith.mu"
+},
+{
+    "domain": "joelw.id.au"
+},
+{
+    "domain": "newneuromarketing.com"
+},
+{
+    "domain": "nrempel.com"
+},
+{
+    "domain": "banditalgs.com"
+},
+{
+    "domain": "biorxiv.org"
+},
+{
+    "domain": "refresh.study"
+},
+{
+    "domain": "rob.conery.io"
+},
+{
+    "domain": "betterwebtype.com"
+},
+{
+    "domain": "ssw.jku.at"
+},
+{
+    "domain": "composingprograms.com"
+},
+{
+    "domain": "radiobruxelleslibera.com"
+},
+{
+    "domain": "sbussard.github.io"
+},
+{
+    "domain": "itprotoday.com"
+},
+{
+    "domain": "ianlotinsky.wordpress.com"
+},
+{
+    "domain": "joelsimon.net"
+},
+{
+    "domain": "newsobserver.com"
+},
+{
+    "domain": "hillelwayne.com"
+},
+{
+    "domain": "mermaidjs.github.io"
+},
+{
+    "domain": "techinasia.com"
+},
+{
+    "domain": "el-tramo.be"
+},
+{
+    "domain": "sbnation.com"
+},
+{
+    "domain": "blog.nobugware.com"
+},
+{
+    "domain": "hugoam.github.io"
+},
+{
+    "domain": "docs.djangoproject.com"
+},
+{
+    "domain": "mnot.net"
+},
+{
+    "domain": "eng.uber.com"
+},
+{
+    "domain": "our.status.im"
+},
+{
+    "domain": "eclipse.org"
+},
+{
+    "domain": "www2.ece.rochester.edu"
+},
+{
+    "domain": "twilio.com"
+},
+{
+    "domain": "twomakers.io"
+},
+{
+    "domain": "atrium.co"
+},
+{
+    "domain": "matthias-endler.de"
+},
+{
+    "domain": "blog.floydhub.com"
+},
+{
+    
+    "domain": "t3x.org"
+},
+{
+    "domain": "oalley.net"
+},
+{
+    "domain": "emboj.embopress.org"
+},
+{
+    "domain": "businesswire.com"
+},
+{
+    "domain": "rigb.org"
+},
+{
+    "domain": "fastcompany.com"
+},
+{
+    "domain": "mirror.co.uk"
+},
+{
+    "domain": "support.hp.com"
+},
+{
+    "domain": "markets.businessinsider.com"
+},
+{
+    "domain": "archdaily.com"
+},
+{
+    "domain": "foxnomad.com"
+},
+{
+    "domain": "nrc.nl"
+},
+{
+    "domain": "ephos.github.io"
+},
+{
+    "domain": "brandur.org"
+},
+{
+    "domain": "docs.browserless.io"
+},
+{
+    "domain": "archive.org"
+},
+{
+    "domain": "openjdk.java.net"
+},
+{
+    "domain": "blog.coinbase.com"
+},
+{
+    "domain": "blogs.findlaw.com"
+},
+{
+    "domain": "semantic-domain.blogspot.com"
+},
+{
+    "domain": "google.github.io"
+},
+{
+    "domain": "beckyances.net"
+},
+{
+    "domain": "evertpot.com"
+},
+{
+    "domain": "opds.io"
+},
+{
+    "domain": "codingnest.com"
+},
+{
+    "domain": "bob.cs.sonoma.edu"
+},
+{
+    "domain": "tox.chat"
+},
+{
+    "domain": "blog.github.com"
+},
+{
+    "domain": "gutenberg.org"
+},
+{
+    "domain": "disneyresearch.com"
+},
+{
+    "domain": "peripheryapp.com"
+},
+{
+    "domain": "castling.club"
+},
+{
+    "domain": "colab.research.google.com"
+},
+{
+    "domain": "spinellis.gr"
+},
+{
+    "domain": "lostella.github.io"
+},
+{
+    "domain": "blogs.msdn.microsoft.com"
+},
+{
+    "domain": "blog.watsi.org"
+},
+{
+    "domain": "science.sciencemag.org"
+},
+{
+    "domain": "thunderbird.net"
+},
+{
+    "domain": "metalevel.at"
+},
+{
+    "domain": "csmonitor.com"
+},
+{
+    "domain": "pnas.org"
+},
+{
+    "domain": "gianlucagimini.it"
+},
+{
+    "domain": "android-developers.googleblog.com"
+},
+{
+    "domain": "dinfuehr.github.io"
+},
+{
+    "domain": "blog.rainway.io"
+},
+{
+    "domain": "rsnous.com"
+},
+{
+    "domain": "simonsfoundation.org"
+},
+{
+    "domain": "crawshaw.io"
+},
+{
+    "domain": "inko-lang.org"
+},
+{
+    "domain": "breakingdefense.com"
+},
+{
+    "domain": "lrb.co.uk"
+},
+{
+    "domain": "movingfulcrum.com"
+},
+{
+    "domain": "placesjournal.org"
+},
+{
+    "domain": "help.twitter.com"
+},
+{
+    "domain": "differentimpulse.com"
+},
+{
+    "domain": "julialang.org"
+},
+{
+    "domain": "apenwarr.ca"
+},
+{
+    "domain": "case-podcast.org"
+},
+{
+    "domain": "cookieplmonster.github.io"
+},
+{
+    "domain": "cbslocal.com"
+},
+{
+    "domain": "stat.wisc.edu"
+},
+{
+    "domain": "rmg.co.uk"
+},
+{
+    "domain": "tesla.com"
+},
+{
+    "domain": "puri.sm"
+},
+{
+    "domain": "ft.com"
+},
+{
+    "domain": "baltimoresun.com"
+},
+{
+    "domain": "tryretool.com"
+},
+{
+    "domain": "eli.thegreenplace.net"
+},
+{
+    "domain": "mrooding.me"
+},
+{
+    "domain": "ribbonfarm.com"
+},
+{
+    "domain": "reneweconomy.com.au"
+},
+{
+    "domain": "leibniz-translations.com"
+},
+{
+    "domain": "rszalski.github.io"
+},
+{
+    "domain": "junglecoder.com"
+},
+{
+    "domain": "fosdem.org"
+},
+{
+    "domain": "strangesounds.org"
+},
+{
+    "domain": "stefan-lesser.com"
+},
+{
+    "domain": "embedded.com"
+},
+{
+    "domain": "sol.gfxile.net"
+},
+{
+    "domain": "blog.erratasec.com"
+},
+{
+    "domain": "polygon.com"
+},
+{
+    "domain": "mansionengineer.com"
+},
+{
+    "domain": "charmpy.readthedocs.io"
+},
+{
+    "domain": "berkeleyside.com"
+},
+{
+    "domain": "muratbuffalo.blogspot.com"
+},
+{
+    "domain": "blog.bugsnag.com"
+},
+{
+    "domain": "news.developer.nvidia.com"
+},
+{
+    "domain": "bulma.io"
+},
+{
+    "domain": "meteorshowers.org"
+},
+{
+    "domain": "rivten.github.io"
+},
+{
+    "domain": "labguysworld.com"
+},
+{
+    "domain": "visca.com"
+},
+{
+    "domain": "dolphin-emu.org"
+},
+{
+    "domain": "princeton.edu"
+},
+{
+    "domain": "babieslearninglanguage.blogspot.com"
+},
+{
+    "domain": "cattlepi.com"
+},
+{
+    "domain": "popularmechanics.com"
+},
+{
+    "domain": "security.googleblog.com"
+},
+{
+    "domain": "christophe.rhodes.io"
+},
+{
+    "domain": "mtmscientific.com"
+},
+{
+    "domain": "worldbrain.io"
+},
+{
+    "domain": "arcentry.com"
+},
+{
+    "domain": "pcmonitors.info"
+},
+{
+    "domain": "pcgamer.com"
+    
+},
+{
+    "domain": "assets.publishing.service.gov.uk"
+},
+{
+    "domain": "softwarepreservation.org"
+},
+{
+    "domain": "danplisetsky.github.io"
+},
+{
+    "domain": "python.org"
+},
+{
+    "domain": "vectos.net"
+},
+{
+    "domain": "smithsonianchips.si.edu"
+},
+{
+    "domain": "efavdb.com"
+},
+{
+    "domain": "secjuice.com"
+},
+{
+    "domain": "inc.com"
+},
+{
+    "domain": "kubuszok.com"
+},
+{
+    "domain": "ybrikman.com"
+},
+{
+    "domain": "geti2p.net"
+},
+{
+    "domain": "gitlab.com"
+},
+{
+    "domain": "allaboutcircuits.com"
+},
+{
+    "domain": "jcgt.org"
+},
+{
+    "domain": "pv-tech.org"
+},
+{
+    "domain": "thelancet.com"
+},
+{
+    "domain": "blog.cornelltech.io"
+},
+{
+    "domain": "wealthmanagement.com"
+},
+{
+    "domain": "denisdutton.com"
+},
+{
+    "domain": "seanriddle.com"
+},
+{
+    "domain": "gamedev.net"
+},
+{
+    "domain": "mosaicscience.com"
+},
+{
+    "domain": "444.hu"
+},
+{
+    "domain": "sciencedirect.com"
+},
+{
+    "domain": "sciencenews.org"
+},
+{
+    "domain": "blog.esciencecenter.nl"
+},
+{
+    "domain": "activestate.com"
+},
+{
+    "domain": "ccn.com"
+},
+{
+    "domain": "math.columbia.edu"
+},
+{
+    "domain": "rodrigob.github.io"
+},
+{
+    "domain": "zerocater.com"
+},
+{
+    "domain": "interestingengineering.com"
+},
+{
+    "domain": "robdobson.com"
+},
+{
+    "domain": "getshogun.com"
+},
+{
+    "domain": "privateinternetaccess.com"
+},
+{
+    "domain": "maa.org"
+},
+{
+    "domain": "bhencke.com"
+},
+{
+    "domain": "news.gatech.edu"
+},
+{
+    "domain": "physics.bu.edu"
+},
+{
+    "domain": "edge.org"
+},
+{
+    "domain": "foreignpolicy.com"
+},
+{
+    "domain": "eno-lang.org"
+},
+{
+    "domain": "leoeditor.com"
+},
+{
+    "domain": "8thlight.com"
+},
+{
+    "domain": "nikhilm.github.io"
+},
+{
+    "domain": "electricitymap.org"
+},
+{
+    "domain": "cacm.acm.org"
+},
+{
+    "domain": "vision.cs.utexas.edu"
+},
+{
+    "domain": "talks.godoc.org"
+},
+{
+    "domain": "publicwww.com"
+},
+{
+    "domain": "linusakesson.net"
+},
+{
+    "domain": "setosa.io"
+},
+{
+    "domain": "atlas.stripe.com"
+},
+{
+    "domain": "gfrison.com"
+},
+{
+    "domain": "chr15m.github.io"
+},
+{
+    "domain": "natecull.org"
+},
+{
+    "domain": "my-netdata.io"
+},
+{
+    "domain": "wits.io"
+},
+{
+    "domain": "towardsdatascience.com"
+},
+{
+    "domain": "deepmind.com"
+},
+{
+    "domain": "arm.com"
+},
+{
+    "domain": "abyjames.com"
+},
+{
+    "domain": "jera.com"
+},
+{
+    "domain": "gq.com"
+},
+{
+    "domain": "aasnova.org"
+},
+{
+    "domain": "journals.plos.org"
+},
+{
+    "domain": "owntrust.org"
+},
+{
+    "domain": "liip.ch"
+},
+{
+    "domain": "lubuntu.me"
+},
+{
+    "domain": "hackernoon.com"
+},
+{
+    "domain": "julesh.com"
+},
+{
+    "domain": "criterion.com"
+},
+{
+    "domain": "kakoune.org"
+},
+{
+    "domain": "fruitmap.sk"
+},
+{
+    "domain": "urban75.org"
+},
+{
+    "domain": "iamjamesward.com"
+},
+{
+    "domain": "codesections.com"
+},
+{
+    "domain": "grahamc.com"
+},
+{
+    "domain": "coloring-book.co"
+},
+{
+    "domain": "smalldata.tech"
+},
+{
+    "domain": "freemovement.org.uk"
+},
+{
+    "domain": "maxhuibai.com"
+},
+{
+    "domain": "java.com"
+},
+{
+    "domain": "nbcnews.com"
+},
+{
+    "domain": "csrc.nist.gov"
+},
+{
+    "domain": "elm-lang.org"
+},
+{
+    "domain": "givecampus.com"
+},
+{
+    "domain": "zen-of-programming.com"
+},
+{
+    "domain": "reason.com"
+},
+{
+    "domain": "noobs-term.com"
+},
+{
+    "domain": "maciek.blog"
+},
+{
+    "domain": "googleblog.blogspot.com"
+},
+{
+    
+    "domain": "blogs.bl.uk"
+},
+{
+    "domain": "imgtranslate.com"
+},
+{
+    "domain": "blogs.nvidia.com"
+},
+{
+    "domain": "www-users.cs.umn.edu"
+},
+{
+    "domain": "thenewstack.io"
+},
+{
+    "domain": "newstatesman.com"
+},
+{
+    "domain": "brownie-camera.com"
+},
+{
+    "domain": "johnhw.github.io"
+},
+{
+    "domain": "hazlitt.net"
+},
+{
+    "domain": "hothardware.com"
+},
+{
+    "domain": "haskellforall.com"
+},
+{
+    "domain": "antirez.com"
+},
+{
+    "domain": "blinkingcaret.com"
+},
+{
+    "domain": "atdt.freeshell.org"
+},
+{
+    "domain": "law.duke.edu"
+},
+{
+    "domain": "pypyjs.org"
+},
+{
+    "domain": "pewresearch.org"
+},
+{
+    "domain": "huffingtonpost.com"
+},
+{
+    "domain": "knowablemagazine.org"
+},
+{
+    "domain": "ianring.com"
+},
+{
+    "domain": "bl.uk"
+},
+{
+    "domain": "fun-mooc.fr"
+},
+{
+    "domain": "home-assistant.io"
+},
+{
+    "domain": "jtolio.com"
+},
+{
+    "domain": "blog.ndk.io"
+},
+{
+    "domain": "a9t9.com"
+},
+{
+    "domain": "p.migdal.pl"
+},
+{
+    "domain": "newrepublic.com"
+},
+{
+    "domain": "johnny-five.io"
+},
+{
+    "domain": "hmijailblog.blogspot.com"
+},
+{
+    "domain": "activesphere.com"
+},
+{
+    "domain": "blog.torservers.net"
+},
+{
+    "domain": "boards.greenhouse.io"
+},
+{
+    "domain": "johndcook.com"
+},
+{
+    "domain": "tech.buzzfeed.com"
+},
+{
+    "domain": "jepsen.io"
+},
+{
+    "domain": "blog.scrt.ch"
+},
+{
+    "domain": "hackaday.io"
+},
+{
+    "domain": "9to5mac.com"
+},
+{
+    "domain": "sangoma.com"
+},
+{
+    "domain": "atcommands.org"
+},
+{
+    "domain": "doc.rust-lang.org"
+},
+{
+    "domain": "jobenabler.org"
+},
+{
+    "domain": "i.blackhat.com"
+},
+{
+    "domain": "briangilham.com"
+},
+{
+    "domain": "tech.firstlook.media"
+},
+{
+    "domain": "honest.engineering"
+},
+{
+    "domain": "megan-vo.github.io"
+},
+{
+    "domain": "bitsnbites.eu"
+},
+{
+    "domain": "stimulusjs.org"
+},
+{
+    "domain": "80000hours.org"
+},
+{
+    "domain": "devblogs.nvidia.com"
+},
+{
+    "domain": "zandercutt.com"
+},
+{
+    "domain": "cryptool.org"
+},
+{
+    "domain": "agner.org"
+},
+{
+    "domain": "craftinginterpreters.com"
+},
+{
+    "domain": "blog.budgetwithbuckets.com"
+},
+{
+    "domain": "go.googlesource.com"
+},
+{
+    "domain": "davidhampgonsalves.com"
+},
+{
+    "domain": "styluslabs.com"
+},
+{
+    "domain": "recode.net"
+},
+{
+    "domain": "salmon-mail.readthedocs.io"
+},
+{
+    "domain": "ep.bmj.com"
+},
+{
+    "domain": "codemirror.net"
+},
+{
+    "domain": "lyx.org"
+},
+{
+    "domain": "terenz.io"
+},
+{
+    "domain": "artnome.com"
+},
+{
+    "domain": "vox.com"
+},
+{
+    "domain": "nycmesh.net"
+},
+{
+    "domain": "thisissecurity.stormshield.com"
+},
+{
+    "domain": "troyhunt.com"
+},
+{
+    "domain": "mattwarren.org"
+},
+{
+    "domain": "fdi.ucm.es"
+},
+{
+    "domain": "latimes.com"
+},
+{
+    "domain": "adguard.com"
+},
+{
+    "domain": "magicleap.com"
+},
+{
+    "domain": "s2geometry.io"
+},
+{
+    "domain": "fivecastfinancial.com"
+},
+{
+    "domain": "mason.gmu.edu"
+},
+{
+    "domain": "web.media.mit.edu"
+},
+{
+    "domain": "diagrams.app"
+},
+{
+    "domain": "prezi.com"
+},
+{
+    "domain": "marcel.is"
+},
+{
+    "domain": "thenextweb.com"
+},
+{
+    "domain": "emarketer.com"
+},
+{
+    "domain": "realpython.com"
+},
+{
+    "domain": "mashable.com"
+},
+{
+    "domain": "gordonbrander.com"
+},
+{
+    "domain": "beta.observablehq.com"
+},
+{
+    "domain": "egr.unlv.edu"
+},
+{
+    "domain": "neurosciencenews.com"
+},
+{
+    "domain": "brookings.edu"
+},
+{
+    "domain": "eigenfoo.xyz"
+},
+{
+    "domain": "psychologytoday.com"
+},
+{
+    "domain": "act.openmedia.org"
+},
+{
+    "domain": "matt.diephouse.com"
+},
+{
+    "domain": "drdobbs.com"
+},
+{
+    "domain": "courses.csail.mit.edu"
+},
+{
+    "domain": "linkedin.com"
+},
+{
+    "domain": "rockpapershotgun.com"
+},
+{
+    "domain": "salk.edu"
+},
+{
+    "domain": "thezvi.wordpress.com"
+},
+{
+    "domain": "webdesignmuseum.org"
+},
+{
+    "domain": "about.sourcegraph.com"
+},
+{
+    "domain": "rjlipton.wordpress.com"
+},
+{
+    "domain": "duriansoftware.com"
+},
+{
+    "domain": "jmoiron.net"
+},
+{
+    "domain": "rutian.github.io"
+},
+{
+    "domain": "geekwire.com"
+},
+{
+    "domain": "ben-evans.com"
+},
+{
+    "domain": "scattered-thoughts.net"
+},
+{
+    "domain": "nolanlawson.com"
+},
+{
+    "domain": "neugierig.org"
+},
+{
+    "domain": "intensecrypto.org"
+},
+{
+    "domain": "christine.website"
+},
+{
+    "domain": "os2museum.com"
+},
+{
+    "domain": "serverless.com"
+},
+{
+    "domain": "zdnet.com"
+},
+{
+    "domain": "thorstenball.com"
+},
+{
+    "domain": "people.eecs.berkeley.edu"
+},
+{
+    "domain": "toolbox.google.com"
+},
+{
+    "domain": "github.prideout.net"
+},
+{
+    "domain": "gkogan.co"
+},
+{
+    "domain": "blog.lareviewofbooks.org"
+},
+{
+    "domain": "phkimpel.us"
+},
+{
+    "domain": "solipsys.co.uk"
+},
+{
+    "domain": "people.uncw.edu"
+},
+{
+    "domain": "rawgit.com"
+},
+{
+    "domain": "turingtumble.com"
+},
+{
+    "domain": "blog.aboutamazon.com"
+},
+{
+    "domain": "bmcinfectdis.biomedcentral.com"
+},
+{
+    "domain": "git.kernel.org"
+},
+{
+    "domain": "saru.science"
+},
+{
+    "domain": "polemicdigital.com"
+},
+{
+    "domain": "mozilla.org"
+},
+{
+    "domain": "boingboing.net"
+},
+{
+    "domain": "cs.cmu.edu"
+},
+{
+    "domain": "blog.merovius.de"
+},
+{
+    "domain": "nickwignall.com"
+},
+{
+    "domain": "nathanmarz.com"
+},
+{
+    "domain": "cs.au.dk"
+},
+{
+    "domain": "blog.torproject.org"
+},
+{
+    "domain": "activewizards.com"
+},
+{
+    "domain": "gimp.org"
+},
+{
+    "domain": "historytoday.com"
+},
+{
+    "domain": "fivethirtyeight.com"
+},
+{
+    "domain": "seas.harvard.edu"
+},
+{
+    "domain": "factor.niehs.nih.gov"
+},
+{
+    "domain": "theintercept.com"
+},
+{
+    "domain": "huffmancoding.com"
+},
+{
+    "domain": "owaahh.com"
+},
+{
+    "domain": "1843magazine.com"
+},
+{
+    "domain": "arangodb.com"
+},
+{
+    "domain": "blog.getpaint.net"
+},
+{
+    "domain": "entrepidpartners.com"
+},
+{
+    "domain": "f-droid.org"
+},
+{
+    "domain": "carnegieendowment.org"
+},
+{
+    "domain": "glassdoor.com"
+},
+{
+    "domain": "creativecommons.org"
+},
+{
+    "domain": "pouet.net"
+},
+{
+    "domain": "cia.gov"
+},
+{
+    "domain": "lists.gnu.org"
+},
+{
+    "domain": "ahungry.com"
+},
+{
+    "domain": "adamtornhill.com"
+},
+{
+    "domain": "thecontrol.co"
+},
+{
+    "domain": "blog.plover.com"
+},
+{
+    "domain": "kennethreitz.org"
+},
+{
+    "domain": "ajc.com"
+},
+{
+    "domain": "osnews.com"
+},
+{
+    "domain": "chrome.google.com"
+},
+{
+    "domain": "morepypy.blogspot.com"
+},
+{
+    "domain": "vicarie.in"
+},
+{
+    "domain": "blog.seso.io"
+},
+{
+    "domain": "huytd.github.io"
+},
+{
+    "domain": "knowherenews.com"
+},
+{
+    "domain": "lcamtuf.coredump.cx"
+},
+{
+    "domain": "globaltimes.cn"
+},
+{
+    "domain": "chrishacken.com"
+},
+{
+    "domain": "mindstamp.io"
+},
+{
+    "domain": "store.steampowered.com"
+},
+{
+    "domain": "cs.uaf.edu"
+},
+{
+    "domain": "uplink.readthedocs.io"
+},
+{
+    "domain": "alemil.com"
+},
+{
+    "domain": "ndpsoftware.com"
+},
+{
+    "domain": "blog.timbunce.org"
+},
+{
+    "domain": "smilingthax.github.io"
+},
+{
+    "domain": "sayazamurai.github.io"
+},
+{
+    "domain": "ntietz.com"
+},
+{
+    "domain": "blog.doist.com"
+},
+{
+    "domain": "guitardashboard.com"
+},
+{
+    "domain": "qwant.com"
+},
+{
+    "domain": "nanotechnologyworld.org"
+},
+{
+    "domain": "mono-project.com"
+},
+{
+    "domain": "kotlindevelopment.com"
+},
+{
+    "domain": "ctolunches.com"
+},
+{
+    "domain": "schneier.com"
+},
+{
+    "domain": "packnback.github.io"
+},
+{
+    "domain": "iopscience.iop.org"
+},
+{
+    "domain": "amp.theguardian.com"
+},
+{
+    "domain": "linuxize.com"
+},
+{
+    "domain": "feedseer.com"
+},
+{
+    "domain": "ramtin-amin.fr"
+},
+{
+    "domain": "vangoghmuseum.nl"
+},
+{
+    "domain": "yunohost.org"
+},
+{
+    "domain": "mathenchant.wordpress.com"
+},
+{
+    "domain": "thetruthaboutknives.com"
+},
+{
+    "domain": "futhark-lang.org"
+},
+{
+    "domain": "pentestpartners.com"
+},
+{
+    "domain": "soundguys.com"
+},
+{
+    "domain": "citizen.co.za"
+},
+{
+    "domain": "trin.cam.ac.uk"
+},
+{
+    "domain": "fennel-lang.org"
+},
+{
+    "domain": "lists.gnupg.org"
+},
+{
+    "domain": "cs.virginia.edu"
+},
+{
+    "domain": "blogs.harvard.edu"
+},
+{
+    "domain": "threatpost.com"
+},
+{
+    "domain": "dtrace.org"
+},
+{
+    "domain": "somethingorotherwhatever.com"
+},
+{
+    "domain": "wiki.c2.com"
+},
+{
+    "domain": "simpleanalytics.io"
+},
+{
+    "domain": "michelenasti.com"
+},
+{
+    "domain": "cdm.link"
+},
+{
+    "domain": "releases.llvm.org"
+},
+{
+    "domain": "gael-varoquaux.info"
+},
+{
+    "domain": "a16z.com"
+},
+{
+    "domain": "fsfla.org"
+},
+{
+    "domain": "nextjs.org"
+},
+{
+    "domain": "philsci-archive.pitt.edu"
+},
+{
+    "domain": "htor.inf.ethz.ch"
+},
+{
+    "domain": "framer.com"
+},
+{
+    "domain": "ipfs.io"
+},
+{
+    "domain": "theinquirer.net"
+},
+{
+    "domain": "blog.timescale.com"
+},
+{
+    "domain": "dymaxion.org"
+},
+{
+    "domain": "news.un.org"
+},
+{
+    "domain": "xyht.com"
+},
+{
+    "domain": "vapid.com"
+},
+{
+    "domain": "tongwing.woon.sg"
+},
+{
+    "domain": "spcr.netlify.com"
+},
+{
+    "domain": "cbinsights.com"
+},
+{
+    "domain": "mmtimes.com"
+},
+{
+    "domain": "mobile.abc.net.au"
+},
+{
+    "domain": "ssi.gouv.fr"
+},
+{
+    "domain": "cosmosmagazine.com"
+},
+{
+    "domain": "freedom.press"
+},
+{
+    "domain": "mattkeeter.com"
+},
+{
+    "domain": "phoboslab.org"
+},
+{
+    "domain": "course.fast.ai"
+},
+{
+    "domain": "microsoft.github.io"
+},
+{
+    "domain": "inconvergent.net"
+},
+{
+    "domain": "7pace.com"
+},
+{
+    "domain": "booktwo.org"
+},
+{
+    "domain": "keyvalues.com"
+},
+{
+    "domain": "kubernetes.io"
+},
+{
+    "domain": "stashofcode.com"
+},
+{
+    "domain": "ovid.github.io"
+},
+{
+    "domain": "yourcalendricalfallacyis.com"
+},
+{
+    "domain": "marketplace.org"
+},
+{
+    "domain": "medievalists.net"
+},
+{
+    "domain": "philipwalton.com"
+},
+{
+    "domain": "sublimemerge.com"
+},
+{
+    "domain": "sback.it"
+},
+{
+    "domain": "artforum.com"
+},
+{
+    "domain": "lineageos.org"
+},
+{
+    "domain": "open-std.org"
+},
+{
+    "domain": "ardica.com"
+},
+{
+    "domain": "sharpnado.com"
+},
+{
+    "domain": "daslab.seas.harvard.edu"
+},
+{
+    "domain": "engadget.com"
+},
+{
+    "domain": "cognitivemedium.com"
+},
+{
+    "domain": "math.ualberta.ca"
+},
+{
+    "domain": "herbsutter.com"
+},
+{
+    "domain": "dailymail.co.uk"
+},
+{
+    "domain": "story.californiasunday.com"
+},
+{
+    "domain": "inf.puc-rio.br"
+},
+{
+    "domain": "ineteconomics.org"
+},
+{
+    "domain": "dbmsmusings.blogspot.com"
+},
+{
+    "domain": "prdeving.wordpress.com"
+},
+{
+    "domain": "abc.net.au"
+},
+{
+    "domain": "rwgrayprojects.com"
+},
+{
+    "domain": "carlmastrangelo.com"
+},
+{
+    "domain": "mino-games.workable.com"
+},
+{
+    "domain": "thonyc.wordpress.com"
+},
+{
+    "domain": "academics.rowan.edu"
+},
+{
+    "domain": "surrey.ac.uk"
+},
+{
+    "domain": "haproxy.com"
+},
+{
+    "domain": "developer.apple.com"
+},
+{
+    "domain": "usatoday.com"
+},
+{
+    "domain": "brucefwebster.com"
+},
+{
+    "domain": "paulgraham.com"
+},
+{
+    "domain": "opkode.com"
+},
+{
+    "domain": "techsolidarity.org"
+},
+{
+    "domain": "blog.smartdec.net"
+},
+{
+    "domain": "statista.com"
+},
+{
+    "domain": "blog.ambor.com"
+},
+{
+    "domain": "warisboring.com"
+},
+{
+    "domain": "247cryptonews.com"
+},
+{
+    "domain": "haya2now.jp"
+},
+{
+    "domain": "blog.regehr.org"
+},
+{
+    "domain": "msn.com"
+},
+{
+    "domain": "massmadesoul.com"
+},
+{
+    "domain": "worrydream.com"
+},
+{
+    "domain": "web.archive.org"
+},
+{
+    "domain": "numworks.com"
+},
+{
+    "domain": "spimsimulator.sourceforge.net"
+},
+{
+    "domain": "djhworld.github.io"
+},
+{
+    "domain": "messynessychic.com"
+},
+{
+    "domain": "twin-cities.umn.edu"
+},
+{
+    "domain": "popsci.com"
+},
+{
+    "domain": "bunniestudios.com"
+},
+{
+    "domain": "www3.nd.edu"
+},
+{
+    "domain": "prn.fm"
+},
+{
+    "domain": "paulmorrison.org"
+},
+{
+    "domain": "blog.ideasynthesis.com"
+},
+{
+    "domain": "garrett.damore.org"
+},
+{
+    "domain": "thoughtspile.github.io"
+},
+{
+    "domain": "media.dmm-make.com"
+},
+{
+    "domain": "yubico.com"
+},
+{
+    "domain": "mlcourse.ai"
+},
+{
+    "domain": "aiai.ed.ac.uk"
+},
+{
+    "domain": "ston.jsc.nasa.gov"
+},
+{
+    "domain": "iter.org"
+},
+{
+    "domain": "harvardlawreview.org"
+},
+{
+    "domain": "blog.cryptographyengineering.com"
+},
+{
+    "domain": "postgis.net"
+},
+{
+    "domain": "ultrabookreview.com"
+},
+{
+    "domain": "cnbeta.com"
+},
+{
+    "domain": "yutsumura.com"
+},
+{
+    "domain": "apps.bostonglobe.com"
+},
+{
+    "domain": "pspdfkit.com"
+},
+{
+    "domain": "veekaybee.github.io"
+},
+{
+    "domain": "embeddedrelated.com"
+},
+{
+    "domain": "blog.florimondmanca.com"
+},
+{
+    "domain": "torch.io"
+},
+{
+    "domain": "undark.org"
+},
+{
+    "domain": "blog.lukaszolejnik.com"
+},
+{
+    "domain": "doi.org"
+},
+{
+    "domain": "slackhq.com"
+},
+{
+    "domain": "iridakos.com"
+},
+{
+    "domain": "themarkup.org"
+},
+{
+    "domain": "ai.sensilab.monash.edu"
+},
+{
+    "domain": "conorpp.com"
+},
+{
+    "domain": "security.stackexchange.com"
+},
+{
+    "domain": "manyver.se"
+},
+{
+    "domain": "elpais.com"
+},
+{
+    "domain": "nr.apple.com"
+},
+{
+    "domain": "m-labs.hk"
+},
+{
+    "domain": "diginomica.com"
+    
+},
+{
+    "domain": "dpreview.com"
+},
+{
+    "domain": "writing.kemitchell.com"
+},
+{
+    "domain": "shamusyoung.com"
+},
+{
+    "domain": "nuxt-box.paperchain.io"
+},
+{
+    "domain": "build-system.fman.io"
+},
+{
+    "domain": "nyamcenterforhistory.org"
+},
+{
+    "domain": "vivaldi.com"
+},
+{
+    "domain": "blog.joda.org"
+},
+{
+    "domain": "massdrop.com"
+},
+{
+    "domain": "blockchain.mit.edu"
+},
+{
+    "domain": "solar.lowtechmagazine.com"
+},
+{
+    "domain": "bytecellar.com"
+},
+{
+    "domain": "ams.org"
+},
+{
+    "domain": "labs.domipheus.com"
+},
+{
+    "domain": "skiplang.com"
+},
+{
+    "domain": "peterroelants.github.io"
+}
 ]
