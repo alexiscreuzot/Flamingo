@@ -34,7 +34,6 @@ extension UIView {
             view.subviews.forEach{ getSubview(view: $0) }
         }
         getSubview(view: self)
-        print(all)
         return all
     }
 }

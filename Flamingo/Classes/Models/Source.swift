@@ -13,9 +13,19 @@ import RealmSwift
 class Source : Object, Decodable{
     
     @objc dynamic var domain : String = ""
+    @objc dynamic var activated : Bool = false
     
     private enum SourceCodingKeys: String, CodingKey {
         case domain
+        case activated
+    }
+    
+    public static func isAllowed(domain: String) -> Bool{
+        if  let realm = try? Realm(),
+            let source = realm.objects(Source.self).first(where: {$0.domain == domain}) {
+                return source.activated
+        }
+        return true
     }
     
     // Required inits
@@ -34,41 +44,29 @@ class Source : Object, Decodable{
     
     // Convenience inits
     
-    convenience init(domain: String) {
+    convenience init(domain: String, activated: Bool) {
         self.init()
         self.domain = domain
+        self.activated = activated
     }
     
     convenience required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SourceCodingKeys.self)
         let domain = try container.decode(String.self, forKey: .domain)
-        self.init(domain: domain)
+        let activated = try container.decode(Bool.self, forKey: .activated)
+        self.init(domain: domain, activated: activated)
     }
     
     // private methods
  
-    func allow() {
-        var blacklist = UserDefaults.standard.unallowedDomains
-        if let index = blacklist.index(of: self.domain){
-            blacklist.remove(at: index)
-        }
-        UserDefaults.standard.unallowedDomains = blacklist
-    }
-    
-    func block() {
-        var blacklist = UserDefaults.standard.unallowedDomains
-        if !blacklist.contains(self.domain) {
-            blacklist.append(self.domain)
-        }
-        UserDefaults.standard.unallowedDomains = blacklist
-    }
     
     override static func primaryKey() -> String? {
         return "domain"
     }
     
-    func toDict() -> [String : String] {
-        return ["domain" : domain]
+    func toDict() -> [String : Any] {
+        return ["domain" : domain,
+                "activated" : activated]
     }
     
     func toJSON() -> String {

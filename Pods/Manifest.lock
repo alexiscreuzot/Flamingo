@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.6.0)
+  - Alamofire (4.7.3)
   - Attributed (4.0.0)
   - HNScraper (0.1.1)
   - HTMLString (4.0.1)
@@ -18,9 +18,10 @@ PODS:
   - RealmSwift (3.7.1):
     - Realm (= 3.7.1)
   - Result (3.2.4)
-  - SDWebImage (4.2.3):
-    - SDWebImage/Core (= 4.2.3)
-  - SDWebImage/Core (4.2.3)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
+  - SVProgressHUD (2.2.5)
   - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
@@ -32,10 +33,11 @@ DEPENDENCIES:
   - R.swift (~> 4.0)
   - RealmSwift
   - SDWebImage (~> 4.2)
+  - SVProgressHUD
   - TTTAttributedLabel (~> 2.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - Attributed
     - HNScraper
@@ -48,10 +50,11 @@ SPEC REPOS:
     - RealmSwift
     - Result
     - SDWebImage
+    - SVProgressHUD
     - TTTAttributedLabel
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Attributed: e4b667d2ccf1802cde5b3011e4be0eccd1fd2911
   HNScraper: 849cb42aa591bf8b6e5019a9a57d9db7d290b755
   HTMLString: 8d9a8a8aaf63dd52c5b8cd9a38e14da52f753210
@@ -62,9 +65,10 @@ SPEC CHECKSUMS:
   Realm: 906be37d52f17f25484ac01643a7f26a9d3bfbd5
   RealmSwift: 1c2b6bae3dc55bb87e080ffa96537d71442f6dce
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 31edf2709b78ae21800148119a4af04d86acce58
+PODFILE CHECKSUM: 57cb57780ec528e2c5a62375b17d7147b73b3430
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.6.0.beta.1

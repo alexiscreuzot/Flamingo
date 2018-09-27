@@ -17,7 +17,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     
     enum State {
         case loading
-        case error(message: String)
+        case error(_ error: Error)
         case loaded(headerImage: UIImage)
     }
     
@@ -69,6 +69,8 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         // Header
         self.headerTitleLabel.text = self.title
         self.headerView.layer.mask = self.maskLayer
+        let blend = (self.pageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
+        self.headerImageView.image = blend
         
         // TableView
         self.tableView.estimatedRowHeight = 200
@@ -111,8 +113,6 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         if let selectedRow = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRow(at: selectedRow, animated: true)
         }
-        
-        print(Sources.toJSON())
     }
 
     override func viewDidLayoutSubviews() {
@@ -148,9 +148,9 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
             self.refreshButton.alpha = 0
             self.animateLoading()
             break
-        case .error(let message) :
+        case .error(let error) :
             self.tableView.alpha = 0
-            self.stateLabel.text = message
+            self.stateLabel.text = error.localizedDescription
             self.refreshImageView.alpha = 0
             self.refreshButton.alpha = 1
             break
@@ -195,6 +195,12 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     // MARK: - Actions
     
     @IBAction func selectRefresh() {
+        
+        guard LocalData.hasSetSources else {
+            self.currentState = .error(FlamingoError.sourcesNotConfigured.error)
+            return
+        }
+        
         self.linkForMore = nil
         self.headerImageView.image = nil
         self.requestNextPage()
@@ -206,7 +212,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     func addSourceFromPosts(_ posts: [HNPost]) {
         let newSources: [Source] = posts.compactMap {
             guard !$0.urlDomain.isEmpty else { return nil }
-            return Source(domain: $0.urlDomain)
+            return Source(domain: $0.urlDomain, activated:true)
         }
         
         try! realm.write() {
@@ -218,12 +224,12 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         if let linkForMore = linkForMore {
             HNScraper.shared.getMoreItems(linkForMore: linkForMore) { (posts, linkForMore, error) in
                 if let error = error {
-                    self.currentState = .error(message: error.localizedDescription)
+                    self.currentState = .error(error)
                     return
                 }
                 
                 let filteredPosts = posts.filter({ post -> Bool in
-                    return !UserDefaults.standard.unallowedDomains.contains(post.urlDomain)
+                    return Source.isAllowed(domain: post.urlDomain)
                 })
                 
                 self.addSourceFromPosts(filteredPosts)
@@ -232,16 +238,16 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         } else {
             HNScraper.shared.getPostsList(page: self.pageType) { (posts, linkForMore, error) in
                 if let error = error {
-                    self.currentState = .error(message: error.localizedDescription)
+                    self.currentState = .error(error)
                     return
                 }
                 
                 let filteredPosts = posts.filter({ post -> Bool in
-                    return !UserDefaults.standard.unallowedDomains.contains(post.urlDomain)
+                    return Source.isAllowed(domain: post.urlDomain)
                 })
                 
                 if filteredPosts.count == 0 {
-                    self.currentState = .error(message: i18n.commonNothingToShow())
+                    self.currentState = .error(FlamingoError.nothingToShow.error)
                     return
                 }
                 
@@ -254,7 +260,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     func createFeed(_ posts: [HNPost], linkForMore: String?) {
         self.linkForMore = linkForMore
         self.posts = posts.filter({ post -> Bool in
-            return !UserDefaults.standard.unallowedDomains.contains(post.urlDomain)
+            return Source.isAllowed(domain: post.urlDomain)
         })
         self.loadPreviews()
     }
@@ -262,7 +268,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
     func addPosts(_ posts: [HNPost], linkForMore: String?) {
         self.linkForMore = linkForMore
         let addedPosts = posts.filter({ post -> Bool in
-            return !UserDefaults.standard.unallowedDomains.contains(post.urlDomain)
+            return Source.isAllowed(domain: post.urlDomain)
         })
         self.posts.append(contentsOf: addedPosts)
         self.tableView.reloadData()

@@ -11,6 +11,7 @@ def shared_pods
     pod 'SDWebImage', '~> 4.2'
     pod 'HTMLString', '~> 4.0'
     pod 'Attributed', '~> 4.0'
+    pod 'SVProgressHUD'
 
     # Networking
     pod 'HNScraper', '~> 0.1.1'
@@ -27,3 +28,13 @@ target 'Flamingo' do
     shared_pods
 end
 
+post_install do |installer|
+    puts "-> Post install changes"
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] =  '4.0'
+            config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Owholemodule'
+        end
+    end
+    puts "-> Done"
+end

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "88E9EC28B8B46C3631E6B242B50F4442"
+               BlueprintIdentifier = "E76458C58C9140B6A16D60547E68E80C"
                BuildableName = "Alamofire.framework"
                BlueprintName = "Alamofire"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -28,7 +28,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7660A2E0943906F0DA490F9E89492A72"
+               BlueprintIdentifier = "3F307EAA4AD101323B1370BFAA1C40E2"
                BuildableName = "Attributed.framework"
                BlueprintName = "Attributed"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -42,7 +42,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "131265C700D4807FD27E22FE61112FDE"
+               BlueprintIdentifier = "86DE8D195E1BFCA4618170F577B44134"
                BuildableName = "HNScraper.framework"
                BlueprintName = "HNScraper"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -56,7 +56,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "76F2E925AD1762D1C52939ED77C55036"
+               BlueprintIdentifier = "E3209FCB119FDC55528078FFB48D7290"
                BuildableName = "HTMLString.framework"
                BlueprintName = "HTMLString"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -70,7 +70,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBCC69D7C794145A1D1F84A3164E6083"
+               BlueprintIdentifier = "A3238177478381615169C4013B2FF434"
                BuildableName = "Mapper.framework"
                BlueprintName = "ModelMapper"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -84,7 +84,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7474A86533136ADF7C2A515898F120F6"
+               BlueprintIdentifier = "CEC9EED5B5F644B9EECC3C1745F616D9"
                BuildableName = "Moya.framework"
                BlueprintName = "Moya"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -98,7 +98,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "19A048CB7F6A4F8AD12B3CA2B83E5DEC"
+               BlueprintIdentifier = "6307CAE315071425F2345469D918F363"
                BuildableName = "Pods_Flamingo.framework"
                BlueprintName = "Pods-Flamingo"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -112,7 +112,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5915261E3AD3C7E01D007CA32D40F382"
+               BlueprintIdentifier = "33B24D762DCB5526AA555171DD9C578F"
                BuildableName = "Rswift.framework"
                BlueprintName = "R.swift.Library"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -126,7 +126,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C37510D3BADB0FEB2AFE88F555DFBFD"
+               BlueprintIdentifier = "E815DF5946CB6BF3565394E7248BDEB5"
                BuildableName = "Result.framework"
                BlueprintName = "Result"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -140,7 +140,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C85898D6F47CBC8FDD553F6AF1BB7EE7"
+               BlueprintIdentifier = "B86BB1D166C7D96E3FA6919422850783"
                BuildableName = "SDWebImage.framework"
                BlueprintName = "SDWebImage"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">
@@ -154,7 +154,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "63B39F0E8EB733D0918CB7C0EEBD09F6"
+               BlueprintIdentifier = "3AEFC3B8EEC8EC573F6C309D3BA70BAE"
                BuildableName = "TTTAttributedLabel.framework"
                BlueprintName = "TTTAttributedLabel"
                ReferencedContainer = "container:Pods/Pods.xcodeproj">

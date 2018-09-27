@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5931BBC84E43AB1A6679F48E /* Pods_Flamingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F712ADE14BD2FC3D1FD71B60 /* Pods_Flamingo.framework */; };
+		E5873A661079E40ED7E036E1 /* Pods_Flamingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC4B98FE1D429BBECD20BAE /* Pods_Flamingo.framework */; };
 		FA055AC620C97F85007FB8D3 /* SettingsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */; };
 		FA055AC820C97FA0007FB8D3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA055AC720C97FA0007FB8D3 /* SettingsVC.swift */; };
 		FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */; };
@@ -37,19 +37,18 @@
 		FAD15549215D0DBD0045001A /* sources.json in Resources */ = {isa = PBXBuildFile; fileRef = FAD15548215D0DBD0045001A /* sources.json */; };
 		FAD1554B215D14AF0045001A /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554A215D14AF0045001A /* JSONSerializer.swift */; };
 		FAD1554D215D16A50045001A /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554C215D16A50045001A /* LocalDataService.swift */; };
+		FAD1554F215D24F60045001A /* Error+Flamingo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554E215D24F60045001A /* Error+Flamingo.swift */; };
 		FAE931D820C991FE00FB0A78 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931D720C991FE00FB0A78 /* Source.swift */; };
 		FAE931DB20C9929F00FB0A78 /* PrototypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */; };
 		FAE931DD20C992AA00FB0A78 /* SwitchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */; };
 		FAE931E220C9A68000FB0A78 /* TitleSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931E120C9A68000FB0A78 /* TitleSeparatorCell.swift */; };
-		FAE931E420C9AD2500FB0A78 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931E320C9AD2500FB0A78 /* UserDefaults+Extensions.swift */; };
 		FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEED4B3203AE85E00E0DCA0 /* FluidController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B6AB411FA31206017046495 /* Pods-Flamingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flamingo/Pods-Flamingo.release.xcconfig"; sourceTree = "<group>"; };
-		12136E14E258A814338A7863 /* Pods_TheNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		23502EE81E317663CC7E0C61 /* Pods-Flamingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flamingo/Pods-Flamingo.debug.xcconfig"; sourceTree = "<group>"; };
-		F712ADE14BD2FC3D1FD71B60 /* Pods_Flamingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flamingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40447B31C403D657D167192A /* Pods-Flamingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.debug.xcconfig"; path = "Target Support Files/Pods-Flamingo/Pods-Flamingo.debug.xcconfig"; sourceTree = "<group>"; };
+		4EC4B98FE1D429BBECD20BAE /* Pods_Flamingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flamingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CDA28FE4EDF1BDABA1025E /* Pods-Flamingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.release.xcconfig"; path = "Target Support Files/Pods-Flamingo/Pods-Flamingo.release.xcconfig"; sourceTree = "<group>"; };
 		FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVC.storyboard; sourceTree = "<group>"; };
 		FA055AC720C97FA0007FB8D3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Safari.swift"; sourceTree = "<group>"; };
@@ -81,11 +80,11 @@
 		FAD15548215D0DBD0045001A /* sources.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sources.json; sourceTree = "<group>"; };
 		FAD1554A215D14AF0045001A /* JSONSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
 		FAD1554C215D16A50045001A /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
+		FAD1554E215D24F60045001A /* Error+Flamingo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Flamingo.swift"; sourceTree = "<group>"; };
 		FAE931D720C991FE00FB0A78 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeTableCell.swift; sourceTree = "<group>"; };
 		FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableCell.swift; sourceTree = "<group>"; };
 		FAE931E120C9A68000FB0A78 /* TitleSeparatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleSeparatorCell.swift; sourceTree = "<group>"; };
-		FAE931E320C9AD2500FB0A78 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		FAEED4B3203AE85E00E0DCA0 /* FluidController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,29 +93,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5931BBC84E43AB1A6679F48E /* Pods_Flamingo.framework in Frameworks */,
+				E5873A661079E40ED7E036E1 /* Pods_Flamingo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F3F6561BE116E95216A0BBF9 /* Frameworks */ = {
+		017225C4C22645DDB97E11F9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				12136E14E258A814338A7863 /* Pods_TheNews.framework */,
-				F712ADE14BD2FC3D1FD71B60 /* Pods_Flamingo.framework */,
+				40447B31C403D657D167192A /* Pods-Flamingo.debug.xcconfig */,
+				E4CDA28FE4EDF1BDABA1025E /* Pods-Flamingo.release.xcconfig */,
 			);
-			name = Frameworks;
+			path = Pods;
 			sourceTree = "<group>";
 		};
-		F60C5E35E03ACE807840F665 /* Pods */ = {
+		CB4638638339AB39DB804395 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				23502EE81E317663CC7E0C61 /* Pods-Flamingo.debug.xcconfig */,
-				0B6AB411FA31206017046495 /* Pods-Flamingo.release.xcconfig */,
+				4EC4B98FE1D429BBECD20BAE /* Pods_Flamingo.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FA0C8FE32024A77400818EB4 /* Services */ = {
@@ -136,7 +134,7 @@
 				FA2F8852202B677200603EAF /* UIKit+Extensions.swift */,
 				FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */,
 				FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */,
-				FAE931E320C9AD2500FB0A78 /* UserDefaults+Extensions.swift */,
+				FAD1554E215D24F60045001A /* Error+Flamingo.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -146,8 +144,8 @@
 			children = (
 				FA50E795200670D2008C28C1 /* Flamingo */,
 				FA50E794200670D2008C28C1 /* Products */,
-				F60C5E35E03ACE807840F665 /* Pods */,
-				F3F6561BE116E95216A0BBF9 /* Frameworks */,
+				017225C4C22645DDB97E11F9 /* Pods */,
+				CB4638638339AB39DB804395 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -277,12 +275,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA50E7A5200670D2008C28C1 /* Build configuration list for PBXNativeTarget "Flamingo" */;
 			buildPhases = (
-				68FC8ED18123703FF3B0B2E3 /* [CP] Check Pods Manifest.lock */,
+				330B5D1FE2471D1C21F4EE8F /* [CP] Check Pods Manifest.lock */,
 				FA50E7B3200679AA008C28C1 /* RSwift */,
 				FA50E78F200670D2008C28C1 /* Sources */,
 				FA50E790200670D2008C28C1 /* Frameworks */,
 				FA50E791200670D2008C28C1 /* Resources */,
-				A76ABC43DF2A666E58352928 /* [CP] Embed Pods Frameworks */,
+				BE444FF2F3997A1F2E20C667 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,16 +346,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		68FC8ED18123703FF3B0B2E3 /* [CP] Check Pods Manifest.lock */ = {
+		330B5D1FE2471D1C21F4EE8F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Flamingo-checkManifestLockResult.txt",
 			);
@@ -366,13 +368,15 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A76ABC43DF2A666E58352928 /* [CP] Embed Pods Frameworks */ = {
+		BE444FF2F3997A1F2E20C667 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Flamingo/Pods-Flamingo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Flamingo/Pods-Flamingo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Attributed/Attributed.framework",
 				"${BUILT_PRODUCTS_DIR}/HNScraper/HNScraper.framework",
@@ -384,9 +388,12 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Attributed.framework",
@@ -399,11 +406,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flamingo/Pods-Flamingo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flamingo/Pods-Flamingo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FA50E7B3200679AA008C28C1 /* RSwift */ = {
@@ -434,11 +442,11 @@
 				FACE2FEA2020C0E4003BBAD0 /* Foundation+Extensions.swift in Sources */,
 				FAD1554D215D16A50045001A /* LocalDataService.swift in Sources */,
 				FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */,
+				FAD1554F215D24F60045001A /* Error+Flamingo.swift in Sources */,
 				FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */,
 				FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */,
 				FAE931DB20C9929F00FB0A78 /* PrototypeTableCell.swift in Sources */,
 				FAE931D820C991FE00FB0A78 /* Source.swift in Sources */,
-				FAE931E420C9AD2500FB0A78 /* UserDefaults+Extensions.swift in Sources */,
 				FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */,
 				FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */,
 				FAB10E1720213F3700F60594 /* MercuryAPI.swift in Sources */,
@@ -599,7 +607,7 @@
 		};
 		FA50E7A6200670D2008C28C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23502EE81E317663CC7E0C61 /* Pods-Flamingo.debug.xcconfig */;
+			baseConfigurationReference = 40447B31C403D657D167192A /* Pods-Flamingo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -620,7 +628,7 @@
 		};
 		FA50E7A7200670D2008C28C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0B6AB411FA31206017046495 /* Pods-Flamingo.release.xcconfig */;
+			baseConfigurationReference = E4CDA28FE4EDF1BDABA1025E /* Pods-Flamingo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

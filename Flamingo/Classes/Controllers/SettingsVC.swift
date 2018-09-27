@@ -42,13 +42,17 @@ class SettingsVC : UIViewController {
         sourceTitleContent.height = 80
         self.datasource.append(sourceTitleContent)
         
+        let isOn = sources.reduce(true) { (res, source) -> Bool in
+            return res && source.activated
+        }
         let switchAllContent = SwitchTableCellContent(title: "All",
-                                             isOn: UserDefaults.standard.unallowedDomains.isEmpty,
+                                             isOn: isOn,
                                              switchAction: { isOn in
-                                                if isOn{
-                                                    UserDefaults.standard.unallowedDomains = [String]()
-                                                } else {
-                                                    UserDefaults.standard.unallowedDomains = sources.map { $0.domain }
+                                                LocalData.hasSetSources = true
+                                                try! self.realm.write {
+                                                    for source in sources {
+                                                        source.activated = isOn
+                                                    }
                                                 }
                                                 self.reloadData()
         })
@@ -56,15 +60,14 @@ class SettingsVC : UIViewController {
         self.datasource.append(switchAllContent)
         
         let sourcesCells: [SwitchTableCellContent] = sources.map({ source in
-            let isBlocked = UserDefaults.standard.unallowedDomains.contains(source.domain)
             let content = SwitchTableCellContent(title: source.domain,
-                                                 isOn: !isBlocked,
+                                                 isOn: source.activated,
                                                  switchAction: { isOn in
-                                                    if isOn{
-                                                        source.allow()
-                                                    } else {
-                                                        source.block()
+                                                    LocalData.hasSetSources = true
+                                                    try! self.realm.write {
+                                                        source.activated = isOn
                                                     }
+                                                    
             })
             return content
         })

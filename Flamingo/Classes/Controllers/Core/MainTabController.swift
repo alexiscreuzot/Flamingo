@@ -61,6 +61,19 @@ class MainTabController : UITabBarController {
                                 FlamingoNVC(rootViewController: settingsController)]
         
         self.delegate = self
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(applicationDidBecomeActive),
+                                               name: UIApplication.didBecomeActiveNotification,
+                                               object: nil)
+    }
+    
+    @objc func applicationDidBecomeActive() {
+        if !LocalData.hasSetSources {
+            self.selectedIndex = 2
+        }
+        
+        print(Sources.toJSON())
     }
     
 }

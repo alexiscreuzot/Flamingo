@@ -14,7 +14,7 @@ struct LocalData {
         case hasSetSources
     }
     
-    public var hasSetSources : Bool {
+    public static var hasSetSources : Bool {
         get {
             return  (UserDefaults.standard.value(forKey: LocalDataKeys.hasSetSources.rawValue) as? Bool)
                     ?? false
