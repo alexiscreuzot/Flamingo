@@ -22,22 +22,33 @@ enum Theme : Int {
             return Theme(rawValue: LocalData.theme) ?? .day
         }
         set {
+            print("REFRESH THEME")
             LocalData.theme = newValue.rawValue
-            NotificationCenter.default.post(name: .themeDidChangeNotification, object: nil)
+            print(self.themables)
+            for themable in self.themables {
+                themable.themeDidChange()
+            }
         }
     }
+    
+    static var isNight : Bool {
+        return self.current == .night
+    }
+    
+    static var themables = [Themable]()
 }
 
-@objc protocol Themable : NSObjectProtocol {
+protocol Themable : NSObjectProtocol {
     func registerForThemeChange()
-    @objc func themeDidChange()
+    func themeDidChange()
 }
 
 extension Themable {
     func registerForThemeChange(){
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(themeDidChange),
-                                               name: .themeDidChangeNotification,
-                                               object: nil)
+        guard !Theme.themables.contains(where: { $0 === self}) else {
+            return
+        }
+        Theme.themables.append(self)
+        self.themeDidChange()
     }
 }

@@ -10,6 +10,10 @@ import UIKit
 
 class MainTabController : UITabBarController {
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return Theme.isNight ? .lightContent : .default
+    }
+    
     lazy var topController: ArticleListVC = {
         let controller = R.storyboard.articleList.articleListVC()!
         controller.title = "Top"
@@ -69,6 +73,7 @@ class MainTabController : UITabBarController {
                                                selector: #selector(applicationDidBecomeActive),
                                                name: UIApplication.didBecomeActiveNotification,
                                                object: nil)
+        self.registerForThemeChange()
     }
     
     @objc func applicationDidBecomeActive() {
@@ -78,6 +83,13 @@ class MainTabController : UITabBarController {
         
     }
     
+}
+
+extension MainTabController : Themable {
+    func themeDidChange() {
+        self.tabBar.barStyle = Theme.isNight ? .black : .default
+        self.setNeedsStatusBarAppearanceUpdate()
+    }
 }
 
 extension MainTabController : UITabBarControllerDelegate {

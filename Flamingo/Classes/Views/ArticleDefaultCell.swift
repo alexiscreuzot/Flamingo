@@ -13,10 +13,11 @@ protocol ArticleDefaultCellDelegate {
     func articleCell(_ cell: ArticleDefaultCell, didSelect post: FlamingoPost)
 }
 
-class ArticleDefaultCell: UITableViewCell{
+class ArticleDefaultCell: UITableViewCell {
     
     typealias OnCommentsAction = ((FlamingoPost) -> ())
     
+    @IBOutlet var topInfoHolderView : UIView!
     @IBOutlet var topInfoTopMarginConstraint : NSLayoutConstraint!
     @IBOutlet var topInfoLabel : UILabel!
     @IBOutlet var titleLabel : UILabel!
@@ -51,8 +52,8 @@ class ArticleDefaultCell: UITableViewCell{
     
     func setPost(_ post : FlamingoPost, highlightComment: Bool = true) {
         
+        self.applyTheme(Theme.current)
         self.topInfoTopMarginConstraint.constant = (post.row == 0) ? 30 : 16
-        self.contentView.backgroundColor = UIColor.white
         
         if let subtitle = post.preview?.excerpt, !subtitle.isEmpty, subtitle != "null" {
             self.middleLabelTopMarginConstraint.constant = 10
@@ -63,7 +64,7 @@ class ArticleDefaultCell: UITableViewCell{
         }
                 
         self.post = post
-        self.contentView.alpha = post.isRead ? 0.3 : 1.0
+        self.alpha = post.isRead ? 0.3 : 1.0
         self.topInfoLabel.isHidden = false
         self.topInfoLabel.text = String(post.row + 1)
         self.titleLabel.text = post.hnPost.title
@@ -77,16 +78,33 @@ class ArticleDefaultCell: UITableViewCell{
         self.commentsButton.isHidden = (post.hnPost.commentCount  == 0)
     }
     
+    func applyTheme(_ theme: Theme) {
+        switch theme {
+        case .day:
+            self.topInfoLabel.backgroundColor = .black
+            self.topInfoLabel.textColor = .white
+            self.titleLabel.textColor = .black
+            self.middleLabel.textColor = UIColor.init(white: 0, alpha: 0.5)
+            self.contentView.backgroundColor = .white
+            self.backgroundColor = .white
+        case .night:
+            self.topInfoLabel.backgroundColor = .white
+            self.topInfoLabel.textColor = .black
+            self.titleLabel.textColor = .white
+            self.middleLabel.textColor = UIColor.init(white: 1, alpha: 0.5)
+            self.contentView.backgroundColor = .black
+            self.backgroundColor = .white
+        }
+    }
+    
     // MARK: - Actions
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        self.topInfoLabel.backgroundColor = UIColor.black.withAlphaComponent(0.95)
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        self.topInfoLabel.backgroundColor = UIColor.black.withAlphaComponent(0.95)
     }
     
     @IBAction func selectComments() {

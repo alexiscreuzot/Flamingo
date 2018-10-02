@@ -13,7 +13,7 @@ import SafariServices
 import Moya
 import RealmSwift
 
-class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellDelegate {
+@objc class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellDelegate {
     
     enum State {
         case loading
@@ -99,6 +99,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
                                                name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
         
+        
         self.selectRefresh()
     }
     
@@ -106,6 +107,7 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.resetBlur()
+        self.themeDidChange()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -411,4 +413,17 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         self.showURL(post.url)
         tableView.reloadRows(at: [indexPath], with: .none)
     }
+}
+
+extension ArticleListVC : Themable {
+    
+    func themeDidChange() {
+        self.view.backgroundColor = Theme.isNight ? .black : .white
+        self.headerTitleLabel.textColor = Theme.isNight ? .white : .black
+        self.headerView.backgroundColor = Theme.isNight
+            ? UIColor.white.withAlphaComponent(0.1)
+            : UIColor.black.withAlphaComponent(0.1)
+        self.tableView.reloadData()
+    }
+    
 }

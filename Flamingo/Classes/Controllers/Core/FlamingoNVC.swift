@@ -9,52 +9,31 @@
 import Foundation
 import UIKit
 
-enum FlamingoNavigationBarTheme {
-    case main
-    case transparent
-}
-
 class FlamingoNVC : UINavigationController {
     
-    var theme: FlamingoNavigationBarTheme = .main {
-        didSet {
-            self.updateUI()
-        }
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        switch self.theme {
-        case .main, .transparent:
-            return .default
-        }
+        return Theme.isNight ? .lightContent : .default
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.updateUI()
+        self.registerForThemeChange()
     }
     
     func updateUI() {
-        
-        let color = UIColor.black
-        switch theme {
-        case .main:
-            break
-        case .transparent:
-            self.navigationBar.setBackgroundImage(UIImage(), for: .default)
-            self.navigationBar.shadowImage = UIImage()
-            self.navigationBar.backgroundColor = UIColor.clear
-            self.navigationBar.isTranslucent = true
-        }
-        
-        self.navigationBar.titleTextAttributes = [.foregroundColor: color]
-        self.navigationBar.tintColor = color
-    
-        self.navigationBar.largeTitleTextAttributes =
-            [NSAttributedString.Key.foregroundColor: UIColor.black,
-             NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!]
-        
-        self.setNeedsStatusBarAppearanceUpdate()
+        let color : UIColor = Theme.isNight ? .white : .black
+        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: color]
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: color,
+        .font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!]
+        self.isNavigationBarHidden = true
+        self.isNavigationBarHidden = false
+        self.navigationBar.barStyle = Theme.isNight ? .black : .default
     }
 
+}
+
+extension FlamingoNVC : Themable {
+    func themeDidChange() {
+        self.updateUI()
+    }
 }

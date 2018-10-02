@@ -18,6 +18,7 @@ class SettingsVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.registerForThemeChange()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,27 +36,41 @@ class SettingsVC : UIViewController {
     func reloadData() {
         let sources = realm.objects(Source.self).sorted(byKeyPath: "domain")
         
+        let sectionBackgroundColor = Theme.isNight
+            ? UIColor.init(white: 0, alpha: 0.98)
+            : UIColor.init(white: 0, alpha: 0.02)
+        let cellBackgroundColor = Theme.isNight
+            ? UIColor.black
+            : UIColor.white
+        let primaryTextColor = Theme.isNight
+            ? UIColor.white
+            : UIColor.black
+         
         self.datasource = [PrototypeTableCellContent]()
         
         // Theme
         let themeTitle = TitleSeparatorCellContent(title: "\nTHEME",
                                                            alignment: .left,
-                                                           color: .black,
-                                                           backgroundColor: .init(white: 0, alpha: 0.02))
+                                                           color: primaryTextColor,
+                                                           backgroundColor: sectionBackgroundColor)
+        themeTitle.backgroundColor = sectionBackgroundColor
         self.datasource.append(themeTitle)
         let nightModeSwitch = SwitchTableCellContent(title: "Night Mode",
-                                                      isOn: Theme.current == .night,
+                                                      isOn: Theme.isNight,
                                                       switchAction: { isOn in
-                                                        
+                                                        Theme.current = isOn ? .night : .day
         })
+        nightModeSwitch.backgroundColor = cellBackgroundColor
+        nightModeSwitch.titleColor = primaryTextColor
         self.datasource.append(nightModeSwitch)
         
         // Sources
         let sourceTitleContent = TitleSeparatorCellContent(title: "\nSOURCES",
                                                                 alignment: .left,
-                                                                color: .black,
-                                                                backgroundColor: .init(white: 0, alpha: 0.02))
+                                                                color: primaryTextColor,
+                                                                backgroundColor:sectionBackgroundColor)
         sourceTitleContent.height = UITableView.automaticDimension
+        sourceTitleContent.backgroundColor = sectionBackgroundColor
         self.datasource.append(sourceTitleContent)
         
         
@@ -74,12 +89,12 @@ class SettingsVC : UIViewController {
                                                 self.reloadData()
         })
         let titleAttributes: [NSAttributedString.Key : Any] = [.font : UIFont.boldSystemFont(ofSize: 16),
-                                                               .foregroundColor : UIColor(white: 1.0, alpha: 1.0)]
+                                                               .foregroundColor : primaryTextColor]
         let switchAllString = NSMutableAttributedString.init(string: "ALL",
                                                        attributes: titleAttributes)
         switchAllContent.attributedTitle = switchAllString
         switchAllContent.tint = UIColor(hex: "58C6FA")
-        switchAllContent.backgroundColor = UIColor(white: 0.05, alpha: 1.0)
+        switchAllContent.backgroundColor = cellBackgroundColor
         self.datasource.append(switchAllContent)
         
         let sourcesCells: [SwitchTableCellContent] = sources.map({ source in
@@ -92,6 +107,8 @@ class SettingsVC : UIViewController {
                                                     }
                                                     
             })
+            content.backgroundColor = cellBackgroundColor
+            content.titleColor = primaryTextColor
             return content
         })
         self.datasource.append(contentsOf: sourcesCells)
@@ -117,5 +134,18 @@ extension SettingsVC : UITableViewDataSource, UITableViewDelegate {
             cell.setPrototypeContent(content)
         }
         return cell
+    }
+}
+
+extension SettingsVC : Themable {
+    func themeDidChange() {
+        self.reloadData()
+        
+        self.tableView.separatorColor = Theme.isNight
+            ? UIColor.white.withAlphaComponent(0.2)
+            : UIColor.black.withAlphaComponent(0.2)
+        self.view.backgroundColor = Theme.isNight ? .black : .white
+        self.tableView.backgroundColor = Theme.isNight ? .black : .white
+       
     }
 }

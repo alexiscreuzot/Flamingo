@@ -38,6 +38,7 @@ class TitleSeparatorCell: PrototypeTableCell {
         super.setPrototypeContent(content)
         if let content = content as? TitleSeparatorCellContent {
             self.backgroundColor = content.backgroundColor
+            self.contentView.backgroundColor = content.backgroundColor
             
             if let attTitle = content.attributedTitle {
                 titleLabel?.attributedText = attTitle

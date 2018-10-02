@@ -14,6 +14,7 @@ class SwitchTableCellContent: PrototypeTableCellContent {
     
     var attributedTitle : NSAttributedString?
     var title = ""
+    var titleColor = UIColor.black
     var isOn = false
     var switchAction : SwitchBlock?
     var tint: UIColor = UIColor.orange
@@ -40,6 +41,7 @@ class SwitchTableCell: PrototypeTableCell {
     override func setPrototypeContent(_ content: PrototypeTableCellContent) {
         super.setPrototypeContent(content)
         if let content = content as? SwitchTableCellContent {
+            self.titleLabel.textColor = content.titleColor
             if let attributedTitle = content.attributedTitle {
                 self.titleLabel.attributedText = attributedTitle
             } else {
