@@ -61,8 +61,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 4 images.
+  /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
+    /// Image `RoundedIcon`.
+    static let roundedIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "RoundedIcon")
     /// Image `circle`.
     static let circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "circle")
     /// Image `color_gradient_blue`.
@@ -71,6 +73,11 @@ struct R: Rswift.Validatable {
     static let color_gradient = Rswift.ImageResource(bundle: R.hostingBundle, name: "color_gradient")
     /// Image `flamingo-back`.
     static let flamingoBack = Rswift.ImageResource(bundle: R.hostingBundle, name: "flamingo-back")
+    
+    /// `UIImage(named: "RoundedIcon", bundle: ..., traitCollection: ...)`
+    static func roundedIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.roundedIcon, compatibleWith: traitCollection)
+    }
     
     /// `UIImage(named: "circle", bundle: ..., traitCollection: ...)`
     static func circle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -181,7 +188,7 @@ struct R: Rswift.Validatable {
   
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
     struct localizable {
       /// en translation: Anonymous
       /// 
@@ -202,7 +209,7 @@ struct R: Rswift.Validatable {
       /// en translation: Nothing to show
       /// 
       /// Locales: en
-      static let commonNothingToShow = Rswift.StringResource(key: "Common/NothingToShow", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      static let flamingoErrorNothingToShow = Rswift.StringResource(key: "FlamingoError/NothingToShow", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Ok
       /// 
       /// Locales: en
@@ -210,7 +217,11 @@ struct R: Rswift.Validatable {
       /// en translation: Something went wrong
       /// 
       /// Locales: en
-      static let commonSomethingWentWrong = Rswift.StringResource(key: "Common/SomethingWentWrong", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      static let flamingoErrorUnknown = Rswift.StringResource(key: "FlamingoError/Unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: You first need to configure the sources in "Settings"
+      /// 
+      /// Locales: en
+      static let flamingoErrorSourcesNotConfigured = Rswift.StringResource(key: "FlamingoError/SourcesNotConfigured", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       
       /// en translation: Anonymous
       /// 
@@ -243,8 +254,8 @@ struct R: Rswift.Validatable {
       /// en translation: Nothing to show
       /// 
       /// Locales: en
-      static func commonNothingToShow(_: Void = ()) -> String {
-        return NSLocalizedString("Common/NothingToShow", bundle: R.hostingBundle, comment: "")
+      static func flamingoErrorNothingToShow(_: Void = ()) -> String {
+        return NSLocalizedString("FlamingoError/NothingToShow", bundle: R.hostingBundle, comment: "")
       }
       
       /// en translation: Ok
@@ -257,8 +268,15 @@ struct R: Rswift.Validatable {
       /// en translation: Something went wrong
       /// 
       /// Locales: en
-      static func commonSomethingWentWrong(_: Void = ()) -> String {
-        return NSLocalizedString("Common/SomethingWentWrong", bundle: R.hostingBundle, comment: "")
+      static func flamingoErrorUnknown(_: Void = ()) -> String {
+        return NSLocalizedString("FlamingoError/Unknown", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// en translation: You first need to configure the sources in "Settings"
+      /// 
+      /// Locales: en
+      static func flamingoErrorSourcesNotConfigured(_: Void = ()) -> String {
+        return NSLocalizedString("FlamingoError/SourcesNotConfigured", bundle: R.hostingBundle, comment: "")
       }
       
       fileprivate init() {}
@@ -294,6 +312,7 @@ struct _R: Rswift.Validatable {
       try settingsVC.validate()
       try articleList.validate()
       try articleComments.validate()
+      try launchScreen.validate()
     }
     
     struct articleComments: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
@@ -334,11 +353,15 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
+    struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
       
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "RoundedIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'RoundedIcon' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+      }
       
       fileprivate init() {}
     }

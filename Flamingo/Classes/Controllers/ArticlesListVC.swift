@@ -113,6 +113,15 @@ class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellD
         if let selectedRow = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRow(at: selectedRow, animated: true)
         }
+        
+        // Refresh if state not loaded
+        switch currentState {
+        case .loaded(_):
+            break
+        default:
+            self.selectRefresh()
+            break
+        }
     }
 
     override func viewDidLayoutSubviews() {

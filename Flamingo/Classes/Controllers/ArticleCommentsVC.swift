@@ -16,7 +16,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     
     enum State {
         case loading
-        case error(message: String)
+        case error(_ error: Error)
         case loaded
     }
 
@@ -66,7 +66,9 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
                                                          .foregroundColor : self.footLabel.textColor]
         self.titleLabel.text = self.post.hnPost.title
         self.summaryLabel.text = self.post.preview?.excerpt
-        self.footLabel.attributedText = self.post.infosAttributedString(attributes: attributes, withComments: true)
+        self.footLabel.attributedText = self.post.infosAttributedString(attributes: attributes,
+                                                                        withPointSize:self.footLabel.font.pointSize,
+                                                                        withComments: true)
         self.view.sendSubviewToBack(self.headerView)
         
         // TableView
@@ -119,14 +121,14 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         
         HNScraper.shared.getComments(ForPost: post.hnPost, buildHierarchy: false) { (_, comments, error) in
             if let error = error  {
-                self.currentState = .error(message: error.localizedDescription)
+                self.currentState = .error(error)
                 return
             }
             self.comments = comments
             if !self.comments.isEmpty {
                 self.currentState = .loaded
             } else {
-                self.currentState = .error(message: i18n.commonNothingToShow())
+                self.currentState = .error(FlamingoError.nothingToShow.error)
             }
         }
     }
@@ -139,9 +141,9 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
             loadingIndicator.startAnimating()
             stateLabel.text = i18n.articleCommentsLoading()
             break
-        case .error(let message) :
+        case .error(let error) :
             loadingIndicator.stopAnimating()
-            stateLabel.text = message
+            stateLabel.text = error.localizedDescription
             break
         case .loaded :
             loadingIndicator.stopAnimating()

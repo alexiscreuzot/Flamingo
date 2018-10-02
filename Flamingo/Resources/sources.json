@@ -1,6 +1,22 @@
 [
     {
         "activated" : false,
+        "domain" : "0x00sec.org"
+    },
+    {
+        "activated" : false,
+        "domain" : "bbc.com"
+    },
+    {
+        "activated" : false,
+        "domain" : "cnbc.com"
+    },
+    {
+        "activated" : false,
+        "domain" : "medium.com"
+    },
+    {
+        "activated" : false,
         "domain" : "theverge.com"
     },
     {

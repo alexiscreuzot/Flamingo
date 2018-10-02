@@ -12,6 +12,7 @@ typealias SimpleCellIdentifier = Int
 
 class SimpleTableCellContent: PrototypeTableCellContent {
     
+    var attributedTitle : NSAttributedString?
     var title : String!
     var value : String?
     var accessoryType: UITableViewCell.AccessoryType
@@ -39,7 +40,12 @@ class SimpleTableCell: PrototypeTableCell {
         super.setPrototypeContent(content)
         if let content = content as? SimpleTableCellContent {
             
-            self.titleLabel.text = content.title
+            if let attributedTitle = content.attributedTitle {
+                self.titleLabel.attributedText = attributedTitle
+            } else {
+               self.titleLabel.text = content.title
+            }
+            
             self.valueLabel.text = content.value
             
             self.accessoryType = content.accessoryType

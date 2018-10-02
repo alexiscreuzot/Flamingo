@@ -37,23 +37,24 @@ class SettingsVC : UIViewController {
         
         self.datasource = [PrototypeTableCellContent]()
         
-        let titleAttributes: [NSAttributedString.Key : Any] = [.font : UIFont.boldSystemFont(ofSize: 16),
-                                                               .foregroundColor : UIColor.black]
-        let subtitleAttributes: [NSAttributedString.Key : Any] = [.font : UIFont.systemFont(ofSize: 14),
-                                                               .foregroundColor : UIColor.black.withAlphaComponent(0.5)]
+        // Theme
+        let themeTitle = TitleSeparatorCellContent(title: "\nTHEME",
+                                                           alignment: .left,
+                                                           color: .black,
+                                                           backgroundColor: .init(white: 0, alpha: 0.02))
+        self.datasource.append(themeTitle)
+        let nightModeSwitch = SwitchTableCellContent(title: "Night Mode",
+                                                      isOn: Theme.current == .night,
+                                                      switchAction: { isOn in
+                                                        
+        })
+        self.datasource.append(nightModeSwitch)
         
-        let attString = NSMutableAttributedString.init(string: "\nSOURCES",
-                                                            attributes: titleAttributes)
-        let subtitle = "\n\nSwitch on the sources from which you would like to see content."
-        let subtitleAttString = NSMutableAttributedString.init(string: subtitle,
-                                                               attributes: subtitleAttributes)
-        attString.append(subtitleAttString)
-        
-        let sourceTitleContent = TitleSeparatorCellContent(title: "",
+        // Sources
+        let sourceTitleContent = TitleSeparatorCellContent(title: "\nSOURCES",
                                                                 alignment: .left,
                                                                 color: .black,
-                                                                backgroundColor: .init(white: 0, alpha: 0.05))
-        sourceTitleContent.attributedTitle = attString
+                                                                backgroundColor: .init(white: 0, alpha: 0.02))
         sourceTitleContent.height = UITableView.automaticDimension
         self.datasource.append(sourceTitleContent)
         
@@ -72,8 +73,13 @@ class SettingsVC : UIViewController {
                                                 }
                                                 self.reloadData()
         })
-        switchAllContent.tint = UIColor.green
-        switchAllContent.backgroundColor = UIColor.black.withAlphaComponent(0.03)
+        let titleAttributes: [NSAttributedString.Key : Any] = [.font : UIFont.boldSystemFont(ofSize: 16),
+                                                               .foregroundColor : UIColor(white: 1.0, alpha: 1.0)]
+        let switchAllString = NSMutableAttributedString.init(string: "ALL",
+                                                       attributes: titleAttributes)
+        switchAllContent.attributedTitle = switchAllString
+        switchAllContent.tint = UIColor(hex: "58C6FA")
+        switchAllContent.backgroundColor = UIColor(white: 0.05, alpha: 1.0)
         self.datasource.append(switchAllContent)
         
         let sourcesCells: [SwitchTableCellContent] = sources.map({ source in

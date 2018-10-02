@@ -7,11 +7,14 @@
 */
 
 "Common/Ok" = "Ok";
-"Common/SomethingWentWrong" = "Something went wrong";
-"Common/NothingToShow" = "Nothing to show";
 
 "ArticlesList/LoadingFailed" = "Couldn't load feed :(";
 
 "ArticleComments/Loading" = "Loading comments...";
 "ArticleComments/LoadingFailed" = "Couldn't load comments :(";
 "ArticleComments/Comment/Anonymous" = "Anonymous";
+
+
+"FlamingoError/Unknown" = "Something went wrong";
+"FlamingoError/NothingToShow" = "Nothing to show";
+"FlamingoError/SourcesNotConfigured" = "You first need to configure the sources in \"Settings\"";

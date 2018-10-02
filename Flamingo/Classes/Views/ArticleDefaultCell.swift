@@ -35,12 +35,16 @@ class ArticleDefaultCell: UITableViewCell{
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.topInfoLabel.layer.cornerRadius = self.topInfoLabel.bounds.width / 2
         self.topInfoLabel.layer.masksToBounds = true
         
         let selView = UIView()
         selView.backgroundColor = UIColor.groupTableViewBackground
         self.selectedBackgroundView = selView
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.topInfoLabel.layer.cornerRadius = self.topInfoLabel.bounds.width / 2
     }
     
     // MARK: - Logic
@@ -66,8 +70,10 @@ class ArticleDefaultCell: UITableViewCell{
         
         let attributes: [NSAttributedString.Key : Any] = [.font : self.bottomLabel.font,
                                                          .foregroundColor : self.bottomLabel.textColor]
-        self.bottomLabel.attributedText = post.infosAttributedString(attributes: attributes, withComments: false)
-        self.commentsButton.setAttributedTitle(post.commentsAttributedString(attributes: attributes, highlightComment: true), for: .normal)
+        self.bottomLabel.attributedText = post.infosAttributedString(attributes: attributes, withPointSize:self.bottomLabel.font.pointSize, withComments: false)
+        self.commentsButton.setAttributedTitle(post.commentsAttributedString(attributes: attributes,
+                                                                             withPointSize: self.commentsButton.titleLabel!.font.pointSize,
+                                                                             highlightComment: true), for: .normal)
         self.commentsButton.isHidden = (post.hnPost.commentCount  == 0)
     }
     

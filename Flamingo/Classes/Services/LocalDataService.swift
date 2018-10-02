@@ -12,6 +12,7 @@ struct LocalData {
     
     enum LocalDataKeys : String, CodingKey{
         case hasSetSources
+        case theme
     }
     
     public static var hasSetSources : Bool {
@@ -21,6 +22,17 @@ struct LocalData {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: LocalDataKeys.hasSetSources.rawValue)
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    public static var theme : Int {
+        get {
+            return  (UserDefaults.standard.value(forKey: LocalDataKeys.theme.rawValue) as? Int)
+                ?? Theme.day.rawValue
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: LocalDataKeys.theme.rawValue)
             UserDefaults.standard.synchronize()
         }
     }

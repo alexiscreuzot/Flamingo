@@ -9,6 +9,7 @@
 import Foundation
 
 enum FlamingoError {
+    case unknown
     case sourcesNotConfigured
     case nothingToShow
 }
@@ -17,6 +18,8 @@ extension FlamingoError {
     
     var code : Int {
         switch self {
+        case .unknown:
+            return 1000
         case .sourcesNotConfigured:
             return 1001
         case .nothingToShow:
@@ -26,10 +29,12 @@ extension FlamingoError {
     
     var message : String {
         switch self {
+        case .unknown:
+            return i18n.flamingoErrorUnknown()
         case .sourcesNotConfigured:
-            return "You first need to configure the sources"
+            return i18n.flamingoErrorSourcesNotConfigured()
         case .nothingToShow:
-            return "Nothing to show"
+            return i18n.flamingoErrorNothingToShow()
         }
     }
     

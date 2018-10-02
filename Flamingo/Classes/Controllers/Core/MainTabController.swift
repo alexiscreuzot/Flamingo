@@ -18,6 +18,7 @@ class MainTabController : UITabBarController {
                                 image: FontIcon(.star, size: 24, color: UIColor.darkGray).image,
                                 selectedImage: FontIcon(.star, size: 24, color: UIColor.orange).image)
         item.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
+        item.accessibilityLabel = "Top stories"
         controller.tabBarItem = item
         
         return controller
@@ -31,6 +32,7 @@ class MainTabController : UITabBarController {
                                 image: FontIcon(.newspaper, size: 24, color: UIColor.darkGray).image,
                                 selectedImage: FontIcon(.newspaper, size: 24, color: UIColor.orange).image)
         item.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
+        item.accessibilityLabel = "New stories"
         controller.tabBarItem = item
         
         return controller
@@ -43,6 +45,7 @@ class MainTabController : UITabBarController {
                                 image: FontIcon(.settings, size: 24, color: UIColor.darkGray).image,
                                 selectedImage: FontIcon(.settings, size: 24, color: UIColor.orange).image)
         item.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
+        item.accessibilityLabel = "Settings"
         controller.tabBarItem = item
         
         return controller
@@ -73,7 +76,6 @@ class MainTabController : UITabBarController {
             self.selectedIndex = 2
         }
         
-        print(Sources.toJSON())
     }
     
 }

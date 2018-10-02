@@ -26,6 +26,7 @@
 		FAB2599B20C728BB00B94ECA /* ArticleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB2599A20C728BB00B94ECA /* ArticleList.storyboard */; };
 		FAB2599D20C728CC00B94ECA /* ArticleComments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB2599C20C728CC00B94ECA /* ArticleComments.storyboard */; };
 		FAB2599F20C72C6A00B94ECA /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2599E20C72C6A00B94ECA /* MainTabController.swift */; };
+		FAB32CF22163C046003EE9C4 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB32CF12163C046003EE9C4 /* ThemeService.swift */; };
 		FAB838E3202893E500DBFEF7 /* ArticleCommentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838E2202893E500DBFEF7 /* ArticleCommentsVC.swift */; };
 		FAB838E5202899AF00DBFEF7 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838E4202899AF00DBFEF7 /* CommentCell.swift */; };
 		FAB838E92028B70700DBFEF7 /* FontIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838E82028B70700DBFEF7 /* FontIcon.swift */; };
@@ -70,6 +71,7 @@
 		FAB2599A20C728BB00B94ECA /* ArticleList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleList.storyboard; sourceTree = "<group>"; };
 		FAB2599C20C728CC00B94ECA /* ArticleComments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleComments.storyboard; sourceTree = "<group>"; };
 		FAB2599E20C72C6A00B94ECA /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		FAB32CF12163C046003EE9C4 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
 		FAB838E2202893E500DBFEF7 /* ArticleCommentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCommentsVC.swift; sourceTree = "<group>"; };
 		FAB838E4202899AF00DBFEF7 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		FAB838E82028B70700DBFEF7 /* FontIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontIcon.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				FAB10E1620213F3700F60594 /* MercuryAPI.swift */,
 				FAD1554A215D14AF0045001A /* JSONSerializer.swift */,
 				FAD1554C215D16A50045001A /* LocalDataService.swift */,
+				FAB32CF12163C046003EE9C4 /* ThemeService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */,
 				FAB838E3202893E500DBFEF7 /* ArticleCommentsVC.swift in Sources */,
 				FAB2599F20C72C6A00B94ECA /* MainTabController.swift in Sources */,
+				FAB32CF22163C046003EE9C4 /* ThemeService.swift in Sources */,
 				FAB10E1B20214C2600F60594 /* Response+ModelMapper.swift in Sources */,
 				FAA4E4262007829E00D2D88C /* ArticlesListVC.swift in Sources */,
 				FAB838EB2028CFF500DBFEF7 /* Constants.swift in Sources */,

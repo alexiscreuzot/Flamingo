@@ -12,6 +12,7 @@ class SwitchTableCellContent: PrototypeTableCellContent {
     
     public typealias SwitchBlock = ((Bool) -> ())
     
+    var attributedTitle : NSAttributedString?
     var title = ""
     var isOn = false
     var switchAction : SwitchBlock?
@@ -39,7 +40,11 @@ class SwitchTableCell: PrototypeTableCell {
     override func setPrototypeContent(_ content: PrototypeTableCellContent) {
         super.setPrototypeContent(content)
         if let content = content as? SwitchTableCellContent {
-            self.titleLabel?.text = content.title
+            if let attributedTitle = content.attributedTitle {
+                self.titleLabel.attributedText = attributedTitle
+            } else {
+                self.titleLabel.text = content.title
+            }
             self.swithView.setOn(content.isOn, animated: false)
             self.swithView.onTintColor = content.tint
         }
