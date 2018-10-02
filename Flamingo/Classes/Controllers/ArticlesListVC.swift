@@ -81,9 +81,11 @@ import RealmSwift
         let top = ArticleListVC.HeaderHeight - ArticleListVC.CutHeight
         
         self.stateLabel.text = nil
+        self.stateLabel.textColor = UIColor.lightGray
+        self.refreshButton.setTitleColor(UIColor.lightGray, for: .normal)
         self.refreshButton.alpha = 0
         self.refreshButton.layer.borderWidth = 1
-        self.refreshButton.layer.borderColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        self.refreshButton.layer.borderColor = UIColor.lightGray.cgColor
         self.refreshButton.layer.cornerRadius = 5
         
         let bottomInset: CGFloat = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0.0
@@ -100,7 +102,6 @@ import RealmSwift
                                                object: nil)
         
         
-        self.selectRefresh()
     }
     
     override func viewWillAppear(_ animated: Bool) {

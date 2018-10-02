@@ -56,6 +56,9 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        if let flamingoNav = self.navigationController as? FlamingoNVC {
+            flamingoNav.theme = .transparent
+        }
         
         // Header
         self.headerImageView.layer.mask = self.maskLayer
@@ -83,6 +86,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         
         self.fetchHeaderImage()
         self.refreshComments()
+        self.registerForThemeChange()
     }
     
     override func viewDidLayoutSubviews() {
@@ -257,4 +261,12 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         }        
     }
 
+}
+
+
+extension ArticleCommentsVC : Themable {
+    
+    func themeDidChange() {
+        self.tableView.reloadData()
+    }
 }

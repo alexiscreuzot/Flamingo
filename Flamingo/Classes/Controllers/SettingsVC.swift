@@ -18,6 +18,7 @@ class SettingsVC : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.registerForThemeChange()
     }
     
@@ -146,6 +147,5 @@ extension SettingsVC : Themable {
             : UIColor.black.withAlphaComponent(0.2)
         self.view.backgroundColor = Theme.isNight ? .black : .white
         self.tableView.backgroundColor = Theme.isNight ? .black : .white
-       
     }
 }
