@@ -40,17 +40,28 @@ class ThemeStyle {
     var secondaryAccentColor : UIColor = .green
 }
 
-enum Theme : Int {
+enum Theme : Int, CaseIterable {
     case day
     case night
+    case space
+    
+    var name : String {
+        switch self {
+        case .day:
+            return "Default"
+        case .night:
+            return "Night"
+        case .space:
+            return "Space"
+        }
+    }
     
     static var current : Theme {
         get {
-            return Theme(rawValue: LocalData.theme) ?? .day
+            return LocalData.theme
         }
         set {
-            LocalData.theme = newValue.rawValue
-            print(self.themables)
+            LocalData.theme = newValue
             for themable in self.themables {
                 themable.themeDidChange()
             }
@@ -76,6 +87,19 @@ enum Theme : Int {
                 theme.secondaryBackgroundColor = UIColor(white: 0.05, alpha: 1.0)
                 theme.textColor = .white
                 theme.secondaryTextColor = UIColor(white: 0.4, alpha: 1.0)
+                return theme
+                
+            case .space:
+                let theme = ThemeStyle()
+                theme.statusBarStyle = .lightContent
+                theme.blurEffectStyle = .dark
+                theme.navigationBarStyle = .black
+                theme.backgroundColor = UIColor(hex: "232323")
+                theme.secondaryBackgroundColor = UIColor(hex: "323232")
+                theme.textColor = UIColor(hex: "F3F3F3")
+                theme.secondaryTextColor = UIColor(hex: "CDCDCD")
+                theme.accentColor = UIColor(hex: "B55DEB")
+                theme.secondaryAccentColor = UIColor(hex: "7BA0FA")
                 return theme
             }
         }

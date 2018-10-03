@@ -9,6 +9,10 @@
 import UIKit
 import RealmSwift
 
+enum SettingsCellIdentifier : SimpleCellIdentifier {
+    case themeIdentifier
+}
+
 class SettingsVC : UIViewController {
     
     @IBOutlet var tableView : UITableView!
@@ -49,15 +53,15 @@ class SettingsVC : UIViewController {
                                                            color: Theme.current.style.textColor,
                                                            backgroundColor: Theme.current.style.secondaryBackgroundColor)
         self.datasource.append(themeTitle)
-        let nightModeSwitch = SwitchTableCellContent(title: "Night Mode",
-                                                      isOn: Theme.isNight,
-                                                      switchAction: { isOn in
-                                                        Theme.current = isOn ? .night : .day
-        })
-        nightModeSwitch.backgroundColor = Theme.current.style.backgroundColor
-        nightModeSwitch.titleColor = Theme.current.style.textColor
-        nightModeSwitch.tint = Theme.current.style.accentColor
-        self.datasource.append(nightModeSwitch)
+        
+        let currentThemeCell = SimpleTableCellContent.init(title: "Theme",
+                                                           value: Theme.current.name,
+                                                           accessoryType: .none,
+                                                           identifier: SettingsCellIdentifier.themeIdentifier.rawValue)
+        currentThemeCell.backgroundColor = Theme.current.style.backgroundColor
+        currentThemeCell.titleColor = Theme.current.style.textColor
+        currentThemeCell.valueColor = Theme.current.style.secondaryTextColor
+        self.datasource.append(currentThemeCell)
         
         // Sources
         let sourceTitleContent = TitleSeparatorCellContent(title: "\nSOURCES",
@@ -109,6 +113,7 @@ class SettingsVC : UIViewController {
         self.datasource.append(contentsOf: sourcesCells)
         self.tableView.reloadData()
     }
+
 }
 
 extension SettingsVC : UITableViewDataSource, UITableViewDelegate {
@@ -130,9 +135,35 @@ extension SettingsVC : UITableViewDataSource, UITableViewDelegate {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let content = self.datasource[indexPath.row]
+        switch content.identifier {
+        case SettingsCellIdentifier.themeIdentifier.rawValue:
+            self.selectTheme()
+        default:
+            break
+        }
+    }
 }
 
 extension SettingsVC : Themable {
+    
+    func selectTheme() {
+        let choiceSheet = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
+        for theme in Theme.allCases {
+            let action = UIAlertAction.init(title: theme.name, style: .default) { _ in
+                Theme.current = theme
+            }
+            let isSelectedTheme = (Theme.current == theme)
+            action.setValue(isSelectedTheme, forKey: "checked")
+            choiceSheet.addAction(action)
+        }
+        let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel)
+        choiceSheet.addAction(cancelAction)
+        self.present(choiceSheet, animated: true)
+    }
+    
     func themeDidChange() {
         self.reloadData()
         self.view.backgroundColor = Theme.current.style.backgroundColor

@@ -428,6 +428,7 @@ extension ArticleListVC : Themable {
         self.headerView.backgroundColor = Theme.current.style.secondaryBackgroundColor
         self.tableView.separatorColor = Theme.current.style.secondaryBackgroundColor
         self.statusBarEffectView.effect  = UIBlurEffect(style: Theme.current.style.blurEffectStyle)
+        self.effectView.backgroundColor = Theme.current.style.backgroundColor.withAlphaComponent(0.25)
         self.headerTitleLabel.textColor = Theme.current.style.textColor
         self.tableView.reloadData()
     }

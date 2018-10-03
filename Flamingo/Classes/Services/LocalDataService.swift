@@ -26,13 +26,13 @@ struct LocalData {
         }
     }
     
-    public static var theme : Int {
+    public static var theme : Theme {
         get {
-            return  (UserDefaults.standard.value(forKey: LocalDataKeys.theme.rawValue) as? Int)
-                ?? Theme.day.rawValue
+            let themeValue = UserDefaults.standard.integer(forKey: LocalDataKeys.theme.rawValue)
+            return  Theme(rawValue: themeValue) ?? Theme.day
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: LocalDataKeys.theme.rawValue)
+            UserDefaults.standard.set(newValue.rawValue, forKey: LocalDataKeys.theme.rawValue)
             UserDefaults.standard.synchronize()
         }
     }

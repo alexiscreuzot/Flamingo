@@ -13,7 +13,9 @@ typealias SimpleCellIdentifier = Int
 class SimpleTableCellContent: PrototypeTableCellContent {
     
     var attributedTitle : NSAttributedString?
+    var titleColor : UIColor = .black
     var title : String!
+    var valueColor : UIColor = .black
     var value : String?
     var accessoryType: UITableViewCell.AccessoryType
     
@@ -39,6 +41,9 @@ class SimpleTableCell: PrototypeTableCell {
     override func setPrototypeContent(_ content: PrototypeTableCellContent) {
         super.setPrototypeContent(content)
         if let content = content as? SimpleTableCellContent {
+            
+            self.titleLabel.textColor = content.titleColor
+            self.valueLabel.textColor = content.valueColor
             
             if let attributedTitle = content.attributedTitle {
                 self.titleLabel.attributedText = attributedTitle

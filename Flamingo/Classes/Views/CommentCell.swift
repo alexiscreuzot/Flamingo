@@ -37,7 +37,7 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
         
         self.bodyTextLabel.enabledTextCheckingTypes = NSTextCheckingResult.CheckingType.link.rawValue
         self.bodyTextLabel.delegate = self
-        self.bodyTextLabel.linkAttributes = [NSAttributedString.Key.foregroundColor: UIColor.orange]
+        self.bodyTextLabel.linkAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.style.accentColor]
         
         let selView = UIView()
         selView.backgroundColor = UIColor.groupTableViewBackground
