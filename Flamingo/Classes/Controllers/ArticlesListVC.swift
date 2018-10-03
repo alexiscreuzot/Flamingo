@@ -429,8 +429,8 @@ extension ArticleListVC : Themable {
         self.view.backgroundColor = Theme.isNight ? .black : .white
         self.headerTitleLabel.textColor = Theme.isNight ? .white : .black
         self.headerView.backgroundColor = Theme.isNight
-            ? UIColor.white.withAlphaComponent(0.1)
-            : UIColor.black.withAlphaComponent(0.1)
+            ? UIColor.white.withAlphaComponent(0.25)
+            : UIColor.black.withAlphaComponent(0.25)
         self.tableView.reloadData()
     }
     

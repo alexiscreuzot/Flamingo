@@ -39,7 +39,7 @@ class ArticleDefaultCell: UITableViewCell {
         self.topInfoLabel.layer.masksToBounds = true
         
         let selView = UIView()
-        selView.backgroundColor = Theme.isNight ? UIColor(white: 0.05, alpha: 1) : UIColor(white: 0.95, alpha: 1)
+        selView.backgroundColor = Theme.isNight ? UIColor(white: 0.2, alpha: 1) : UIColor(white: 0.8, alpha: 1)
         self.selectedBackgroundView = selView
     }
     
@@ -105,6 +105,18 @@ class ArticleDefaultCell: UITableViewCell {
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
+        
+        switch Theme.current {
+        case .day:
+            self.topInfoLabel.backgroundColor = .black
+            self.topInfoLabel.textColor = .white
+            break
+        case .night:
+            self.topInfoLabel.backgroundColor = .white
+            self.topInfoLabel.textColor = .black
+            break
+        }
+        
     }
     
     @IBAction func selectComments() {
