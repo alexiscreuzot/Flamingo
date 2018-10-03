@@ -267,6 +267,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
 extension ArticleCommentsVC : Themable {
     
     func themeDidChange() {
+        self.view.backgroundColor = Theme.isNight ? .black : .white
         self.tableView.reloadData()
     }
 }

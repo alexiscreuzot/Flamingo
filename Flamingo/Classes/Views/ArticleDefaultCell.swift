@@ -39,7 +39,7 @@ class ArticleDefaultCell: UITableViewCell {
         self.topInfoLabel.layer.masksToBounds = true
         
         let selView = UIView()
-        selView.backgroundColor = UIColor.groupTableViewBackground
+        selView.backgroundColor = Theme.isNight ? UIColor(white: 0.05, alpha: 1) : UIColor(white: 0.95, alpha: 1)
         self.selectedBackgroundView = selView
     }
     
@@ -93,7 +93,7 @@ class ArticleDefaultCell: UITableViewCell {
             self.titleLabel.textColor = .white
             self.middleLabel.textColor = UIColor.init(white: 1, alpha: 0.5)
             self.contentView.backgroundColor = .black
-            self.backgroundColor = .white
+            self.backgroundColor = .black
         }
     }
     

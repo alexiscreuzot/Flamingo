@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VWx-dF-e6A">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VWx-dF-e6A">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,7 +62,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oAS-pA-rKS">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="122.66666666666667"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Fringilla Inceptos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t3-hX-aXG">
                                                             <rect key="frame" x="8" y="10.000000000000002" width="130" height="19.666666666666671"/>
@@ -72,13 +71,13 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="• 10 minutes ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rx-Iq-UmV">
-                                                            <rect key="frame" x="141.66666666666666" y="13" width="224.99999999999997" height="16"/>
+                                                            <rect key="frame" x="142" y="13" width="225" height="16"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Fq-r9-ZAs" customClass="TTTAttributedLabel">
-                                                            <rect key="frame" x="8" y="37" width="359" height="54"/>
+                                                            <rect key="frame" x="8" y="37.666666666666657" width="359" height="54"/>
                                                             <accessibility key="accessibilityConfiguration">
                                                                 <accessibilityTraits key="traits" link="YES" staticText="YES"/>
                                                             </accessibility>
@@ -88,7 +87,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="2Fq-r9-ZAs" firstAttribute="top" secondItem="4t3-hX-aXG" secondAttribute="bottom" constant="8" id="4kh-FC-Rnz"/>
                                                         <constraint firstItem="2Fq-r9-ZAs" firstAttribute="leading" secondItem="oAS-pA-rKS" secondAttribute="leading" constant="8" id="KVp-Db-JQa"/>
@@ -112,6 +111,7 @@
                                         <connections>
                                             <outlet property="bodyTextLabel" destination="2Fq-r9-ZAs" id="wpG-Si-6hZ"/>
                                             <outlet property="createdLabel" destination="5Rx-Iq-UmV" id="FiR-u7-ivD"/>
+                                            <outlet property="holderView" destination="oAS-pA-rKS" id="y0W-Ux-K0D"/>
                                             <outlet property="leftMarginConstraint" destination="c8l-aS-8KW" id="TtK-Yn-qTG"/>
                                             <outlet property="topLabel" destination="4t3-hX-aXG" id="Sbf-1I-Wes"/>
                                         </connections>

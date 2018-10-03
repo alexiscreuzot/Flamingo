@@ -27,7 +27,8 @@ import RealmSwift
     
     @IBOutlet var statusBarTopConstraint : NSLayoutConstraint!
     
-    @IBOutlet weak var effectView: UIVisualEffectView!
+    @IBOutlet var statusBarEffectView: UIVisualEffectView!
+    @IBOutlet var effectView: UIVisualEffectView!
     @IBOutlet var headerView : UIView!
     @IBOutlet var headerTitleLabel : UILabel!
     @IBOutlet var headerImageView : UIImageView!
@@ -57,6 +58,10 @@ import RealmSwift
                 self.updateUI()
             }
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return Theme.isNight ? .lightContent : .default
     }
     
     // MARK: - Lifecycle
@@ -419,6 +424,8 @@ import RealmSwift
 extension ArticleListVC : Themable {
     
     func themeDidChange() {
+        self.tableView.separatorColor = Theme.isNight ? UIColor.darkGray : UIColor.lightGray
+        self.statusBarEffectView.effect  = Theme.isNight ? UIBlurEffect(style: .dark) : UIBlurEffect(style: .light)
         self.view.backgroundColor = Theme.isNight ? .black : .white
         self.headerTitleLabel.textColor = Theme.isNight ? .white : .black
         self.headerView.backgroundColor = Theme.isNight

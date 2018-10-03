@@ -16,6 +16,10 @@ class SettingsVC : UIViewController {
     
     let realm = try! Realm()
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return Theme.isNight ? .lightContent : .default
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

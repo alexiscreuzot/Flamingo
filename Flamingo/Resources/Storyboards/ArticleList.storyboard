@@ -254,6 +254,7 @@
                         <outlet property="refreshButton" destination="qCU-bh-oFJ" id="8hM-oo-SfN"/>
                         <outlet property="refreshImageView" destination="Q3F-ui-frw" id="Aj1-pu-Y2A"/>
                         <outlet property="stateLabel" destination="aAA-lT-IQ8" id="jNK-7e-3g9"/>
+                        <outlet property="statusBarEffectView" destination="JnB-Mt-PGG" id="GZO-FT-MeN"/>
                         <outlet property="statusBarTopConstraint" destination="4g1-TD-8W0" id="UoT-C3-JGH"/>
                         <outlet property="tableView" destination="3OW-3S-iU0" id="Kkz-hW-G88"/>
                         <segue destination="bQs-xp-3no" kind="show" identifier="comments" id="Yag-Ih-0a4"/>

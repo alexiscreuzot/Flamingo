@@ -22,18 +22,14 @@ class FlamingoNVC : UINavigationController {
         }
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        switch self.theme {
-        case .main:
-            return Theme.isNight ? .lightContent : .default
-        case .transparent:
-            return .default
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerForThemeChange()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.updateUI()
     }
     
     func updateUI() {
@@ -58,9 +54,7 @@ class FlamingoNVC : UINavigationController {
     
         self.navigationBar.largeTitleTextAttributes =
             [NSAttributedString.Key.foregroundColor: color,
-             NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!]
-        
-        self.setNeedsStatusBarAppearanceUpdate()
+             NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!]        
     }
 
 }
@@ -68,5 +62,12 @@ class FlamingoNVC : UINavigationController {
 extension FlamingoNVC : Themable {
     func themeDidChange() {
         self.updateUI()
+    }
+}
+
+
+extension UINavigationController {
+    open override var childForStatusBarStyle: UIViewController? {
+        return visibleViewController
     }
 }

@@ -34,8 +34,10 @@ enum Theme : Int {
     static var isNight : Bool {
         return self.current == .night
     }
-    
     static var themables = [Themable]()
+    
+    
+    
 }
 
 protocol Themable : NSObjectProtocol {
