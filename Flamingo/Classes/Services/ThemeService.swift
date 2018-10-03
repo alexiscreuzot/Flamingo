@@ -94,8 +94,8 @@ enum Theme : Int, CaseIterable {
                 theme.statusBarStyle = .lightContent
                 theme.blurEffectStyle = .dark
                 theme.navigationBarStyle = .black
-                theme.backgroundColor = UIColor(hex: "232323")
-                theme.secondaryBackgroundColor = UIColor(hex: "323232")
+                theme.backgroundColor = UIColor(hex: "323232")
+                theme.secondaryBackgroundColor = UIColor(hex: "262626")
                 theme.textColor = UIColor(hex: "F3F3F3")
                 theme.secondaryTextColor = UIColor(hex: "CDCDCD")
                 theme.accentColor = UIColor(hex: "B55DEB")
