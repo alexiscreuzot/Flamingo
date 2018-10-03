@@ -14,13 +14,6 @@ class MainTabController : UITabBarController {
         let controller = R.storyboard.articleList.articleListVC()!
         controller.title = "Top"
         controller.pageType = .front
-        let item = UITabBarItem(title: nil,
-                                image: FontIcon(.star, size: 24, color: UIColor.darkGray).image,
-                                selectedImage: FontIcon(.star, size: 24, color: UIColor.orange).image)
-        item.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
-        item.accessibilityLabel = "Top stories"
-        controller.tabBarItem = item
-        
         return controller
     }()
     
@@ -28,26 +21,12 @@ class MainTabController : UITabBarController {
         let controller = R.storyboard.articleList.articleListVC()!
         controller.title = "News"
         controller.pageType = .news
-        let item = UITabBarItem(title: nil,
-                                image: FontIcon(.newspaper, size: 24, color: UIColor.darkGray).image,
-                                selectedImage: FontIcon(.newspaper, size: 24, color: UIColor.orange).image)
-        item.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
-        item.accessibilityLabel = "New stories"
-        controller.tabBarItem = item
-        
         return controller
     }()
     
     lazy var settingsController: SettingsVC = {
         let controller = R.storyboard.settingsVC.settingsVC()!
         controller.title = "Settings"
-        let item = UITabBarItem(title: nil,
-                                image: FontIcon(.settings, size: 24, color: UIColor.darkGray).image,
-                                selectedImage: FontIcon(.settings, size: 24, color: UIColor.orange).image)
-        item.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
-        item.accessibilityLabel = "Settings"
-        controller.tabBarItem = item
-        
         return controller
     }()
     
@@ -83,7 +62,29 @@ class MainTabController : UITabBarController {
 
 extension MainTabController : Themable {
     func themeDidChange() {
-        self.tabBar.barStyle = Theme.isNight ? .black : .default
+
+        let item1 = UITabBarItem(title: nil,
+                                image: FontIcon(.star, size: 24, color: Theme.current.style.secondaryTextColor).image,
+                                selectedImage: FontIcon(.star, size: 24, color: Theme.current.style.accentColor).image)
+        item1.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
+        item1.accessibilityLabel = "Top stories"
+        self.topController.tabBarItem = item1
+        
+        let item2 = UITabBarItem(title: nil,
+                                image: FontIcon(.newspaper, size: 24, color: Theme.current.style.secondaryTextColor).image,
+                                selectedImage: FontIcon(.newspaper, size: 24, color: Theme.current.style.accentColor).image)
+        item2.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
+        item2.accessibilityLabel = "New stories"
+        self.newsController.tabBarItem = item2
+        
+        let item3 = UITabBarItem(title: nil,
+                                image: FontIcon(.settings, size: 24, color: Theme.current.style.secondaryTextColor).image,
+                                selectedImage: FontIcon(.settings, size: 24, color: Theme.current.style.accentColor).image)
+        item3.imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
+        item3.accessibilityLabel = "Settings"
+        self.settingsController.tabBarItem = item3
+
+        self.tabBar.barStyle = Theme.current.style.navigationBarStyle
         self.setNeedsStatusBarAppearanceUpdate()
     }
 }
@@ -124,8 +125,6 @@ extension MainTabController : UITabBarControllerDelegate {
         UIView.animate(withDuration: 0.8, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.3, options: .allowUserInteraction, animations: {() -> Void in
             toView?.transform = CGAffineTransform.identity
         }, completion: { _ in })
-        
-        
     }
     
 }

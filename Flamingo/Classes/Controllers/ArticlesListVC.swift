@@ -61,7 +61,7 @@ import RealmSwift
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return Theme.isNight ? .lightContent : .default
+        return Theme.current.style.statusBarStyle
     }
     
     // MARK: - Lifecycle
@@ -424,13 +424,11 @@ import RealmSwift
 extension ArticleListVC : Themable {
     
     func themeDidChange() {
-        self.tableView.separatorColor = Theme.isNight ? UIColor.darkGray : UIColor.lightGray
-        self.statusBarEffectView.effect  = Theme.isNight ? UIBlurEffect(style: .dark) : UIBlurEffect(style: .light)
-        self.view.backgroundColor = Theme.isNight ? .black : .white
-        self.headerTitleLabel.textColor = Theme.isNight ? .white : .black
-        self.headerView.backgroundColor = Theme.isNight
-            ? UIColor.white.withAlphaComponent(0.25)
-            : UIColor.black.withAlphaComponent(0.25)
+        self.view.backgroundColor = Theme.current.style.backgroundColor
+        self.headerView.backgroundColor = Theme.current.style.secondaryBackgroundColor
+        self.tableView.separatorColor = Theme.current.style.secondaryBackgroundColor
+        self.statusBarEffectView.effect  = UIBlurEffect(style: Theme.current.style.blurEffectStyle)
+        self.headerTitleLabel.textColor = Theme.current.style.textColor
         self.tableView.reloadData()
     }
     

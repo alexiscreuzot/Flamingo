@@ -33,25 +33,20 @@ class FlamingoNVC : UINavigationController {
     }
     
     func updateUI() {
-        
-        var color : UIColor
+        let color = Theme.current.style.textColor
+        self.navigationBar.barStyle = Theme.current.style.navigationBarStyle
         switch theme {
         case .main:
-            self.navigationBar.barStyle = Theme.isNight ? .black : .default
-            color = Theme.isNight ? UIColor.white : UIColor.black
             break
         case .transparent:
-            color =  UIColor.black
-            self.navigationBar.barStyle = .default
             self.navigationBar.setBackgroundImage(UIImage(), for: .default)
             self.navigationBar.shadowImage = UIImage()
             self.navigationBar.backgroundColor = UIColor.clear
             self.navigationBar.isTranslucent = true
         }
         
-        self.navigationBar.titleTextAttributes = [.foregroundColor: color]
         self.navigationBar.tintColor = color
-    
+        self.navigationBar.titleTextAttributes = [.foregroundColor: color]
         self.navigationBar.largeTitleTextAttributes =
             [NSAttributedString.Key.foregroundColor: color,
              NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!]        
@@ -64,7 +59,6 @@ extension FlamingoNVC : Themable {
         self.updateUI()
     }
 }
-
 
 extension UINavigationController {
     open override var childForStatusBarStyle: UIViewController? {

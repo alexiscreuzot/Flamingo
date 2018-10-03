@@ -39,7 +39,7 @@ class ArticleDefaultCell: UITableViewCell {
         self.topInfoLabel.layer.masksToBounds = true
         
         let selView = UIView()
-        selView.backgroundColor = Theme.isNight ? UIColor(white: 0.2, alpha: 1) : UIColor(white: 0.8, alpha: 1)
+        selView.backgroundColor = Theme.current.style.secondaryBackgroundColor
         self.selectedBackgroundView = selView
     }
     
@@ -52,7 +52,7 @@ class ArticleDefaultCell: UITableViewCell {
     
     func setPost(_ post : FlamingoPost, highlightComment: Bool = true) {
         
-        self.applyTheme(Theme.current)
+        self.applyTheme()
         self.topInfoTopMarginConstraint.constant = (post.row == 0) ? 30 : 16
         
         if let subtitle = post.preview?.excerpt, !subtitle.isEmpty, subtitle != "null" {
@@ -72,29 +72,22 @@ class ArticleDefaultCell: UITableViewCell {
         let attributes: [NSAttributedString.Key : Any] = [.font : self.bottomLabel.font,
                                                          .foregroundColor : self.bottomLabel.textColor]
         self.bottomLabel.attributedText = post.infosAttributedString(attributes: attributes, withPointSize:self.bottomLabel.font.pointSize, withComments: false)
+        
         self.commentsButton.setAttributedTitle(post.commentsAttributedString(attributes: attributes,
                                                                              withPointSize: self.commentsButton.titleLabel!.font.pointSize,
                                                                              highlightComment: true), for: .normal)
         self.commentsButton.isHidden = (post.hnPost.commentCount  == 0)
     }
     
-    func applyTheme(_ theme: Theme) {
-        switch theme {
-        case .day:
-            self.topInfoLabel.backgroundColor = .black
-            self.topInfoLabel.textColor = .white
-            self.titleLabel.textColor = .black
-            self.middleLabel.textColor = UIColor.init(white: 0, alpha: 0.5)
-            self.contentView.backgroundColor = .white
-            self.backgroundColor = .white
-        case .night:
-            self.topInfoLabel.backgroundColor = .white
-            self.topInfoLabel.textColor = .black
-            self.titleLabel.textColor = .white
-            self.middleLabel.textColor = UIColor.init(white: 1, alpha: 0.5)
-            self.contentView.backgroundColor = .black
-            self.backgroundColor = .black
-        }
+    func applyTheme() {
+
+        self.backgroundColor = Theme.current.style.backgroundColor
+        self.contentView.backgroundColor = Theme.current.style.backgroundColor
+        
+        self.topInfoLabel.backgroundColor = Theme.current.style.textColor
+        self.topInfoLabel.textColor = Theme.current.style.backgroundColor
+        self.titleLabel.textColor = Theme.current.style.textColor
+        self.middleLabel.textColor = Theme.current.style.secondaryTextColor
     }
     
     // MARK: - Actions
@@ -106,17 +99,8 @@ class ArticleDefaultCell: UITableViewCell {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         
-        switch Theme.current {
-        case .day:
-            self.topInfoLabel.backgroundColor = .black
-            self.topInfoLabel.textColor = .white
-            break
-        case .night:
-            self.topInfoLabel.backgroundColor = .white
-            self.topInfoLabel.textColor = .black
-            break
-        }
-        
+        self.topInfoLabel.backgroundColor = Theme.current.style.textColor
+        self.topInfoLabel.textColor = Theme.current.style.backgroundColor
     }
     
     @IBAction func selectComments() {

@@ -53,6 +53,10 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     var isPerformingCollapse = false
     var fromPageType: HNScraper.PostListPageName = .front
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return Theme.current.style.statusBarStyle
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -267,7 +271,7 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
 extension ArticleCommentsVC : Themable {
     
     func themeDidChange() {
-        self.view.backgroundColor = Theme.isNight ? .black : .white
+        self.view.backgroundColor = Theme.current.style.backgroundColor
         self.tableView.reloadData()
     }
 }
