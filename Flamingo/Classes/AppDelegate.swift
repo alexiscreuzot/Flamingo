@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             JSONSerializer.serializeSources()
         }
         
+        print(Sources.toJSON())
+        
         return true
     }
 

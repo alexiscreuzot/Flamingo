@@ -93,6 +93,11 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         self.registerForThemeChange()
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if isFirstLayout {
@@ -272,6 +277,8 @@ extension ArticleCommentsVC : Themable {
     
     func themeDidChange() {
         self.view.backgroundColor = Theme.current.style.backgroundColor
+        self.loadingIndicator.style = Theme.current.style.loadingStyle
+        self.stateLabel.textColor = Theme.current.style.secondaryTextColor
         self.tableView.reloadData()
     }
 }

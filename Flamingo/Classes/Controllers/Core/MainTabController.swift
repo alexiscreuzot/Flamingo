@@ -32,11 +32,6 @@ class MainTabController : UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let defaultsAtts: [NSAttributedString.Key : Any] = [.foregroundColor: UIColor.black]
-        let selectedAtts: [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.orange]
-        UITabBarItem.appearance().setTitleTextAttributes(defaultsAtts, for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes(selectedAtts, for: .selected)
         
         self.viewControllers = [FlamingoNVC(rootViewController: topController),
                                 FlamingoNVC(rootViewController: newsController),

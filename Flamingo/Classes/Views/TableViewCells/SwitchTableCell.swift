@@ -17,7 +17,7 @@ class SwitchTableCellContent: PrototypeTableCellContent {
     var titleColor = UIColor.black
     var isOn = false
     var switchAction : SwitchBlock?
-    var tint: UIColor = UIColor.orange
+    var tint: UIColor = UIColor.green
     
     convenience init(title: String, isOn : Bool, switchAction : SwitchBlock?) {
         self.init(SwitchTableCell.self)

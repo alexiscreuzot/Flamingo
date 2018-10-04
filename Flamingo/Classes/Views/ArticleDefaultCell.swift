@@ -35,12 +35,8 @@ class ArticleDefaultCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         self.topInfoLabel.layer.masksToBounds = true
-        
-        let selView = UIView()
-        selView.backgroundColor = Theme.current.style.secondaryBackgroundColor
-        self.selectedBackgroundView = selView
+        self.selectedBackgroundView = UIView()
     }
     
     override func layoutSubviews() {
@@ -51,6 +47,8 @@ class ArticleDefaultCell: UITableViewCell {
     // MARK: - Logic
     
     func setPost(_ post : FlamingoPost, highlightComment: Bool = true) {
+        
+        self.selectedBackgroundView?.backgroundColor = Theme.current.style.secondaryBackgroundColor
         
         self.applyTheme()
         self.topInfoTopMarginConstraint.constant = (post.row == 0) ? 30 : 16
@@ -80,12 +78,8 @@ class ArticleDefaultCell: UITableViewCell {
     }
     
     func applyTheme() {
-
         self.backgroundColor = Theme.current.style.backgroundColor
         self.contentView.backgroundColor = Theme.current.style.backgroundColor
-        
-        self.topInfoLabel.backgroundColor = Theme.current.style.textColor
-        self.topInfoLabel.textColor = Theme.current.style.backgroundColor
         self.titleLabel.textColor = Theme.current.style.textColor
         self.middleLabel.textColor = Theme.current.style.secondaryTextColor
     }

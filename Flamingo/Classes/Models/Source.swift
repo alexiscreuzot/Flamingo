@@ -16,8 +16,8 @@ class Source : Object, Decodable{
     @objc dynamic var activated : Bool = false
     
     private enum SourceCodingKeys: String, CodingKey {
-        case domain
         case activated
+        case domain
     }
     
     public static func isAllowed(domain: String) -> Bool{
@@ -46,14 +46,16 @@ class Source : Object, Decodable{
     
     convenience init(domain: String, activated: Bool) {
         self.init()
+         self.activated = activated
         self.domain = domain
-        self.activated = activated
+       
     }
     
     convenience required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SourceCodingKeys.self)
-        let domain = try container.decode(String.self, forKey: .domain)
         let activated = try container.decode(Bool.self, forKey: .activated)
+        let domain = try container.decode(String.self, forKey: .domain)
+        
         self.init(domain: domain, activated: activated)
     }
     
@@ -65,8 +67,8 @@ class Source : Object, Decodable{
     }
     
     func toDict() -> [String : Any] {
-        return ["domain" : domain,
-                "activated" : activated]
+        return ["activated" : activated,
+                "domain" : domain]
     }
     
     func toJSON() -> String {

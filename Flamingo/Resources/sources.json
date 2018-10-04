@@ -1,102 +1,5248 @@
-[
-    {
-        "activated" : false,
-        "domain" : "0x00sec.org"
-    },
-    {
-        "activated" : false,
-        "domain" : "bbc.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "cnbc.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "medium.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "theverge.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "torrentfreak.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "harpers.org"
-    },
-    {
-        "activated" : false,
-        "domain" : "krita.org"
-    },
-    {
-        "activated" : false,
-        "domain" : "bbc.co.uk"
-    },
-    {
-        "activated" : false,
-        "domain" : "techcrunch.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "pnas.org"
-    },
-    {
-        "activated" : false,
-        "domain" : "youtube.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "redditprofile.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "aeon.co"
-    },
-    {
-        "activated" : false,
-        "domain" : "leonardofed.io"
-    },
-    {
-        "activated" : false,
-        "domain" : "tailwindcss.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "nim-lang.org"
-    },
-    {
-        "activated" : false,
-        "domain" : "news.ycombinator.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "paleotronic.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "opensource.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "newyorker.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "glineq.blogspot.com"
-    },
-    {
-        "activated" : false,
-        "domain" : "eand.co"
-    },
-    {
-        "activated" : false,
-        "domain" : "daringfireball.net"
-    },
-    {
-        "activated" : false,
-        "domain" : "lwn.net"
-    }
+[{
+    "activated" : false,
+    "domain": "grunfy.com"
+},
+{
+    "activated" : false,
+    "domain": "darpa.mil"
+},
+{
+    "activated" : false,
+    "domain": "nautil.us"
+},
+{
+    "activated" : false,
+    "domain": "vandenoever.info"
+},
+{
+    "activated" : false,
+    "domain": "chronicle.com"
+},
+{
+    "activated" : false,
+    "domain": "alexanderellis.github.io"
+},
+{
+    "activated" : false,
+    "domain": "postmarketos.org"
+},
+{
+    "activated" : false,
+    "domain": "nytimes.com"
+},
+{
+    "activated" : false,
+    "domain": "youtube.com"
+},
+{
+    "activated" : false,
+    "domain": "logger.believermag.com"
+},
+{
+    "activated" : false,
+    "domain": "asc.upenn.edu"
+},
+{
+    "activated" : false,
+    "domain": "arstechnica.com"
+},
+{
+    "activated" : false,
+    "domain": "independent.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "mailman.nanog.org"
+},
+{
+    "activated" : false,
+    "domain": "asia.nikkei.com"
+},
+{
+    "activated" : false,
+    "domain": "hacks.mozilla.org"
+},
+{
+    "activated" : false,
+    "domain": "gravitational.com"
+},
+{
+    "activated" : false,
+    "domain": "chenhuijing.com"
+},
+{
+    "activated" : false,
+    "domain": "theappendix.net"
+},
+{
+    "activated" : false,
+    "domain": "devpen.io"
+},
+{
+    "activated" : false,
+    "domain": "bbc.com"
+},
+{
+    "activated" : false,
+    "domain": "anandtech.com"
+},
+{
+    "activated" : false,
+    "domain": "arne-mertz.de"
+},
+{
+    "activated" : false,
+    "domain": "newyorker.com"
+},
+{
+    "activated" : false,
+    "domain": "xtof.info"
+},
+{
+    "activated" : false,
+    "domain": "medium.com"
+},
+{
+    "activated" : false,
+    "domain": "reddit.com"
+},
+{
+    "activated" : false,
+    "domain": "scala-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "bbc.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "nullprogram.com"
+},
+{
+    "activated" : false,
+    "domain": "polyaxon.com"
+},
+{
+    "activated" : false,
+    "domain": "cowlark.com"
+},
+{
+    "activated" : false,
+    "domain": "eff.org"
+},
+{
+    "activated" : false,
+    "domain": "sciencemag.org"
+},
+{
+    "activated" : false,
+    "domain": "fullstackacademy.workable.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.jamesdbloom.com"
+},
+{
+    "activated" : false,
+    "domain": "ideas.4brad.com"
+},
+{
+    "activated" : false,
+    "domain": "journal.stuffwithstuff.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.growthbot.org"
+},
+{
+    "activated" : false,
+    "domain": "devuan.org"
+},
+{
+    "activated" : false,
+    "domain": "inews.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "avc.com"
+},
+{
+    "activated" : false,
+    "domain": "openbsd.org"
+},
+{
+    "activated" : false,
+    "domain": "jamchamb.github.io"
+},
+{
+    "activated" : false,
+    "domain": "lambda-the-ultimate.org"
+},
+{
+    "activated" : false,
+    "domain": "amasad.me"
+},
+{
+    "activated" : false,
+    "domain": "reuters.com"
+},
+{
+    "activated" : false,
+    "domain": "seths.blog"
+},
+{
+    "activated" : false,
+    "domain": "motherboard.vice.com"
+},
+{
+    "activated" : false,
+    "domain": "jobs.lever.co"
+},
+{
+    "activated" : false,
+    "domain": "satu0king.github.io"
+},
+{
+    "activated" : false,
+    "domain": "wired.com"
+},
+{
+    "activated" : false,
+    "domain": "faz.net"
+},
+{
+    "activated" : false,
+    "domain": "github.com"
+},
+{
+    "activated" : false,
+    "domain": "legacy.earlham.edu"
+},
+{
+    "activated" : false,
+    "domain": "news.ycombinator.com"
+},
+{
+    "activated" : false,
+    "domain": "news.nationalgeographic.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.snapeda.com"
+},
+{
+    "activated" : false,
+    "domain": "wsj.com"
+},
+{
+    "activated" : false,
+    "domain": "washingtonpost.com"
+},
+{
+    "activated" : false,
+    "domain": "clipperhouse.com"
+},
+{
+    "activated" : false,
+    "domain": "arxiv.org"
+},
+{
+    "activated" : false,
+    "domain": "en.oxforddictionaries.com"
+},
+{
+    "activated" : false,
+    "domain": "grnh.se"
+},
+{
+    "activated" : false,
+    "domain": "calver.org"
+},
+{
+    "activated" : false,
+    "domain": "pcg-random.org"
+},
+{
+    "activated" : false,
+    "domain": "c256foenix.com"
+},
+{
+    "activated" : false,
+    "domain": "6502.org"
+},
+{
+    "activated" : false,
+    "domain": "elie.net"
+},
+{
+    "activated" : false,
+    "domain": "getbitbar.com"
+    
+},
+{
+    "activated" : false,
+    "domain": "economist.com"
+},
+{
+    "activated" : false,
+    "domain": "rant.monkeydom.de"
+},
+{
+    "activated" : false,
+    "domain": "lists.nongnu.org"
+},
+{
+    "activated" : false,
+    "domain": "flexport.com"
+},
+{
+    "activated" : false,
+    "domain": "ruder.io"
+},
+{
+    "activated" : false,
+    "domain": "pfrazee.hashbase.io"
+},
+{
+    "activated" : false,
+    "domain": "cloudplatform.googleblog.com"
+},
+{
+    "activated" : false,
+    "domain": "bloomberg.com"
+},
+{
+    "activated" : false,
+    "domain": "chinamoneynetwork.com"
+},
+{
+    "activated" : false,
+    "domain": "wired.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "irishtimes.com"
+},
+{
+    "activated" : false,
+    "domain": "engineering.mixpanel.com"
+},
+{
+    "activated" : false,
+    "domain": "svnweb.freebsd.org"
+},
+{
+    "activated" : false,
+    "domain": "nymag.com"
+},
+{
+    "activated" : false,
+    "domain": "en.wikipedia.org"
+},
+{
+    "activated" : false,
+    "domain": "variety.com"
+},
+{
+    "activated" : false,
+    "domain": "aristo-demo.allenai.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.ripstech.com"
+},
+{
+    "activated" : false,
+    "domain": "axios.com"
+},
+{
+    "activated" : false,
+    "domain": "remotestorage.io"
+},
+{
+    "activated" : false,
+    "domain": "developer.mozilla.org"
+},
+{
+    "activated" : false,
+    "domain": "latacora.singles"
+},
+{
+    "activated" : false,
+    "domain": "ietf.org"
+},
+{
+    "activated" : false,
+    "domain": "cen.acs.org"
+},
+{
+    "activated" : false,
+    "domain": "top500.org"
+},
+{
+    "activated" : false,
+    "domain": "macleans.ca"
+},
+{
+    "activated" : false,
+    "domain": "shkspr.mobi"
+},
+{
+    "activated" : false,
+    "domain": "theparisreview.org"
+},
+{
+    "activated" : false,
+    "domain": "longreads.com"
+},
+{
+    "activated" : false,
+    "domain": "openculture.com"
+},
+{
+    "activated" : false,
+    "domain": "kromtech.com"
+},
+{
+    "activated" : false,
+    "domain": "rfpose.csail.mit.edu"
+},
+{
+    "activated" : false,
+    "domain": "techcrunch.com"
+},
+{
+    "activated" : false,
+    "domain": "howtographql.com"
+},
+{
+    "activated" : false,
+    "domain": "gpfault.net"
+},
+{
+    "activated" : false,
+    "domain": "tudelft.nl"
+},
+{
+    "activated" : false,
+    "domain": "blog.yellowant.com"
+},
+{
+    "activated" : false,
+    "domain": "narimiran.github.io"
+},
+{
+    "activated" : false,
+    "domain": "arrgh.tim-smith.us"
+},
+{
+    "activated" : false,
+    "domain": "gatesnotes.com"
+},
+{
+    "activated" : false,
+    "domain": "newcriterion.com"
+},
+{
+    "activated" : false,
+    "domain": "newatlas.com"
+},
+{
+    "activated" : false,
+    "domain": "nccgroup.trust"
+},
+{
+    "activated" : false,
+    "domain": "vtdigger.org"
+},
+{
+    "activated" : false,
+    "domain": "intel.com"
+},
+{
+    "activated" : false,
+    "domain": "discrete.gr"
+},
+{
+    "activated" : false,
+    "domain": "sonyaellenmann.com"
+},
+{
+    "activated" : false,
+    "domain": "hussmanfunds.com"
+},
+{
+    "activated" : false,
+    "domain": "rushter.com"
+},
+{
+    "activated" : false,
+    "domain": "modelzoo.co"
+},
+{
+    "activated" : false,
+    "domain": "biogeosciences.net"
+},
+{
+    "activated" : false,
+    "domain": "laravelfactory.com"
+},
+{
+    "activated" : false,
+    "domain": "clever.com"
+},
+{
+    "activated" : false,
+    "domain": "dailycamera.com"
+},
+{
+    "activated" : false,
+    "domain": "theguardian.com"
+},
+{
+    "activated" : false,
+    "domain": "theverge.com"
+},
+{
+    "activated" : false,
+    "domain": "j.ludost.net"
+},
+{
+    "activated" : false,
+    "domain": "quillette.com"
+},
+{
+    "activated" : false,
+    "domain": "logicmag.io"
+},
+{
+    "activated" : false,
+    "domain": "cnet.com"
+},
+{
+    "activated" : false,
+    "domain": "mercurynews.com"
+},
+{
+    "activated" : false,
+    "domain": "ianhogarth.com"
+},
+{
+    "activated" : false,
+    "domain": "react-etc.net"
+},
+{
+    "activated" : false,
+    "domain": "weblog.rogueamoeba.com"
+},
+{
+    "activated" : false,
+    "domain": "sec.gov"
+},
+{
+    "activated" : false,
+    "domain": "pagerduty.com"
+},
+{
+    "activated" : false,
+    "domain": "daveceddia.com"
+},
+{
+    "activated" : false,
+    "domain": "linuxjournal.com"
+},
+{
+    "activated" : false,
+    "domain": "quod.us"
+},
+{
+    "activated" : false,
+    "domain": "anishgodha.com"
+},
+{
+    "activated" : false,
+    "domain": "physicsworld.com"
+},
+{
+    "activated" : false,
+    "domain": "daily.jstor.org"
+},
+{
+    "activated" : false,
+    "domain": "objectivevgaesthetics.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "home.cern"
+},
+{
+    "activated" : false,
+    "domain": "bitmovin.com"
+},
+{
+    "activated" : false,
+    "domain": "kkimdev.github.io"
+},
+{
+    "activated" : false,
+    "domain": "paleotronic.com"
+},
+{
+    "activated" : false,
+    "domain": "ipwatchdog.com"
+},
+{
+    "activated" : false,
+    "domain": "cato.org"
+},
+{
+    "activated" : false,
+    "domain": "stripes.com"
+},
+{
+    "activated" : false,
+    "domain": "52-insights.com"
+},
+{
+    "activated" : false,
+    "domain": "psafe.com"
+},
+{
+    "activated" : false,
+    "domain": "matthuisman.nz"
+},
+{
+    "activated" : false,
+    "domain": "infoworld.com"
+},
+{
+    "activated" : false,
+    "domain": "riter.co"
+},
+{
+    "activated" : false,
+    "domain": "m.phys.org"
+},
+{
+    "activated" : false,
+    "domain": "hackgnar.com"
+},
+{
+    "activated" : false,
+    "domain": "thepythoncorner.com"
+},
+{
+    "activated" : false,
+    "domain": "ml5js.org"
+},
+{
+    "activated" : false,
+    "domain": "nature.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.teemya.com"
+},
+{
+    "activated" : false,
+    "domain": "technologyreview.com"
+},
+{
+    "activated" : false,
+    "domain": "pnnl.gov"
+},
+{
+    "activated" : false,
+    "domain": "vulture.com"
+},
+{
+    "activated" : false,
+    "domain": "history.nasa.gov"
+},
+{
+    "activated" : false,
+    "domain": "medium.freecodecamp.org"
+},
+{
+    "activated" : false,
+    "domain": "aiweirdness.com"
+},
+{
+    "activated" : false,
+    "domain": "jasondavies.com"
+},
+{
+    "activated" : false,
+    "domain": "pyimagesearch.com"
+},
+{
+    "activated" : false,
+    "domain": "joeduffyblog.com"
+},
+{
+    "activated" : false,
+    "domain": "torrentfreak.com"
+},
+{
+    "activated" : false,
+    "domain": "wpri.com"
+},
+{
+    "activated" : false,
+    "domain": "r2d3.us"
+},
+{
+    "activated" : false,
+    "domain": "engblg.livingcomputers.org"
+},
+{
+    "activated" : false,
+    "domain": "citusdata.com"
+},
+{
+    "activated" : false,
+    "domain": "dahg.maps.arcgis.com"
+},
+{
+    "activated" : false,
+    "domain": "highsnobiety.com"
+},
+{
+    "activated" : false,
+    "domain": "hackaday.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.benjojo.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "rkirsling.github.io"
+},
+{
+    "activated" : false,
+    "domain": "socratic-form-microscopy.com"
+},
+{
+    "activated" : false,
+    "domain": "monoskop.org"
+},
+{
+    "activated" : false,
+    "domain": "kibble.net"
+},
+{
+    "activated" : false,
+    "domain": "severalnines.com"
+},
+{
+    "activated" : false,
+    "domain": "theglobeandmail.com"
+},
+{
+    "activated" : false,
+    "domain": "utcc.utoronto.ca"
+},
+{
+    "activated" : false,
+    "domain": "bis.org"
+},
+{
+    "activated" : false,
+    "domain": "ai.google"
+},
+{
+    "activated" : false,
+    "domain": "hubicka.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "www2.cs.arizona.edu"
+},
+{
+    "activated" : false,
+    "domain": "starterstory.com"
+},
+{
+    "activated" : false,
+    "domain": "standuply.com"
+},
+{
+    "activated" : false,
+    "domain": "posthook.io"
+},
+{
+    "activated" : false,
+    "domain": "resobscura.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "jvns.ca"
+},
+{
+    "activated" : false,
+    "domain": "blender.org"
+},
+{
+    "activated" : false,
+    "domain": "developer.oculus.com"
+},
+{
+    "activated" : false,
+    "domain": "objective-see.com"
+},
+{
+    "activated" : false,
+    "domain": "citylab.com"
+},
+{
+    "activated" : false,
+    "domain": "stratechery.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.qt.io"
+},
+{
+    "activated" : false,
+    "domain": "middleeasteye.net"
+},
+{
+    "activated" : false,
+    "domain": "thenewatlantis.com"
+},
+{
+    "activated" : false,
+    "domain": "theatlantic.com"
+},
+{
+    "activated" : false,
+    "domain": "depauw.edu"
+},
+{
+    "activated" : false,
+    "domain": "cupery.net"
+},
+{
+    "activated" : false,
+    "domain": "theinformation.com"
+},
+{
+    "activated" : false,
+    "domain": "theregister.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "voronoi.surge.sh"
+},
+{
+    "activated" : false,
+    "domain": "zwischenzugs.com"
+},
+{
+    "activated" : false,
+    "domain": "www2.deloitte.com"
+},
+{
+    "activated" : false,
+    "domain": "quora.com"
+},
+{
+    "activated" : false,
+    "domain": "apnews.com"
+},
+{
+    "activated" : false,
+    "domain": "businessinsider.com"
+},
+{
+    "activated" : false,
+    "domain": "code.facebook.com"
+},
+{
+    "activated" : false,
+    "domain": "spectator.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "idiallo.com"
+},
+{
+    "activated" : false,
+    "domain": "mail-archive.com"
+},
+{
+    "activated" : false,
+    "domain": "motherjones.com"
+},
+{
+    "activated" : false,
+    "domain": "ai.googleblog.com"
+},
+{
+    "activated" : false,
+    "domain": "timesofsandiego.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.mozvr.com"
+},
+{
+    "activated" : false,
+    "domain": "harpers.org"
+},
+{
+    "activated" : false,
+    "domain": "devs.cloudimmunity.com"
+},
+{
+    "activated" : false,
+    "domain": "gizmodo.com"
+},
+{
+    "activated" : false,
+    "domain": "cl.cam.ac.uk"
+},
+{
+    "activated" : false,
+    "domain": "transfer.sh"
+},
+{
+    "activated" : false,
+    "domain": "statnews.com"
+},
+{
+    "activated" : false,
+    "domain": "log.fundamental-code.com"
+},
+{
+    "activated" : false,
+    "domain": "dlang.org"
+},
+{
+    "activated" : false,
+    "domain": "cs.uwaterloo.ca"
+},
+{
+    "activated" : false,
+    "domain": "keybase.io"
+},
+{
+    "activated" : false,
+    "domain": "arp242.net"
+},
+{
+    "activated" : false,
+    "domain": "erlang.org"
+},
+{
+    "activated" : false,
+    "domain": "githubengineering.com"
+},
+{
+    "activated" : false,
+    "domain": "letsencrypt.org"
+},
+{
+    "activated" : false,
+    "domain": "the-tls.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "quantamagazine.org"
+},
+{
+    "activated" : false,
+    "domain": "itsblockchain.com"
+},
+{
+    "activated" : false,
+    "domain": "pgdash.io"
+},
+{
+    "activated" : false,
+    "domain": "atsdr.cdc.gov"
+},
+{
+    "activated" : false,
+    "domain": "humaninterest.com"
+},
+{
+    "activated" : false,
+    "domain": "bernat.tech"
+},
+{
+    "activated" : false,
+    "domain": "srobb.net"
+},
+{
+    "activated" : false,
+    "domain": "rapp.org"
+},
+{
+    "activated" : false,
+    "domain": "tools.ietf.org"
+},
+{
+    "activated" : false,
+    "domain": "philosophynow.org"
+},
+{
+    "activated" : false,
+    "domain": "sanctum.geek.nz"
+},
+{
+    "activated" : false,
+    "domain": "einstein.ai"
+},
+{
+    "activated" : false,
+    "domain": "phys.org"
+},
+{
+    "activated" : false,
+    "domain": "nyclu.org"
+},
+{
+    "activated" : false,
+    "domain": "hisutton.com"
+},
+{
+    "activated" : false,
+    "domain": "yodaiken.com"
+},
+{
+    "activated" : false,
+    "domain": "jakearchibald.com"
+},
+{
+    "activated" : false,
+    "domain": "v8project.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "whydoiprocrastinate.com"
+},
+{
+    "activated" : false,
+    "domain": "news.rpi.edu"
+},
+{
+    "activated" : false,
+    "domain": "queue.acm.org"
+},
+{
+    "activated" : false,
+    "domain": "cs230.stanford.edu"
+},
+{
+    "activated" : false,
+    "domain": "npr.org"
+},
+{
+    "activated" : false,
+    "domain": "wende.github.io"
+},
+{
+    "activated" : false,
+    "domain": "blog.klaehn.org"
+},
+{
+    "activated" : false,
+    "domain": "vanguard.com"
+},
+{
+    "activated" : false,
+    "domain": "architectural-review.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.acolyer.org"
+},
+{
+    "activated" : false,
+    "domain": "techdirt.com"
+},
+{
+    "activated" : false,
+    "domain": "victor.darvariu.me"
+},
+{
+    "activated" : false,
+    "domain": "electronjs.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.rust-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "lists.opensource.org"
+},
+{
+    "activated" : false,
+    "domain": "ualberta.ca"
+},
+{
+    "activated" : false,
+    "domain": "qz.com"
+},
+{
+    "activated" : false,
+    "domain": "seekingalpha.com"
+},
+{
+    "activated" : false,
+    "domain": "metro.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "thehill.com"
+},
+{
+    "activated" : false,
+    "domain": "zenmagnets.com"
+},
+{
+    "activated" : false,
+    "domain": "articles.fti.bi"
+},
+{
+    "activated" : false,
+    "domain": "diego-pacheco.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "thecut.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.atom.io"
+},
+{
+    "activated" : false,
+    "domain": "gravity-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "atlasobscura.com"
+},
+{
+    "activated" : false,
+    "domain": "01.org"
+},
+{
+    "activated" : false,
+    "domain": "mtgox.com"
+},
+{
+    "activated" : false,
+    "domain": "cjr.org"
+},
+{
+    "activated" : false,
+    "domain": "dragan.rocks"
+},
+{
+    "activated" : false,
+    "domain": "irc.com"
+},
+{
+    "activated" : false,
+    "domain": "defensecode.com"
+},
+{
+    "activated" : false,
+    "domain": "otoro.net"
+},
+{
+    "activated" : false,
+    "domain": "cityobservatory.org"
+},
+{
+    "activated" : false,
+    "domain": "apple.com"
+},
+{
+    "activated" : false,
+    "domain": "pointfree.co"
+},
+{
+    "activated" : false,
+    "domain": "nurpax.github.io"
+},
+{
+    "activated" : false,
+    "domain": "internals.rust-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "docs.google.com"
+},
+{
+    "activated" : false,
+    "domain": "papers.ssrn.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.eladgil.com"
+},
+{
+    "activated" : false,
+    "domain": "forum.filezilla-project.org"
+},
+{
+    "activated" : false,
+    "domain": "brianketelsen.com"
+},
+{
+    "activated" : false,
+    "domain": "psychologicalscience.org"
+},
+{
+    "activated" : false,
+    "domain": "cs.brown.edu"
+},
+{
+    "activated" : false,
+    "domain": "iokit.racing"
+},
+{
+    "activated" : false,
+    "domain": "blog.openai.com"
+},
+{
+    "activated" : false,
+    "domain": "loudnesspenalty.com"
+},
+{
+    "activated" : false,
+    "domain": "righto.com"
+},
+{
+    "activated" : false,
+    "domain": "anfractuosity.com"
+},
+{
+    "activated" : false,
+    "domain": "firehydrant.io"
+},
+{
+    "activated" : false,
+    "domain": "defenseone.com"
+},
+{
+    "activated" : false,
+    "domain": "spectrum.ieee.org"
+},
+{
+    "activated" : false,
+    "domain": "jsonnet.org"
+},
+{
+    "activated" : false,
+    "domain": "auphonic.com"
+},
+{
+    "activated" : false,
+    "domain": "sciencedaily.com"
+},
+{
+    "activated" : false,
+    "domain": "doesitmutate.xyz"
+},
+{
+    "activated" : false,
+    "domain": "mediarelations.uwo.ca"
+},
+{
+    "activated" : false,
+    "domain": "freakonomics.com"
+},
+{
+    "activated" : false,
+    "domain": "c2rust.com"
+},
+{
+    "activated" : false,
+    "domain": "genielabs.github.io"
+},
+{
+    "activated" : false,
+    "domain": "eartharchitecture.org"
+},
+{
+    "activated" : false,
+    "domain": "webtoons.com"
+},
+{
+    "activated" : false,
+    "domain": "habitatchronicles.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.gtk.org"
+},
+{
+    "activated" : false,
+    "domain": "theoutline.com"
+},
+{
+    "activated" : false,
+    "domain": "news.mit.edu"
+},
+{
+    "activated" : false,
+    "domain": "mailinator.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "dannyguo.com"
+},
+{
+    "activated" : false,
+    "domain": "geomesa.org"
+},
+{
+    "activated" : false,
+    "domain": "dremio.com"
+},
+{
+    "activated" : false,
+    "domain": "city-journal.org"
+},
+{
+    "activated" : false,
+    "domain": "noelzach.github.io"
+},
+{
+    "activated" : false,
+    "domain": "lvogel.free.fr"
+},
+{
+    "activated" : false,
+    "domain": "abe-winter.github.io"
+},
+{
+    "activated" : false,
+    "domain": "harveynick.com"
+},
+{
+    "activated" : false,
+    "domain": "drive.google.com"
+},
+{
+    "activated" : false,
+    "domain": "nasa.gov"
+},
+{
+    "activated" : false,
+    "domain": "blogs.dropbox.com"
+},
+{
+    "activated" : false,
+    "domain": "vegardno.net"
+},
+{
+    "activated" : false,
+    "domain": "theamericanscholar.org"
+},
+{
+    "activated" : false,
+    "domain": "taskandpurpose.com"
+},
+{
+    "activated" : false,
+    "domain": "gov.uk"
+},
+{
+    "activated" : false,
+    "domain": "pbs.org"
+},
+{
+    "activated" : false,
+    "domain": "jdebp.eu"
+},
+{
+    "activated" : false,
+    "domain": "channelnewsasia.com"
+},
+{
+    "activated" : false,
+    "domain": "universal-sci.com"
+},
+{
+    "activated" : false,
+    "domain": "infoq.com"
+},
+{
+    "activated" : false,
+    "domain": "itwire.com"
+},
+{
+    "activated" : false,
+    "domain": "analog.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.ret2.io"
+},
+{
+    "activated" : false,
+    "domain": "money.cnn.com"
+},
+{
+    "activated" : false,
+    "domain": "greenentrepreneur.com"
+},
+{
+    "activated" : false,
+    "domain": "certsimple.com"
+},
+{
+    "activated" : false,
+    "domain": "dosyago-coder-0.github.io"
+},
+{
+    "activated" : false,
+    "domain": "aholme.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "cambus.net"
+},
+{
+    "activated" : false,
+    "domain": "ncbi.nlm.nih.gov"
+},
+{
+    "activated" : false,
+    "domain": "bfilipek.com"
+},
+{
+    "activated" : false,
+    "domain": "wi-fi.org"
+},
+{
+    "activated" : false,
+    "domain": "hyperallergic.com"
+},
+{
+    "activated" : false,
+    "domain": "filfre.net"
+},
+{
+    "activated" : false,
+    "domain": "slate.com"
+},
+{
+    "activated" : false,
+    "domain": "ceres1.space"
+},
+{
+    "activated" : false,
+    "domain": "joeyh.name"
+},
+{
+    "activated" : false,
+    "domain": "stripe.com"
+},
+{
+    "activated" : false,
+    "domain": "groups.google.com"
+},
+{
+    "activated" : false,
+    "domain": "allthingsdistributed.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.ycombinator.com"
+},
+{
+    "activated" : false,
+    "domain": "bdd-data.berkeley.edu"
+},
+{
+    "activated" : false,
+    "domain": "flightstorome.moovellab.com"
+},
+{
+    "activated" : false,
+    "domain": "gnss-sdr.org"
+},
+{
+    "activated" : false,
+    "domain": "google-developers.appspot.com"
+},
+{
+    "activated" : false,
+    "domain": "potaroo.net"
+},
+{
+    "activated" : false,
+    "domain": "blog.joinmastodon.org"
+},
+{
+    "activated" : false,
+    "domain": "globalpolicy.ieee.org"
+},
+{
+    "activated" : false,
+    "domain": "andrewnetwork.github.io"
+},
+{
+    "activated" : false,
+    "domain": "ppltoast.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "blogs.windows.com"
+},
+{
+    "activated" : false,
+    "domain": "mikedrivendevelopment.com"
+},
+{
+    "activated" : false,
+    "domain": "m.huffingtonpost.in"
+},
+{
+    "activated" : false,
+    "domain": "char.gd"
+},
+{
+    "activated" : false,
+    "domain": "blog.danslimmon.com"
+},
+{
+    "activated" : false,
+    "domain": "overclock3d.net"
+},
+{
+    "activated" : false,
+    "domain": "pubweb.eng.utah.edu"
+},
+{
+    "activated" : false,
+    "domain": "salon.com"
+},
+{
+    "activated" : false,
+    "domain": "madore.org"
+},
+{
+    "activated" : false,
+    "domain": "snapeda.workable.com"
+},
+{
+    "activated" : false,
+    "domain": "kvonhorn.github.io"
+},
+{
+    "activated" : false,
+    "domain": "robinrendle.com"
+},
+{
+    "activated" : false,
+    "domain": "huffingtonpost.in"
+},
+{
+    "activated" : false,
+    "domain": "cnbc.com"
+},
+{
+    "activated" : false,
+    "domain": "lmgsecurity.com"
+},
+{
+    "activated" : false,
+    "domain": "code.djangoproject.com"
+},
+{
+    "activated" : false,
+    "domain": "kcsrk.info"
+},
+{
+    "activated" : false,
+    "domain": "lwn.net"
+},
+{
+    "activated" : false,
+    "domain": "lowtechmagazine.com"
+},
+{
+    "activated" : false,
+    "domain": "thesoundingline.com"
+},
+{
+    "activated" : false,
+    "domain": "digiday.com"
+},
+{
+    "activated" : false,
+    "domain": "devonzuegel.com"
+},
+{
+    "activated" : false,
+    "domain": "nianticlabs.com"
+},
+{
+    "activated" : false,
+    "domain": "failory.com"
+},
+{
+    "activated" : false,
+    "domain": "engineering.gusto.com"
+},
+{
+    "activated" : false,
+    "domain": "intoli.com"
+},
+{
+    "activated" : false,
+    "domain": "bair.berkeley.edu"
+},
+{
+    "activated" : false,
+    "domain": "themuse.com"
+},
+{
+    "activated" : false,
+    "domain": "bleepingcomputer.com"
+},
+{
+    "activated" : false,
+    "domain": "crystal-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "gentoo.org"
+},
+{
+    "activated" : false,
+    "domain": "alter-attack.net"
+},
+{
+    "activated" : false,
+    "domain": "programaudioseries.com"
+},
+{
+    "activated" : false,
+    "domain": "developer.amazon.com"
+},
+{
+    "activated" : false,
+    "domain": "newsweek.com"
+},
+{
+    "activated" : false,
+    "domain": "freedom-to-tinker.com"
+},
+{
+    "activated" : false,
+    "domain": "thedailybeast.com"
+},
+{
+    "activated" : false,
+    "domain": "read.iopipe.com"
+},
+{
+    "activated" : false,
+    "domain": "able.bio"
+},
+{
+    "activated" : false,
+    "domain": "eetimes.com"
+},
+{
+    "activated" : false,
+    "domain": "kaiostech.com"
+},
+{
+    "activated" : false,
+    "domain": "hazyresearch.github.io"
+},
+{
+    "activated" : false,
+    "domain": "interviewcake.com"
+},
+{
+    "activated" : false,
+    "domain": "collectorsweekly.com"
+},
+{
+    "activated" : false,
+    "domain": "tom.preston-werner.com"
+},
+{
+    "activated" : false,
+    "domain": "denofgeek.com"
+},
+{
+    "activated" : false,
+    "domain": "matthewearl.github.io"
+},
+{
+    "activated" : false,
+    "domain": "begin.re"
+},
+{
+    "activated" : false,
+    "domain": "usenix.org"
+},
+{
+    "activated" : false,
+    "domain": "tylermw.com"
+},
+{
+    "activated" : false,
+    "domain": "drewdevault.com"
+},
+{
+    "activated" : false,
+    "domain": "discuss.haiku-os.org"
+},
+{
+    "activated" : false,
+    "domain": "medium.learningbyshipping.com"
+},
+{
+    "activated" : false,
+    "domain": "simonmar.github.io"
+},
+{
+    "activated" : false,
+    "domain": "cse.chalmers.se"
+},
+{
+    "activated" : false,
+    "domain": "linuxfoundation.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.marcgravell.com"
+},
+{
+    "activated" : false,
+    "domain": "espn.com"
+},
+{
+    "activated" : false,
+    "domain": "eso.org"
+},
+{
+    "activated" : false,
+    "domain": "thomas-tanay.github.io"
+},
+{
+    "activated" : false,
+    "domain": "lists.opensuse.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.netbsd.org"
+},
+{
+    "activated" : false,
+    "domain": "thewholestory.solutionsjournalism.org"
+},
+{
+    "activated" : false,
+    "domain": "code.fb.com"
+},
+{
+    "activated" : false,
+    "domain": "theweek.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.cloudflare.com"
+},
+{
+    "activated" : false,
+    "domain": "seriouseats.com"
+},
+{
+    "activated" : false,
+    "domain": "humus.name"
+},
+{
+    "activated" : false,
+    "domain": "eulerarchive.maa.org"
+},
+{
+    "activated" : false,
+    "domain": "fast.ai"
+},
+{
+    "activated" : false,
+    "domain": "rstb.royalsocietypublishing.org"
+},
+{
+    "activated" : false,
+    "domain": "graphcms.com"
+},
+{
+    "activated" : false,
+    "domain": "glench.github.io"
+},
+{
+    "activated" : false,
+    "domain": "palant.de"
+},
+{
+    "activated" : false,
+    "domain": "andrewchen.co"
+},
+{
+    "activated" : false,
+    "domain": "epsilontheory.com"
+},
+{
+    "activated" : false,
+    "domain": "rollingstone.com"
+},
+{
+    "activated" : false,
+    "domain": "ivory.idyll.org"
+},
+{
+    "activated" : false,
+    "domain": "stats.oecd.org"
+},
+{
+    "activated" : false,
+    "domain": "memecentral.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.headius.com"
+},
+{
+    "activated" : false,
+    "domain": "pauladamsmith.com"
+},
+{
+    "activated" : false,
+    "domain": "urchin.earth.li"
+},
+{
+    "activated" : false,
+    "domain": "chinafile.com"
+},
+{
+    "activated" : false,
+    "domain": "theindy.us"
+},
+{
+    "activated" : false,
+    "domain": "lamport.azurewebsites.net"
+},
+{
+    "activated" : false,
+    "domain": "news.crunchbase.com"
+},
+{
+    "activated" : false,
+    "domain": "multimedia.scmp.com"
+},
+{
+    "activated" : false,
+    "domain": "hbr.org"
+},
+{
+    "activated" : false,
+    "domain": "ajolicoeur.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "blaseur.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.janestreet.com"
+},
+{
+    "activated" : false,
+    "domain": "evilmadscientist.com"
+},
+{
+    "activated" : false,
+    "domain": "hanselman.com"
+},
+{
+    "activated" : false,
+    "domain": "wiki.gentoo.org"
+},
+{
+    "activated" : false,
+    "domain": "cloudblogs.microsoft.com"
+},
+{
+    "activated" : false,
+    "domain": "winand.at"
+},
+{
+    "activated" : false,
+    "domain": "jim.tcl.tk"
+},
+{
+    "activated" : false,
+    "domain": "idlewords.com"
+},
+{
+    "activated" : false,
+    "domain": "es.wikipedia.org"
+},
+{
+    "activated" : false,
+    "domain": "odditycentral.com"
+},
+{
+    "activated" : false,
+    "domain": "gurn.io"
+},
+{
+    "activated" : false,
+    "domain": "cbsnews.com"
+},
+{
+    "activated" : false,
+    "domain": "itty.bitty.site"
+},
+{
+    "activated" : false,
+    "domain": "nexocode.com"
+},
+{
+    "activated" : false,
+    "domain": "bloomreach.com"
+},
+{
+    "activated" : false,
+    "domain": "flightglobal.com"
+},
+{
+    "activated" : false,
+    "domain": "haiku-os.org"
+},
+{
+    "activated" : false,
+    "domain": "sapper.svelte.technology"
+},
+{
+    "activated" : false,
+    "domain": "blog.poormansmath.net"
+},
+{
+    "activated" : false,
+    "domain": "blog.trailofbits.com"
+},
+{
+    "activated" : false,
+    "domain": "theconversation.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.conduit.io"
+},
+{
+    "activated" : false,
+    "domain": "stackingthebricks.com"
+},
+{
+    "activated" : false,
+    "domain": "invenia.github.io"
+},
+{
+    "activated" : false,
+    "domain": "tmorville.github.io"
+},
+{
+    "activated" : false,
+    "domain": "blog.polyverse.io"
+},
+{
+    "activated" : false,
+    "domain": "gnu.org"
+},
+{
+    "activated" : false,
+    "domain": "bostonglobe.com"
+},
+{
+    "activated" : false,
+    "domain": "heartbeat.fritz.ai"
+},
+{
+    "activated" : false,
+    "domain": "plato.stanford.edu"
+},
+{
+    "activated" : false,
+    "domain": "flockport.com"
+},
+{
+    "activated" : false,
+    "domain": "buildyourownlisp.com"
+},
+{
+    "activated" : false,
+    "domain": "justinscholz.de"
+},
+{
+    "activated" : false,
+    "domain": "instructables.com"
+},
+{
+    "activated" : false,
+    "domain": "electromaker.io"
+},
+{
+    "activated" : false,
+    "domain": "argoledo.com"
+},
+{
+    "activated" : false,
+    "domain": "academic.oup.com"
+},
+{
+    "activated" : false,
+    "domain": "firstround.com"
+},
+{
+    "activated" : false,
+    "domain": "politico.com"
+},
+{
+    "activated" : false,
+    "domain": "fermatslibrary.com"
+},
+{
+    "activated" : false,
+    "domain": "picheta.me"
+},
+{
+    "activated" : false,
+    "domain": "brutalist-web.design"
+},
+{
+    "activated" : false,
+    "domain": "cloud9trader.com"
+},
+{
+    "activated" : false,
+    "domain": "pvk.ca"
+},
+{
+    "activated" : false,
+    "domain": "artsy.net"
+},
+{
+    "activated" : false,
+    "domain": "1amstudios.com"
+},
+{
+    "activated" : false,
+    "domain": "uea.ac.uk"
+},
+{
+    "activated" : false,
+    "domain": "hollywoodreporter.com"
+},
+{
+    "activated" : false,
+    "domain": "chicagotribune.com"
+},
+{
+    "activated" : false,
+    "domain": "twitter.com"
+},
+{
+    "activated" : false,
+    "domain": "site.macleans.ca"
+},
+{
+    "activated" : false,
+    "domain": "john-millikin.com"
+},
+{
+    "activated" : false,
+    "domain": "heraldscotland.com"
+},
+{
+    "activated" : false,
+    "domain": "captaineinstein.org"
+},
+{
+    "activated" : false,
+    "domain": "quaap.com"
+},
+{
+    "activated" : false,
+    "domain": "pagetable.com"
+},
+{
+    "activated" : false,
+    "domain": "hellowebbooks.com"
+},
+{
+    "activated" : false,
+    "domain": "atsushisakai.github.io"
+},
+{
+    "activated" : false,
+    "domain": "blog.quarkslab.com"
+},
+{
+    "activated" : false,
+    "domain": "imaginarycloud.com"
+},
+{
+    "activated" : false,
+    "domain": "twobithistory.org"
+},
+{
+    "activated" : false,
+    "domain": "aeon.co"
+},
+{
+    "activated" : false,
+    "domain": "post-gazette.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.makerdiary.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.jonlu.ca"
+},
+{
+    "activated" : false,
+    "domain": "english.manoramaonline.com"
+},
+{
+    "activated" : false,
+    "domain": "theptrk.com"
+},
+{
+    "activated" : false,
+    "domain": "midibin.com"
+},
+{
+    "activated" : false,
+    "domain": "kialo.com"
+},
+{
+    "activated" : false,
+    "domain": "intercoolerjs.org"
+},
+{
+    "activated" : false,
+    "domain": "newelectronics.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "blog.asrpo.com"
+},
+{
+    "activated" : false,
+    "domain": "thegradient.pub"
+},
+{
+    "activated" : false,
+    "domain": "stevelosh.com"
+},
+{
+    "activated" : false,
+    "domain": "publicintelligence.net"
+},
+{
+    "activated" : false,
+    "domain": "clemenswinter.com"
+},
+{
+    "activated" : false,
+    "domain": "jeffreykegler.github.io"
+},
+{
+    "activated" : false,
+    "domain": "apsdehal.in"
+},
+{
+    "activated" : false,
+    "domain": "ma.rtijn.org"
+},
+{
+    "activated" : false,
+    "domain": "iqc.ou.edu"
+},
+{
+    "activated" : false,
+    "domain": "stories.sagefy.org"
+},
+{
+    "activated" : false,
+    "domain": "pdfs.semanticscholar.org"
+},
+{
+    "activated" : false,
+    "domain": "sirc.org"
+},
+{
+    "activated" : false,
+    "domain": "gasworld.com"
+},
+{
+    "activated" : false,
+    "domain": "oasislabs.com"
+},
+{
+    "activated" : false,
+    "domain": "usefathom.com"
+},
+{
+    "activated" : false,
+    "domain": "segment.com"
+},
+{
+    "activated" : false,
+    "domain": "pubs.aeaweb.org"
+},
+{
+    "activated" : false,
+    "domain": "tinyletter.com"
+},
+{
+    "activated" : false,
+    "domain": "cam.ac.uk"
+},
+{
+    "activated" : false,
+    "domain": "blog.scrapinghub.com"
+},
+{
+    "activated" : false,
+    "domain": "homes.cs.washington.edu"
+},
+{
+    "activated" : false,
+    "domain": "dyn.com"
+},
+{
+    "activated" : false,
+    "domain": "forbes.com"
+},
+{
+    "activated" : false,
+    "domain": "csiro.au"
+},
+{
+    "activated" : false,
+    "domain": "gravwell.io"
+},
+{
+    "activated" : false,
+    "domain": "dropbox.com"
+},
+{
+    "activated" : false,
+    "domain": "anu.edu.au"
+},
+{
+    "activated" : false,
+    "domain": "testpilot.firefox.com"
+},
+{
+    "activated" : false,
+    "domain": "cnn.com"
+},
+{
+    "activated" : false,
+    "domain": "macrumors.com"
+},
+{
+    "activated" : false,
+    "domain": "gohugo.io"
+},
+{
+    "activated" : false,
+    "domain": "spectrumnews.org"
+},
+{
+    "activated" : false,
+    "domain": "sensorstechforum.com"
+},
+{
+    "activated" : false,
+    "domain": "globalnews.ca"
+},
+{
+    "activated" : false,
+    "domain": "nationalgeographic.com"
+},
+{
+    "activated" : false,
+    "domain": "venturebeat.com"
+},
+{
+    "activated" : false,
+    "domain": "jefftk.com"
+},
+{
+    "activated" : false,
+    "domain": "strongtowns.org"
+},
+{
+    "activated" : false,
+    "domain": "thetimes.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "openstreetmap.org"
+},
+{
+    "activated" : false,
+    "domain": "ansuz.sooke.bc.ca"
+},
+{
+    "activated" : false,
+    "domain": "blog.gdssecurity.com"
+},
+{
+    "activated" : false,
+    "domain": "yarchive.net"
+},
+{
+    "activated" : false,
+    "domain": "zeit.de"
+},
+{
+    "activated" : false,
+    "domain": "mobilesyrup.com"
+},
+{
+    "activated" : false,
+    "domain": "usa.streetsblog.org"
+},
+{
+    "activated" : false,
+    "domain": "europeanfinancialreview.com"
+},
+{
+    "activated" : false,
+    "domain": "nevalalee.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "dave.cheney.net"
+},
+{
+    "activated" : false,
+    "domain": "frontiersin.org"
+},
+{
+    "activated" : false,
+    "domain": "mwhittaker.github.io"
+},
+{
+    "activated" : false,
+    "domain": "neil.fraser.name"
+},
+{
+    "activated" : false,
+    "domain": "research.vu.nl"
+},
+{
+    "activated" : false,
+    "domain": "pm.inf.ethz.ch"
+},
+{
+    "activated" : false,
+    "domain": "ac1235.github.io"
+},
+{
+    "activated" : false,
+    "domain": "dtic.mil"
+},
+{
+    "activated" : false,
+    "domain": "cv.nrao.edu"
+},
+{
+    "activated" : false,
+    "domain": "3ammagazine.com"
+},
+{
+    "activated" : false,
+    "domain": "believermag.com"
+},
+{
+    "activated" : false,
+    "domain": "boats.gitlab.io"
+},
+{
+    "activated" : false,
+    "domain": "thediplomat.com"
+},
+{
+    "activated" : false,
+    "domain": "en.tldp.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.mozilla.org"
+},
+{
+    "activated" : false,
+    "domain": "blogs.scientificamerican.com"
+},
+{
+    "activated" : false,
+    "domain": "freshman.tech"
+},
+{
+    "activated" : false,
+    "domain": "medicalnewstoday.com"
+},
+{
+    "activated" : false,
+    "domain": "vanityfair.com"
+},
+{
+    "activated" : false,
+    "domain": "br.de"
+},
+{
+    "activated" : false,
+    "domain": "gds.blog.gov.uk"
+},
+{
+    "activated" : false,
+    "domain": "blog.instapaper.com"
+},
+{
+    "activated" : false,
+    "domain": "townandcountrymag.com"
+},
+{
+    "activated" : false,
+    "domain": "slackware.com"
+},
+{
+    "activated" : false,
+    "domain": "obe.tv"
+},
+{
+    "activated" : false,
+    "domain": "ifixit.com"
+},
+{
+    "activated" : false,
+    "domain": "streak.com"
+},
+{
+    "activated" : false,
+    "domain": "yurichev.com"
+},
+{
+    "activated" : false,
+    "domain": "smithsonianmag.com"
+},
+{
+    "activated" : false,
+    "domain": "scientificamerican.com"
+},
+{
+    "activated" : false,
+    "domain": "backblaze.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.golang.org"
+},
+{
+    "activated" : false,
+    "domain": "aws.amazon.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.paperspace.com"
+},
+{
+    "activated" : false,
+    "domain": "feld.com"
+},
+{
+    "activated" : false,
+    "domain": "engineering.riotgames.com"
+},
+{
+    "activated" : false,
+    "domain": "bloombergquint.com"
+},
+{
+    "activated" : false,
+    "domain": "lwan.ws"
+},
+{
+    "activated" : false,
+    "domain": "press.stripe.com"
+},
+{
+    "activated" : false,
+    "domain": "cloudforecast.io"
+},
+{
+    "activated" : false,
+    "domain": "assafmo.github.io"
+},
+{
+    "activated" : false,
+    "domain": "ssh.com"
+},
+{
+    "activated" : false,
+    "domain": "tonsky.me"
+},
+{
+    "activated" : false,
+    "domain": "status.cloud.google.com"
+},
+{
+    "activated" : false,
+    "domain": "wiki.dlang.org"
+},
+{
+    "activated" : false,
+    "domain": "propublica.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.timac.org"
+},
+{
+    "activated" : false,
+    "domain": "software-lab.de"
+},
+{
+    "activated" : false,
+    "domain": "www8.gsb.columbia.edu"
+},
+{
+    "activated" : false,
+    "domain": "addons.mozilla.org"
+},
+{
+    "activated" : false,
+    "domain": "trackinghappiness.com"
+},
+{
+    "activated" : false,
+    "domain": "lightbluetouchpaper.org"
+},
+{
+    "activated" : false,
+    "domain": "smashingmagazine.com"
+},
+{
+    "activated" : false,
+    "domain": "jenkins.io"
+},
+{
+    "activated" : false,
+    "domain": "gaslands.com"
+},
+{
+    "activated" : false,
+    "domain": "slatestarcodex.com"
+},
+{
+    "activated" : false,
+    "domain": "rodneybrooks.com"
+},
+{
+    "activated" : false,
+    "domain": "multimessenger.desy.de"
+},
+{
+    "activated" : false,
+    "domain": "middleendian.com"
+},
+{
+    "activated" : false,
+    "domain": "pacifict.com"
+},
+{
+    "activated" : false,
+    "domain": "openspace.sfmoma.org"
+},
+{
+    "activated" : false,
+    "domain": "now.tufts.edu"
+},
+{
+    "activated" : false,
+    "domain": "huckmag.com"
+},
+{
+    "activated" : false,
+    "domain": "picolisp.com"
+},
+{
+    "activated" : false,
+    "domain": "fortune.com"
+},
+{
+    "activated" : false,
+    "domain": "xxyxyz.org"
+},
+{
+    "activated" : false,
+    "domain": "archaeology.org"
+},
+{
+    "activated" : false,
+    "domain": "cbc.ca"
+},
+{
+    "activated" : false,
+    "domain": "wouter.coekaerts.be"
+},
+{
+    "activated" : false,
+    "domain": "nybooks.com"
+},
+{
+    "activated" : false,
+    "domain": "freshonthenet.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "blog.apnic.net"
+},
+{
+    "activated" : false,
+    "domain": "sfzoning.deapthoughts.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.wallaroolabs.com"
+},
+{
+    "activated" : false,
+    "domain": "lily-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "lsoft.com"
+},
+{
+    "activated" : false,
+    "domain": "instabug.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.rebased.pl"
+},
+{
+    "activated" : false,
+    "domain": "fda.gov"
+},
+{
+    "activated" : false,
+    "domain": "gamasutra.com"
+},
+{
+    "activated" : false,
+    "domain": "matija.suklje.name"
+},
+{
+    "activated" : false,
+    "domain": "robinwieruch.de"
+},
+{
+    "activated" : false,
+    "domain": "inderapotheke.de"
+},
+{
+    "activated" : false,
+    "domain": "vanemden.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "remotehabits.com"
+},
+{
+    "activated" : false,
+    "domain": "kanbanmail.app"
+},
+{
+    "activated" : false,
+    "domain": "opnsec.com"
+},
+{
+    "activated" : false,
+    "domain": "growth.eladgil.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.scottlogic.com"
+},
+{
+    "activated" : false,
+    "domain": "quariety.com"
+},
+{
+    "activated" : false,
+    "domain": "multinational.io"
+},
+{
+    "activated" : false,
+    "domain": "datatransferproject.dev"
+},
+{
+    "activated" : false,
+    "domain": "hurstwic.org"
+},
+{
+    "activated" : false,
+    "domain": "indiehackers.com"
+},
+{
+    "activated" : false,
+    "domain": "erica.biz"
+},
+{
+    "activated" : false,
+    "domain": "columbia.edu"
+},
+{
+    "activated" : false,
+    "domain": "sandimetz.com"
+},
+{
+    "activated" : false,
+    "domain": "scottaaronson.com"
+},
+{
+    "activated" : false,
+    "domain": "unibas.ch"
+},
+{
+    "activated" : false,
+    "domain": "lithub.com"
+},
+{
+    "activated" : false,
+    "domain": "cadc.uscourts.gov"
+},
+{
+    "activated" : false,
+    "domain": "cake.co"
+},
+{
+    "activated" : false,
+    "domain": "protonmail.com"
+},
+{
+    "activated" : false,
+    "domain": "fiercebiotech.com"
+},
+{
+    "activated" : false,
+    "domain": "falstad.com"
+},
+{
+    "activated" : false,
+    "domain": "guivr.github.io"
+},
+{
+    "activated" : false,
+    "domain": "ds9a.nl"
+},
+{
+    "activated" : false,
+    "domain": "anteru.net"
+},
+{
+    "activated" : false,
+    "domain": "learn.adacore.com"
+},
+{
+    "activated" : false,
+    "domain": "cyberscoop.com"
+},
+{
+    "activated" : false,
+    "domain": "developers.google.com"
+},
+{
+    "activated" : false,
+    "domain": "elixir-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "steveblank.com"
+},
+{
+    "activated" : false,
+    "domain": "alexpolozov.com"
+},
+{
+    "activated" : false,
+    "domain": "tech.instacart.com"
+},
+{
+    "activated" : false,
+    "domain": "laphamsquarterly.org"
+},
+{
+    "activated" : false,
+    "domain": "marketwatch.com"
+},
+{
+    "activated" : false,
+    "domain": "bbc.godbolt.org"
+},
+{
+    "activated" : false,
+    "domain": "webassembly.org"
+},
+{
+    "activated" : false,
+    "domain": "cloud.google.com"
+},
+{
+    "activated" : false,
+    "domain": "99percentinvisible.org"
+},
+{
+    "activated" : false,
+    "domain": "info.perforce.com"
+},
+{
+    "activated" : false,
+    "domain": "kernel.org"
+},
+{
+    "activated" : false,
+    "domain": "historyextra.com"
+},
+{
+    "activated" : false,
+    "domain": "warhistoryonline.com"
+},
+{
+    "activated" : false,
+    "domain": "scaleapi.com"
+},
+{
+    "activated" : false,
+    "domain": "s3.eurecom.fr"
+},
+{
+    "activated" : false,
+    "domain": "knowledge.autodesk.com"
+},
+{
+    "activated" : false,
+    "domain": "dampfkraft.com"
+},
+{
+    "activated" : false,
+    "domain": "opensource.com"
+},
+{
+    "activated" : false,
+    "domain": "codewith.mu"
+},
+{
+    "activated" : false,
+    "domain": "joelw.id.au"
+},
+{
+    "activated" : false,
+    "domain": "newneuromarketing.com"
+},
+{
+    "activated" : false,
+    "domain": "nrempel.com"
+},
+{
+    "activated" : false,
+    "domain": "banditalgs.com"
+},
+{
+    "activated" : false,
+    "domain": "biorxiv.org"
+},
+{
+    "activated" : false,
+    "domain": "refresh.study"
+},
+{
+    "activated" : false,
+    "domain": "rob.conery.io"
+},
+{
+    "activated" : false,
+    "domain": "betterwebtype.com"
+},
+{
+    "activated" : false,
+    "domain": "ssw.jku.at"
+},
+{
+    "activated" : false,
+    "domain": "composingprograms.com"
+},
+{
+    "activated" : false,
+    "domain": "radiobruxelleslibera.com"
+},
+{
+    "activated" : false,
+    "domain": "sbussard.github.io"
+},
+{
+    "activated" : false,
+    "domain": "itprotoday.com"
+},
+{
+    "activated" : false,
+    "domain": "ianlotinsky.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "joelsimon.net"
+},
+{
+    "activated" : false,
+    "domain": "newsobserver.com"
+},
+{
+    "activated" : false,
+    "domain": "hillelwayne.com"
+},
+{
+    "activated" : false,
+    "domain": "mermaidjs.github.io"
+},
+{
+    "activated" : false,
+    "domain": "techinasia.com"
+},
+{
+    "activated" : false,
+    "domain": "el-tramo.be"
+},
+{
+    "activated" : false,
+    "domain": "sbnation.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.nobugware.com"
+},
+{
+    "activated" : false,
+    "domain": "hugoam.github.io"
+},
+{
+    "activated" : false,
+    "domain": "docs.djangoproject.com"
+},
+{
+    "activated" : false,
+    "domain": "mnot.net"
+},
+{
+    "activated" : false,
+    "domain": "eng.uber.com"
+},
+{
+    "activated" : false,
+    "domain": "our.status.im"
+},
+{
+    "activated" : false,
+    "domain": "eclipse.org"
+},
+{
+    "activated" : false,
+    "domain": "www2.ece.rochester.edu"
+},
+{
+    "activated" : false,
+    "domain": "twilio.com"
+},
+{
+    "activated" : false,
+    "domain": "twomakers.io"
+},
+{
+    "activated" : false,
+    "domain": "atrium.co"
+},
+{
+    "activated" : false,
+    "domain": "matthias-endler.de"
+},
+{
+    "activated" : false,
+    "domain": "blog.floydhub.com"
+},
+{
+    "activated" : false,
+    "domain": "t3x.org"
+},
+{
+    "activated" : false,
+    "domain": "oalley.net"
+},
+{
+    "activated" : false,
+    "domain": "emboj.embopress.org"
+},
+{
+    "activated" : false,
+    "domain": "businesswire.com"
+},
+{
+    "activated" : false,
+    "domain": "rigb.org"
+},
+{
+    "activated" : false,
+    "domain": "fastcompany.com"
+},
+{
+    "activated" : false,
+    "domain": "mirror.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "support.hp.com"
+},
+{
+    "activated" : false,
+    "domain": "markets.businessinsider.com"
+},
+{
+    "activated" : false,
+    "domain": "archdaily.com"
+},
+{
+    "activated" : false,
+    "domain": "foxnomad.com"
+},
+{
+    "activated" : false,
+    "domain": "nrc.nl"
+},
+{
+    "activated" : false,
+    "domain": "ephos.github.io"
+},
+{
+    "activated" : false,
+    "domain": "brandur.org"
+},
+{
+    "activated" : false,
+    "domain": "docs.browserless.io"
+},
+{
+    "activated" : false,
+    "domain": "archive.org"
+},
+{
+    "activated" : false,
+    "domain": "openjdk.java.net"
+},
+{
+    "activated" : false,
+    "domain": "blog.coinbase.com"
+},
+{
+    "activated" : false,
+    "domain": "blogs.findlaw.com"
+},
+{
+    "activated" : false,
+    "domain": "semantic-domain.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "google.github.io"
+},
+{
+    "activated" : false,
+    "domain": "beckyances.net"
+},
+{
+    "activated" : false,
+    "domain": "evertpot.com"
+},
+{
+    "activated" : false,
+    "domain": "opds.io"
+},
+{
+    "activated" : false,
+    "domain": "codingnest.com"
+},
+{
+    "activated" : false,
+    "domain": "bob.cs.sonoma.edu"
+},
+{
+    "activated" : false,
+    "domain": "tox.chat"
+},
+{
+    "activated" : false,
+    "domain": "blog.github.com"
+},
+{
+    "activated" : false,
+    "domain": "gutenberg.org"
+},
+{
+    "activated" : false,
+    "domain": "disneyresearch.com"
+},
+{
+    "activated" : false,
+    "domain": "peripheryapp.com"
+},
+{
+    "activated" : false,
+    "domain": "castling.club"
+},
+{
+    "activated" : false,
+    "domain": "colab.research.google.com"
+},
+{
+    "activated" : false,
+    "domain": "spinellis.gr"
+},
+{
+    "activated" : false,
+    "domain": "lostella.github.io"
+},
+{
+    "activated" : false,
+    "domain": "blogs.msdn.microsoft.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.watsi.org"
+},
+{
+    "activated" : false,
+    "domain": "science.sciencemag.org"
+},
+{
+    "activated" : false,
+    "domain": "thunderbird.net"
+},
+{
+    "activated" : false,
+    "domain": "metalevel.at"
+},
+{
+    "activated" : false,
+    "domain": "csmonitor.com"
+},
+{
+    "activated" : false,
+    "domain": "pnas.org"
+},
+{
+    "activated" : false,
+    "domain": "gianlucagimini.it"
+},
+{
+    "activated" : false,
+    "domain": "android-developers.googleblog.com"
+},
+{
+    "activated" : false,
+    "domain": "dinfuehr.github.io"
+},
+{
+    "activated" : false,
+    "domain": "blog.rainway.io"
+},
+{
+    "activated" : false,
+    "domain": "rsnous.com"
+},
+{
+    "activated" : false,
+    "domain": "simonsfoundation.org"
+},
+{
+    "activated" : false,
+    "domain": "crawshaw.io"
+},
+{
+    "activated" : false,
+    "domain": "inko-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "breakingdefense.com"
+},
+{
+    "activated" : false,
+    "domain": "lrb.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "movingfulcrum.com"
+},
+{
+    "activated" : false,
+    "domain": "placesjournal.org"
+},
+{
+    "activated" : false,
+    "domain": "help.twitter.com"
+},
+{
+    "activated" : false,
+    "domain": "differentimpulse.com"
+},
+{
+    "activated" : false,
+    "domain": "julialang.org"
+},
+{
+    "activated" : false,
+    "domain": "apenwarr.ca"
+},
+{
+    "activated" : false,
+    "domain": "case-podcast.org"
+},
+{
+    "activated" : false,
+    "domain": "cookieplmonster.github.io"
+},
+{
+    "activated" : false,
+    "domain": "cbslocal.com"
+},
+{
+    "activated" : false,
+    "domain": "stat.wisc.edu"
+},
+{
+    "activated" : false,
+    "domain": "rmg.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "tesla.com"
+},
+{
+    "activated" : false,
+    "domain": "puri.sm"
+},
+{
+    "activated" : false,
+    "domain": "ft.com"
+},
+{
+    "activated" : false,
+    "domain": "baltimoresun.com"
+},
+{
+    "activated" : false,
+    "domain": "tryretool.com"
+},
+{
+    "activated" : false,
+    "domain": "eli.thegreenplace.net"
+},
+{
+    "activated" : false,
+    "domain": "mrooding.me"
+},
+{
+    "activated" : false,
+    "domain": "ribbonfarm.com"
+},
+{
+    "activated" : false,
+    "domain": "reneweconomy.com.au"
+},
+{
+    "activated" : false,
+    "domain": "leibniz-translations.com"
+},
+{
+    "activated" : false,
+    "domain": "rszalski.github.io"
+},
+{
+    "activated" : false,
+    "domain": "junglecoder.com"
+},
+{
+    "activated" : false,
+    "domain": "fosdem.org"
+},
+{
+    "activated" : false,
+    "domain": "strangesounds.org"
+},
+{
+    "activated" : false,
+    "domain": "stefan-lesser.com"
+},
+{
+    "activated" : false,
+    "domain": "embedded.com"
+},
+{
+    "activated" : false,
+    "domain": "sol.gfxile.net"
+},
+{
+    "activated" : false,
+    "domain": "blog.erratasec.com"
+},
+{
+    "activated" : false,
+    "domain": "polygon.com"
+},
+{
+    "activated" : false,
+    "domain": "mansionengineer.com"
+},
+{
+    "activated" : false,
+    "domain": "charmpy.readthedocs.io"
+},
+{
+    "activated" : false,
+    "domain": "berkeleyside.com"
+},
+{
+    "activated" : false,
+    "domain": "muratbuffalo.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.bugsnag.com"
+},
+{
+    "activated" : false,
+    "domain": "news.developer.nvidia.com"
+},
+{
+    "activated" : false,
+    "domain": "bulma.io"
+},
+{
+    "activated" : false,
+    "domain": "meteorshowers.org"
+},
+{
+    "activated" : false,
+    "domain": "rivten.github.io"
+},
+{
+    "activated" : false,
+    "domain": "labguysworld.com"
+},
+{
+    "activated" : false,
+    "domain": "visca.com"
+},
+{
+    "activated" : false,
+    "domain": "dolphin-emu.org"
+},
+{
+    "activated" : false,
+    "domain": "princeton.edu"
+},
+{
+    "activated" : false,
+    "domain": "babieslearninglanguage.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "cattlepi.com"
+},
+{
+    "activated" : false,
+    "domain": "popularmechanics.com"
+},
+{
+    "activated" : false,
+    "domain": "security.googleblog.com"
+},
+{
+    "activated" : false,
+    "domain": "christophe.rhodes.io"
+},
+{
+    "activated" : false,
+    "domain": "mtmscientific.com"
+},
+{
+    "activated" : false,
+    "domain": "worldbrain.io"
+},
+{
+    "activated" : false,
+    "domain": "arcentry.com"
+},
+{
+    "activated" : false,
+    "domain": "pcmonitors.info"
+},
+{
+    "activated" : false,
+    "domain": "pcgamer.com"
+    
+},
+{
+    "activated" : false,
+    "domain": "assets.publishing.service.gov.uk"
+},
+{
+    "activated" : false,
+    "domain": "softwarepreservation.org"
+},
+{
+    "activated" : false,
+    "domain": "danplisetsky.github.io"
+},
+{
+    "activated" : false,
+    "domain": "python.org"
+},
+{
+    "activated" : false,
+    "domain": "vectos.net"
+},
+{
+    "activated" : false,
+    "domain": "smithsonianchips.si.edu"
+},
+{
+    "activated" : false,
+    "domain": "efavdb.com"
+},
+{
+    "activated" : false,
+    "domain": "secjuice.com"
+},
+{
+    "activated" : false,
+    "domain": "inc.com"
+},
+{
+    "activated" : false,
+    "domain": "kubuszok.com"
+},
+{
+    "activated" : false,
+    "domain": "ybrikman.com"
+},
+{
+    "activated" : false,
+    "domain": "geti2p.net"
+},
+{
+    "activated" : false,
+    "domain": "gitlab.com"
+},
+{
+    "activated" : false,
+    "domain": "allaboutcircuits.com"
+},
+{
+    "activated" : false,
+    "domain": "jcgt.org"
+},
+{
+    "activated" : false,
+    "domain": "pv-tech.org"
+},
+{
+    "activated" : false,
+    "domain": "thelancet.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.cornelltech.io"
+},
+{
+    "activated" : false,
+    "domain": "wealthmanagement.com"
+},
+{
+    "activated" : false,
+    "domain": "denisdutton.com"
+},
+{
+    "activated" : false,
+    "domain": "seanriddle.com"
+},
+{
+    "activated" : false,
+    "domain": "gamedev.net"
+},
+{
+    "activated" : false,
+    "domain": "mosaicscience.com"
+},
+{
+    "activated" : false,
+    "domain": "444.hu"
+},
+{
+    "activated" : false,
+    "domain": "sciencedirect.com"
+},
+{
+    "activated" : false,
+    "domain": "sciencenews.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.esciencecenter.nl"
+},
+{
+    "activated" : false,
+    "domain": "activestate.com"
+},
+{
+    "activated" : false,
+    "domain": "ccn.com"
+},
+{
+    "activated" : false,
+    "domain": "math.columbia.edu"
+},
+{
+    "activated" : false,
+    "domain": "rodrigob.github.io"
+},
+{
+    "activated" : false,
+    "domain": "zerocater.com"
+},
+{
+    "activated" : false,
+    "domain": "interestingengineering.com"
+},
+{
+    "activated" : false,
+    "domain": "robdobson.com"
+},
+{
+    "activated" : false,
+    "domain": "getshogun.com"
+},
+{
+    "activated" : false,
+    "domain": "privateinternetaccess.com"
+},
+{
+    "activated" : false,
+    "domain": "maa.org"
+},
+{
+    "activated" : false,
+    "domain": "bhencke.com"
+},
+{
+    "activated" : false,
+    "domain": "news.gatech.edu"
+},
+{
+    "activated" : false,
+    "domain": "physics.bu.edu"
+},
+{
+    "activated" : false,
+    "domain": "edge.org"
+},
+{
+    "activated" : false,
+    "domain": "foreignpolicy.com"
+},
+{
+    "activated" : false,
+    "domain": "eno-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "leoeditor.com"
+},
+{
+    "activated" : false,
+    "domain": "8thlight.com"
+},
+{
+    "activated" : false,
+    "domain": "nikhilm.github.io"
+},
+{
+    "activated" : false,
+    "domain": "electricitymap.org"
+},
+{
+    "activated" : false,
+    "domain": "cacm.acm.org"
+},
+{
+    "activated" : false,
+    "domain": "vision.cs.utexas.edu"
+},
+{
+    "activated" : false,
+    "domain": "talks.godoc.org"
+},
+{
+    "activated" : false,
+    "domain": "publicwww.com"
+},
+{
+    "activated" : false,
+    "domain": "linusakesson.net"
+},
+{
+    "activated" : false,
+    "domain": "setosa.io"
+},
+{
+    "activated" : false,
+    "domain": "atlas.stripe.com"
+},
+{
+    "activated" : false,
+    "domain": "gfrison.com"
+},
+{
+    "activated" : false,
+    "domain": "chr15m.github.io"
+},
+{
+    "activated" : false,
+    "domain": "natecull.org"
+},
+{
+    "activated" : false,
+    "domain": "my-netdata.io"
+},
+{
+    "activated" : false,
+    "domain": "wits.io"
+},
+{
+    "activated" : false,
+    "domain": "towardsdatascience.com"
+},
+{
+    "activated" : false,
+    "domain": "deepmind.com"
+},
+{
+    "activated" : false,
+    "domain": "arm.com"
+},
+{
+    "activated" : false,
+    "domain": "abyjames.com"
+},
+{
+    "activated" : false,
+    "domain": "jera.com"
+},
+{
+    "activated" : false,
+    "domain": "gq.com"
+},
+{
+    "activated" : false,
+    "domain": "aasnova.org"
+},
+{
+    "activated" : false,
+    "domain": "journals.plos.org"
+},
+{
+    "activated" : false,
+    "domain": "owntrust.org"
+},
+{
+    "activated" : false,
+    "domain": "liip.ch"
+},
+{
+    "activated" : false,
+    "domain": "lubuntu.me"
+},
+{
+    "activated" : false,
+    "domain": "hackernoon.com"
+},
+{
+    "activated" : false,
+    "domain": "julesh.com"
+},
+{
+    "activated" : false,
+    "domain": "criterion.com"
+},
+{
+    "activated" : false,
+    "domain": "kakoune.org"
+},
+{
+    "activated" : false,
+    "domain": "fruitmap.sk"
+},
+{
+    "activated" : false,
+    "domain": "urban75.org"
+},
+{
+    "activated" : false,
+    "domain": "iamjamesward.com"
+},
+{
+    "activated" : false,
+    "domain": "codesections.com"
+},
+{
+    "activated" : false,
+    "domain": "grahamc.com"
+},
+{
+    "activated" : false,
+    "domain": "coloring-book.co"
+},
+{
+    "activated" : false,
+    "domain": "smalldata.tech"
+},
+{
+    "activated" : false,
+    "domain": "freemovement.org.uk"
+},
+{
+    "activated" : false,
+    "domain": "maxhuibai.com"
+},
+{
+    "activated" : false,
+    "domain": "java.com"
+},
+{
+    "activated" : false,
+    "domain": "nbcnews.com"
+},
+{
+    "activated" : false,
+    "domain": "csrc.nist.gov"
+},
+{
+    "activated" : false,
+    "domain": "elm-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "givecampus.com"
+},
+{
+    "activated" : false,
+    "domain": "zen-of-programming.com"
+},
+{
+    "activated" : false,
+    "domain": "reason.com"
+},
+{
+    "activated" : false,
+    "domain": "noobs-term.com"
+},
+{
+    "activated" : false,
+    "domain": "maciek.blog"
+},
+{
+    "activated" : false,
+    "domain": "googleblog.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "blogs.bl.uk"
+},
+{
+    "activated" : false,
+    "domain": "imgtranslate.com"
+},
+{
+    "activated" : false,
+    "domain": "blogs.nvidia.com"
+},
+{
+    "activated" : false,
+    "domain": "www-users.cs.umn.edu"
+},
+{
+    "activated" : false,
+    "domain": "thenewstack.io"
+},
+{
+    "activated" : false,
+    "domain": "newstatesman.com"
+},
+{
+    "activated" : false,
+    "domain": "brownie-camera.com"
+},
+{
+    "activated" : false,
+    "domain": "johnhw.github.io"
+},
+{
+    "activated" : false,
+    "domain": "hazlitt.net"
+},
+{
+    "activated" : false,
+    "domain": "hothardware.com"
+},
+{
+    "activated" : false,
+    "domain": "haskellforall.com"
+},
+{
+    "activated" : false,
+    "domain": "antirez.com"
+},
+{
+    "activated" : false,
+    "domain": "blinkingcaret.com"
+},
+{
+    "activated" : false,
+    "domain": "atdt.freeshell.org"
+},
+{
+    "activated" : false,
+    "domain": "law.duke.edu"
+},
+{
+    "activated" : false,
+    "domain": "pypyjs.org"
+},
+{
+    "activated" : false,
+    "domain": "pewresearch.org"
+},
+{
+    "activated" : false,
+    "domain": "huffingtonpost.com"
+},
+{
+    "activated" : false,
+    "domain": "knowablemagazine.org"
+},
+{
+    "activated" : false,
+    "domain": "ianring.com"
+},
+{
+    "activated" : false,
+    "domain": "bl.uk"
+},
+{
+    "activated" : false,
+    "domain": "fun-mooc.fr"
+},
+{
+    "activated" : false,
+    "domain": "home-assistant.io"
+},
+{
+    "activated" : false,
+    "domain": "jtolio.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.ndk.io"
+},
+{
+    "activated" : false,
+    "domain": "a9t9.com"
+},
+{
+    "activated" : false,
+    "domain": "p.migdal.pl"
+},
+{
+    "activated" : false,
+    "domain": "newrepublic.com"
+},
+{
+    "activated" : false,
+    "domain": "johnny-five.io"
+},
+{
+    "activated" : false,
+    "domain": "hmijailblog.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "activesphere.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.torservers.net"
+},
+{
+    "activated" : false,
+    "domain": "boards.greenhouse.io"
+},
+{
+    "activated" : false,
+    "domain": "johndcook.com"
+},
+{
+    "activated" : false,
+    "domain": "tech.buzzfeed.com"
+},
+{
+    "activated" : false,
+    "domain": "jepsen.io"
+},
+{
+    "activated" : false,
+    "domain": "blog.scrt.ch"
+},
+{
+    "activated" : false,
+    "domain": "hackaday.io"
+},
+{
+    "activated" : false,
+    "domain": "9to5mac.com"
+},
+{
+    "activated" : false,
+    "domain": "sangoma.com"
+},
+{
+    "activated" : false,
+    "domain": "atcommands.org"
+},
+{
+    "activated" : false,
+    "domain": "doc.rust-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "jobenabler.org"
+},
+{
+    "activated" : false,
+    "domain": "i.blackhat.com"
+},
+{
+    "activated" : false,
+    "domain": "briangilham.com"
+},
+{
+    "activated" : false,
+    "domain": "tech.firstlook.media"
+},
+{
+    "activated" : false,
+    "domain": "honest.engineering"
+},
+{
+    "activated" : false,
+    "domain": "megan-vo.github.io"
+},
+{
+    "activated" : false,
+    "domain": "bitsnbites.eu"
+},
+{
+    "activated" : false,
+    "domain": "stimulusjs.org"
+},
+{
+    "activated" : false,
+    "domain": "80000hours.org"
+},
+{
+    "activated" : false,
+    "domain": "devblogs.nvidia.com"
+},
+{
+    "activated" : false,
+    "domain": "zandercutt.com"
+},
+{
+    "activated" : false,
+    "domain": "cryptool.org"
+},
+{
+    "activated" : false,
+    "domain": "agner.org"
+},
+{
+    "activated" : false,
+    "domain": "craftinginterpreters.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.budgetwithbuckets.com"
+},
+{
+    "activated" : false,
+    "domain": "go.googlesource.com"
+},
+{
+    "activated" : false,
+    "domain": "davidhampgonsalves.com"
+},
+{
+    "activated" : false,
+    "domain": "styluslabs.com"
+},
+{
+    "activated" : false,
+    "domain": "recode.net"
+},
+{
+    "activated" : false,
+    "domain": "salmon-mail.readthedocs.io"
+},
+{
+    "activated" : false,
+    "domain": "ep.bmj.com"
+},
+{
+    "activated" : false,
+    "domain": "codemirror.net"
+},
+{
+    "activated" : false,
+    "domain": "lyx.org"
+},
+{
+    "activated" : false,
+    "domain": "terenz.io"
+},
+{
+    "activated" : false,
+    "domain": "artnome.com"
+},
+{
+    "activated" : false,
+    "domain": "vox.com"
+},
+{
+    "activated" : false,
+    "domain": "nycmesh.net"
+},
+{
+    "activated" : false,
+    "domain": "thisissecurity.stormshield.com"
+},
+{
+    "activated" : false,
+    "domain": "troyhunt.com"
+},
+{
+    "activated" : false,
+    "domain": "mattwarren.org"
+},
+{
+    "activated" : false,
+    "domain": "fdi.ucm.es"
+},
+{
+    "activated" : false,
+    "domain": "latimes.com"
+},
+{
+    "activated" : false,
+    "domain": "adguard.com"
+},
+{
+    "activated" : false,
+    "domain": "magicleap.com"
+},
+{
+    "activated" : false,
+    "domain": "s2geometry.io"
+},
+{
+    "activated" : false,
+    "domain": "fivecastfinancial.com"
+},
+{
+    "activated" : false,
+    "domain": "mason.gmu.edu"
+},
+{
+    "activated" : false,
+    "domain": "web.media.mit.edu"
+},
+{
+    "activated" : false,
+    "domain": "diagrams.app"
+},
+{
+    "activated" : false,
+    "domain": "prezi.com"
+},
+{
+    "activated" : false,
+    "domain": "marcel.is"
+},
+{
+    "activated" : false,
+    "domain": "thenextweb.com"
+},
+{
+    "activated" : false,
+    "domain": "emarketer.com"
+},
+{
+    "activated" : false,
+    "domain": "realpython.com"
+},
+{
+    "activated" : false,
+    "domain": "mashable.com"
+},
+{
+    "activated" : false,
+    "domain": "gordonbrander.com"
+},
+{
+    "activated" : false,
+    "domain": "beta.observablehq.com"
+},
+{
+    "activated" : false,
+    "domain": "egr.unlv.edu"
+},
+{
+    "activated" : false,
+    "domain": "neurosciencenews.com"
+},
+{
+    "activated" : false,
+    "domain": "brookings.edu"
+},
+{
+    "activated" : false,
+    "domain": "eigenfoo.xyz"
+},
+{
+    "activated" : false,
+    "domain": "psychologytoday.com"
+},
+{
+    "activated" : false,
+    "domain": "act.openmedia.org"
+},
+{
+    "activated" : false,
+    "domain": "matt.diephouse.com"
+},
+{
+    "activated" : false,
+    "domain": "drdobbs.com"
+},
+{
+    "activated" : false,
+    "domain": "courses.csail.mit.edu"
+},
+{
+    "activated" : false,
+    "domain": "linkedin.com"
+},
+{
+    "activated" : false,
+    "domain": "rockpapershotgun.com"
+},
+{
+    "activated" : false,
+    "domain": "salk.edu"
+},
+{
+    "activated" : false,
+    "domain": "thezvi.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "webdesignmuseum.org"
+},
+{
+    "activated" : false,
+    "domain": "about.sourcegraph.com"
+},
+{
+    "activated" : false,
+    "domain": "rjlipton.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "duriansoftware.com"
+},
+{
+    "activated" : false,
+    "domain": "jmoiron.net"
+},
+{
+    "activated" : false,
+    "domain": "rutian.github.io"
+},
+{
+    "activated" : false,
+    "domain": "geekwire.com"
+},
+{
+    "activated" : false,
+    "domain": "ben-evans.com"
+},
+{
+    "activated" : false,
+    "domain": "scattered-thoughts.net"
+},
+{
+    "activated" : false,
+    "domain": "nolanlawson.com"
+},
+{
+    "activated" : false,
+    "domain": "neugierig.org"
+},
+{
+    "activated" : false,
+    "domain": "intensecrypto.org"
+},
+{
+    "activated" : false,
+    "domain": "christine.website"
+},
+{
+    "activated" : false,
+    "domain": "os2museum.com"
+},
+{
+    "activated" : false,
+    "domain": "serverless.com"
+},
+{
+    "activated" : false,
+    "domain": "zdnet.com"
+},
+{
+    "activated" : false,
+    "domain": "thorstenball.com"
+},
+{
+    "activated" : false,
+    "domain": "people.eecs.berkeley.edu"
+},
+{
+    "activated" : false,
+    "domain": "toolbox.google.com"
+},
+{
+    "activated" : false,
+    "domain": "github.prideout.net"
+},
+{
+    "activated" : false,
+    "domain": "gkogan.co"
+},
+{
+    "activated" : false,
+    "domain": "blog.lareviewofbooks.org"
+},
+{
+    "activated" : false,
+    "domain": "phkimpel.us"
+},
+{
+    "activated" : false,
+    "domain": "solipsys.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "people.uncw.edu"
+},
+{
+    "activated" : false,
+    "domain": "rawgit.com"
+},
+{
+    "activated" : false,
+    "domain": "turingtumble.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.aboutamazon.com"
+},
+{
+    "activated" : false,
+    "domain": "bmcinfectdis.biomedcentral.com"
+},
+{
+    "activated" : false,
+    "domain": "git.kernel.org"
+},
+{
+    "activated" : false,
+    "domain": "saru.science"
+},
+{
+    "activated" : false,
+    "domain": "polemicdigital.com"
+},
+{
+    "activated" : false,
+    "domain": "mozilla.org"
+},
+{
+    "activated" : false,
+    "domain": "boingboing.net"
+},
+{
+    "activated" : false,
+    "domain": "cs.cmu.edu"
+},
+{
+    "activated" : false,
+    "domain": "blog.merovius.de"
+},
+{
+    "activated" : false,
+    "domain": "nickwignall.com"
+},
+{
+    "activated" : false,
+    "domain": "nathanmarz.com"
+},
+{
+    "activated" : false,
+    "domain": "cs.au.dk"
+},
+{
+    "activated" : false,
+    "domain": "blog.torproject.org"
+},
+{
+    "activated" : false,
+    "domain": "activewizards.com"
+},
+{
+    "activated" : false,
+    "domain": "gimp.org"
+},
+{
+    "activated" : false,
+    "domain": "historytoday.com"
+},
+{
+    "activated" : false,
+    "domain": "fivethirtyeight.com"
+},
+{
+    "activated" : false,
+    "domain": "seas.harvard.edu"
+},
+{
+    "activated" : false,
+    "domain": "factor.niehs.nih.gov"
+},
+{
+    "activated" : false,
+    "domain": "theintercept.com"
+},
+{
+    "activated" : false,
+    "domain": "huffmancoding.com"
+},
+{
+    "activated" : false,
+    "domain": "owaahh.com"
+},
+{
+    "activated" : false,
+    "domain": "1843magazine.com"
+},
+{
+    "activated" : false,
+    "domain": "arangodb.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.getpaint.net"
+},
+{
+    "activated" : false,
+    "domain": "entrepidpartners.com"
+},
+{
+    "activated" : false,
+    "domain": "f-droid.org"
+},
+{
+    "activated" : false,
+    "domain": "carnegieendowment.org"
+},
+{
+    "activated" : false,
+    "domain": "glassdoor.com"
+},
+{
+    "activated" : false,
+    "domain": "creativecommons.org"
+},
+{
+    "activated" : false,
+    "domain": "pouet.net"
+},
+{
+    "activated" : false,
+    "domain": "cia.gov"
+},
+{
+    "activated" : false,
+    "domain": "lists.gnu.org"
+},
+{
+    "activated" : false,
+    "domain": "ahungry.com"
+},
+{
+    "activated" : false,
+    "domain": "adamtornhill.com"
+},
+{
+    "activated" : false,
+    "domain": "thecontrol.co"
+},
+{
+    "activated" : false,
+    "domain": "blog.plover.com"
+},
+{
+    "activated" : false,
+    "domain": "kennethreitz.org"
+},
+{
+    "activated" : false,
+    "domain": "ajc.com"
+},
+{
+    "activated" : false,
+    "domain": "osnews.com"
+},
+{
+    "activated" : false,
+    "domain": "chrome.google.com"
+},
+{
+    "activated" : false,
+    "domain": "morepypy.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "vicarie.in"
+},
+{
+    "activated" : false,
+    "domain": "blog.seso.io"
+},
+{
+    "activated" : false,
+    "domain": "huytd.github.io"
+},
+{
+    "activated" : false,
+    "domain": "knowherenews.com"
+},
+{
+    "activated" : false,
+    "domain": "lcamtuf.coredump.cx"
+},
+{
+    "activated" : false,
+    "domain": "globaltimes.cn"
+},
+{
+    "activated" : false,
+    "domain": "chrishacken.com"
+},
+{
+    "activated" : false,
+    "domain": "mindstamp.io"
+},
+{
+    "activated" : false,
+    "domain": "store.steampowered.com"
+},
+{
+    "activated" : false,
+    "domain": "cs.uaf.edu"
+},
+{
+    "activated" : false,
+    "domain": "uplink.readthedocs.io"
+},
+{
+    "activated" : false,
+    "domain": "alemil.com"
+},
+{
+    "activated" : false,
+    "domain": "ndpsoftware.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.timbunce.org"
+},
+{
+    "activated" : false,
+    "domain": "smilingthax.github.io"
+},
+{
+    "activated" : false,
+    "domain": "sayazamurai.github.io"
+},
+{
+    "activated" : false,
+    "domain": "ntietz.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.doist.com"
+},
+{
+    "activated" : false,
+    "domain": "guitardashboard.com"
+},
+{
+    "activated" : false,
+    "domain": "qwant.com"
+},
+{
+    "activated" : false,
+    "domain": "nanotechnologyworld.org"
+},
+{
+    "activated" : false,
+    "domain": "mono-project.com"
+},
+{
+    "activated" : false,
+    "domain": "kotlindevelopment.com"
+},
+{
+    "activated" : false,
+    "domain": "ctolunches.com"
+},
+{
+    "activated" : false,
+    "domain": "schneier.com"
+},
+{
+    "activated" : false,
+    "domain": "packnback.github.io"
+},
+{
+    "activated" : false,
+    "domain": "iopscience.iop.org"
+},
+{
+    "activated" : false,
+    "domain": "amp.theguardian.com"
+},
+{
+    "activated" : false,
+    "domain": "linuxize.com"
+},
+{
+    "activated" : false,
+    "domain": "feedseer.com"
+},
+{
+    "activated" : false,
+    "domain": "ramtin-amin.fr"
+},
+{
+    "activated" : false,
+    "domain": "vangoghmuseum.nl"
+},
+{
+    "activated" : false,
+    "domain": "yunohost.org"
+},
+{
+    "activated" : false,
+    "domain": "mathenchant.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "thetruthaboutknives.com"
+},
+{
+    "activated" : false,
+    "domain": "futhark-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "pentestpartners.com"
+},
+{
+    "activated" : false,
+    "domain": "soundguys.com"
+},
+{
+    "activated" : false,
+    "domain": "citizen.co.za"
+},
+{
+    "activated" : false,
+    "domain": "trin.cam.ac.uk"
+},
+{
+    "activated" : false,
+    "domain": "fennel-lang.org"
+},
+{
+    "activated" : false,
+    "domain": "lists.gnupg.org"
+},
+{
+    "activated" : false,
+    "domain": "cs.virginia.edu"
+},
+{
+    "activated" : false,
+    "domain": "blogs.harvard.edu"
+},
+{
+    "activated" : false,
+    "domain": "threatpost.com"
+},
+{
+    "activated" : false,
+    "domain": "dtrace.org"
+},
+{
+    "activated" : false,
+    "domain": "somethingorotherwhatever.com"
+},
+{
+    "activated" : false,
+    "domain": "wiki.c2.com"
+},
+{
+    "activated" : false,
+    "domain": "simpleanalytics.io"
+},
+{
+    "activated" : false,
+    "domain": "michelenasti.com"
+},
+{
+    "activated" : false,
+    "domain": "cdm.link"
+},
+{
+    "activated" : false,
+    "domain": "releases.llvm.org"
+},
+{
+    "activated" : false,
+    "domain": "gael-varoquaux.info"
+},
+{
+    "activated" : false,
+    "domain": "a16z.com"
+},
+{
+    "activated" : false,
+    "domain": "fsfla.org"
+},
+{
+    "activated" : false,
+    "domain": "nextjs.org"
+},
+{
+    "activated" : false,
+    "domain": "philsci-archive.pitt.edu"
+},
+{
+    "activated" : false,
+    "domain": "htor.inf.ethz.ch"
+},
+{
+    "activated" : false,
+    "domain": "framer.com"
+},
+{
+    "activated" : false,
+    "domain": "ipfs.io"
+},
+{
+    "activated" : false,
+    "domain": "theinquirer.net"
+},
+{
+    "activated" : false,
+    "domain": "blog.timescale.com"
+},
+{
+    "activated" : false,
+    "domain": "dymaxion.org"
+},
+{
+    "activated" : false,
+    "domain": "news.un.org"
+},
+{
+    "activated" : false,
+    "domain": "xyht.com"
+},
+{
+    "activated" : false,
+    "domain": "vapid.com"
+},
+{
+    "activated" : false,
+    "domain": "tongwing.woon.sg"
+},
+{
+    "activated" : false,
+    "domain": "spcr.netlify.com"
+},
+{
+    "activated" : false,
+    "domain": "cbinsights.com"
+},
+{
+    "activated" : false,
+    "domain": "mmtimes.com"
+},
+{
+    "activated" : false,
+    "domain": "mobile.abc.net.au"
+},
+{
+    "activated" : false,
+    "domain": "ssi.gouv.fr"
+},
+{
+    "activated" : false,
+    "domain": "cosmosmagazine.com"
+},
+{
+    "activated" : false,
+    "domain": "freedom.press"
+},
+{
+    "activated" : false,
+    "domain": "mattkeeter.com"
+},
+{
+    "activated" : false,
+    "domain": "phoboslab.org"
+},
+{
+    "activated" : false,
+    "domain": "course.fast.ai"
+},
+{
+    "activated" : false,
+    "domain": "microsoft.github.io"
+},
+{
+    "activated" : false,
+    "domain": "inconvergent.net"
+},
+{
+    "activated" : false,
+    "domain": "7pace.com"
+},
+{
+    "activated" : false,
+    "domain": "booktwo.org"
+},
+{
+    "activated" : false,
+    "domain": "keyvalues.com"
+},
+{
+    "activated" : false,
+    "domain": "kubernetes.io"
+},
+{
+    "activated" : false,
+    "domain": "stashofcode.com"
+},
+{
+    "activated" : false,
+    "domain": "ovid.github.io"
+},
+{
+    "activated" : false,
+    "domain": "yourcalendricalfallacyis.com"
+},
+{
+    "activated" : false,
+    "domain": "marketplace.org"
+},
+{
+    "activated" : false,
+    "domain": "medievalists.net"
+},
+{
+    "activated" : false,
+    "domain": "philipwalton.com"
+},
+{
+    "activated" : false,
+    "domain": "sublimemerge.com"
+},
+{
+    "activated" : false,
+    "domain": "sback.it"
+},
+{
+    "activated" : false,
+    "domain": "artforum.com"
+},
+{
+    "activated" : false,
+    "domain": "lineageos.org"
+},
+{
+    "activated" : false,
+    "domain": "open-std.org"
+},
+{
+    "activated" : false,
+    "domain": "ardica.com"
+},
+{
+    "activated" : false,
+    "domain": "sharpnado.com"
+},
+{
+    "activated" : false,
+    "domain": "daslab.seas.harvard.edu"
+},
+{
+    "activated" : false,
+    "domain": "engadget.com"
+},
+{
+    "activated" : false,
+    "domain": "cognitivemedium.com"
+},
+{
+    "activated" : false,
+    "domain": "math.ualberta.ca"
+},
+{
+    "activated" : false,
+    "domain": "herbsutter.com"
+},
+{
+    "activated" : false,
+    "domain": "dailymail.co.uk"
+},
+{
+    "activated" : false,
+    "domain": "story.californiasunday.com"
+},
+{
+    "activated" : false,
+    "domain": "inf.puc-rio.br"
+},
+{
+    "activated" : false,
+    "domain": "ineteconomics.org"
+},
+{
+    "activated" : false,
+    "domain": "dbmsmusings.blogspot.com"
+},
+{
+    "activated" : false,
+    "domain": "prdeving.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "abc.net.au"
+},
+{
+    "activated" : false,
+    "domain": "rwgrayprojects.com"
+},
+{
+    "activated" : false,
+    "domain": "carlmastrangelo.com"
+},
+{
+    "activated" : false,
+    "domain": "mino-games.workable.com"
+},
+{
+    "activated" : false,
+    "domain": "thonyc.wordpress.com"
+},
+{
+    "activated" : false,
+    "domain": "academics.rowan.edu"
+},
+{
+    "activated" : false,
+    "domain": "surrey.ac.uk"
+},
+{
+    "activated" : false,
+    "domain": "haproxy.com"
+},
+{
+    "activated" : false,
+    "domain": "developer.apple.com"
+},
+{
+    "activated" : false,
+    "domain": "usatoday.com"
+},
+{
+    "activated" : false,
+    "domain": "brucefwebster.com"
+},
+{
+    "activated" : false,
+    "domain": "paulgraham.com"
+},
+{
+    "activated" : false,
+    "domain": "opkode.com"
+},
+{
+    "activated" : false,
+    "domain": "techsolidarity.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.smartdec.net"
+},
+{
+    "activated" : false,
+    "domain": "statista.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.ambor.com"
+},
+{
+    "activated" : false,
+    "domain": "warisboring.com"
+},
+{
+    "activated" : false,
+    "domain": "247cryptonews.com"
+},
+{
+    "activated" : false,
+    "domain": "haya2now.jp"
+},
+{
+    "activated" : false,
+    "domain": "blog.regehr.org"
+},
+{
+    "activated" : false,
+    "domain": "msn.com"
+},
+{
+    "activated" : false,
+    "domain": "massmadesoul.com"
+},
+{
+    "activated" : false,
+    "domain": "worrydream.com"
+},
+{
+    "activated" : false,
+    "domain": "web.archive.org"
+},
+{
+    "activated" : false,
+    "domain": "numworks.com"
+},
+{
+    "activated" : false,
+    "domain": "spimsimulator.sourceforge.net"
+},
+{
+    "activated" : false,
+    "domain": "djhworld.github.io"
+},
+{
+    "activated" : false,
+    "domain": "messynessychic.com"
+},
+{
+    "activated" : false,
+    "domain": "twin-cities.umn.edu"
+},
+{
+    "activated" : false,
+    "domain": "popsci.com"
+},
+{
+    "activated" : false,
+    "domain": "bunniestudios.com"
+},
+{
+    "activated" : false,
+    "domain": "www3.nd.edu"
+},
+{
+    "activated" : false,
+    "domain": "prn.fm"
+},
+{
+    "activated" : false,
+    "domain": "paulmorrison.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.ideasynthesis.com"
+},
+{
+    "activated" : false,
+    "domain": "garrett.damore.org"
+},
+{
+    "activated" : false,
+    "domain": "thoughtspile.github.io"
+},
+{
+    "activated" : false,
+    "domain": "media.dmm-make.com"
+},
+{
+    "activated" : false,
+    "domain": "yubico.com"
+},
+{
+    "activated" : false,
+    "domain": "mlcourse.ai"
+},
+{
+    "activated" : false,
+    "domain": "aiai.ed.ac.uk"
+},
+{
+    "activated" : false,
+    "domain": "ston.jsc.nasa.gov"
+},
+{
+    "activated" : false,
+    "domain": "iter.org"
+},
+{
+    "activated" : false,
+    "domain": "harvardlawreview.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.cryptographyengineering.com"
+},
+{
+    "activated" : false,
+    "domain": "postgis.net"
+},
+{
+    "activated" : false,
+    "domain": "ultrabookreview.com"
+},
+{
+    "activated" : false,
+    "domain": "cnbeta.com"
+},
+{
+    "activated" : false,
+    "domain": "yutsumura.com"
+},
+{
+    "activated" : false,
+    "domain": "apps.bostonglobe.com"
+},
+{
+    "activated" : false,
+    "domain": "pspdfkit.com"
+},
+{
+    "activated" : false,
+    "domain": "veekaybee.github.io"
+},
+{
+    "activated" : false,
+    "domain": "embeddedrelated.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.florimondmanca.com"
+},
+{
+    "activated" : false,
+    "domain": "torch.io"
+},
+{
+    "activated" : false,
+    "domain": "undark.org"
+},
+{
+    "activated" : false,
+    "domain": "blog.lukaszolejnik.com"
+},
+{
+    "activated" : false,
+    "domain": "doi.org"
+},
+{
+    "activated" : false,
+    "domain": "slackhq.com"
+},
+{
+    "activated" : false,
+    "domain": "iridakos.com"
+},
+{
+    "activated" : false,
+    "domain": "themarkup.org"
+},
+{
+    "activated" : false,
+    "domain": "ai.sensilab.monash.edu"
+},
+{
+    "activated" : false,
+    "domain": "conorpp.com"
+},
+{
+    "activated" : false,
+    "domain": "security.stackexchange.com"
+},
+{
+    "activated" : false,
+    "domain": "manyver.se"
+},
+{
+    "activated" : false,
+    "domain": "elpais.com"
+},
+{
+    "activated" : false,
+    "domain": "nr.apple.com"
+},
+{
+    "activated" : false,
+    "domain": "m-labs.hk"
+},
+{
+    "activated" : false,
+    "domain": "diginomica.com"
+    
+},
+{
+    "activated" : false,
+    "domain": "dpreview.com"
+},
+{
+    "activated" : false,
+    "domain": "writing.kemitchell.com"
+},
+{
+    "activated" : false,
+    "domain": "shamusyoung.com"
+},
+{
+    "activated" : false,
+    "domain": "nuxt-box.paperchain.io"
+},
+{
+    "activated" : false,
+    "domain": "build-system.fman.io"
+},
+{
+    "activated" : false,
+    "domain": "nyamcenterforhistory.org"
+},
+{
+    "activated" : false,
+    "domain": "vivaldi.com"
+},
+{
+    "activated" : false,
+    "domain": "blog.joda.org"
+},
+{
+    "activated" : false,
+    "domain": "massdrop.com"
+},
+{
+    "activated" : false,
+    "domain": "blockchain.mit.edu"
+},
+{
+    "activated" : false,
+    "domain": "solar.lowtechmagazine.com"
+},
+{
+    "activated" : false,
+    "domain": "bytecellar.com"
+},
+{
+    "activated" : false,
+    "domain": "ams.org"
+},
+{
+    "activated" : false,
+    "domain": "labs.domipheus.com"
+},
+{
+    "activated" : false,
+    "domain": "skiplang.com"
+},
+{
+    "activated" : false,
+    "domain": "peterroelants.github.io"
+}
 ]

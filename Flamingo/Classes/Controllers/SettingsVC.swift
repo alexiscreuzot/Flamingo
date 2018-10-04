@@ -39,6 +39,12 @@ class SettingsVC : UIViewController {
         
         self.tableView.estimatedRowHeight = 60
         
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(themeDidChange),
+                                               name: UIContentSizeCategory.didChangeNotification,
+                                               object: nil)
+
+        
         self.reloadData()
     }
     
@@ -86,7 +92,7 @@ class SettingsVC : UIViewController {
                                                 }
                                                 self.reloadData()
         })
-        let titleAttributes: [NSAttributedString.Key : Any] = [.font : UIFont.boldSystemFont(ofSize: 16),
+        let titleAttributes: [NSAttributedString.Key : Any] = [.font : UIFont.preferredFont(forTextStyle: .headline),
                                                                .foregroundColor : Theme.current.style.textColor]
         let switchAllString = NSMutableAttributedString.init(string: "ALL",
                                                        attributes: titleAttributes)
@@ -164,8 +170,10 @@ extension SettingsVC : Themable {
         self.present(choiceSheet, animated: true)
     }
     
-    func themeDidChange() {
+    @objc func themeDidChange() {
+        
         self.reloadData()
+        
         self.view.backgroundColor = Theme.current.style.backgroundColor
         self.tableView.backgroundColor = Theme.current.style.backgroundColor
         self.tableView.separatorColor = Theme.current.style.secondaryBackgroundColor

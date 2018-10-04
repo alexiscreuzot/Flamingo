@@ -22,13 +22,11 @@ class JSONSerializer {
             do {
                 let sources = try jsonDecoder.decode([Source].self, from: data)
                 let realm = try! Realm()
-                for source in sources {
-                    try! realm.write {
-                        realm.add(source)
-                    }
+                try! realm.write {
+                    realm.add(sources)
                 }
-            } catch {
-                print("failed to convert data")
+            } catch let error {
+                print("failed to convert data : \(error)")
             }
         } catch let error {
             print(error)

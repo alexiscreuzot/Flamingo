@@ -169,6 +169,7 @@
 			children = (
 				FA50E7B420067A24008C28C1 /* R.generated.swift */,
 				FA50E7AE200677EE008C28C1 /* Classes */,
+				FA50E7B620067A3E008C28C1 /* Storyboards */,
 				FA50E7AC200677D2008C28C1 /* Resources */,
 			);
 			path = Flamingo;
@@ -198,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				FAC2E14220C9112000CFF541 /* flamingo.ttf */,
-				FA50E7B620067A3E008C28C1 /* Storyboards */,
 				FA2F8851202B641A00603EAF /* Localizable.strings */,
 				FA50E79D200670D2008C28C1 /* Assets.xcassets */,
 				FA50E7A2200670D2008C28C1 /* Info.plist */,

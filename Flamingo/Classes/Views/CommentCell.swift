@@ -35,13 +35,11 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        self.selectedBackgroundView = UIView()
+        
         self.bodyTextLabel.enabledTextCheckingTypes = NSTextCheckingResult.CheckingType.link.rawValue
         self.bodyTextLabel.delegate = self
         self.bodyTextLabel.linkAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.style.accentColor]
-        
-        let selView = UIView()
-        selView.backgroundColor = UIColor.groupTableViewBackground
-        self.selectedBackgroundView = selView
         
         // Create levels
         for _ in 1...CommentCell.MaxLevels {
@@ -70,6 +68,7 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
     
     func setComment(_ comment: HNComment, isCollapser : Bool = false) {
         
+        self.selectedBackgroundView?.backgroundColor = Theme.current.style.secondaryBackgroundColor
         
         self.backgroundColor = Theme.current.style.backgroundColor
         self.contentView.backgroundColor = Theme.current.style.backgroundColor
@@ -116,4 +115,13 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
         self.delegate?.commentCell(self, didSelect: url)
     }
 
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+    }
+    
 }

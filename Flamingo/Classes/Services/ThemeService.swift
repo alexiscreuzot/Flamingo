@@ -38,6 +38,10 @@ class ThemeStyle {
     var secondaryTextColor : UIColor = UIColor(white: 0.6, alpha: 1.0)
     var accentColor : UIColor = .orange
     var secondaryAccentColor : UIColor = .green
+    
+    var loadingStyle : UIActivityIndicatorView.Style {
+        return blurEffectStyle == .light ? .gray : .white
+    }
 }
 
 enum Theme : Int, CaseIterable {

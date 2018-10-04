@@ -13,7 +13,7 @@ class PrototypeTableCellContent: NSObject {
     var identifier: Int?
     var payload: Any?
     var height: CGFloat = 50
-    var estimatedHeight: CGFloat = 50
+    var estimatedHeight: CGFloat = UITableView.automaticDimension
     var backgroundColor: UIColor = .clear
 
     var reuseIdentifier : String {
