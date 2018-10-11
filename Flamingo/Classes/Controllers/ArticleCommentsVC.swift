@@ -19,6 +19,9 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         case error(_ error: Error)
         case loaded
     }
+    
+    @IBOutlet var statusBarTopConstraint : NSLayoutConstraint!
+    @IBOutlet var statusBarEffectView: UIVisualEffectView!
 
     @IBOutlet var headerTopConstraint: NSLayoutConstraint!
     @IBOutlet var headerView: UIView!
@@ -42,6 +45,12 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
+    var topBarHeight : CGFloat {
+        get {
+            return self.navigationController!.navigationBar.frame.height + UIApplication.shared.statusBarFrame.height
+        }
+    }
+    
     var comments = [HNComment]()
     var collapsingIds = Set<String>()
     var collapsedIds = Set<String>()
@@ -63,6 +72,9 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         if let flamingoNav = self.navigationController as? FlamingoNVC {
             flamingoNav.theme = .transparent
         }
+        
+        // Top bar
+        self.statusBarTopConstraint.constant = self.topBarHeight
         
         // Header
         self.headerImageView.layer.mask = self.maskLayer
@@ -211,6 +223,23 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     // MARK: - UIScrollViewDelegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // Status bar
+        self.statusBarTopConstraint.constant = (scrollView.contentOffset.y >= -scrollView.contentInset.top)
+            ? 0
+            : self.topBarHeight
+        
+        if self.statusBarTopConstraint.constant == 0 {
+            self.title = self.post.hnPost.title
+        } else {
+            self.title = ""
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+        
+        // Comment collapse
         if isPerformingCollapse {return}
         let contentOffset =     -(self.tableView.contentOffset.y
                                 + self.tableView.contentInset.top
@@ -277,6 +306,7 @@ extension ArticleCommentsVC : Themable {
     
     func themeDidChange() {
         self.view.backgroundColor = Theme.current.style.backgroundColor
+        self.statusBarEffectView.effect  = UIBlurEffect(style: Theme.current.style.blurEffectStyle)
         self.loadingIndicator.style = Theme.current.style.loadingStyle
         self.stateLabel.textColor = Theme.current.style.secondaryTextColor
         self.tableView.reloadData()

@@ -26,8 +26,8 @@ import RealmSwift
     static let DeltaBlur: CGFloat = -250
     
     @IBOutlet var statusBarTopConstraint : NSLayoutConstraint!
-    
     @IBOutlet var statusBarEffectView: UIVisualEffectView!
+    
     @IBOutlet var effectView: UIVisualEffectView!
     @IBOutlet var headerView : UIView!
     @IBOutlet var headerTitleLabel : UILabel!

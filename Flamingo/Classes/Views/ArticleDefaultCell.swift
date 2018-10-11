@@ -62,7 +62,7 @@ class ArticleDefaultCell: UITableViewCell {
         }
                 
         self.post = post
-        self.alpha = post.isRead ? 0.3 : 1.0
+
         self.topInfoLabel.isHidden = false
         self.topInfoLabel.text = String(post.row + 1)
         self.titleLabel.text = post.hnPost.title
@@ -75,6 +75,7 @@ class ArticleDefaultCell: UITableViewCell {
                                                                              withPointSize: self.commentsButton.titleLabel!.font.pointSize,
                                                                              highlightComment: true), for: .normal)
         self.commentsButton.isHidden = (post.hnPost.commentCount  == 0)
+        self.contentView.alpha = post.isRead ? 0.3 : 1.0
     }
     
     func applyTheme() {

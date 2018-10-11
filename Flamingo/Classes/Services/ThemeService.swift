@@ -98,12 +98,12 @@ enum Theme : Int, CaseIterable {
                 theme.statusBarStyle = .lightContent
                 theme.blurEffectStyle = .dark
                 theme.navigationBarStyle = .black
-                theme.backgroundColor = UIColor(hex: "323232")
+                theme.backgroundColor = UIColor(hex: "303030")
                 theme.secondaryBackgroundColor = UIColor(hex: "262626")
-                theme.textColor = UIColor(hex: "F3F3F3")
+                theme.textColor = UIColor(hex: "F6F6F6")
                 theme.secondaryTextColor = UIColor(hex: "CDCDCD")
-                theme.accentColor = UIColor(hex: "B55DEB")
-                theme.secondaryAccentColor = UIColor(hex: "7BA0FA")
+                theme.accentColor = UIColor(hex: "B55DFB")
+                theme.secondaryAccentColor = UIColor(hex: "7BA0FC")
                 return theme
             }
         }

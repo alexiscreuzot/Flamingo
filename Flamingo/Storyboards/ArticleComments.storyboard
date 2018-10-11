@@ -186,18 +186,30 @@
                                     <constraint firstAttribute="bottom" secondItem="NSu-0s-qsR" secondAttribute="bottom" id="y3i-S4-kcS"/>
                                 </constraints>
                             </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQI-Tz-BLa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PGI-nT-qzB">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="XpP-6y-958" firstAttribute="trailing" secondItem="kQI-Tz-BLa" secondAttribute="trailing" id="0Qr-E3-3ky"/>
                             <constraint firstItem="XpP-6y-958" firstAttribute="trailing" secondItem="gSE-Pd-z1y" secondAttribute="trailing" id="2XU-Xg-rnf"/>
                             <constraint firstItem="gSE-Pd-z1y" firstAttribute="leading" secondItem="XpP-6y-958" secondAttribute="leading" id="89c-7z-aTJ"/>
                             <constraint firstItem="XpP-6y-958" firstAttribute="trailing" secondItem="XpO-nv-QTn" secondAttribute="trailing" id="Dy7-mg-xjw"/>
                             <constraint firstItem="gpM-sA-jrz" firstAttribute="trailing" secondItem="XpP-6y-958" secondAttribute="trailing" id="GkD-V7-vQJ"/>
+                            <constraint firstItem="kQI-Tz-BLa" firstAttribute="top" secondItem="6Fb-kY-dbq" secondAttribute="topMargin" priority="900" id="Jbh-4G-sC6"/>
                             <constraint firstAttribute="topMargin" secondItem="P3v-vJ-DV4" secondAttribute="top" priority="900" id="OGK-Ut-srg"/>
                             <constraint firstItem="gSE-Pd-z1y" firstAttribute="bottom" secondItem="XpP-6y-958" secondAttribute="bottom" id="VTl-ts-TlT"/>
                             <constraint firstItem="gSE-Pd-z1y" firstAttribute="top" secondItem="gpM-sA-jrz" secondAttribute="bottom" id="YUb-4l-eO0"/>
+                            <constraint firstItem="kQI-Tz-BLa" firstAttribute="leading" secondItem="XpP-6y-958" secondAttribute="leading" id="fNW-oP-FgL"/>
                             <constraint firstItem="gpM-sA-jrz" firstAttribute="leading" secondItem="XpP-6y-958" secondAttribute="leading" id="hTN-2U-7rp"/>
                             <constraint firstItem="XpO-nv-QTn" firstAttribute="top" secondItem="6Fb-kY-dbq" secondAttribute="topMargin" id="ikD-VA-Uhu"/>
+                            <constraint firstItem="XpP-6y-958" firstAttribute="top" secondItem="kQI-Tz-BLa" secondAttribute="bottom" id="k3j-sz-yZt"/>
                             <constraint firstItem="gpM-sA-jrz" firstAttribute="top" secondItem="6Fb-kY-dbq" secondAttribute="topMargin" id="nUI-iO-7AZ"/>
                             <constraint firstItem="XpO-nv-QTn" firstAttribute="leading" secondItem="XpP-6y-958" secondAttribute="leading" id="sV1-S7-x2B"/>
                             <constraint firstItem="XpO-nv-QTn" firstAttribute="bottom" secondItem="XpP-6y-958" secondAttribute="bottom" id="uKM-GL-HHh"/>
@@ -213,6 +225,8 @@
                         <outlet property="loaderView" destination="wOJ-Hv-eGI" id="tbW-JH-1AY"/>
                         <outlet property="loadingIndicator" destination="Oyc-Uk-qyN" id="dhQ-uq-fK9"/>
                         <outlet property="stateLabel" destination="bxP-PW-egg" id="q2t-C4-oEH"/>
+                        <outlet property="statusBarEffectView" destination="kQI-Tz-BLa" id="A6l-mM-0G8"/>
+                        <outlet property="statusBarTopConstraint" destination="k3j-sz-yZt" id="m0P-O3-Wrz"/>
                         <outlet property="summaryLabel" destination="8eP-tT-0sK" id="ohf-vW-K4Q"/>
                         <outlet property="tableView" destination="XpO-nv-QTn" id="z7C-Rb-P7b"/>
                         <outlet property="titleLabel" destination="of2-HK-nzF" id="E84-Yg-iAF"/>
