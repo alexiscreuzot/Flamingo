@@ -32,9 +32,9 @@ Here is what the app currently does :
 ## Roadmap
 There are a lot of ways to improve the experience even further. I'm open to any ideas the community may have!
 Here are a few :
-- [ ] TabBar with | Top - New - Settings |
-- [ ] RSS feed customization (URL whitelist)
-- [ ] Nigh / Day theming
+- [x] TabBar with | Top - New - Settings |
+- [x] RSS feed customization (URL whitelist)
+- [x] Nigh / Day theming
 - [ ] Search
 - [ ] Custom filters ?
 
