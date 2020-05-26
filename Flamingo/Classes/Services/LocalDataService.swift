@@ -27,9 +27,24 @@ final class LocalDataService: NSObject, ApplicationService {
             JSONSerializer.serializeSources()
         }
         
+        if CommandLine.arguments.contains("screenshots") {
+            self.prepareScreenshots()
+        }
+        
         print("🚀 LocalDataService has started!")
                 
         return true
+    }
+    
+    func prepareScreenshots() {
+        UIView.setAnimationsEnabled(false)
+        let realm = try! Realm()
+        CustomPreferences.hasSetSources = true
+        try! realm.write {
+            for source in realm.objects(Source.self) {
+                source.activated = true
+            }
+        }
     }
     
 }

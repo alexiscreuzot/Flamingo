@@ -78,6 +78,7 @@ class SettingsVC : UIViewController {
                                                 }
                                                 self.reloadData()
         })
+        switchAllContent.tint = UIColor.systemGreen
         switchAllContent.title = "ALL"
         self.datasource.append(switchAllContent)
         

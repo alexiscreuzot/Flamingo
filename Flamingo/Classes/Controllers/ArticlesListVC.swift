@@ -108,6 +108,11 @@ import ReadabilityKit
                                                object: nil)
         
         
+        
+        if CommandLine.arguments.contains("screenshots") {
+            self.effectView.isHidden = true
+            self.updateUI()
+        }
     }
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -126,7 +131,7 @@ import ReadabilityKit
         if let selectedRow = self.tableView.indexPathForSelectedRow{
             self.tableView.deselectRow(at: selectedRow, animated: true)
         }
-        
+
         // Refresh if state not loaded
         switch currentState {
         case .loaded(_):
@@ -190,6 +195,7 @@ import ReadabilityKit
             } else {
                 self.headerImageView.image = image.blend(image: blend, with: .hardLight)
             }
+            
             break
         }
     }

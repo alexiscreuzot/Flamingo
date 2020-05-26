@@ -1,5 +1,5 @@
 
 app_identifier("com.alexiscreuzot.flamingo") # The bundle identifier of your app
 apple_id("alexis.creuzot@gmail.com") # Your Apple email address
-#itc_team_id("117731495") # App Store Connect Team ID
+itc_team_id("2113148") # App Store Connect Team ID
 team_id("ZAMD7Q9KYY") # Developer Portal Team ID

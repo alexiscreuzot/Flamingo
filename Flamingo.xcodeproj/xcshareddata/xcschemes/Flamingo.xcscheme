@@ -191,6 +191,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FA775F58247D58BD00407E55"
+               BuildableName = "flamingoUITests.xctest"
+               BlueprintName = "flamingoUITests"
+               ReferencedContainer = "container:Flamingo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

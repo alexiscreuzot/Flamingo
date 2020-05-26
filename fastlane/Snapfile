@@ -1,15 +1,12 @@
 # List of devices you want to take the screenshots from
 devices([
-    "iPad Pro (12.9-inch) (2nd generation)",
-    "iPad Pro (12.9-inch) (3rd generation)",
     "iPhone 8 Plus",
     "iPhone 11 Pro Max"
 ])
 
  languages([
-  "en-US",
-  "fr-FR"
+  "en-US"
 ])
 
-scheme("screenshots")
+scheme("flamingoUITests")
 output_directory("./fastlane/screenshots")
