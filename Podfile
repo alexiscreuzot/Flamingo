@@ -7,20 +7,21 @@ source 'https://github.com/CocoaPods/Specs.git'
 def shared_pods
 
     # Util
-    pod 'R.swift', '~> 4.0'
-    pod 'SDWebImage', '~> 4.2'
-    pod 'HTMLString', '~> 4.0'
-    pod 'Attributed', '~> 4.0'
+    pod 'R.swift'
+    pod 'SDWebImage'
+    pod 'HTMLString'
+    pod 'Attributed'
     pod 'SVProgressHUD'
 
     # Networking
-    pod 'HNScraper', '~> 0.1.1'
-    pod 'Moya', '~> 9.0.0'
-    pod 'ModelMapper', '~> 7.4'
+    pod 'HNScraper', :git => 'https://github.com/weiran/HNScraper'
+    pod 'Moya'
+    pod 'ModelMapper'
     pod 'RealmSwift'
 
     # Components
-    pod 'TTTAttributedLabel', '~> 2.0'
+    pod 'TTTAttributedLabel'
+    pod 'ReadabilityKit'
 
 end
 
@@ -29,12 +30,14 @@ target 'Flamingo' do
 end
 
 post_install do |installer|
-    puts "-> Post install changes"
-    installer.pods_project.targets.each do |target|
-        target.build_configurations.each do |config|
-            config.build_settings['SWIFT_VERSION'] =  '4.0'
-            config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Owholemodule'
-        end
-    end
-    puts "-> Done"
+    # puts "-> Post install changes"
+    # installer.pods_project.targets.each do |target|
+    #     target.build_configurations.each do |config|
+    #         if ['HNScraper'].include? target.name
+    #             config.build_settings['SWIFT_VERSION'] =  '4.0'
+    #             config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Owholemodule'
+    #         end
+    #     end
+    # end
+    # puts "-> Done"
 end

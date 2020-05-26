@@ -1,74 +1,88 @@
 PODS:
-  - Alamofire (4.7.3)
-  - Attributed (4.0.0)
-  - HNScraper (0.1.1)
-  - HTMLString (4.0.1)
-  - ModelMapper (7.4.0)
-  - Moya (9.0.0):
-    - Moya/Core (= 9.0.0)
-  - Moya/Core (9.0.0):
-    - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - R.swift (4.0.0):
-    - R.swift.Library (~> 4.0.0)
-  - R.swift.Library (4.0.0)
-  - Realm (3.7.1):
-    - Realm/Headers (= 3.7.1)
-  - Realm/Headers (3.7.1)
-  - RealmSwift (3.7.1):
-    - Realm (= 3.7.1)
-  - Result (3.2.4)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
+  - Alamofire (5.2.1)
+  - Attributed (8.1.0)
+  - HNScraper (0.2.2)
+  - HTMLString (5.0.0)
+  - Ji (5.0.0)
+  - ModelMapper (10.0.0):
+    - ModelMapper/Core (= 10.0.0)
+  - ModelMapper/Core (10.0.0)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - R.swift (5.2.2):
+    - R.swift.Library (~> 5.2.0)
+  - R.swift.Library (5.2.0)
+  - ReadabilityKit (0.7.4):
+    - Ji (= 5.0.0)
+  - Realm (5.0.0):
+    - Realm/Headers (= 5.0.0)
+  - Realm/Headers (5.0.0)
+  - RealmSwift (5.0.0):
+    - Realm (= 5.0.0)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
   - SVProgressHUD (2.2.5)
   - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
-  - Attributed (~> 4.0)
-  - HNScraper (~> 0.1.1)
-  - HTMLString (~> 4.0)
-  - ModelMapper (~> 7.4)
-  - Moya (~> 9.0.0)
-  - R.swift (~> 4.0)
+  - Attributed
+  - HNScraper (from `https://github.com/weiran/HNScraper`)
+  - HTMLString
+  - ModelMapper
+  - Moya
+  - R.swift
+  - ReadabilityKit
   - RealmSwift
-  - SDWebImage (~> 4.2)
+  - SDWebImage
   - SVProgressHUD
-  - TTTAttributedLabel (~> 2.0)
+  - TTTAttributedLabel
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - Attributed
-    - HNScraper
     - HTMLString
+    - Ji
     - ModelMapper
     - Moya
     - R.swift
     - R.swift.Library
+    - ReadabilityKit
     - Realm
     - RealmSwift
-    - Result
     - SDWebImage
     - SVProgressHUD
     - TTTAttributedLabel
 
+EXTERNAL SOURCES:
+  HNScraper:
+    :git: https://github.com/weiran/HNScraper
+
+CHECKOUT OPTIONS:
+  HNScraper:
+    :commit: 48e391b52f7d0ab6b7eadba6305427ac12d3b19e
+    :git: https://github.com/weiran/HNScraper
+
 SPEC CHECKSUMS:
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  Attributed: e4b667d2ccf1802cde5b3011e4be0eccd1fd2911
-  HNScraper: 849cb42aa591bf8b6e5019a9a57d9db7d290b755
-  HTMLString: 8d9a8a8aaf63dd52c5b8cd9a38e14da52f753210
-  ModelMapper: 467f49f6f187b4e6cde2599e7cc5968cefa3f19b
-  Moya: cf5e6ee93af526532f92614004b8ad2ea60fd845
-  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
-  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
-  Realm: 906be37d52f17f25484ac01643a7f26a9d3bfbd5
-  RealmSwift: 1c2b6bae3dc55bb87e080ffa96537d71442f6dce
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
+  Attributed: bcc7294cff154619c6557f2bb93d80d4612a3ea0
+  HNScraper: d96632c361238905f2886f83675e75f2153b4dc4
+  HTMLString: 20374dc0195423d02569e87561f01153fca0c364
+  Ji: d795fed288fe78658b404c88946d753b17d8d7f4
+  ModelMapper: a8dbf2a2003bf626627b9fe7c9a22b3405a30404
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
+  R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
+  ReadabilityKit: 09e8b2ecb3d06f17f4c856e426c34f9016e86e6f
+  Realm: 76066d333de26f97e9caedaa85ee3ff4a62ca265
+  RealmSwift: c1bdff09b422569dc6881410d9ccf712bcdb79b0
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 57cb57780ec528e2c5a62375b17d7147b73b3430
+PODFILE CHECKSUM: 2de82ef562f5282bcfa2510356d938c5ed4f660d
 
-COCOAPODS: 1.6.0.beta.1
+COCOAPODS: 1.9.2

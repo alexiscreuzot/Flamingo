@@ -20,15 +20,29 @@
 // THE SOFTWARE.
 //
 
-import UIKit
+import Foundation
 
-public typealias Modifier = (_ mutableAttributedString: NSMutableAttributedString, _ range: NSRange, _ stack: [MarkupElement]) -> Void
+public struct State {
+    public var mutableAttributedString: NSMutableAttributedString
+    public var range: NSRange
+    public var stack: [MarkupElement]
+    public var startElement: MarkupElement?
+    public var endElement: MarkupElement?
+}
 
-public func modifierWithBaseAttributes(_ attributes: [NSAttributedStringKey: Any], modifiers: [Modifier]) -> Modifier {
-    return { mutableAttributedString, range, stack in
-        mutableAttributedString.addAttributes(attributes, range: range)
-        for modifier in modifiers {
-            modifier(mutableAttributedString, range, stack)
+public typealias Modifier = (_ state: State) -> Void
+
+public func modifierWithBaseAttributes(_ attributes: [NSAttributedString.Key: Any], modifiers: [Modifier]) -> Modifier {
+    return { state in
+        state.mutableAttributedString.addAttributes(attributes, range: state.range)
+
+        for count in 0...state.stack.count {
+            let localStack = Array(state.stack[0..<count])
+            for modifier in modifiers {
+                var newState = state
+                newState.stack = localStack
+                modifier(newState)
+            }
         }
     }
 }
@@ -36,78 +50,86 @@ public func modifierWithBaseAttributes(_ attributes: [NSAttributedStringKey: Any
 public typealias Map = (NSAttributedString) -> NSAttributedString
 
 public func selectMap(_ selector: String, _ map: @escaping Map) -> Modifier {
-    return { mutableAttributedString, range, stack in
-        for element in stack {
-            if selector ~= element {
-                let attributedString = mutableAttributedString.attributedSubstring(from: range)
-                mutableAttributedString.replaceCharacters(in: range, with: map(attributedString))
-            }
-        }
+    return { state in
+        guard let element = state.stack.last, selector ~= element else { return }
+
+        let attributedString = state.mutableAttributedString.attributedSubstring(from: state.range)
+        state.mutableAttributedString.replaceCharacters(in: state.range, with: map(attributedString))
+    }
+}
+
+public func selectMapBefore(_ selector: String, _ map: @escaping Map) -> Modifier {
+    return { state in
+        guard let element = state.startElement, selector ~= element else { return }
+
+        let attributedString = state.mutableAttributedString.attributedSubstring(from: state.range)
+        state.mutableAttributedString.replaceCharacters(in: state.range, with: map(attributedString))
+    }
+}
+
+public func selectMapAfter(_ selector: String, _ map: @escaping Map) -> Modifier {
+    return { state in
+        guard let element = state.endElement, state.stack.isEmpty, selector ~= element else { return }
+
+        let attributedString = state.mutableAttributedString.attributedSubstring(from: state.range)
+        state.mutableAttributedString.replaceCharacters(in: state.range, with: map(attributedString))
     }
 }
 
 public typealias MapWithContext = (NSAttributedString, NSAttributedString) -> NSAttributedString
 
 public func selectMap(_ selector: String, _ mapWithContext: @escaping MapWithContext) -> Modifier {
-    return { mutableAttributedString, range, stack in
-        for element in stack {
-            if selector ~= element {
-                let attributedString = mutableAttributedString.attributedSubstring(from: range)
-                mutableAttributedString.replaceCharacters(in: range, with: mapWithContext(mutableAttributedString, attributedString))
-            }
-        }
+    return { state in
+        guard let element = state.stack.last, selector ~= element else { return }
+
+        let attributedString = state.mutableAttributedString.attributedSubstring(from: state.range)
+        state.mutableAttributedString.replaceCharacters(in: state.range, with: mapWithContext(state.mutableAttributedString, attributedString))
     }
 }
 
-public func bold(_ attributedString: NSAttributedString) -> NSAttributedString {
-    if let result = attributedString.mutableCopy() as? NSMutableAttributedString {
-        if let font = attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? UIFont {
-            let range = NSMakeRange(0, attributedString.length)
-            result.addAttribute(NSAttributedStringKey.font, value: font.fontWithBold(), range: range)
-        }
-        return result
+public func selectMapBefore(_ selector: String, _ mapWithContext: @escaping MapWithContext) -> Modifier {
+    return { state in
+        guard let element = state.startElement, selector ~= element else { return }
+
+        let attributedString = state.mutableAttributedString.attributedSubstring(from: state.range)
+        state.mutableAttributedString.replaceCharacters(in: state.range, with: mapWithContext(state.mutableAttributedString, attributedString))
     }
-    return attributedString
 }
 
-public func italic(_ attributedString: NSAttributedString) -> NSAttributedString {
-    if let result = attributedString.mutableCopy() as? NSMutableAttributedString {
-        if let font = attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? UIFont {
-            let range = NSMakeRange(0, attributedString.length)
-            result.addAttribute(NSAttributedStringKey.font, value: font.fontWithItalic(), range: range)
-        }
-        return result
+public func selectMapAfter(_ selector: String, _ mapWithContext: @escaping MapWithContext) -> Modifier {
+    return { state in
+        guard let element = state.endElement, state.stack.isEmpty, selector ~= element else { return }
+
+        let attributedString = state.mutableAttributedString.attributedSubstring(from: state.range)
+        state.mutableAttributedString.replaceCharacters(in: state.range, with: mapWithContext(state.mutableAttributedString, attributedString))
     }
-    return attributedString
 }
 
-public func monospacedNumbers(_ attributedString: NSAttributedString) -> NSAttributedString {
-    if let result = attributedString.mutableCopy() as? NSMutableAttributedString {
-        if let font = attributedString.attributes(at: 0, effectiveRange: nil)[NSAttributedStringKey.font] as? UIFont {
-            let range = NSMakeRange(0, attributedString.length)
-            result.addAttribute(NSAttributedStringKey.font, value: font.fontWithMonospacedNumbers(), range: range)
-        }
-        return result
+public typealias MapWithElement = (MarkupElement, NSAttributedString) -> NSAttributedString
+
+public func selectMap(_ selector: String, _ mapWithElement: @escaping MapWithElement) -> Modifier {
+    return { state in
+        guard let element = state.stack.last, selector ~= element else { return }
+
+        let attributedString = state.mutableAttributedString.attributedSubstring(from: state.range)
+        state.mutableAttributedString.replaceCharacters(in: state.range, with: mapWithElement(element, attributedString))
     }
-    return attributedString
 }
 
-public func smallCaps(_ attributedString: NSAttributedString) -> NSAttributedString {
-    if let result = attributedString.mutableCopy() as? NSMutableAttributedString {
-        let attributes = attributedString.attributes(at: 0, effectiveRange: nil)
-        if let font = attributes[NSAttributedStringKey.font] as? UIFont {
-            let range = NSMakeRange(0, attributedString.length)
-            if font.supportsSmallCaps, let smallCapsFont = font.fontWithSmallCaps() {
-                result.addAttribute(NSAttributedStringKey.font, value: smallCapsFont, range: range)
-            } else {
-                result.simulateSmallCapsInRange(range, withFont: font, attributes: attributes)
-            }
-        }
-        return result
+public func selectMapBefore(_ selector: String, _ mapWithElement: @escaping MapWithElement) -> Modifier {
+    return { state in
+        guard let element = state.startElement, selector ~= element else { return }
+
+        let attributedString = state.mutableAttributedString.attributedSubstring(from: state.range)
+        state.mutableAttributedString.replaceCharacters(in: state.range, with: mapWithElement(element, attributedString))
     }
-    return attributedString
 }
 
-public func lineBreak(_ context: NSAttributedString, attributedString: NSAttributedString) -> NSAttributedString {
-    return NSAttributedString(string: "\n", attributes: context.attributes(at: context.length - 1, effectiveRange: nil))
+public func selectMapAfter(_ selector: String, _ mapWithElement: @escaping MapWithElement) -> Modifier {
+    return { state in
+        guard let element = state.endElement, state.stack.isEmpty, selector ~= element else { return }
+
+        let attributedString = state.mutableAttributedString.attributedSubstring(from: state.range)
+        state.mutableAttributedString.replaceCharacters(in: state.range, with: mapWithElement(element, attributedString))
+    }
 }

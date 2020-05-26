@@ -32,10 +32,10 @@ class ThemeStyle {
     var statusBarStyle : UIStatusBarStyle = .default
     var blurEffectStyle : UIBlurEffect.Style = .light
     var navigationBarStyle : UIBarStyle = .default
-    var backgroundColor : UIColor = .white
-    var secondaryBackgroundColor : UIColor = UIColor(white: 0.95, alpha: 1.0)
+    var backgroundColor : UIColor = UIColor(white: 0.98, alpha: 1.0)
+    var secondaryBackgroundColor : UIColor = UIColor(white: 0.9, alpha: 1.0)
     var textColor : UIColor = .black
-    var secondaryTextColor : UIColor = UIColor(white: 0.6, alpha: 1.0)
+    var secondaryTextColor : UIColor = UIColor(white: 0.65, alpha: 1.0)
     var accentColor : UIColor = .orange
     var secondaryAccentColor : UIColor = .green
     

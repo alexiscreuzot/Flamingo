@@ -30,13 +30,13 @@ import Attributed
 
 let html = "Waltz, <em>bad nymph</em>, for quick jigs <span class=\"bold\">vex</span>."
 
-let baseFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
-let modifier = modifierWithBaseAttributes([NSFontAttributeName: baseFont], modifiers: [
-	selectMap("em", italic),
-	selectMap("span.bold", bold),
+let baseFont = UIFont.preferredFont(forTextStyle: .body)
+let modifier = modifierWithBaseAttributes([.font: baseFont], modifiers: [
+	selectMap("em", Modifiers.italic),
+	selectMap("span.bold", Modifiers.bold),
 ])
 
-let attributedString = NSAttributedString.attributedStringFromMarkup(html, modifier)
+let attributedString = NSAttributedString.attributedStringFromMarkup(html, withModifier: modifier)
 ```
 
 ### License

@@ -67,8 +67,8 @@ class ArticleDefaultCell: UITableViewCell {
         self.topInfoLabel.text = String(post.row + 1)
         self.titleLabel.text = post.hnPost.title
         
-        let attributes: [NSAttributedString.Key : Any] = [.font : self.bottomLabel.font,
-                                                         .foregroundColor : self.bottomLabel.textColor]
+        let attributes: [NSAttributedString.Key : Any] = [.font : self.bottomLabel.font!,
+                                                         .foregroundColor : self.bottomLabel.textColor!]
         self.bottomLabel.attributedText = post.infosAttributedString(attributes: attributes, withPointSize:self.bottomLabel.font.pointSize, withComments: false)
         
         self.commentsButton.setAttributedTitle(post.commentsAttributedString(attributes: attributes,

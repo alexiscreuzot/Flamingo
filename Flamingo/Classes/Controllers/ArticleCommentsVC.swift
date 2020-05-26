@@ -78,8 +78,8 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         
         // Header
         self.headerImageView.layer.mask = self.maskLayer
-        let attributes: [NSAttributedString.Key : Any] = [.font : self.footLabel.font,
-                                                         .foregroundColor : self.footLabel.textColor]
+        let attributes: [NSAttributedString.Key : Any] = [.font : self.footLabel.font!,
+                                                         .foregroundColor : self.footLabel.textColor!]
         self.titleLabel.text = self.post.hnPost.title
         self.summaryLabel.text = self.post.preview?.excerpt
         self.footLabel.attributedText = self.post.infosAttributedString(attributes: attributes,
@@ -129,12 +129,12 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
             return
         }
         
-        SDWebImageDownloader.shared().downloadImage(with: url, options: [.allowInvalidSSLCertificates], progress: nil) { (image, _, _, _) in
+        SDWebImageDownloader.shared.downloadImage(with: url, options: [.allowInvalidSSLCertificates], progress: nil) { (image, _, _, _) in
             self.loaderView.stopAnimating()
-   
-            let img = image ?? R.image.flamingoBack()!
-            let blend = (self.fromPageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
-            self.headerImageView.image = img.blend(image: blend, with: .hardLight)
+            
+                     let img = image ?? R.image.flamingoBack()!
+                     let blend = (self.fromPageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
+                     self.headerImageView.image = img.blend(image: blend, with: .hardLight)
         }
     }
     

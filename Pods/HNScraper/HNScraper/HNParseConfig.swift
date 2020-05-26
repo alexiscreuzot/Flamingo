@@ -13,9 +13,9 @@ import Foundation
  Manage to download, store and cache the json file
  used to parse the pages of the website.
  */
-class HNParseConfig {
+public class HNParseConfig {
     private let savingKey = "HNParseConfig"
-    private let url = "https://raw.githubusercontent.com/tsucres/HNScraper/master/hn.json"
+    private let url = "https://raw.githubusercontent.com/tsucres/HNScraper/v0.2.2/hn.json"
     private var _config: [String: Any]? = nil
     private init() {}
     public static let shared = HNParseConfig()
@@ -46,7 +46,7 @@ class HNParseConfig {
      parameter when the json file has been fetched. It firstly
      checks in the clocal storage if it has already been fetched.
      */
-    public func getDictionnary(completion: @escaping (([String: Any]?, RessourceFetcher.RessourceFetchingError?) -> Void)) {
+    internal func getDictionnary(completion: @escaping (([String: Any]?, RessourceFetcher.RessourceFetchingError?) -> Void)) {
         if self.data != nil {
             completion(self.data, nil)
         } else {
@@ -56,7 +56,7 @@ class HNParseConfig {
     
     
     /// Downloads the configFile and store it locally. If a configFile is already saved, it's replaced.
-    public func downloadConfigFile(completion: @escaping (([String: Any]?, RessourceFetcher.RessourceFetchingError?) -> Void)) {
+    internal func downloadConfigFile(completion: @escaping (([String: Any]?, RessourceFetcher.RessourceFetchingError?) -> Void)) {
         RessourceFetcher.shared.getJson(url: self.url, completion: { (json, error) -> Void in
             if (json != nil) {
                 let defaults = UserDefaults.standard
@@ -67,5 +67,12 @@ class HNParseConfig {
                 completion(nil, error ?? .noData)
             }
         })
+    }
+    
+    /// Downloads the configFile and store it locally. If a configFile is already saved, it's replaced.
+    public func forceRedownload(completion: @escaping ((HNScraper.HNScraperError?) -> Void)) {
+        self.downloadConfigFile { (_, ressourceFetcherError) in
+            completion(HNScraper.HNScraperError.init(ressourceFetcherError))
+        }
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 
 
 /// Model used by the HN Scraper to store avery data about a post.
-public class HNPost {
+open class HNPost {
     public enum PostType {
         case defaultType
         case askHN
@@ -28,6 +28,7 @@ public class HNPost {
     
     public var type: PostType = .defaultType
     public var username: String = ""
+    public var isOPNoob: Bool = false
     public var url: URL?// = URL(string: "")!
     public var urlDomain: String {
         get {
@@ -36,7 +37,7 @@ public class HNPost {
             }
             var dom: String? = self.url!.host
             if dom != nil && dom!.hasPrefix("www.") {
-                dom = String(dom!.characters.dropFirst(4))
+                dom = String(dom!.dropFirst(4))
             }
             return dom ?? ""
         }
@@ -50,9 +51,7 @@ public class HNPost {
     public var upvoted: Bool = false
     public var upvoteAdditionURL: String?
     
-    public var favorited: Bool = false
-    public var bookmarked: Bool = false
-    public var readOn: Date?
+    public var favorited: Bool = false // TODO: there's no way to know from a "list page", but it could be filled from the discussion thread.
     
     public var replyAction: String?
     public var replyParent: String?
@@ -112,9 +111,10 @@ public class HNPost {
         self.title = postDict["Title"] as? String ?? ""
         self.points = Int(((postDict["Points"] as? String ?? "").components(separatedBy: " ")[0])) ?? 0
         self.username = postDict["Username"] as? String ?? ""
+        self.isOPNoob = HNUser.cleanNoobUsername(username: &self.username)
         self.id = postDict["PostId"] as? String ?? ""
         self.time = postDict["Time"] as? String ?? ""
-        if self.id != "" && html.contains("un_"+self.id) {
+        if self.id != "" && (html.contains("<a id='un_\(self.id)") || html.contains("<a id='up_\(self.id)") && html.contains("class='nosee'><div class='votearrow'")) {
             self.upvoted = true
         }
         
@@ -130,15 +130,16 @@ public class HNPost {
         }
         
         // Check if Jobs Post
-        if (self.id.characters.count == 0 && self.points == 0 && self.username.characters.count == 0) {
+        if (self.id.count == 0 && self.points == 0 && self.username.count == 0) {
             self.type = .jobs
             if self.url != nil && !self.url!.absoluteString.contains("http") {
                 self.id = self.url!.absoluteString.replacingOccurrences(of: "item?id=", with: "")
+                self.url = URL(string: "https://news.ycombinator.com/" + self.url!.absoluteString)!
             }
         }
         else {
             // Check if AskHN
-            if self.url != nil && !self.url!.absoluteString.contains("http") && self.id.length > 0 {
+            if self.url != nil && !self.url!.absoluteString.contains("http") && self.id.count > 0 {
                 self.type = .askHN
                 self.url = URL(string: "https://news.ycombinator.com/" + self.url!.absoluteString)!
             }

@@ -1,5 +1,4 @@
 import Foundation
-import Result
 
 /// A Moya Plugin receives callbacks to perform side effects wherever a request is sent or received.
 ///
@@ -8,7 +7,7 @@ import Result
 ///     - hide and show a network activity indicator
 ///     - inject additional information into a request
 public protocol PluginType {
-    /// Called to modify a request before sending
+    /// Called to modify a request before sending.
     func prepare(_ request: URLRequest, target: TargetType) -> URLRequest
 
     /// Called immediately before a request is sent over the network (or stubbed).
@@ -17,7 +16,7 @@ public protocol PluginType {
     /// Called after a response has been received, but before the MoyaProvider has invoked its completion handler.
     func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType)
 
-    /// Called to modify a result before completion
+    /// Called to modify a result before completion.
     func process(_ result: Result<Moya.Response, MoyaError>, target: TargetType) -> Result<Moya.Response, MoyaError>
 }
 
@@ -39,9 +38,17 @@ public protocol RequestType {
     /// Retrieve an `NSURLRequest` representation.
     var request: URLRequest? { get }
 
+    ///  Additional headers appended to the request when added to the session.
+    var sessionHeaders: [String: String] { get }
+
     /// Authenticates the request with a username and password.
-    func authenticate(user: String, password: String, persistence: URLCredential.Persistence) -> Self
+    func authenticate(username: String, password: String, persistence: URLCredential.Persistence) -> Self
 
     /// Authenticates the request with an `NSURLCredential` instance.
-    func authenticate(usingCredential credential: URLCredential) -> Self
+    func authenticate(with credential: URLCredential) -> Self
+
+    /// cURL representation of the instance.
+    ///
+    /// - Returns: The cURL equivalent of the instance.
+    func cURLDescription(calling handler: @escaping (String) -> Void) -> Self
 }

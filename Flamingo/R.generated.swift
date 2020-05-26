@@ -9,58 +9,202 @@ import UIKit
 
 /// This `R` struct is generated and contains references to static resources.
 struct R: Rswift.Validatable {
-  fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap(Locale.init) ?? Locale.current
+  fileprivate static let applicationLocale = hostingBundle.preferredLocalizations.first.flatMap { Locale(identifier: $0) } ?? Locale.current
   fileprivate static let hostingBundle = Bundle(for: R.Class.self)
-  
+
+  /// Find first language and bundle for which the table exists
+  fileprivate static func localeBundle(tableName: String, preferredLanguages: [String]) -> (Foundation.Locale, Foundation.Bundle)? {
+    // Filter preferredLanguages to localizations, use first locale
+    var languages = preferredLanguages
+      .map { Locale(identifier: $0) }
+      .prefix(1)
+      .flatMap { locale -> [String] in
+        if hostingBundle.localizations.contains(locale.identifier) {
+          if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
+            return [locale.identifier, language]
+          } else {
+            return [locale.identifier]
+          }
+        } else if let language = locale.languageCode, hostingBundle.localizations.contains(language) {
+          return [language]
+        } else {
+          return []
+        }
+      }
+
+    // If there's no languages, use development language as backstop
+    if languages.isEmpty {
+      if let developmentLocalization = hostingBundle.developmentLocalization {
+        languages = [developmentLocalization]
+      }
+    } else {
+      // Insert Base as second item (between locale identifier and languageCode)
+      languages.insert("Base", at: 1)
+
+      // Add development language as backstop
+      if let developmentLocalization = hostingBundle.developmentLocalization {
+        languages.append(developmentLocalization)
+      }
+    }
+
+    // Find first language for which table exists
+    // Note: key might not exist in chosen language (in that case, key will be shown)
+    for language in languages {
+      if let lproj = hostingBundle.url(forResource: language, withExtension: "lproj"),
+         let lbundle = Bundle(url: lproj)
+      {
+        let strings = lbundle.url(forResource: tableName, withExtension: "strings")
+        let stringsdict = lbundle.url(forResource: tableName, withExtension: "stringsdict")
+
+        if strings != nil || stringsdict != nil {
+          return (Locale(identifier: language), lbundle)
+        }
+      }
+    }
+
+    // If table is available in main bundle, don't look for localized resources
+    let strings = hostingBundle.url(forResource: tableName, withExtension: "strings", subdirectory: nil, localization: nil)
+    let stringsdict = hostingBundle.url(forResource: tableName, withExtension: "stringsdict", subdirectory: nil, localization: nil)
+
+    if strings != nil || stringsdict != nil {
+      return (applicationLocale, hostingBundle)
+    }
+
+    // If table is not found for requested languages, key will be shown
+    return nil
+  }
+
+  /// Load string from Info.plist file
+  fileprivate static func infoPlistString(path: [String], key: String) -> String? {
+    var dict = hostingBundle.infoDictionary
+    for step in path {
+      guard let obj = dict?[step] as? [String: Any] else { return nil }
+      dict = obj
+    }
+    return dict?[key] as? String
+  }
+
   static func validate() throws {
     try font.validate()
     try intern.validate()
   }
-  
-  /// This `R.color` struct is generated, and contains static references to 0 colors.
-  struct color {
+
+  #if os(iOS) || os(tvOS)
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
+  struct segue {
+    /// This struct is generated for `ArticleListVC`, and contains static references to 1 segues.
+    struct articleListVC {
+      /// Segue identifier `comments`.
+      static let comments: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ArticleListVC, ArticleCommentsVC> = Rswift.StoryboardSegueIdentifier(identifier: "comments")
+
+      #if os(iOS) || os(tvOS)
+      /// Optionally returns a typed version of segue `comments`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func comments(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ArticleListVC, ArticleCommentsVC>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.articleListVC.comments, segue: segue)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
-  
+  #endif
+
+  #if os(iOS) || os(tvOS)
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  struct storyboard {
+    /// Storyboard `ArticleComments`.
+    static let articleComments = _R.storyboard.articleComments()
+    /// Storyboard `ArticleList`.
+    static let articleList = _R.storyboard.articleList()
+    /// Storyboard `LaunchScreen`.
+    static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `Main`.
+    static let main = _R.storyboard.main()
+    /// Storyboard `SettingsVC`.
+    static let settingsVC = _R.storyboard.settingsVC()
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ArticleComments", bundle: ...)`
+    static func articleComments(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.articleComments)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "ArticleList", bundle: ...)`
+    static func articleList(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.articleList)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
+    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "Main", bundle: ...)`
+    static func main(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.main)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIStoryboard(name: "SettingsVC", bundle: ...)`
+    static func settingsVC(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.settingsVC)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+  #endif
+
   /// This `R.file` struct is generated, and contains static references to 2 files.
   struct file {
     /// Resource file `flamingo.ttf`.
     static let flamingoTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "flamingo", pathExtension: "ttf")
     /// Resource file `sources.json`.
     static let sourcesJson = Rswift.FileResource(bundle: R.hostingBundle, name: "sources", pathExtension: "json")
-    
+
     /// `bundle.url(forResource: "flamingo", withExtension: "ttf")`
     static func flamingoTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.flamingoTtf
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
     /// `bundle.url(forResource: "sources", withExtension: "json")`
     static func sourcesJson(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.sourcesJson
       return fileResource.bundle.url(forResource: fileResource)
     }
-    
+
     fileprivate init() {}
   }
-  
+
   /// This `R.font` struct is generated, and contains static references to 1 fonts.
   struct font: Rswift.Validatable {
     /// Font `flamingo`.
     static let flamingo = Rswift.FontResource(fontName: "flamingo")
-    
+
     /// `UIFont(name: "flamingo", size: ...)`
     static func flamingo(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: flamingo, size: size)
     }
-    
+
     static func validate() throws {
       if R.font.flamingo(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'flamingo' could not be loaded, is 'flamingo.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
-    
+
     fileprivate init() {}
   }
-  
+
   /// This `R.image` struct is generated, and contains static references to 5 images.
   struct image {
     /// Image `RoundedIcon`.
@@ -73,40 +217,45 @@ struct R: Rswift.Validatable {
     static let color_gradient = Rswift.ImageResource(bundle: R.hostingBundle, name: "color_gradient")
     /// Image `flamingo-back`.
     static let flamingoBack = Rswift.ImageResource(bundle: R.hostingBundle, name: "flamingo-back")
-    
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "RoundedIcon", bundle: ..., traitCollection: ...)`
     static func roundedIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.roundedIcon, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "circle", bundle: ..., traitCollection: ...)`
     static func circle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.circle, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "color_gradient", bundle: ..., traitCollection: ...)`
     static func color_gradient(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.color_gradient, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "color_gradient_blue", bundle: ..., traitCollection: ...)`
     static func color_gradient_blue(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.color_gradient_blue, compatibleWith: traitCollection)
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     /// `UIImage(named: "flamingo-back", bundle: ..., traitCollection: ...)`
     static func flamingoBack(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.flamingoBack, compatibleWith: traitCollection)
     }
-    
+    #endif
+
     fileprivate init() {}
   }
-  
-  /// This `R.nib` struct is generated, and contains static references to 0 nibs.
-  struct nib {
-    fileprivate init() {}
-  }
-  
+
   /// This `R.reuseIdentifier` struct is generated, and contains static references to 6 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `ArticleDefaultCell`.
@@ -121,278 +270,315 @@ struct R: Rswift.Validatable {
     static let titleSeparatorCell: Rswift.ReuseIdentifier<TitleSeparatorCell> = Rswift.ReuseIdentifier(identifier: "TitleSeparatorCell")
     /// Reuse identifier `fake`.
     static let fake: Rswift.ReuseIdentifier<UIKit.UITableViewCell> = Rswift.ReuseIdentifier(identifier: "fake")
-    
+
     fileprivate init() {}
   }
-  
-  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
-  struct segue {
-    /// This struct is generated for `ArticleListVC`, and contains static references to 1 segues.
-    struct articleListVC {
-      /// Segue identifier `comments`.
-      static let comments: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, ArticleListVC, ArticleCommentsVC> = Rswift.StoryboardSegueIdentifier(identifier: "comments")
-      
-      /// Optionally returns a typed version of segue `comments`.
-      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
-      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func comments(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, ArticleListVC, ArticleCommentsVC>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.articleListVC.comments, segue: segue)
-      }
-      
-      fileprivate init() {}
-    }
-    
-    fileprivate init() {}
-  }
-  
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
-  struct storyboard {
-    /// Storyboard `ArticleComments`.
-    static let articleComments = _R.storyboard.articleComments()
-    /// Storyboard `ArticleList`.
-    static let articleList = _R.storyboard.articleList()
-    /// Storyboard `LaunchScreen`.
-    static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
-    /// Storyboard `SettingsVC`.
-    static let settingsVC = _R.storyboard.settingsVC()
-    
-    /// `UIStoryboard(name: "ArticleComments", bundle: ...)`
-    static func articleComments(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.articleComments)
-    }
-    
-    /// `UIStoryboard(name: "ArticleList", bundle: ...)`
-    static func articleList(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.articleList)
-    }
-    
-    /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
-    static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
-    }
-    
-    /// `UIStoryboard(name: "SettingsVC", bundle: ...)`
-    static func settingsVC(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.settingsVC)
-    }
-    
-    fileprivate init() {}
-  }
-  
+
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
     /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
     struct localizable {
       /// en translation: Anonymous
-      /// 
+      ///
       /// Locales: en
       static let articleCommentsCommentAnonymous = Rswift.StringResource(key: "ArticleComments/Comment/Anonymous", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Couldn't load comments :(
-      /// 
+      ///
       /// Locales: en
       static let articleCommentsLoadingFailed = Rswift.StringResource(key: "ArticleComments/LoadingFailed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Couldn't load feed :(
-      /// 
+      ///
       /// Locales: en
       static let articlesListLoadingFailed = Rswift.StringResource(key: "ArticlesList/LoadingFailed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Loading comments...
-      /// 
+      ///
       /// Locales: en
       static let articleCommentsLoading = Rswift.StringResource(key: "ArticleComments/Loading", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Nothing to show
-      /// 
+      ///
       /// Locales: en
       static let flamingoErrorNothingToShow = Rswift.StringResource(key: "FlamingoError/NothingToShow", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Ok
-      /// 
+      ///
       /// Locales: en
       static let commonOk = Rswift.StringResource(key: "Common/Ok", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Something went wrong
-      /// 
+      ///
       /// Locales: en
       static let flamingoErrorUnknown = Rswift.StringResource(key: "FlamingoError/Unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: You first need to configure the sources in "Settings"
-      /// 
+      ///
       /// Locales: en
       static let flamingoErrorSourcesNotConfigured = Rswift.StringResource(key: "FlamingoError/SourcesNotConfigured", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
-      
+
       /// en translation: Anonymous
-      /// 
+      ///
       /// Locales: en
-      static func articleCommentsCommentAnonymous(_: Void = ()) -> String {
-        return NSLocalizedString("ArticleComments/Comment/Anonymous", bundle: R.hostingBundle, comment: "")
+      static func articleCommentsCommentAnonymous(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ArticleComments/Comment/Anonymous", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ArticleComments/Comment/Anonymous"
+        }
+
+        return NSLocalizedString("ArticleComments/Comment/Anonymous", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Couldn't load comments :(
-      /// 
+      ///
       /// Locales: en
-      static func articleCommentsLoadingFailed(_: Void = ()) -> String {
-        return NSLocalizedString("ArticleComments/LoadingFailed", bundle: R.hostingBundle, comment: "")
+      static func articleCommentsLoadingFailed(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ArticleComments/LoadingFailed", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ArticleComments/LoadingFailed"
+        }
+
+        return NSLocalizedString("ArticleComments/LoadingFailed", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Couldn't load feed :(
-      /// 
+      ///
       /// Locales: en
-      static func articlesListLoadingFailed(_: Void = ()) -> String {
-        return NSLocalizedString("ArticlesList/LoadingFailed", bundle: R.hostingBundle, comment: "")
+      static func articlesListLoadingFailed(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ArticlesList/LoadingFailed", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ArticlesList/LoadingFailed"
+        }
+
+        return NSLocalizedString("ArticlesList/LoadingFailed", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Loading comments...
-      /// 
+      ///
       /// Locales: en
-      static func articleCommentsLoading(_: Void = ()) -> String {
-        return NSLocalizedString("ArticleComments/Loading", bundle: R.hostingBundle, comment: "")
+      static func articleCommentsLoading(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("ArticleComments/Loading", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "ArticleComments/Loading"
+        }
+
+        return NSLocalizedString("ArticleComments/Loading", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Nothing to show
-      /// 
+      ///
       /// Locales: en
-      static func flamingoErrorNothingToShow(_: Void = ()) -> String {
-        return NSLocalizedString("FlamingoError/NothingToShow", bundle: R.hostingBundle, comment: "")
+      static func flamingoErrorNothingToShow(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("FlamingoError/NothingToShow", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "FlamingoError/NothingToShow"
+        }
+
+        return NSLocalizedString("FlamingoError/NothingToShow", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Ok
-      /// 
+      ///
       /// Locales: en
-      static func commonOk(_: Void = ()) -> String {
-        return NSLocalizedString("Common/Ok", bundle: R.hostingBundle, comment: "")
+      static func commonOk(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Ok", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Ok"
+        }
+
+        return NSLocalizedString("Common/Ok", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: Something went wrong
-      /// 
+      ///
       /// Locales: en
-      static func flamingoErrorUnknown(_: Void = ()) -> String {
-        return NSLocalizedString("FlamingoError/Unknown", bundle: R.hostingBundle, comment: "")
+      static func flamingoErrorUnknown(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("FlamingoError/Unknown", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "FlamingoError/Unknown"
+        }
+
+        return NSLocalizedString("FlamingoError/Unknown", bundle: bundle, comment: "")
       }
-      
+
       /// en translation: You first need to configure the sources in "Settings"
-      /// 
+      ///
       /// Locales: en
-      static func flamingoErrorSourcesNotConfigured(_: Void = ()) -> String {
-        return NSLocalizedString("FlamingoError/SourcesNotConfigured", bundle: R.hostingBundle, comment: "")
+      static func flamingoErrorSourcesNotConfigured(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("FlamingoError/SourcesNotConfigured", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "FlamingoError/SourcesNotConfigured"
+        }
+
+        return NSLocalizedString("FlamingoError/SourcesNotConfigured", bundle: bundle, comment: "")
       }
-      
+
       fileprivate init() {}
     }
-    
+
     fileprivate init() {}
   }
-  
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()
     }
-    
+
     fileprivate init() {}
   }
-  
+
   fileprivate class Class {}
-  
+
   fileprivate init() {}
 }
 
 struct _R: Rswift.Validatable {
   static func validate() throws {
+    #if os(iOS) || os(tvOS)
     try storyboard.validate()
+    #endif
   }
-  
-  struct nib {
-    fileprivate init() {}
-  }
-  
+
+  #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
-      try settingsVC.validate()
-      try articleList.validate()
+      #if os(iOS) || os(tvOS)
       try articleComments.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try articleList.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
       try launchScreen.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try main.validate()
+      #endif
+      #if os(iOS) || os(tvOS)
+      try settingsVC.validate()
+      #endif
     }
-    
+
+    #if os(iOS) || os(tvOS)
     struct articleComments: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = ArticleCommentsVC
-      
+
       let articleCommentsVC = StoryboardViewControllerResource<ArticleCommentsVC>(identifier: "ArticleCommentsVC")
       let bundle = R.hostingBundle
       let name = "ArticleComments"
-      
+
       func articleCommentsVC(_: Void = ()) -> ArticleCommentsVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articleCommentsVC)
       }
-      
+
       static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
         if _R.storyboard.articleComments().articleCommentsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleCommentsVC' could not be loaded from storyboard 'ArticleComments' as 'ArticleCommentsVC'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct articleList: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = ArticleListVC
-      
+
       let articleListVC = StoryboardViewControllerResource<ArticleListVC>(identifier: "ArticleListVC")
       let bundle = R.hostingBundle
       let name = "ArticleList"
-      
+
       func articleListVC(_: Void = ()) -> ArticleListVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: articleListVC)
       }
-      
+
       static func validate() throws {
-        if UIKit.UIImage(named: "circle") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'circle' is used in storyboard 'ArticleList', but couldn't be loaded.") }
-        if UIKit.UIImage(named: "color_gradient") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'color_gradient' is used in storyboard 'ArticleList', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "circle", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'circle' is used in storyboard 'ArticleList', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "color_gradient", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'color_gradient' is used in storyboard 'ArticleList', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
         if _R.storyboard.articleList().articleListVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'articleListVC' could not be loaded from storyboard 'ArticleList' as 'ArticleListVC'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = UIKit.UIViewController
-      
+
       let bundle = R.hostingBundle
       let name = "LaunchScreen"
-      
+
       static func validate() throws {
-        if UIKit.UIImage(named: "RoundedIcon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'RoundedIcon' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "RoundedIcon", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'RoundedIcon' is used in storyboard 'LaunchScreen', but couldn't be loaded.") }
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
       }
-      
+
       fileprivate init() {}
     }
-    
-    struct main: Rswift.StoryboardResourceWithInitialControllerType {
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
       typealias InitialController = MainTabController
-      
+
       let bundle = R.hostingBundle
       let name = "Main"
-      
+
+      static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
+      }
+
       fileprivate init() {}
     }
-    
+    #endif
+
+    #if os(iOS) || os(tvOS)
     struct settingsVC: Rswift.StoryboardResourceType, Rswift.Validatable {
       let bundle = R.hostingBundle
       let name = "SettingsVC"
       let settingsVC = StoryboardViewControllerResource<SettingsVC>(identifier: "SettingsVC")
-      
+
       func settingsVC(_: Void = ()) -> SettingsVC? {
         return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: settingsVC)
       }
-      
+
       static func validate() throws {
+        if #available(iOS 11.0, tvOS 11.0, *) {
+        }
         if _R.storyboard.settingsVC().settingsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsVC' could not be loaded from storyboard 'SettingsVC' as 'SettingsVC'.") }
       }
-      
+
       fileprivate init() {}
     }
-    
+    #endif
+
     fileprivate init() {}
   }
-  
+  #endif
+
   fileprivate init() {}
 }

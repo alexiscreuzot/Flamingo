@@ -10,7 +10,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-class Source : Object, Decodable{
+class Source : Object, Decodable {
     
     @objc dynamic var domain : String = ""
     @objc dynamic var activated : Bool = false
@@ -34,13 +34,6 @@ class Source : Object, Decodable{
         super.init()
     }
     
-    required init(value: Any, schema: RLMSchema) {
-        super.init(value: value, schema: schema)
-    }
-    
-    required init(realm: RLMRealm, schema: RLMObjectSchema) {
-        super.init(realm: realm, schema: schema)
-    }
     
     // Convenience inits
     
@@ -80,7 +73,6 @@ class Source : Object, Decodable{
             return ""
         }
     }
-    
 }
 
 class Sources {

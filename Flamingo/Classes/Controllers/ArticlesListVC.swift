@@ -12,6 +12,7 @@ import SDWebImage
 import SafariServices
 import Moya
 import RealmSwift
+import ReadabilityKit
 
 @objc class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellDelegate {
     
@@ -82,7 +83,7 @@ import RealmSwift
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.alpha = 0
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
-
+        
         let top = ArticleListVC.HeaderHeight - ArticleListVC.CutHeight
         
         self.stateLabel.text = nil
@@ -115,7 +116,7 @@ import RealmSwift
         self.resetBlur()
         self.themeDidChange()
     }
-
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let selectedRow = self.tableView.indexPathForSelectedRow{
@@ -131,7 +132,7 @@ import RealmSwift
             break
         }
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -159,7 +160,7 @@ import RealmSwift
     func updateUI() {
         switch currentState {
         case .loading :
-//            self.tableView.setContentOffset(CGPoint(x:0, y:-self.tableView.contentInset.top), animated: true)
+            //            self.tableView.setContentOffset(CGPoint(x:0, y:-self.tableView.contentInset.top), animated: true)
             self.tableView.alpha = 0
             self.stateLabel.text = nil
             self.refreshButton.alpha = 0
@@ -233,7 +234,7 @@ import RealmSwift
         }
         
         try! realm.write() {
-            realm.add(newSources, update:true)
+            realm.add(newSources, update: .all)
         }
     }
     
@@ -292,28 +293,28 @@ import RealmSwift
     }
     
     func loadPreviews() {
-        let provider = MoyaProvider<Mercury>()
         for post in posts {
             guard let url = post.url else { continue }
-            provider.request(Mercury.parser(url: url.absoluteString)) { (result) in
-                if case .success(let response) = result {
-                    let preview = try? response.map(to: Preview.self)
-                    self.postPreviews[post.id] = preview
-                    
-                    if  let urlString = preview?.lead_image_url,
-                        !urlString.contains("ycombinator"), // Don't like those
-                        let url = URL(string:urlString) {
-                            self.imageQueue.insert(url)
-                            self.downloadImage(url, post: post)
-                    }
+            
+            Readability.parse(url: url, completion: { data in
+                guard let data = data else { return }
+                
+                let preview = Preview.init(data: data)
+                self.postPreviews[post.id] = preview
+                
+                if  let urlString = preview.lead_image_url,
+                    !urlString.contains("ycombinator"), // Don't like those
+                    let url = URL(string:urlString) {
+                    self.imageQueue.insert(url)
+                    self.downloadImage(url, post: post)
                 }
-            }
+            })
         }
     }
     
     func downloadImage(_ url: URL, post: HNPost) {
         
-        SDWebImageDownloader.shared().downloadImage(with: url, options: [.allowInvalidSSLCertificates], progress: nil) { (image, _, _, _) in
+        SDWebImageDownloader.shared.downloadImage(with: url, options: [.allowInvalidSSLCertificates], progress: nil) { (image, _, _, _) in
             
             guard self.headerImageView.image == nil else {
                 return
@@ -323,8 +324,8 @@ import RealmSwift
             if  let image = image,
                 image.size.width >= 750 {
                 
-                guard let oldIndex = (self.posts.index{$0 === post}) else { return }
-                SDWebImageDownloader.shared().cancelAllDownloads()
+                guard let oldIndex = (self.posts.firstIndex{$0 === post}) else { return }
+                SDWebImageDownloader.shared.cancelAllDownloads()
                 
                 if oldIndex != 0 {
                     self.posts.rearrange(from: oldIndex, to: 0)
@@ -355,7 +356,7 @@ import RealmSwift
     // MARK: - UIScrollViewDelegate
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-
+        
         let contentOffset = self.tableView.contentOffset.y + self.tableView.contentInset.top
         
         // Header image bounce & blur
@@ -368,8 +369,8 @@ import RealmSwift
         animator?.fractionComplete = (contentOffset < startOffset) ? percent : 0
         
         statusBarTopConstraint.constant = (headerViewHeightConstraint.constant - ArticleListVC.CutHeight <= 60)
-        ? 0
-        : UIApplication.shared.statusBarFrame.height
+            ? 0
+            : UIApplication.shared.statusBarFrame.height
         
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -400,14 +401,14 @@ import RealmSwift
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let post: HNPost = self.posts[indexPath.row]
         let prev: Preview? = self.postPreviews[post.id]
         
         let fpost = FlamingoPost(hnPost: post, preview: prev, row: indexPath.row)
         let cell : ArticleDefaultCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.articleDefaultCell,
-                                                 for: indexPath)!
+                                                                      for: indexPath)!
         cell.setPost(fpost)
         cell.delegate = self
         return cell

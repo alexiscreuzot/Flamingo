@@ -24,6 +24,7 @@ public class HNLogin {
     }
     private init() {
         if let cookie = self.retrieveSessionCookie() {
+            self._sessionCookie = cookie
             self.getUsernameFromCookie(cookie, completion: {(user, cookie, error) -> Void in
                 if cookie != nil {
                     self._user = user
@@ -38,7 +39,7 @@ public class HNLogin {
         }
     }
     
-    public enum HNLoginError {
+    public enum HNLoginError: Error {
         case badCredentials
         case serverUnreachable
         case noInternet
@@ -86,7 +87,7 @@ public class HNLogin {
      */
     public func login(username: String, psw: String, completion: @escaping ((HNUser?, HTTPCookie?, HNLoginError?) -> Void)) {
         let url = HNScraper.baseUrl + "login"
-        let encodedPass = psw.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[]"))
+        let encodedPass = psw.addingPercentEncoding(withAllowedCharacters: CharacterSet(charactersIn: "!*'();:@&=+$,/?%#[]").inverted)
         let bodyString = "acct=\(username)&pw=\(encodedPass!)&whence=news"
         guard let bodyData = bodyString.data(using: .utf8) else {
             completion(nil, nil, .badCredentials)
@@ -107,7 +108,7 @@ public class HNLogin {
                     scanner.scanUpTo("/a>&nbsp;(", into: &trash) // TODO: use config file
                     scanner.scanString("/a>&nbsp;(", into: &trash)
                     scanner.scanUpTo(")", into: &karma)
-                    self._user = HNUser(username: username, karma: karma as String!, age: "", aboutInfo: "")
+                    self._user = HNUser(username: username, karma: karma! as String, age: "", aboutInfo: "")
                     
                     self.getLoggedInUser(user: self._user!, completion: {(user, cookie, error) -> Void in
                         
@@ -157,7 +158,7 @@ public class HNLogin {
         
         RessourceFetcher.shared.fetchData(urlString: url, completion: {(data, error) -> Void in
             
-            if let html = String(data: data!, encoding: .utf8) {
+            if let data = data, let html = String(data: data, encoding: .utf8) {
                 var newUser: HNUser?
                 // Getting user info
                 if !(html.contains("We've limited requests for this url.")) {
@@ -207,7 +208,7 @@ public class HNLogin {
                         scanner.scanString("&nbsp;(", into: &trash)
                         scanner.scanUpTo(")", into: &karma)
                         
-                        let user = HNUser(username: userString as String!, karma: karma as String!, age: "", aboutInfo: "")
+                        let user = HNUser(username: userString! as String, karma: karma! as String, age: "", aboutInfo: "")
                         
                         self.getLoggedInUser(user: user, completion: completion)
                         

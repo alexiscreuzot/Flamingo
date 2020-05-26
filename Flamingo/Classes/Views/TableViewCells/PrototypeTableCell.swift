@@ -41,7 +41,7 @@ class PrototypeTableCell : UITableViewCell, PrototypeTableCellProtocol {
         super.awakeFromNib()
         
         let selView = UIView()
-        selView.backgroundColor = UIColor(white: 0, alpha: 0.08)
+        selView.backgroundColor = UIColor(white: 0, alpha: 0.1)
         self.selectedBackgroundView = selView
         
         self.selectionStyle = .none

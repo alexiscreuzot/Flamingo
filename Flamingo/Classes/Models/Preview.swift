@@ -8,10 +8,10 @@
 
 import Foundation
 import Mapper
+import ReadabilityKit
 
-class Preview: Mappable {
+class Preview  {
     let title: String
-    let domain: String
     
     let excerpt: String?
     let content: String?
@@ -19,14 +19,13 @@ class Preview: Mappable {
     let lead_image_url: String?
     let word_count: Int?
     
-    required init(map: Mapper) throws {
-        try title = map.from("title")
-        try domain = map.from("domain")
-        excerpt = map.optionalFrom("excerpt")
-        content =  map.optionalFrom("content")
-        author = map.optionalFrom("author")
-        lead_image_url = map.optionalFrom("lead_image_url")
-        word_count = map.optionalFrom("word_count")
+    init(data: ReadabilityData) {
+        title = data.title
+        excerpt = data.description
+        content =  data.text
+        author = nil
+        lead_image_url = data.topImage
+        word_count = data.text?.count
     }
     
     var wordCount : Int? {

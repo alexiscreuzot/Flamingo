@@ -62,7 +62,7 @@ class SettingsVC : UIViewController {
         
         let currentThemeCell = SimpleTableCellContent.init(title: "Theme",
                                                            value: Theme.current.name,
-                                                           accessoryType: .none,
+                                                           accessoryType: .disclosureIndicator,
                                                            identifier: SettingsCellIdentifier.themeIdentifier.rawValue)
         currentThemeCell.backgroundColor = Theme.current.style.backgroundColor
         currentThemeCell.titleColor = Theme.current.style.textColor
@@ -172,10 +172,10 @@ extension SettingsVC : Themable {
     
     @objc func themeDidChange() {
         
-        self.reloadData()
-        
         self.view.backgroundColor = Theme.current.style.backgroundColor
         self.tableView.backgroundColor = Theme.current.style.backgroundColor
         self.tableView.separatorColor = Theme.current.style.secondaryBackgroundColor
+
+        self.reloadData()
     }
 }

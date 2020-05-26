@@ -23,6 +23,10 @@
 import UIKit
 
 extension UIFont {
+    func fontWithRegular() -> UIFont {
+        return fontDescriptor.withSymbolicTraits(fontDescriptor.symbolicTraits.subtracting(.traitBold)).flatMap { UIFont(descriptor: $0, size: pointSize) } ?? self
+    }
+
     func fontWithBold() -> UIFont {
         return fontDescriptor.withSymbolicTraits(fontDescriptor.symbolicTraits.union(.traitBold)).flatMap { UIFont(descriptor: $0, size: pointSize) } ?? self
     }

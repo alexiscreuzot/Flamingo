@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class BaseComment {
+open class BaseComment {
     public var replies: [BaseComment]! = []
     public var level: Int! = 0
     public weak var replyTo: BaseComment?
@@ -26,7 +26,7 @@ public class BaseComment {
     
 }
 
-public class HNComment: BaseComment {
+open class HNComment: BaseComment {
     public convenience init() {
         self.init(level: 0, replyTo: nil)
     }
@@ -44,12 +44,14 @@ public class HNComment: BaseComment {
     public var text: String! = ""
     public var id: String! = ""
     public var username: String! = "anonymous"
-    public var parentId: Int! = -1
+    public var isOPNoob: Bool! = false
+    public var parentId: String?
     public var created: String! = ""
     public var replyUrl: String! = ""
     public var links: [String]! = []
     public var upvoteUrl: String! = ""
     public var downvoteUrl: String! = ""
+    public var upvoted: Bool = false
     
     
     public convenience init?(fromHtml html: String, withParsingConfig parseConfig: [String : Any], levelOffset: Int = 0) {
@@ -60,9 +62,10 @@ public class HNComment: BaseComment {
         }
         
         let scanner = Scanner(string: html)
-        var upvoteString: NSString? = ""
+        var upvoteString: NSString?
         let downvoteString: NSString? = ""
         var level: NSString? = ""
+        //var parentPostId: NSString? = ""
         var cDict: [String : Any] = [:]
         
         
@@ -73,6 +76,13 @@ public class HNComment: BaseComment {
         } else {
             self.level = levelOffset
         }
+        
+        // Parent isn't in the html anymore... it's parsable in the upvote/reply url...
+        // Get parentPostId (only if the comment comes from the list of comment ssubmited by a user).
+        /*scanner.scanBetweenString(stringA: (commentDict!["ParentPostId"] as! [String: String])["S"]!, stringB: (commentDict!["ParentPostId"] as! [String: String])["E"]!, into: &parentPostId)
+        if (parentPostId != nil) {
+            self.parentId = (parentPostId as String?) ?? ""
+        }*/
         
         
         
@@ -99,6 +109,7 @@ public class HNComment: BaseComment {
         for dict in regs {
             var new: NSString? = ""
             let isTrash = dict["I"] as! String == "TRASH"
+            
             scanner.scanBetweenString(stringA: dict["S"] as! String, stringB: dict["E"] as! String, into: &new)
             if (!isTrash && (new?.length)! > 0) {
                 cDict[dict["I"] as! String] = new
@@ -108,9 +119,13 @@ public class HNComment: BaseComment {
         self.id = cDict["CommentId"] as? String ?? ""
         self.text = cDict["Text"] as? String ?? ""
         self.username = cDict["Username"] as? String ?? ""
+        self.isOPNoob = HNUser.cleanNoobUsername(username: &(self.username!))
         self.created = cDict["Time"] as? String ?? ""
         self.replyUrl = cDict["ReplyUrl"] as? String ?? ""
         
+        if self.id != "" && html.contains("<a id=\'un_\(self.id!)") { // TODO: put that in the configFie
+            self.upvoted = true
+        }
         
         
     }
@@ -145,11 +160,14 @@ public class HNComment: BaseComment {
         let newComment = HNComment()
         newComment.level = 0
         newComment.username = cDict["Username"] as? String ?? ""
+        newComment.isOPNoob = HNUser.cleanNoobUsername(username: &(newComment.username!))
         newComment.created = cDict["Time"] as? String ?? ""
         newComment.text = cDict["Text"] as? String ?? ""
         //newComment.links = ...
         newComment.type = .askHN
-        newComment.upvoteUrl = String(describing: upvoteUrl) as String //(upvoteUrl?.length)! > 0 ? upvoteUrl : "";
+        if upvoteUrl != nil {
+            newComment.upvoteUrl = String(describing: upvoteUrl!) as String //(upvoteUrl?.length)! > 0 ? upvoteUrl : "";
+        }
         newComment.id = cDict["CommentId"] as? String ?? ""
         return newComment
     }

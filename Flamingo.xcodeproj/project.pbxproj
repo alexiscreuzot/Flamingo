@@ -21,7 +21,6 @@
 		FA50E7BD20067ABB008C28C1 /* ArticleDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */; };
 		FAA4E4262007829E00D2D88C /* ArticlesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E798200670D2008C28C1 /* ArticlesListVC.swift */; };
 		FAB10E1420213F0C00F60594 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1320213F0C00F60594 /* Preview.swift */; };
-		FAB10E1720213F3700F60594 /* MercuryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1620213F3700F60594 /* MercuryAPI.swift */; };
 		FAB10E1B20214C2600F60594 /* Response+ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */; };
 		FAB2599B20C728BB00B94ECA /* ArticleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB2599A20C728BB00B94ECA /* ArticleList.storyboard */; };
 		FAB2599D20C728CC00B94ECA /* ArticleComments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB2599C20C728CC00B94ECA /* ArticleComments.storyboard */; };
@@ -66,7 +65,6 @@
 		FA50E7B420067A24008C28C1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDefaultCell.swift; sourceTree = "<group>"; };
 		FAB10E1320213F0C00F60594 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
-		FAB10E1620213F3700F60594 /* MercuryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercuryAPI.swift; sourceTree = "<group>"; };
 		FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ModelMapper.swift"; sourceTree = "<group>"; };
 		FAB2599A20C728BB00B94ECA /* ArticleList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleList.storyboard; sourceTree = "<group>"; };
 		FAB2599C20C728CC00B94ECA /* ArticleComments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleComments.storyboard; sourceTree = "<group>"; };
@@ -124,7 +122,6 @@
 		FA0C8FE32024A77400818EB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FAB10E1620213F3700F60594 /* MercuryAPI.swift */,
 				FAD1554A215D14AF0045001A /* JSONSerializer.swift */,
 				FAD1554C215D16A50045001A /* LocalDataService.swift */,
 				FAB32CF12163C046003EE9C4 /* ThemeService.swift */,
@@ -309,7 +306,7 @@
 				TargetAttributes = {
 					FA50E792200670D2008C28C1 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 1000;
+						LastSwiftMigration = 1140;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -379,38 +376,36 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Flamingo/Pods-Flamingo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Attributed/Attributed.framework",
 				"${BUILT_PRODUCTS_DIR}/HNScraper/HNScraper.framework",
 				"${BUILT_PRODUCTS_DIR}/HTMLString/HTMLString.framework",
+				"${BUILT_PRODUCTS_DIR}/Ji/Ji.framework",
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/ReadabilityKit/ReadabilityKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Attributed.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HNScraper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTMLString.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ji.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReadabilityKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
@@ -426,13 +421,15 @@
 			files = (
 			);
 			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
 			);
 			name = RSwift;
 			outputPaths = (
+				"$SRCROOT/Flamingo/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Flamingo\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Flamingo/R.generated.swift\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -456,7 +453,6 @@
 				FAE931D820C991FE00FB0A78 /* Source.swift in Sources */,
 				FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */,
 				FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */,
-				FAB10E1720213F3700F60594 /* MercuryAPI.swift in Sources */,
 				FAB838E5202899AF00DBFEF7 /* CommentCell.swift in Sources */,
 				FAD1554B215D14AF0045001A /* JSONSerializer.swift in Sources */,
 				FAE931E220C9A68000FB0A78 /* TitleSeparatorCell.swift in Sources */,
@@ -629,7 +625,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -650,7 +646,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

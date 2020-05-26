@@ -176,7 +176,7 @@ public class HNScraper {
             }
             self.commentsHtmlToBeParsed = html
             if let post = HNPost(fromHtml: html!, withParsingConfig: parseConfig) {
-                self.parseDownloadedComments(ForPost: post, buildHierarchy: buildHierarchy, completion: completion)
+                self.parseDownloadedComments(ForPost: post, buildHierarchy: buildHierarchy, completion: { post, comments, linkFormore, error -> Void in completion(post, comments, error) })
             } else {
                 completion(nil, [], .parsingError)
             }
@@ -260,7 +260,7 @@ public class HNScraper {
             
             // If last item of the page, try to grab the link for next page.
             if (htmlComponentCounter == htmlComponents.count - 1) {
-                linkForMore = parseLinkForMore(html: htmlComponent, withParsingConfig: parseConfig!)
+                linkForMore = parseLinkForMoreFromPostsList(html: htmlComponent, withParsingConfig: parseConfig!)
             }
 
             htmlComponentCounter += 1
@@ -277,15 +277,37 @@ public class HNScraper {
         self.getPostsList(url: HNScraper.baseUrl + linkForMore, completion: completionHandler)
     }
     
+    public func getMoreComments(linkForMore: String, completionHandler: @escaping (([HNComment], String?, HNScraperError?) -> Void)) {
+        self.getComments(FromURl: HNScraper.baseUrl + linkForMore, completion: completionHandler)
+    }
+    
+    /**
+     *  Parse the last part of the html page of the posts/coments list to find the link to the next page.
+     *  - parameters:
+     *      - html: the part of the html of the list page containing the link to the next page.
+     *      - parseConfigS: the identifying string just before the link (found in the parseConfig file)
+     *      - parseConfigE: the identifying string just after the link (found in the parseConfig file)
+     *  - note: In case of an error, it will just return nil, no error is reported.
+     */
+    private func parseLinkForMore(html: String, parseConfigS: String, parseConfigE: String) -> String? {
+        let scanner: Scanner = Scanner(string: html)
+        var trash: NSString? = ""
+        
+        scanner.scanUpTo(parseConfigS, into: &trash)
+        var linkForMore: NSString? = ""
+        scanner.scanString(parseConfigS, into: &trash)
+        scanner.scanUpTo(parseConfigE, into: &linkForMore)
+        var finalLinkForMore = (linkForMore?.replacingOccurrences(of: "/", with: ""))!
+        finalLinkForMore = finalLinkForMore.replacingOccurrences(of: "&amp;", with: "&")
+        return finalLinkForMore
+    }
     /**
      *  Parse the last part of the html page of the posts list to find the link to the next page.
      *  - parameters:
      *      - html: the part of the html of the list page containing the link to the next page.
      *  - note: In case of an error, it will just return nil, no error is reported.
      */
-    private func parseLinkForMore(html: String, withParsingConfig parseConfig: [String: Any]) -> String? {
-        let scanner: Scanner = Scanner(string: html)
-        //var postsConfig: [String : Any]? = (parseConfig["Post"] != nil) ? parseConfig["Post"] as? [String : Any] : nil
+    private func parseLinkForMoreFromPostsList(html: String, withParsingConfig parseConfig: [String: Any]) -> String? {
         let postsConfig: [String : Any]? = parseConfig["Post"] as? [String: Any]
         if postsConfig == nil {
             return nil
@@ -294,15 +316,31 @@ public class HNScraper {
         if linkConfig == nil {
             return nil
         }
-        var trash: NSString? = ""
-        
-        scanner.scanUpTo(linkConfig!["S"]!, into: &trash)
-        var linkForMore: NSString? = ""
-        scanner.scanString(linkConfig!["S"]!, into: &trash)
-        scanner.scanUpTo(linkConfig!["E"]!, into: &linkForMore)
-        var finalLinkForMore = (linkForMore?.replacingOccurrences(of: "/", with: ""))!
-        finalLinkForMore = finalLinkForMore.replacingOccurrences(of: "&amp;", with: "&")
-        return finalLinkForMore
+        guard let parseConfigS = linkConfig!["S"], let parseConfigE = linkConfig!["E"] else {
+            return nil
+        }
+        return parseLinkForMore(html: html, parseConfigS: parseConfigS, parseConfigE: parseConfigE)
+    }
+    
+    /**
+     * Parse the last part of a list of comment (typically the list of comments submitted by a user) to find the "More" link
+     * - Parameters:
+     *      - html: the part of the html of the list page containing the link to the next page.
+     *      - parseConfigS
+     */
+    private func parseLinkForMoreFromCommentsList(html: String, withParsingConfig parseConfig: [String: Any]) -> String? {
+        let postsConfig: [String : Any]? = parseConfig["Comment"] as? [String: Any]
+        if postsConfig == nil {
+            return nil
+        }
+        var linkConfig: [String : String]? = postsConfig!["LinkForMore"] as? [String: String]
+        if linkConfig == nil {
+            return nil
+        }
+        guard let parseConfigS = linkConfig!["S"], let parseConfigE = linkConfig!["E"] else {
+            return nil
+        }
+        return parseLinkForMore(html: html, parseConfigS: parseConfigS, parseConfigE: parseConfigE)
     }
     
     /**
@@ -349,6 +387,19 @@ public class HNScraper {
         self.getPost(ById: postId, buildHierarchy: buildHierarchy, completion: completion)
     }
     
+    private func getComments(FromURl url: String, buildHierarchy: Bool = true, offsetComments: Bool = true, completion: @escaping (([HNComment], String?, HNScraperError?) -> Void)) {
+        getHtmlAndParsingConfig(url: url, completion: { html, error -> Void in
+            if html == nil {
+                completion([], nil, error ?? .noData)
+                return
+            }
+            self.commentsHtmlToBeParsed = html
+            self.parseDownloadedComments(ForPost: HNPost(), buildHierarchy: buildHierarchy, offsetComments: offsetComments, completion: {(post, comments, linkForMore, error) in
+                completion(comments, linkForMore, error)
+            })
+        })
+    }
+    
     /**
      Fetches the comments assiciated to the specified post.
      - parameters:
@@ -356,7 +407,7 @@ public class HNScraper {
          - buildHierarchy: indicates if the comments must be nested or must all be placed at the root of the array
      - Note: the type of the post has to be specified in order to handle a askHN or a job correctly
      */
-    public func getComments(ForPost post: HNPost, buildHierarchy: Bool = true, completion: @escaping ((HNPost, [HNComment], HNScraperError?) -> Void)) {
+    public func getComments(ForPost post: HNPost, buildHierarchy: Bool = true, offsetComments: Bool = true, completion: @escaping ((HNPost, [HNComment], HNScraperError?) -> Void)) {
         let url = HNScraper.baseUrl + "item?id=\(post.id)"
         
         getHtmlAndParsingConfig(url: url, completion: { html, error -> Void in
@@ -369,20 +420,20 @@ public class HNScraper {
                 return
             }
             self.commentsHtmlToBeParsed = html
-            self.parseDownloadedComments(ForPost: post, buildHierarchy: buildHierarchy, completion: completion)
+            self.parseDownloadedComments(ForPost: post, buildHierarchy: buildHierarchy, offsetComments: offsetComments, completion: { post, comments, linkFormore, error -> Void in completion(post, comments, error) })
         })
     }
     
     // TODO: That method is ugly, That method is ugly, That method's ugly, 'at method's ugly, thod's ugly, thod's gly, thod's y, Hodor
-    private func parseDownloadedComments(ForPost post:HNPost, buildHierarchy: Bool = true, completion: ((HNPost, [HNComment], HNScraperError?) -> Void)) {
+    private func parseDownloadedComments(ForPost post:HNPost, buildHierarchy: Bool = true, offsetComments: Bool = true, completion: ((HNPost, [HNComment], String?, HNScraperError?) -> Void)) {
         let parseConfig = HNParseConfig.shared.data
         let html = self.commentsHtmlToBeParsed
         if html == nil {
-            completion(post, [], .noData)
+            completion(post, [], nil, .noData)
             return
         }
         if parseConfig == nil {
-            completion(post, [], .missingOrCorruptedConfigFile)
+            completion(post, [], nil, .missingOrCorruptedConfigFile)
             return
         }
         
@@ -394,13 +445,13 @@ public class HNScraper {
         // Set Up
         var commentDict: [String : Any]? = (parseConfig != nil && parseConfig!["Comment"] != nil) ? parseConfig!["Comment"] as? [String: Any] : nil
         if (commentDict == nil) {
-            completion(post, [], .missingOrCorruptedConfigFile)
+            completion(post, [], nil, .missingOrCorruptedConfigFile)
             return
         }
         
         var htmlComponents = commentDict!["CS"] != nil ? html!.components(separatedBy: commentDict!["CS"] as! String) : nil
         if (htmlComponents == nil) {
-            completion(post, [], .missingOrCorruptedConfigFile)
+            completion(post, [], nil, .missingOrCorruptedConfigFile)
             return
         }
         
@@ -434,7 +485,7 @@ public class HNScraper {
                 lastCommentByLevel[0] = newComment
             } else {
                 print("error parsing AskHN comment")
-                completion(post, [], .parsingError)
+                completion(post, [], nil, .parsingError)
                 return
             }
             
@@ -447,17 +498,18 @@ public class HNScraper {
                 lastCommentByLevel[0] = newComment
             } else {
                 print("error parsing Job comment")
-                completion(post, [], .parsingError)
+                completion(post, [], nil, .parsingError)
                 return
             }
             
         }
         
+        var linkForMore : String?
         // 1st object is garbage.
         htmlComponents?.remove(at: 0)
-        for htmlComponent in htmlComponents! {
-            
-            if let newComment = HNComment(fromHtml: htmlComponent, withParsingConfig: parseConfig!, levelOffset: (post.type == .jobs || post.type == .askHN) ? 1 : 0) {
+        for (index, htmlComponent) in htmlComponents!.enumerated() {
+            let offset = post.type == .jobs || post.type == .askHN && offsetComments ? 1 : 0
+            if let newComment = HNComment(fromHtml: htmlComponent, withParsingConfig: parseConfig!, levelOffset: offset) {
                 if newComment.level == 0 { // If root comment
                     rootComments.append(newComment)
                 } else { // looking for parent
@@ -469,6 +521,10 @@ public class HNScraper {
                 allComments.append(newComment)
                 lastCommentByLevel[newComment.level] = newComment
                 
+                // If last item of the page, try to grab the link for next page.
+                if index == htmlComponents!.count - 1 {
+                    linkForMore = parseLinkForMoreFromCommentsList(html: htmlComponent, withParsingConfig: parseConfig!)
+                }
             } else {
                 print("error parsing comment")
             }
@@ -477,9 +533,9 @@ public class HNScraper {
         }
         // TODO: return error if every comment fail to be parsed (i.e. htmlComponents.count> 0 && comments.count == 0)
         if buildHierarchy {
-            completion(post, rootComments, nil)
+            completion(post, rootComments, linkForMore, nil)
         } else {
-            completion(post, allComments, nil)
+            completion(post, allComments, linkForMore, nil)
         }
         
         
@@ -534,13 +590,20 @@ public class HNScraper {
      the specified username and pass it to the completion
      handler when done.
      */
-    /*public func getComments(ForUserWithUsername username: String, completion: @escaping (([HNComment]) -> Void)) {
-     let url = HNScraper.baseUrl + "submitted?id=\(username)"
-     getHtmlAndParsingConfig(url: url, completion: { html -> Void in
-     self.postsHtmlToBeParsed = html
-     self.parseDownloadedPosts(completion: completion)
-     })
-     }*/ // TODO
+    public func getComments(ForUserWithUsername username: String, completion: @escaping (([HNComment], String?, HNScraperError?) -> Void)) {
+        let url = HNScraper.baseUrl + "threads?id=\(username)"
+        getComments(FromURl: url, completion: completion)/*
+        getHtmlAndParsingConfig(url: url, completion: { html, error -> Void in
+            if html == nil {
+                completion([], nil, error ?? .noData)
+                return
+            }
+            self.commentsHtmlToBeParsed = html
+            self.parseDownloadedComments(ForPost: HNPost(), completion: { (post, comments, linkForMore, error) in
+                completion(comments, linkForMore, error)
+            })
+        })*/
+     } // TODO
     
     // ==================================================
     // MARK: - Actions on posts/comments
