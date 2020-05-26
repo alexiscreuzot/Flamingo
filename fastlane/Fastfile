@@ -1,0 +1,69 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+
+#update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Create a new beta build to TestFlight, generate screenshots and push everything to ITC"
+  lane :release do
+    increment_build_number(
+      xcodeproj: "Flamingo.xcodeproj"
+    )
+    build_app(
+      skip_build_archive: false,
+      workspace: "Flamingo.xcworkspace", 
+      scheme: "Flamingo",
+      export_options: {
+        force: true,
+        method: "app-store",
+        provisioningProfiles: { 
+          "com.alexiscreuzot.flamingo" => "Flamingo AppStore"
+        }
+      }
+    )
+    upload_build
+  end
+
+  lane :upload_build do
+    deliver(
+      force: true, # Skip HTMl report verification
+      skip_metadata: true,
+      skip_screenshots: true,
+      skip_binary_upload: false
+    )
+  end
+
+  desc "Upload metadata and screenshots"
+  lane :upload_metadata do
+    deliver(
+        force: true,
+        skip_metadata: false,
+        skip_screenshots: false,
+        skip_binary_upload: true
+      )
+  end
+
+  desc "Only generate screenshots and save them localy"
+  lane :generate_screenshots do
+    capture_screenshots(
+      skip_open_summary: true,
+      stop_after_first_error: true,
+      clean: true
+    )
+    frame_screenshots()
+    delete_unframed
+  end
+
+  lane :delete_unframed do
+    Dir.glob("./screenshots/**/*.png").select{ |file| 
+      not /framed/.match(file)
+    }.each { |file| 
+      File.delete(file)
+    }
+    puts "Done"
+  end
+
+end

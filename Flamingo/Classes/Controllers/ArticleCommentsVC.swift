@@ -47,7 +47,7 @@ class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, Co
     }
     var topBarHeight : CGFloat {
         get {
-            return self.navigationController!.navigationBar.frame.height + UIApplication.shared.statusBarFrame.height
+            return self.navigationController!.navigationBar.frame.height + (view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0)
         }
     }
     

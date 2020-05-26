@@ -1,0 +1,6 @@
+Flamingo is a minimalist reader for Hacker News.
+You can check the sources of this app on Github : https://github.com/kirualex/Flamingo
+
+Contributors :
+- Alexis Creuzot
+- David Bonnet

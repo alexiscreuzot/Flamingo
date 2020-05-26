@@ -1,0 +1,2 @@
+iOS13 update!
+Now support Light and dark mode.
