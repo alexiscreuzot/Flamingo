@@ -30,10 +30,10 @@ class flamingoUITests: XCTestCase {
         app.launch()
                 
         app.tabBars.buttons.element(boundBy: 0).tap()
-        sleep(3)
+        sleep(8)
         snapshot("0_top")
         app.tabBars.buttons.element(boundBy: 1).tap()
-        sleep(3)
+        sleep(8)
         snapshot("1_news")
         app.tabBars.buttons.element(boundBy: 2).tap()
         snapshot("3_settings")

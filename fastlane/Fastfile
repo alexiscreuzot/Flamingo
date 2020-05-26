@@ -53,8 +53,8 @@ platform :ios do
       stop_after_first_error: true,
       clean: true
     )
-    frame_screenshots()
-    delete_unframed
+    #frame_screenshots()
+    #delete_unframed
   end
 
   lane :delete_unframed do
