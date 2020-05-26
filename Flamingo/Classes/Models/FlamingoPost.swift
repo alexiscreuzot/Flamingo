@@ -56,7 +56,7 @@ struct FlamingoPost {
         
         var buttonAtts = attributes
         if highlightComment {
-            buttonAtts[.foregroundColor] = Theme.current.style.accentColor
+            buttonAtts[.foregroundColor] = CustomColor.primary
         }
 
         icon.color = buttonAtts[.foregroundColor] as! UIColor

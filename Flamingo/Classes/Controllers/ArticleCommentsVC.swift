@@ -12,7 +12,7 @@ import HNScraper
 import SDWebImage
 import SafariServices
 
-class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDelegate, CommentCellDelegate {
+class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, CommentCellDelegate {
     
     enum State {
         case loading
@@ -63,16 +63,15 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
     var fromPageType: HNScraper.PostListPageName = .front
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return Theme.current.style.statusBarStyle
+        return CustomPreferences.colorTheme.statusBarStyle
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let flamingoNav = self.navigationController as? FlamingoNVC {
-            flamingoNav.theme = .transparent
-        }
-        
+        self.setNavigationBar(type: .clear)
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
         // Top bar
         self.statusBarTopConstraint.constant = self.topBarHeight
         
@@ -102,7 +101,8 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         
         self.fetchHeaderImage()
         self.refreshComments()
-        self.registerForThemeChange()
+        
+        
     }
     
     
@@ -299,16 +299,4 @@ class ArticleCommentsVC : UIViewController, UITableViewDataSource, UITableViewDe
         }        
     }
 
-}
-
-
-extension ArticleCommentsVC : Themable {
-    
-    func themeDidChange() {
-        self.view.backgroundColor = Theme.current.style.backgroundColor
-        self.statusBarEffectView.effect  = UIBlurEffect(style: Theme.current.style.blurEffectStyle)
-        self.loadingIndicator.style = Theme.current.style.loadingStyle
-        self.stateLabel.textColor = Theme.current.style.secondaryTextColor
-        self.tableView.reloadData()
-    }
 }

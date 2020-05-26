@@ -21,13 +21,11 @@ class SettingsVC : UIViewController {
     let realm = try! Realm()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return Theme.current.style.statusBarStyle
+        return CustomPreferences.colorTheme.statusBarStyle
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.registerForThemeChange()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,13 +36,8 @@ class SettingsVC : UIViewController {
         self.navigationItem.largeTitleDisplayMode = .always
         
         self.tableView.estimatedRowHeight = 60
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(themeDidChange),
-                                               name: UIContentSizeCategory.didChangeNotification,
-                                               object: nil)
-
-        
+        self.tableView.backgroundColor = .secondarySystemBackground
+                
         self.reloadData()
     }
     
@@ -55,25 +48,18 @@ class SettingsVC : UIViewController {
         
         // Theme
         let themeTitle = TitleSeparatorCellContent(title: "\nTHEME",
-                                                           alignment: .left,
-                                                           color: Theme.current.style.textColor,
-                                                           backgroundColor: Theme.current.style.secondaryBackgroundColor)
+                                                           alignment: .left)
         self.datasource.append(themeTitle)
         
         let currentThemeCell = SimpleTableCellContent.init(title: "Theme",
-                                                           value: Theme.current.name,
+                                                           value: CustomPreferences.colorTheme.localized,
                                                            accessoryType: .disclosureIndicator,
                                                            identifier: SettingsCellIdentifier.themeIdentifier.rawValue)
-        currentThemeCell.backgroundColor = Theme.current.style.backgroundColor
-        currentThemeCell.titleColor = Theme.current.style.textColor
-        currentThemeCell.valueColor = Theme.current.style.secondaryTextColor
         self.datasource.append(currentThemeCell)
         
         // Sources
         let sourceTitleContent = TitleSeparatorCellContent(title: "\nSOURCES",
-                                                                alignment: .left,
-                                                                color: Theme.current.style.textColor,
-                                                                backgroundColor:Theme.current.style.secondaryBackgroundColor)
+                                                                alignment: .left)
         sourceTitleContent.height = UITableView.automaticDimension
         self.datasource.append(sourceTitleContent)
         
@@ -84,7 +70,7 @@ class SettingsVC : UIViewController {
         let switchAllContent = SwitchTableCellContent(title: "ALL",
                                              isOn: isOn,
                                              switchAction: { isOn in
-                                                LocalData.hasSetSources = true
+                                                CustomPreferences.hasSetSources = true
                                                 try! self.realm.write {
                                                     for source in sources {
                                                         source.activated = isOn
@@ -92,33 +78,41 @@ class SettingsVC : UIViewController {
                                                 }
                                                 self.reloadData()
         })
-        let titleAttributes: [NSAttributedString.Key : Any] = [.font : UIFont.preferredFont(forTextStyle: .headline),
-                                                               .foregroundColor : Theme.current.style.textColor]
-        let switchAllString = NSMutableAttributedString.init(string: "ALL",
-                                                       attributes: titleAttributes)
-        switchAllContent.attributedTitle = switchAllString
-        switchAllContent.tint = Theme.current.style.secondaryAccentColor
-        switchAllContent.backgroundColor = Theme.current.style.backgroundColor
+        switchAllContent.title = "ALL"
         self.datasource.append(switchAllContent)
         
         let sourcesCells: [SwitchTableCellContent] = sources.map({ source in
             let content = SwitchTableCellContent(title: source.domain,
                                                  isOn: source.activated,
                                                  switchAction: { isOn in
-                                                    LocalData.hasSetSources = true
+                                                    CustomPreferences.hasSetSources = true
                                                     try! self.realm.write {
                                                         source.activated = isOn
                                                     }
                                                     
             })
-            content.backgroundColor = Theme.current.style.backgroundColor
-            content.titleColor = Theme.current.style.textColor
-            content.tint = Theme.current.style.accentColor
             return content
         })
         self.datasource.append(contentsOf: sourcesCells)
         self.tableView.reloadData()
     }
+    
+    typealias SheetSelectBlock = ((Int) -> Void)
+    func selectFrom(elements: [String], currentSelectedIndex: Int? = nil, completion: SheetSelectBlock? = nil) {
+           let sheetView = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+           for (index, element) in elements.enumerated() {
+               let action = UIAlertAction(title: element, style: .default) { _ in
+                   completion?(index)
+               }
+               if index == currentSelectedIndex {
+                   let image = MaterialIcon.check.imageFor(size: 20, color: UIColor.systemBlue)
+                   action.setValue(image, forKey: "_image")
+               }
+               sheetView.addAction(action)
+           }
+           sheetView.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+           self.present(sheetView, animated: true, completion: nil)
+       }
 
 }
 
@@ -146,36 +140,17 @@ extension SettingsVC : UITableViewDataSource, UITableViewDelegate {
         let content = self.datasource[indexPath.row]
         switch content.identifier {
         case SettingsCellIdentifier.themeIdentifier.rawValue:
-            self.selectTheme()
+            let currentOption = Theme.allCases.firstIndex(of: CustomPreferences.colorTheme)
+            self.selectFrom(elements: Theme.allCases.map {$0.localized},
+                            currentSelectedIndex:currentOption) { selIndex in
+                                CustomPreferences.colorTheme = Theme.allCases[selIndex]
+                                ThemeService.shared.updateTheme()
+            }
         default:
             break
         }
-    }
-}
-
-extension SettingsVC : Themable {
-    
-    func selectTheme() {
-        let choiceSheet = UIAlertController.init(title: nil, message: nil, preferredStyle: .actionSheet)
-        for theme in Theme.allCases {
-            let action = UIAlertAction.init(title: theme.name, style: .default) { _ in
-                Theme.current = theme
-            }
-            let isSelectedTheme = (Theme.current == theme)
-            action.setValue(isSelectedTheme, forKey: "checked")
-            choiceSheet.addAction(action)
+        delay(0.1) {
+            tableView.deselectRow(at: indexPath, animated: true)
         }
-        let cancelAction = UIAlertAction.init(title: "Cancel", style: .cancel)
-        choiceSheet.addAction(cancelAction)
-        self.present(choiceSheet, animated: true)
-    }
-    
-    @objc func themeDidChange() {
-        
-        self.view.backgroundColor = Theme.current.style.backgroundColor
-        self.tableView.backgroundColor = Theme.current.style.backgroundColor
-        self.tableView.separatorColor = Theme.current.style.secondaryBackgroundColor
-
-        self.reloadData()
     }
 }

@@ -7,6 +7,25 @@
 */
 
 "Common/Ok" = "Ok";
+"Common/Save" = "Save";
+"Common/Cancel" = "Cancel";
+"Common/Error" = "Error";
+"Common/Stop" = "Stop";
+"Common/Done" = "Done";
+"Common/Next" = "Next";
+"Common/Share" = "Share";
+"Common/Continue" = "Continue";
+"Common/Resume" = "Resume";
+"Common/Confirm" = "Confirm";
+"Common/Select" = "Select";
+"Common/Delete" = "Delete";
+"Common/Move" = "Move";
+"Common/Export" = "Export";
+"Common/Yes" = "Yes";
+"Common/No" = "No";
+
+"Error/Unknown" = "Something went wrong :(";
+
 
 "ArticlesList/LoadingFailed" = "Couldn't load feed :(";
 
@@ -14,7 +33,10 @@
 "ArticleComments/LoadingFailed" = "Couldn't load comments :(";
 "ArticleComments/Comment/Anonymous" = "Anonymous";
 
-
 "FlamingoError/Unknown" = "Something went wrong";
 "FlamingoError/NothingToShow" = "Nothing to show";
 "FlamingoError/SourcesNotConfigured" = "You first need to configure the sources in \"Settings\"";
+
+"settings_general_theme_auto" = "Auto";
+"settings_general_theme_dark" = "Dark";
+"settings_general_theme_light" = "Light";

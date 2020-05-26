@@ -11,6 +11,7 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - PluggableAppDelegate (1.3.0)
   - R.swift (5.2.2):
     - R.swift.Library (~> 5.2.0)
   - R.swift.Library (5.2.0)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - HTMLString
   - ModelMapper
   - Moya
+  - PluggableAppDelegate
   - R.swift
   - ReadabilityKit
   - RealmSwift
@@ -48,6 +50,7 @@ SPEC REPOS:
     - Ji
     - ModelMapper
     - Moya
+    - PluggableAppDelegate
     - R.swift
     - R.swift.Library
     - ReadabilityKit
@@ -74,6 +77,7 @@ SPEC CHECKSUMS:
   Ji: d795fed288fe78658b404c88946d753b17d8d7f4
   ModelMapper: a8dbf2a2003bf626627b9fe7c9a22b3405a30404
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  PluggableAppDelegate: 94c85bf821d85661c843a86e1aafe0cc12a62634
   R.swift: 7c52cdc57a66840ffe6cbd8a823d732059d42a32
   R.swift.Library: 5ba4f1631300caf9a4d890186930da85d540769d
   ReadabilityKit: 09e8b2ecb3d06f17f4c856e426c34f9016e86e6f
@@ -83,6 +87,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 2de82ef562f5282bcfa2510356d938c5ed4f660d
+PODFILE CHECKSUM: 53fd23f6e4ef27c9669632f6a27d8e8cfb764871
 
 COCOAPODS: 1.9.2

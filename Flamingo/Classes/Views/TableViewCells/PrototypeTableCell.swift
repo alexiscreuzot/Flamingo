@@ -14,7 +14,7 @@ class PrototypeTableCellContent: NSObject {
     var payload: Any?
     var height: CGFloat = 50
     var estimatedHeight: CGFloat = UITableView.automaticDimension
-    var backgroundColor: UIColor = .clear
+    var backgroundColor: UIColor = UIColor.systemBackground
 
     var reuseIdentifier : String {
         get {
@@ -34,14 +34,13 @@ class PrototypeTableCell : UITableViewCell, PrototypeTableCellProtocol {
     func setPrototypeContent(_ content: PrototypeTableCellContent) {
         self.cellContent = content
         self.backgroundColor = self.cellContent.backgroundColor
-        self.contentView.backgroundColor = self.cellContent.backgroundColor
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let selView = UIView()
-        selView.backgroundColor = UIColor(white: 0, alpha: 0.1)
+        selView.backgroundColor = UIColor.label.withAlphaComponent(0.05)
         self.selectedBackgroundView = selView
         
         self.selectionStyle = .none

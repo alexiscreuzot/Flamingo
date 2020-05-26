@@ -6,38 +6,26 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 def shared_pods
 
-    # Util
+    # Architecture
+    pod 'PluggableAppDelegate'
     pod 'R.swift'
-    pod 'SDWebImage'
-    pod 'HTMLString'
-    pod 'Attributed'
-    pod 'SVProgressHUD'
 
-    # Networking
+    # Data
     pod 'HNScraper', :git => 'https://github.com/weiran/HNScraper'
     pod 'Moya'
     pod 'ModelMapper'
     pod 'RealmSwift'
+    pod 'ReadabilityKit'
 
     # Components
+    pod 'SDWebImage'
+    pod 'HTMLString'
+    pod 'Attributed'
+    pod 'SVProgressHUD'
     pod 'TTTAttributedLabel'
-    pod 'ReadabilityKit'
 
 end
 
 target 'Flamingo' do
     shared_pods
-end
-
-post_install do |installer|
-    # puts "-> Post install changes"
-    # installer.pods_project.targets.each do |target|
-    #     target.build_configurations.each do |config|
-    #         if ['HNScraper'].include? target.name
-    #             config.build_settings['SWIFT_VERSION'] =  '4.0'
-    #             config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Owholemodule'
-    #         end
-    #     end
-    # end
-    # puts "-> Done"
 end

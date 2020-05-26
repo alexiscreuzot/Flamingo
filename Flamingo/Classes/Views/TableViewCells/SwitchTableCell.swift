@@ -14,10 +14,9 @@ class SwitchTableCellContent: PrototypeTableCellContent {
     
     var attributedTitle : NSAttributedString?
     var title = ""
-    var titleColor = UIColor.black
     var isOn = false
     var switchAction : SwitchBlock?
-    var tint: UIColor = UIColor.green
+    var tint: UIColor?
     
     convenience init(title: String, isOn : Bool, switchAction : SwitchBlock?) {
         self.init(SwitchTableCell.self)
@@ -41,14 +40,15 @@ class SwitchTableCell: PrototypeTableCell {
     override func setPrototypeContent(_ content: PrototypeTableCellContent) {
         super.setPrototypeContent(content)
         if let content = content as? SwitchTableCellContent {
-            self.titleLabel.textColor = content.titleColor
             if let attributedTitle = content.attributedTitle {
                 self.titleLabel.attributedText = attributedTitle
             } else {
                 self.titleLabel.text = content.title
             }
+            if let tint = content.tint {
+                self.swithView.onTintColor = tint
+            }
             self.swithView.setOn(content.isOn, animated: false)
-            self.swithView.onTintColor = content.tint
         }
     }
     

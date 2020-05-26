@@ -7,34 +7,29 @@
 //
 
 import Foundation
+import PluggableAppDelegate
+import RealmSwift
 
-struct LocalData {
+final class LocalDataService: NSObject, ApplicationService {
     
-    enum LocalDataKeys : String, CodingKey{
-        case hasSetSources
-        case theme
-    }
+    static let shared = LocalDataService()
     
-    public static var hasSetSources : Bool {
-        get {
-            return  (UserDefaults.standard.value(forKey: LocalDataKeys.hasSetSources.rawValue) as? Bool)
-                    ?? false
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        var config = Realm.Configuration()
+        config.deleteRealmIfMigrationNeeded = true
+        Realm.Configuration.defaultConfiguration = config
+        
+        // Init sources if needed
+        let realm = try! Realm()
+        let localSources = realm.objects(Source.self)
+        if localSources.isEmpty {
+            JSONSerializer.serializeSources()
         }
-        set {
-            UserDefaults.standard.set(newValue, forKey: LocalDataKeys.hasSetSources.rawValue)
-            UserDefaults.standard.synchronize()
-        }
-    }
-    
-    public static var theme : Theme {
-        get {
-            let themeValue = UserDefaults.standard.integer(forKey: LocalDataKeys.theme.rawValue)
-            return  Theme(rawValue: themeValue) ?? Theme.day
-        }
-        set {
-            UserDefaults.standard.set(newValue.rawValue, forKey: LocalDataKeys.theme.rawValue)
-            UserDefaults.standard.synchronize()
-        }
+        
+        print("🚀 LocalDataService has started!")
+                
+        return true
     }
     
 }

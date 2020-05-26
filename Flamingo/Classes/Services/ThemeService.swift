@@ -8,106 +8,87 @@
 
 import Foundation
 import UIKit
+import PluggableAppDelegate
 
-extension Notification.Name {
-    static let themeDidChangeNotification = Notification.Name("themeDidChangeNotification")
-}
-
-protocol Themable : NSObjectProtocol {
-    func registerForThemeChange()
-    func themeDidChange()
-}
-
-extension Themable {
-    func registerForThemeChange(){
-        guard !Theme.themables.contains(where: { $0 === self}) else {
-            return
-        }
-        Theme.themables.append(self)
-        self.themeDidChange()
-    }
-}
-
-class ThemeStyle {
-    var statusBarStyle : UIStatusBarStyle = .default
-    var blurEffectStyle : UIBlurEffect.Style = .light
-    var navigationBarStyle : UIBarStyle = .default
-    var backgroundColor : UIColor = UIColor(white: 0.98, alpha: 1.0)
-    var secondaryBackgroundColor : UIColor = UIColor(white: 0.9, alpha: 1.0)
-    var textColor : UIColor = .black
-    var secondaryTextColor : UIColor = UIColor(white: 0.65, alpha: 1.0)
-    var accentColor : UIColor = .orange
-    var secondaryAccentColor : UIColor = .green
+enum Theme : String, CaseIterable, Codable {
+    case auto
+    case dark
+    case light
     
-    var loadingStyle : UIActivityIndicatorView.Style {
-        return blurEffectStyle == .light ? .gray : .white
-    }
-}
-
-enum Theme : Int, CaseIterable {
-    case day
-    case night
-    case space
-    
-    var name : String {
+    var localized : String {
         switch self {
-        case .day:
-            return "Default"
-        case .night:
-            return "Night"
-        case .space:
-            return "Space"
+        case .auto:
+            return i18n.settings_general_theme_auto()
+        case .dark:
+            return i18n.settings_general_theme_dark()
+        case .light:
+            return i18n.settings_general_theme_light()
         }
     }
     
-    static var current : Theme {
-        get {
-            return LocalData.theme
-        }
-        set {
-            LocalData.theme = newValue
-            for themable in self.themables {
-                themable.themeDidChange()
-            }
+    var statusBarStyle : UIStatusBarStyle {
+        switch self {
+        case .auto:
+            return .default
+        case .dark:
+            return .lightContent
+        case .light:
+            return .darkContent
         }
     }
+}
+
+final class ThemeService: NSObject, ApplicationService {
     
-    static var isNight : Bool {
-        return self.current == .night
-    }
-    static var themables = [Themable]()
+    static let shared = ThemeService()
     
-    var style : ThemeStyle {
-        get {
-            switch self {
-            case .day:
-                return ThemeStyle() // default is day
-            case .night:
-                let theme = ThemeStyle()
-                theme.statusBarStyle = .lightContent
-                theme.blurEffectStyle = .dark
-                theme.navigationBarStyle = .black
-                theme.backgroundColor = .black
-                theme.secondaryBackgroundColor = UIColor(white: 0.05, alpha: 1.0)
-                theme.textColor = .white
-                theme.secondaryTextColor = UIColor(white: 0.4, alpha: 1.0)
-                return theme
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        print("🚀 ThemeService has started!")
+        
+//        self.printAvailableFonts()
+        self.updateTheme()
+        self.styleUIKit()
                 
-            case .space:
-                let theme = ThemeStyle()
-                theme.statusBarStyle = .lightContent
-                theme.blurEffectStyle = .dark
-                theme.navigationBarStyle = .black
-                theme.backgroundColor = UIColor(hex: "303030")
-                theme.secondaryBackgroundColor = UIColor(hex: "262626")
-                theme.textColor = UIColor(hex: "F6F6F6")
-                theme.secondaryTextColor = UIColor(hex: "CDCDCD")
-                theme.accentColor = UIColor(hex: "B55DFB")
-                theme.secondaryAccentColor = UIColor(hex: "7BA0FC")
-                return theme
+        return true
+    }
+    
+    func printAvailableFonts() {
+        UIFont.familyNames.sorted().forEach({ familyName in
+            let fontNames = UIFont.fontNames(forFamilyName: familyName).sorted()
+            print(familyName, fontNames)
+        })
+    }
+    
+    func styleUIKit() {
+        UINavigationBar.appearance().tintColor = UIColor.label
+        UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.label],
+                                                            for: .normal)
+        UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.secondaryLabel],
+                                                            for: .highlighted)
+    }
+    
+    
+    func updateTheme() {
+        let currentTheme = CustomPreferences.colorTheme
+        print("Set theme to \(currentTheme)")
+        switch currentTheme {
+        case .auto:
+            UIApplication.shared.windows.forEach { window in
+                window.overrideUserInterfaceStyle = .unspecified
             }
+            break
+        case .dark:
+            UIApplication.shared.windows.forEach { window in
+                window.overrideUserInterfaceStyle = .dark
+            }
+            break
+        case .light:
+            UIApplication.shared.windows.forEach { window in
+                window.overrideUserInterfaceStyle = .light
+            }
+            break
         }
     }
     
 }
-

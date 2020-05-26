@@ -39,7 +39,7 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
         
         self.bodyTextLabel.enabledTextCheckingTypes = NSTextCheckingResult.CheckingType.link.rawValue
         self.bodyTextLabel.delegate = self
-        self.bodyTextLabel.linkAttributes = [NSAttributedString.Key.foregroundColor: Theme.current.style.accentColor]
+        self.bodyTextLabel.linkAttributes = [NSAttributedString.Key.foregroundColor: CustomColor.primary]
         
         // Create levels
         for _ in 1...CommentCell.MaxLevels {
@@ -67,14 +67,7 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
     }
     
     func setComment(_ comment: HNComment, isCollapser : Bool = false) {
-        
-        self.selectedBackgroundView?.backgroundColor = Theme.current.style.secondaryBackgroundColor
-        
-        self.backgroundColor = Theme.current.style.backgroundColor
-        self.contentView.backgroundColor = Theme.current.style.backgroundColor
-        self.holderView.backgroundColor = Theme.current.style.backgroundColor
-        self.topLabel.textColor = Theme.current.style.textColor
-        
+                
         let level = min(comment.level + 1, CommentCell.MaxLevels)
         let leftInset = CGFloat(level) * CommentCell.LevelOffset
         self.leftMarginConstraint.constant = leftInset
@@ -83,7 +76,7 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
         let username = comment.username ?? i18n.articleCommentsCommentAnonymous()
         self.topLabel.text = username.removingHTMLEntities
         
-        let color = isCollapser ? Theme.current.style.accentColor : Theme.current.style.textColor
+        let color = isCollapser ? CustomColor.primary : .label
         self.selectionStyle = isCollapser ? .default : .none
         for level in self.levelViews {
             level.backgroundColor = color
@@ -95,15 +88,13 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
         } else {
             self.createdLabel.text = nil
         }
-        self.createdLabel.textColor = Theme.current.style.secondaryTextColor
         
         // Body
         var content = comment.text ?? ""
         content.removingRegexMatches(pattern: "(<p>|</p>)", replaceWith: "\n\n")
  
-        
         let attributes:[NSAttributedString.Key : Any] = [.font: self.bodyTextLabel.font!,
-                                                        .foregroundColor: Theme.current.style.secondaryTextColor]
+                                                         .foregroundColor: UIColor.secondaryLabel]
         let modifier = modifierWithBaseAttributes(attributes, modifiers: [])
         let contentAttString = NSAttributedString.attributedStringFromMarkup(content, withModifier: modifier)
         self.bodyTextLabel.setText(contentAttString)

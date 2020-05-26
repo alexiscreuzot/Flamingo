@@ -8,30 +8,18 @@
 
 import UIKit
 import RealmSwift
+import PluggableAppDelegate
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+class AppDelegate: PluggableApplicationDelegate {
     
-    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        
-        var config = Realm.Configuration()
-        config.deleteRealmIfMigrationNeeded = true
-        Realm.Configuration.defaultConfiguration = config
-        
-        // Init sources if needed
-        let realm = try! Realm()
-        let localSources = realm.objects(Source.self)
-        if localSources.isEmpty {
-            JSONSerializer.serializeSources()
-        }
-        
-        print(Sources.toJSON())
-        
-        return true
+    override var services: [ApplicationService] {
+        return [
+            ThemeService.shared,
+            LocalDataService.shared,
+            RoutingService.shared
+        ]
     }
-
     
 }
 

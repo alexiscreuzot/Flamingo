@@ -47,10 +47,7 @@ class ArticleDefaultCell: UITableViewCell {
     // MARK: - Logic
     
     func setPost(_ post : FlamingoPost, highlightComment: Bool = true) {
-        
-        self.selectedBackgroundView?.backgroundColor = Theme.current.style.secondaryBackgroundColor
-        
-        self.applyTheme()
+                
         self.topInfoTopMarginConstraint.constant = (post.row == 0) ? 30 : 16
         
         if let subtitle = post.preview?.excerpt, !subtitle.isEmpty, subtitle != "null" {
@@ -75,15 +72,9 @@ class ArticleDefaultCell: UITableViewCell {
                                                                              withPointSize: self.commentsButton.titleLabel!.font.pointSize,
                                                                              highlightComment: true), for: .normal)
         self.commentsButton.isHidden = (post.hnPost.commentCount  == 0)
-        self.contentView.alpha = post.isRead ? 0.3 : 1.0
+        self.contentView.alpha = post.isRead ? 0.5 : 1.0
     }
     
-    func applyTheme() {
-        self.backgroundColor = Theme.current.style.backgroundColor
-        self.contentView.backgroundColor = Theme.current.style.backgroundColor
-        self.titleLabel.textColor = Theme.current.style.textColor
-        self.middleLabel.textColor = Theme.current.style.secondaryTextColor
-    }
     
     // MARK: - Actions
 
@@ -93,9 +84,6 @@ class ArticleDefaultCell: UITableViewCell {
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        
-        self.topInfoLabel.backgroundColor = Theme.current.style.textColor
-        self.topInfoLabel.textColor = Theme.current.style.backgroundColor
     }
     
     @IBAction func selectComments() {

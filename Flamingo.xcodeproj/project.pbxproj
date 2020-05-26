@@ -19,6 +19,26 @@
 		FA50E7A1200670D2008C28C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA50E79F200670D2008C28C1 /* LaunchScreen.storyboard */; };
 		FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E7B420067A24008C28C1 /* R.generated.swift */; };
 		FA50E7BD20067ABB008C28C1 /* ArticleDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */; };
+		FA8886B4247D37AB0060F4C7 /* CustomNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886AE247D37AB0060F4C7 /* CustomNotifications.swift */; };
+		FA8886B5247D37AB0060F4C7 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886AF247D37AB0060F4C7 /* CustomColors.swift */; };
+		FA8886B6247D37AB0060F4C7 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886B0247D37AB0060F4C7 /* CustomError.swift */; };
+		FA8886B7247D37AB0060F4C7 /* CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886B1247D37AB0060F4C7 /* CustomFont.swift */; };
+		FA8886B8247D37AB0060F4C7 /* CustomPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886B2247D37AB0060F4C7 /* CustomPreferences.swift */; };
+		FA8886BA247D37E90060F4C7 /* MaterialIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886B9247D37E90060F4C7 /* MaterialIcon.swift */; };
+		FA8886BE247D39E00060F4C7 /* RoutingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886BD247D39E00060F4C7 /* RoutingService.swift */; };
+		FA8886C1247D3B0A0060F4C7 /* CoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886BF247D3B090060F4C7 /* CoreVC.swift */; };
+		FA8886C2247D3B0A0060F4C7 /* CoreNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886C0247D3B090060F4C7 /* CoreNVC.swift */; };
+		FA8886C4247D3B4A0060F4C7 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886C3247D3B4A0060F4C7 /* UIColor+Extensions.swift */; };
+		FA8886C6247D3E390060F4C7 /* PropertyWrappers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8886C5247D3E390060F4C7 /* PropertyWrappers.swift */; };
+		FA8886D3247D40960060F4C7 /* demo.css in Resources */ = {isa = PBXBuildFile; fileRef = FA8886C9247D40960060F4C7 /* demo.css */; };
+		FA8886D4247D40960060F4C7 /* demo.js in Resources */ = {isa = PBXBuildFile; fileRef = FA8886CA247D40960060F4C7 /* demo.js */; };
+		FA8886D5247D40960060F4C7 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = FA8886CB247D40960060F4C7 /* style.css */; };
+		FA8886D6247D40960060F4C7 /* selection.json in Resources */ = {isa = PBXBuildFile; fileRef = FA8886CC247D40960060F4C7 /* selection.json */; };
+		FA8886D7247D40960060F4C7 /* Read Me.txt in Resources */ = {isa = PBXBuildFile; fileRef = FA8886CD247D40960060F4C7 /* Read Me.txt */; };
+		FA8886D8247D40960060F4C7 /* demo.html in Resources */ = {isa = PBXBuildFile; fileRef = FA8886CE247D40960060F4C7 /* demo.html */; };
+		FA8886D9247D40960060F4C7 /* material-icons.woff in Resources */ = {isa = PBXBuildFile; fileRef = FA8886D0247D40960060F4C7 /* material-icons.woff */; };
+		FA8886DA247D40960060F4C7 /* material-icons.svg in Resources */ = {isa = PBXBuildFile; fileRef = FA8886D1247D40960060F4C7 /* material-icons.svg */; };
+		FA8886DB247D40960060F4C7 /* material-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8886D2247D40960060F4C7 /* material-icons.ttf */; };
 		FAA4E4262007829E00D2D88C /* ArticlesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E798200670D2008C28C1 /* ArticlesListVC.swift */; };
 		FAB10E1420213F0C00F60594 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1320213F0C00F60594 /* Preview.swift */; };
 		FAB10E1B20214C2600F60594 /* Response+ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */; };
@@ -31,7 +51,6 @@
 		FAB838E92028B70700DBFEF7 /* FontIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838E82028B70700DBFEF7 /* FontIcon.swift */; };
 		FAB838EB2028CFF500DBFEF7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EA2028CFF500DBFEF7 /* Constants.swift */; };
 		FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */; };
-		FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */; };
 		FAC2E14320C9112000CFF541 /* flamingo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAC2E14220C9112000CFF541 /* flamingo.ttf */; };
 		FACE2FEA2020C0E4003BBAD0 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */; };
 		FAD15549215D0DBD0045001A /* sources.json in Resources */ = {isa = PBXBuildFile; fileRef = FAD15548215D0DBD0045001A /* sources.json */; };
@@ -64,6 +83,26 @@
 		FA50E7A2200670D2008C28C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA50E7B420067A24008C28C1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDefaultCell.swift; sourceTree = "<group>"; };
+		FA8886AE247D37AB0060F4C7 /* CustomNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNotifications.swift; sourceTree = "<group>"; };
+		FA8886AF247D37AB0060F4C7 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
+		FA8886B0247D37AB0060F4C7 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		FA8886B1247D37AB0060F4C7 /* CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFont.swift; sourceTree = "<group>"; };
+		FA8886B2247D37AB0060F4C7 /* CustomPreferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPreferences.swift; sourceTree = "<group>"; };
+		FA8886B9247D37E90060F4C7 /* MaterialIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialIcon.swift; sourceTree = "<group>"; };
+		FA8886BD247D39E00060F4C7 /* RoutingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutingService.swift; sourceTree = "<group>"; };
+		FA8886BF247D3B090060F4C7 /* CoreVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreVC.swift; sourceTree = "<group>"; };
+		FA8886C0247D3B090060F4C7 /* CoreNVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreNVC.swift; sourceTree = "<group>"; };
+		FA8886C3247D3B4A0060F4C7 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		FA8886C5247D3E390060F4C7 /* PropertyWrappers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyWrappers.swift; sourceTree = "<group>"; };
+		FA8886C9247D40960060F4C7 /* demo.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = demo.css; sourceTree = "<group>"; };
+		FA8886CA247D40960060F4C7 /* demo.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = demo.js; sourceTree = "<group>"; };
+		FA8886CB247D40960060F4C7 /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		FA8886CC247D40960060F4C7 /* selection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = selection.json; sourceTree = "<group>"; };
+		FA8886CD247D40960060F4C7 /* Read Me.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Read Me.txt"; sourceTree = "<group>"; };
+		FA8886CE247D40960060F4C7 /* demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = demo.html; sourceTree = "<group>"; };
+		FA8886D0247D40960060F4C7 /* material-icons.woff */ = {isa = PBXFileReference; lastKnownFileType = file; path = "material-icons.woff"; sourceTree = "<group>"; };
+		FA8886D1247D40960060F4C7 /* material-icons.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "material-icons.svg"; sourceTree = "<group>"; };
+		FA8886D2247D40960060F4C7 /* material-icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "material-icons.ttf"; sourceTree = "<group>"; };
 		FAB10E1320213F0C00F60594 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ModelMapper.swift"; sourceTree = "<group>"; };
 		FAB2599A20C728BB00B94ECA /* ArticleList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleList.storyboard; sourceTree = "<group>"; };
@@ -75,7 +114,6 @@
 		FAB838E82028B70700DBFEF7 /* FontIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontIcon.swift; sourceTree = "<group>"; };
 		FAB838EA2028CFF500DBFEF7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamingoPost.swift; sourceTree = "<group>"; };
-		FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamingoNVC.swift; sourceTree = "<group>"; };
 		FAC2E14220C9112000CFF541 /* flamingo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = flamingo.ttf; sourceTree = "<group>"; };
 		FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
 		FAD15548215D0DBD0045001A /* sources.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sources.json; sourceTree = "<group>"; };
@@ -122,7 +160,7 @@
 		FA0C8FE32024A77400818EB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FAD1554A215D14AF0045001A /* JSONSerializer.swift */,
+				FA8886BD247D39E00060F4C7 /* RoutingService.swift */,
 				FAD1554C215D16A50045001A /* LocalDataService.swift */,
 				FAB32CF12163C046003EE9C4 /* ThemeService.swift */,
 			);
@@ -132,6 +170,7 @@
 		FA2F8854202B679900603EAF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FA8886C3247D3B4A0060F4C7 /* UIColor+Extensions.swift */,
 				FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */,
 				FA2F8852202B677200603EAF /* UIKit+Extensions.swift */,
 				FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */,
@@ -186,6 +225,8 @@
 		FA50E7AA200677B5008C28C1 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FA8886C5247D3E390060F4C7 /* PropertyWrappers.swift */,
+				FAD1554A215D14AF0045001A /* JSONSerializer.swift */,
 				FAB838E82028B70700DBFEF7 /* FontIcon.swift */,
 				FA2F8854202B679900603EAF /* Extensions */,
 			);
@@ -195,6 +236,7 @@
 		FA50E7AC200677D2008C28C1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FA8886C7247D40960060F4C7 /* material-icons */,
 				FAC2E14220C9112000CFF541 /* flamingo.ttf */,
 				FA2F8851202B641A00603EAF /* Localizable.strings */,
 				FA50E79D200670D2008C28C1 /* Assets.xcassets */,
@@ -209,6 +251,7 @@
 			children = (
 				FA50E796200670D2008C28C1 /* AppDelegate.swift */,
 				FAB838EA2028CFF500DBFEF7 /* Constants.swift */,
+				FA8886AC247D37AB0060F4C7 /* Core */,
 				FA0C8FE32024A77400818EB4 /* Services */,
 				FAB10E1520213F1500F60594 /* Models */,
 				FA50E7A8200677AA008C28C1 /* Controllers */,
@@ -241,6 +284,51 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FA8886AC247D37AB0060F4C7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FA8886B9247D37E90060F4C7 /* MaterialIcon.swift */,
+				FA8886AE247D37AB0060F4C7 /* CustomNotifications.swift */,
+				FA8886AF247D37AB0060F4C7 /* CustomColors.swift */,
+				FA8886B0247D37AB0060F4C7 /* CustomError.swift */,
+				FA8886B1247D37AB0060F4C7 /* CustomFont.swift */,
+				FA8886B2247D37AB0060F4C7 /* CustomPreferences.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FA8886C7247D40960060F4C7 /* material-icons */ = {
+			isa = PBXGroup;
+			children = (
+				FA8886C8247D40960060F4C7 /* demo-files */,
+				FA8886CB247D40960060F4C7 /* style.css */,
+				FA8886CC247D40960060F4C7 /* selection.json */,
+				FA8886CD247D40960060F4C7 /* Read Me.txt */,
+				FA8886CE247D40960060F4C7 /* demo.html */,
+				FA8886CF247D40960060F4C7 /* fonts */,
+			);
+			path = "material-icons";
+			sourceTree = "<group>";
+		};
+		FA8886C8247D40960060F4C7 /* demo-files */ = {
+			isa = PBXGroup;
+			children = (
+				FA8886C9247D40960060F4C7 /* demo.css */,
+				FA8886CA247D40960060F4C7 /* demo.js */,
+			);
+			path = "demo-files";
+			sourceTree = "<group>";
+		};
+		FA8886CF247D40960060F4C7 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FA8886D0247D40960060F4C7 /* material-icons.woff */,
+				FA8886D1247D40960060F4C7 /* material-icons.svg */,
+				FA8886D2247D40960060F4C7 /* material-icons.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		FAB10E1520213F1500F60594 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,8 +353,9 @@
 		FAFCD16420CCFB1D00BDFC5F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				FA8886BF247D3B090060F4C7 /* CoreVC.swift */,
+				FA8886C0247D3B090060F4C7 /* CoreNVC.swift */,
 				FAB2599E20C72C6A00B94ECA /* MainTabController.swift */,
-				FAB838EE2028D52B00DBFEF7 /* FlamingoNVC.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -335,14 +424,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2F884F202B641A00603EAF /* Localizable.strings in Resources */,
+				FA8886D5247D40960060F4C7 /* style.css in Resources */,
 				FAD15549215D0DBD0045001A /* sources.json in Resources */,
+				FA8886D7247D40960060F4C7 /* Read Me.txt in Resources */,
+				FA8886D8247D40960060F4C7 /* demo.html in Resources */,
+				FA8886D4247D40960060F4C7 /* demo.js in Resources */,
 				FA50E7A1200670D2008C28C1 /* LaunchScreen.storyboard in Resources */,
 				FA50E79E200670D2008C28C1 /* Assets.xcassets in Resources */,
+				FA8886DB247D40960060F4C7 /* material-icons.ttf in Resources */,
+				FA8886D6247D40960060F4C7 /* selection.json in Resources */,
 				FAB2599D20C728CC00B94ECA /* ArticleComments.storyboard in Resources */,
 				FA50E79C200670D2008C28C1 /* Main.storyboard in Resources */,
+				FA8886D9247D40960060F4C7 /* material-icons.woff in Resources */,
+				FA8886D3247D40960060F4C7 /* demo.css in Resources */,
 				FAB2599B20C728BB00B94ECA /* ArticleList.storyboard in Resources */,
 				FA055AC620C97F85007FB8D3 /* SettingsVC.storyboard in Resources */,
 				FAC2E14320C9112000CFF541 /* flamingo.ttf in Resources */,
+				FA8886DA247D40960060F4C7 /* material-icons.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +483,7 @@
 				"${BUILT_PRODUCTS_DIR}/Ji/Ji.framework",
 				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/PluggableAppDelegate/PluggableAppDelegate.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/ReadabilityKit/ReadabilityKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -402,6 +501,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ji.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PluggableAppDelegate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReadabilityKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -425,7 +525,7 @@
 			);
 			name = RSwift;
 			outputPaths = (
-				"$SRCROOT/Flamingo/R.generated.swift",
+				$SRCROOT/Flamingo/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -439,31 +539,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA055AC820C97FA0007FB8D3 /* SettingsVC.swift in Sources */,
+				FA8886B8247D37AB0060F4C7 /* CustomPreferences.swift in Sources */,
 				FA50E7BD20067ABB008C28C1 /* ArticleDefaultCell.swift in Sources */,
 				FAB838E92028B70700DBFEF7 /* FontIcon.swift in Sources */,
+				FA8886BE247D39E00060F4C7 /* RoutingService.swift in Sources */,
 				FA2F8853202B677200603EAF /* UIKit+Extensions.swift in Sources */,
 				FACE2FEA2020C0E4003BBAD0 /* Foundation+Extensions.swift in Sources */,
+				FA8886C4247D3B4A0060F4C7 /* UIColor+Extensions.swift in Sources */,
 				FAD1554D215D16A50045001A /* LocalDataService.swift in Sources */,
 				FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */,
 				FAD1554F215D24F60045001A /* Error+Flamingo.swift in Sources */,
 				FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */,
 				FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */,
 				FAD15551215D36E70045001A /* SimpleTableCell.swift in Sources */,
+				FA8886B4247D37AB0060F4C7 /* CustomNotifications.swift in Sources */,
 				FAE931DB20C9929F00FB0A78 /* PrototypeTableCell.swift in Sources */,
 				FAE931D820C991FE00FB0A78 /* Source.swift in Sources */,
-				FAB838EF2028D52B00DBFEF7 /* FlamingoNVC.swift in Sources */,
 				FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */,
+				FA8886C2247D3B0A0060F4C7 /* CoreNVC.swift in Sources */,
+				FA8886B5247D37AB0060F4C7 /* CustomColors.swift in Sources */,
+				FA8886C6247D3E390060F4C7 /* PropertyWrappers.swift in Sources */,
 				FAB838E5202899AF00DBFEF7 /* CommentCell.swift in Sources */,
 				FAD1554B215D14AF0045001A /* JSONSerializer.swift in Sources */,
 				FAE931E220C9A68000FB0A78 /* TitleSeparatorCell.swift in Sources */,
 				FAE931DD20C992AA00FB0A78 /* SwitchTableCell.swift in Sources */,
 				FAB10E1420213F0C00F60594 /* Preview.swift in Sources */,
+				FA8886C1247D3B0A0060F4C7 /* CoreVC.swift in Sources */,
 				FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */,
 				FAB838E3202893E500DBFEF7 /* ArticleCommentsVC.swift in Sources */,
 				FAB2599F20C72C6A00B94ECA /* MainTabController.swift in Sources */,
 				FAB32CF22163C046003EE9C4 /* ThemeService.swift in Sources */,
+				FA8886BA247D37E90060F4C7 /* MaterialIcon.swift in Sources */,
+				FA8886B6247D37AB0060F4C7 /* CustomError.swift in Sources */,
 				FAB10E1B20214C2600F60594 /* Response+ModelMapper.swift in Sources */,
 				FAA4E4262007829E00D2D88C /* ArticlesListVC.swift in Sources */,
+				FA8886B7247D37AB0060F4C7 /* CustomFont.swift in Sources */,
 				FAB838EB2028CFF500DBFEF7 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -548,7 +658,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -601,7 +711,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -619,7 +729,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAMD7Q9KYY;
 				INFOPLIST_FILE = "$(SRCROOT)/Flamingo/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiscreuzot.flamingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -640,7 +750,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAMD7Q9KYY;
 				INFOPLIST_FILE = "$(SRCROOT)/Flamingo/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexiscreuzot.flamingo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

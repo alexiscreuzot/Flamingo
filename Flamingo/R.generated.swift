@@ -166,16 +166,110 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.color` struct is generated, and contains static references to 2 colors.
+  struct color {
+    /// Color `primary`.
+    static let primary = Rswift.ColorResource(bundle: R.hostingBundle, name: "primary")
+    /// Color `secondary`.
+    static let secondary = Rswift.ColorResource(bundle: R.hostingBundle, name: "secondary")
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "primary", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func primary(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.primary, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "secondary", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func secondary(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.secondary, compatibleWith: traitCollection)
+    }
+    #endif
+
+    fileprivate init() {}
+  }
+
+  /// This `R.file` struct is generated, and contains static references to 11 files.
   struct file {
+    /// Resource file `Read Me.txt`.
+    static let readMeTxt = Rswift.FileResource(bundle: R.hostingBundle, name: "Read Me", pathExtension: "txt")
+    /// Resource file `demo.css`.
+    static let demoCss = Rswift.FileResource(bundle: R.hostingBundle, name: "demo", pathExtension: "css")
+    /// Resource file `demo.html`.
+    static let demoHtml = Rswift.FileResource(bundle: R.hostingBundle, name: "demo", pathExtension: "html")
+    /// Resource file `demo.js`.
+    static let demoJs = Rswift.FileResource(bundle: R.hostingBundle, name: "demo", pathExtension: "js")
     /// Resource file `flamingo.ttf`.
     static let flamingoTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "flamingo", pathExtension: "ttf")
+    /// Resource file `material-icons.svg`.
+    static let materialIconsSvg = Rswift.FileResource(bundle: R.hostingBundle, name: "material-icons", pathExtension: "svg")
+    /// Resource file `material-icons.ttf`.
+    static let materialIconsTtf = Rswift.FileResource(bundle: R.hostingBundle, name: "material-icons", pathExtension: "ttf")
+    /// Resource file `material-icons.woff`.
+    static let materialIconsWoff = Rswift.FileResource(bundle: R.hostingBundle, name: "material-icons", pathExtension: "woff")
+    /// Resource file `selection.json`.
+    static let selectionJson = Rswift.FileResource(bundle: R.hostingBundle, name: "selection", pathExtension: "json")
     /// Resource file `sources.json`.
     static let sourcesJson = Rswift.FileResource(bundle: R.hostingBundle, name: "sources", pathExtension: "json")
+    /// Resource file `style.css`.
+    static let styleCss = Rswift.FileResource(bundle: R.hostingBundle, name: "style", pathExtension: "css")
+
+    /// `bundle.url(forResource: "Read Me", withExtension: "txt")`
+    static func readMeTxt(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.readMeTxt
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "demo", withExtension: "css")`
+    static func demoCss(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.demoCss
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "demo", withExtension: "html")`
+    static func demoHtml(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.demoHtml
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "demo", withExtension: "js")`
+    static func demoJs(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.demoJs
+      return fileResource.bundle.url(forResource: fileResource)
+    }
 
     /// `bundle.url(forResource: "flamingo", withExtension: "ttf")`
     static func flamingoTtf(_: Void = ()) -> Foundation.URL? {
       let fileResource = R.file.flamingoTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "material-icons", withExtension: "svg")`
+    static func materialIconsSvg(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.materialIconsSvg
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "material-icons", withExtension: "ttf")`
+    static func materialIconsTtf(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.materialIconsTtf
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "material-icons", withExtension: "woff")`
+    static func materialIconsWoff(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.materialIconsWoff
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "selection", withExtension: "json")`
+    static func selectionJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.selectionJson
       return fileResource.bundle.url(forResource: fileResource)
     }
 
@@ -185,21 +279,35 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "style", withExtension: "css")`
+    static func styleCss(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.styleCss
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     fileprivate init() {}
   }
 
-  /// This `R.font` struct is generated, and contains static references to 1 fonts.
+  /// This `R.font` struct is generated, and contains static references to 2 fonts.
   struct font: Rswift.Validatable {
     /// Font `flamingo`.
     static let flamingo = Rswift.FontResource(fontName: "flamingo")
+    /// Font `material-icons`.
+    static let materialIcons = Rswift.FontResource(fontName: "material-icons")
 
     /// `UIFont(name: "flamingo", size: ...)`
     static func flamingo(size: CGFloat) -> UIKit.UIFont? {
       return UIKit.UIFont(resource: flamingo, size: size)
     }
 
+    /// `UIFont(name: "material-icons", size: ...)`
+    static func materialIcons(size: CGFloat) -> UIKit.UIFont? {
+      return UIKit.UIFont(resource: materialIcons, size: size)
+    }
+
     static func validate() throws {
       if R.font.flamingo(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'flamingo' could not be loaded, is 'flamingo.ttf' added to the UIAppFonts array in this targets Info.plist?") }
+      if R.font.materialIcons(size: 42) == nil { throw Rswift.ValidationError(description:"[R.swift] Font 'material-icons' could not be loaded, is 'material-icons.ttf' added to the UIAppFonts array in this targets Info.plist?") }
     }
 
     fileprivate init() {}
@@ -276,12 +384,28 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 28 localization keys.
     struct localizable {
       /// en translation: Anonymous
       ///
       /// Locales: en
       static let articleCommentsCommentAnonymous = Rswift.StringResource(key: "ArticleComments/Comment/Anonymous", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Auto
+      ///
+      /// Locales: en
+      static let settings_general_theme_auto = Rswift.StringResource(key: "settings_general_theme_auto", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Cancel
+      ///
+      /// Locales: en
+      static let commonCancel = Rswift.StringResource(key: "Common/Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Confirm
+      ///
+      /// Locales: en
+      static let commonConfirm = Rswift.StringResource(key: "Common/Confirm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Continue
+      ///
+      /// Locales: en
+      static let commonContinue = Rswift.StringResource(key: "Common/Continue", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Couldn't load comments :(
       ///
       /// Locales: en
@@ -290,10 +414,46 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let articlesListLoadingFailed = Rswift.StringResource(key: "ArticlesList/LoadingFailed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Dark
+      ///
+      /// Locales: en
+      static let settings_general_theme_dark = Rswift.StringResource(key: "settings_general_theme_dark", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Delete
+      ///
+      /// Locales: en
+      static let commonDelete = Rswift.StringResource(key: "Common/Delete", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: en
+      static let commonDone = Rswift.StringResource(key: "Common/Done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Error
+      ///
+      /// Locales: en
+      static let commonError = Rswift.StringResource(key: "Common/Error", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Export
+      ///
+      /// Locales: en
+      static let commonExport = Rswift.StringResource(key: "Common/Export", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Light
+      ///
+      /// Locales: en
+      static let settings_general_theme_light = Rswift.StringResource(key: "settings_general_theme_light", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Loading comments...
       ///
       /// Locales: en
       static let articleCommentsLoading = Rswift.StringResource(key: "ArticleComments/Loading", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Move
+      ///
+      /// Locales: en
+      static let commonMove = Rswift.StringResource(key: "Common/Move", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Next
+      ///
+      /// Locales: en
+      static let commonNext = Rswift.StringResource(key: "Common/Next", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: No
+      ///
+      /// Locales: en
+      static let commonNo = Rswift.StringResource(key: "Common/No", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Nothing to show
       ///
       /// Locales: en
@@ -302,10 +462,38 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: en
       static let commonOk = Rswift.StringResource(key: "Common/Ok", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Resume
+      ///
+      /// Locales: en
+      static let commonResume = Rswift.StringResource(key: "Common/Resume", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Save
+      ///
+      /// Locales: en
+      static let commonSave = Rswift.StringResource(key: "Common/Save", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Select
+      ///
+      /// Locales: en
+      static let commonSelect = Rswift.StringResource(key: "Common/Select", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Share
+      ///
+      /// Locales: en
+      static let commonShare = Rswift.StringResource(key: "Common/Share", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: Something went wrong
       ///
       /// Locales: en
       static let flamingoErrorUnknown = Rswift.StringResource(key: "FlamingoError/Unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Something went wrong :(
+      ///
+      /// Locales: en
+      static let errorUnknown = Rswift.StringResource(key: "Error/Unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Stop
+      ///
+      /// Locales: en
+      static let commonStop = Rswift.StringResource(key: "Common/Stop", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Yes
+      ///
+      /// Locales: en
+      static let commonYes = Rswift.StringResource(key: "Common/Yes", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
       /// en translation: You first need to configure the sources in "Settings"
       ///
       /// Locales: en
@@ -324,6 +512,66 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("ArticleComments/Comment/Anonymous", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Auto
+      ///
+      /// Locales: en
+      static func settings_general_theme_auto(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings_general_theme_auto", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings_general_theme_auto"
+        }
+
+        return NSLocalizedString("settings_general_theme_auto", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Cancel
+      ///
+      /// Locales: en
+      static func commonCancel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Cancel", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Cancel"
+        }
+
+        return NSLocalizedString("Common/Cancel", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Confirm
+      ///
+      /// Locales: en
+      static func commonConfirm(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Confirm", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Confirm"
+        }
+
+        return NSLocalizedString("Common/Confirm", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Continue
+      ///
+      /// Locales: en
+      static func commonContinue(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Continue", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Continue"
+        }
+
+        return NSLocalizedString("Common/Continue", bundle: bundle, comment: "")
       }
 
       /// en translation: Couldn't load comments :(
@@ -356,6 +604,96 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("ArticlesList/LoadingFailed", bundle: bundle, comment: "")
       }
 
+      /// en translation: Dark
+      ///
+      /// Locales: en
+      static func settings_general_theme_dark(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings_general_theme_dark", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings_general_theme_dark"
+        }
+
+        return NSLocalizedString("settings_general_theme_dark", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Delete
+      ///
+      /// Locales: en
+      static func commonDelete(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Delete", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Delete"
+        }
+
+        return NSLocalizedString("Common/Delete", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: en
+      static func commonDone(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Done", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Done"
+        }
+
+        return NSLocalizedString("Common/Done", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Error
+      ///
+      /// Locales: en
+      static func commonError(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Error", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Error"
+        }
+
+        return NSLocalizedString("Common/Error", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Export
+      ///
+      /// Locales: en
+      static func commonExport(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Export", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Export"
+        }
+
+        return NSLocalizedString("Common/Export", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Light
+      ///
+      /// Locales: en
+      static func settings_general_theme_light(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("settings_general_theme_light", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "settings_general_theme_light"
+        }
+
+        return NSLocalizedString("settings_general_theme_light", bundle: bundle, comment: "")
+      }
+
       /// en translation: Loading comments...
       ///
       /// Locales: en
@@ -369,6 +707,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("ArticleComments/Loading", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Move
+      ///
+      /// Locales: en
+      static func commonMove(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Move", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Move"
+        }
+
+        return NSLocalizedString("Common/Move", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Next
+      ///
+      /// Locales: en
+      static func commonNext(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Next", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Next"
+        }
+
+        return NSLocalizedString("Common/Next", bundle: bundle, comment: "")
+      }
+
+      /// en translation: No
+      ///
+      /// Locales: en
+      static func commonNo(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/No", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/No"
+        }
+
+        return NSLocalizedString("Common/No", bundle: bundle, comment: "")
       }
 
       /// en translation: Nothing to show
@@ -401,6 +784,66 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Common/Ok", bundle: bundle, comment: "")
       }
 
+      /// en translation: Resume
+      ///
+      /// Locales: en
+      static func commonResume(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Resume", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Resume"
+        }
+
+        return NSLocalizedString("Common/Resume", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Save
+      ///
+      /// Locales: en
+      static func commonSave(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Save", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Save"
+        }
+
+        return NSLocalizedString("Common/Save", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Select
+      ///
+      /// Locales: en
+      static func commonSelect(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Select", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Select"
+        }
+
+        return NSLocalizedString("Common/Select", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Share
+      ///
+      /// Locales: en
+      static func commonShare(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Share", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Share"
+        }
+
+        return NSLocalizedString("Common/Share", bundle: bundle, comment: "")
+      }
+
       /// en translation: Something went wrong
       ///
       /// Locales: en
@@ -414,6 +857,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("FlamingoError/Unknown", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Something went wrong :(
+      ///
+      /// Locales: en
+      static func errorUnknown(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Error/Unknown", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Error/Unknown"
+        }
+
+        return NSLocalizedString("Error/Unknown", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Stop
+      ///
+      /// Locales: en
+      static func commonStop(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Stop", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Stop"
+        }
+
+        return NSLocalizedString("Common/Stop", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Yes
+      ///
+      /// Locales: en
+      static func commonYes(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("Common/Yes", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "Common/Yes"
+        }
+
+        return NSLocalizedString("Common/Yes", bundle: bundle, comment: "")
       }
 
       /// en translation: You first need to configure the sources in "Settings"
@@ -557,7 +1045,9 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct settingsVC: Rswift.StoryboardResourceType, Rswift.Validatable {
+    struct settingsVC: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = SettingsVC
+
       let bundle = R.hostingBundle
       let name = "SettingsVC"
       let settingsVC = StoryboardViewControllerResource<SettingsVC>(identifier: "SettingsVC")
@@ -568,6 +1058,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "primary", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'primary' is used in storyboard 'SettingsVC', but couldn't be loaded.") }
         }
         if _R.storyboard.settingsVC().settingsVC() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'settingsVC' could not be loaded from storyboard 'SettingsVC' as 'SettingsVC'.") }
       }

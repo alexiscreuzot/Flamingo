@@ -62,7 +62,7 @@ import ReadabilityKit
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return Theme.current.style.statusBarStyle
+        return CustomPreferences.colorTheme.statusBarStyle
     }
     
     // MARK: - Lifecycle
@@ -94,7 +94,7 @@ import ReadabilityKit
         self.refreshButton.layer.borderColor = UIColor.lightGray.cgColor
         self.refreshButton.layer.cornerRadius = 5
         
-        let bottomInset: CGFloat = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0.0
+        let bottomInset: CGFloat = self.view.safeAreaInsets.bottom
         self.tableView.contentInset = UIEdgeInsets.init(top: top, left: 0, bottom: bottomInset, right: 0)
         
         // Events
@@ -110,11 +110,15 @@ import ReadabilityKit
         
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        self.updateUI()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
         self.resetBlur()
-        self.themeDidChange()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -180,7 +184,12 @@ import ReadabilityKit
             self.refreshImageView.alpha = 0
             
             let blend = (self.pageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
-            self.headerImageView.image = image.blend(image: blend, with: .hardLight)
+            
+            if self.traitCollection.userInterfaceStyle == .dark {
+                self.headerImageView.image = image.blend(image: blend, with: .multiply)
+            } else {
+                self.headerImageView.image = image.blend(image: blend, with: .hardLight)
+            }
             break
         }
     }
@@ -214,7 +223,7 @@ import ReadabilityKit
     
     @IBAction func selectRefresh() {
         
-        guard LocalData.hasSetSources else {
+        guard CustomPreferences.hasSetSources else {
             self.currentState = .error(FlamingoError.sourcesNotConfigured.error)
             return
         }
@@ -364,13 +373,15 @@ import ReadabilityKit
         self.view.layoutIfNeeded()
         
         let startOffset = ArticleListVC.DeltaBlur * 0.1
-        let topInset: CGFloat = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0.0
+        
+        let topInset: CGFloat = self.view.safeAreaInsets.top
         let percent = (contentOffset - startOffset + topInset) / ArticleListVC.DeltaBlur
         animator?.fractionComplete = (contentOffset < startOffset) ? percent : 0
         
+         let height = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
         statusBarTopConstraint.constant = (headerViewHeightConstraint.constant - ArticleListVC.CutHeight <= 60)
             ? 0
-            : UIApplication.shared.statusBarFrame.height
+            : height
         
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -420,18 +431,4 @@ import ReadabilityKit
         self.showURL(post.url)
         tableView.reloadRows(at: [indexPath], with: .none)
     }
-}
-
-extension ArticleListVC : Themable {
-    
-    func themeDidChange() {
-        self.view.backgroundColor = Theme.current.style.backgroundColor
-        self.headerView.backgroundColor = Theme.current.style.secondaryBackgroundColor
-        self.tableView.separatorColor = Theme.current.style.secondaryBackgroundColor
-        self.statusBarEffectView.effect  = UIBlurEffect(style: Theme.current.style.blurEffectStyle)
-        self.effectView.backgroundColor = Theme.current.style.backgroundColor.withAlphaComponent(0.1)
-        self.headerTitleLabel.textColor = Theme.current.style.textColor
-        self.tableView.reloadData()
-    }
-    
 }
