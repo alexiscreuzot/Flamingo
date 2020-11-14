@@ -1,0 +1,17 @@
+current directory: /Users/alex/Development/iOS/com.alexiscreuzot/Flamingo/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /Library/Ruby/Site/2.6.0 -r ./siteconf20201114-37316-182q9r2.rb extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /Users/alex/Development/iOS/com.alexiscreuzot/Flamingo/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make "DESTDIR=" clean
+
+current directory: /Users/alex/Development/iOS/com.alexiscreuzot/Flamingo/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make "DESTDIR="
+compiling unf.cc
+linking shared-object unf_ext.bundle
+ld: warning: directory not found for option '-L/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.Internal.sdk/usr/local/lib'
+
+current directory: /Users/alex/Development/iOS/com.alexiscreuzot/Flamingo/vendor/bundle/ruby/2.6.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20201114-37316-mi1hvr

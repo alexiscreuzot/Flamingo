@@ -49,7 +49,7 @@ final class ThemeService: NSObject, ApplicationService {
 //        self.printAvailableFonts()
         self.updateTheme()
         self.styleUIKit()
-                
+ 
         return true
     }
     

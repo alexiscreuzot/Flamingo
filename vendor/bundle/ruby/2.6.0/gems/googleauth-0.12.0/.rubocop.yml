@@ -1,0 +1,17 @@
+inherit_gem:
+  google-style: google-style.yml
+
+AllCops:
+  Exclude:
+    - "spec/**/*"
+    - "Rakefile"
+    - "rakelib/**/*"
+Metrics/ClassLength:
+  Max: 200
+Metrics/ModuleLength:
+  Max: 110
+Metrics/BlockLength:
+  Exclude:
+    - "googleauth.gemspec"
+Style/SafeNavigation:
+  Enabled: false

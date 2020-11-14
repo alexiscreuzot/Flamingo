@@ -33,8 +33,11 @@ class SwitchTableCell: PrototypeTableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         swithView.addTarget(self, action: #selector(switchValueDidChange(sender:)), for: .valueChanged)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
     
     override func setPrototypeContent(_ content: PrototypeTableCellContent) {
@@ -47,6 +50,8 @@ class SwitchTableCell: PrototypeTableCell {
             }
             if let tint = content.tint {
                 self.swithView.onTintColor = tint
+            } else {
+                self.swithView.onTintColor = R.color.primary()!
             }
             self.swithView.setOn(content.isOn, animated: false)
         }

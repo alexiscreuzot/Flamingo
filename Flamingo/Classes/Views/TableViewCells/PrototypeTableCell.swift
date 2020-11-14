@@ -14,7 +14,7 @@ class PrototypeTableCellContent: NSObject {
     var payload: Any?
     var height: CGFloat = 50
     var estimatedHeight: CGFloat = UITableView.automaticDimension
-    var backgroundColor: UIColor = UIColor.systemBackground
+    var backgroundColor: UIColor = UIColor.clear
 
     var reuseIdentifier : String {
         get {

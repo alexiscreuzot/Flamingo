@@ -12,33 +12,27 @@ Install _fastlane_ using
 ```
 [sudo] gem install fastlane -NV
 ```
-or alternatively using `brew cask install fastlane`
+or alternatively using `brew install fastlane`
 
 # Available Actions
-## iOS
-### ios release
+### release
 ```
-fastlane ios release
+fastlane release
 ```
-Create a new beta build to TestFlight, generate screenshots and push everything to ITC
-### ios upload_build
+Upload release version to TestFlight
+### upload
 ```
-fastlane ios upload_build
+fastlane upload
 ```
 
-### ios upload_metadata
+### generate_screenshots
 ```
-fastlane ios upload_metadata
-```
-Upload metadata and screenshots
-### ios generate_screenshots
-```
-fastlane ios generate_screenshots
+fastlane generate_screenshots
 ```
 Only generate screenshots and save them localy
-### ios delete_unframed
+### delete_unframed
 ```
-fastlane ios delete_unframed
+fastlane delete_unframed
 ```
 
 

@@ -3,67 +3,66 @@
 
 #update_fastlane
 
-default_platform(:ios)
+#----------------------------------------------------------------
+#  Upload
+#----------------------------------------------------------------
 
-platform :ios do
-
-  desc "Create a new beta build to TestFlight, generate screenshots and push everything to ITC"
-  lane :release do
-    increment_build_number(
-      xcodeproj: "Flamingo.xcodeproj"
+desc "Upload release version to TestFlight"
+lane :release do
+  upload(
+    project_name: "Flamingo",
+    scheme_name: "Flamingo"
     )
-    build_app(
-      skip_build_archive: false,
-      workspace: "Flamingo.xcworkspace", 
-      scheme: "Flamingo",
-      export_options: {
-        force: true,
-        method: "app-store",
-        provisioningProfiles: { 
-          "com.alexiscreuzot.flamingo" => "Flamingo AppStore"
-        }
-      }
-    )
-    upload_build
-  end
+end
 
-  lane :upload_build do
-    deliver(
+lane :upload do |values|
+
+  project_name = values[:project_name]
+  scheme_name = values[:scheme_name]
+
+  increment_build_number(
+    xcodeproj: "#{project_name}.xcodeproj"
+    )
+  enable_automatic_code_signing
+  build_app(
+    skip_build_archive: false,
+    skip_codesigning: false,
+    workspace: "#{project_name}.xcworkspace", 
+    scheme: scheme_name,
+    archive_path: "builds/#{scheme_name}",
+    export_xcargs: "-allowProvisioningUpdates",
+    export_method: "app-store"
+    )
+
+  deliver(
       force: true, # Skip HTMl report verification
       skip_metadata: true,
       skip_screenshots: true,
       skip_binary_upload: false
-    )
-  end
-
-  desc "Upload metadata and screenshots"
-  lane :upload_metadata do
-    deliver(
-        force: true,
-        skip_metadata: false,
-        skip_screenshots: false,
-        skip_binary_upload: true
       )
-  end
+end
 
-  desc "Only generate screenshots and save them localy"
-  lane :generate_screenshots do
-    capture_screenshots(
-      skip_open_summary: true,
-      stop_after_first_error: true,
-      clean: true
+
+#----------------------------------------------------------------
+#  METADATA
+#----------------------------------------------------------------
+
+desc "Only generate screenshots and save them localy"
+lane :generate_screenshots do
+  capture_screenshots(
+    skip_open_summary: true,
+    stop_after_first_error: true,
+    clean: true
     )
-    #frame_screenshots()
-    #delete_unframed
-  end
+  frame_screenshots()
+  delete_unframed
+end
 
-  lane :delete_unframed do
-    Dir.glob("./screenshots/**/*.png").select{ |file| 
-      not /framed/.match(file)
-    }.each { |file| 
-      File.delete(file)
-    }
-    puts "Done"
-  end
-
+lane :delete_unframed do
+  Dir.glob("./screenshots/**/*.png").select{ |file| 
+    not /framed/.match(file)
+  }.each { |file| 
+    File.delete(file)
+  }
+  puts "Done"
 end

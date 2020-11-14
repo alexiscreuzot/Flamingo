@@ -8,5 +8,5 @@ devices([
   "en-US"
 ])
 
-scheme("flamingoUITests")
+scheme("screenshots")
 output_directory("./fastlane/screenshots")

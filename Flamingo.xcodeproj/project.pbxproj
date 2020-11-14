@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E5873A661079E40ED7E036E1 /* Pods_Flamingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC4B98FE1D429BBECD20BAE /* Pods_Flamingo.framework */; };
+		6219E8B13E90D3989CDE8542 /* Pods_Flamingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C90CA8DB76247A573617DA4 /* Pods_Flamingo.framework */; };
 		FA055AC620C97F85007FB8D3 /* SettingsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */; };
 		FA055AC820C97FA0007FB8D3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA055AC720C97FA0007FB8D3 /* SettingsVC.swift */; };
 		FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */; };
@@ -78,9 +78,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		40447B31C403D657D167192A /* Pods-Flamingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.debug.xcconfig"; path = "Target Support Files/Pods-Flamingo/Pods-Flamingo.debug.xcconfig"; sourceTree = "<group>"; };
-		4EC4B98FE1D429BBECD20BAE /* Pods_Flamingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flamingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E4CDA28FE4EDF1BDABA1025E /* Pods-Flamingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.release.xcconfig"; path = "Target Support Files/Pods-Flamingo/Pods-Flamingo.release.xcconfig"; sourceTree = "<group>"; };
+		3C90CA8DB76247A573617DA4 /* Pods_Flamingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flamingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77ABC0806D4603DC8DE6F5A3 /* Pods-Flamingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.debug.xcconfig"; path = "Target Support Files/Pods-Flamingo/Pods-Flamingo.debug.xcconfig"; sourceTree = "<group>"; };
+		BCEC6BBE52BD1926E5E38C3D /* Pods-Flamingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.release.xcconfig"; path = "Target Support Files/Pods-Flamingo/Pods-Flamingo.release.xcconfig"; sourceTree = "<group>"; };
 		FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVC.storyboard; sourceTree = "<group>"; };
 		FA055AC720C97FA0007FB8D3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Safari.swift"; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		FA50E7A2200670D2008C28C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA50E7B420067A24008C28C1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDefaultCell.swift; sourceTree = "<group>"; };
-		FA775F59247D58BD00407E55 /* flamingoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flamingoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA775F59247D58BD00407E55 /* screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA775F5B247D58BD00407E55 /* flamingoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flamingoUITests.swift; sourceTree = "<group>"; };
 		FA775F5D247D58BD00407E55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA775F63247D591000407E55 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5873A661079E40ED7E036E1 /* Pods_Flamingo.framework in Frameworks */,
+				6219E8B13E90D3989CDE8542 /* Pods_Flamingo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,16 +166,16 @@
 		017225C4C22645DDB97E11F9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				40447B31C403D657D167192A /* Pods-Flamingo.debug.xcconfig */,
-				E4CDA28FE4EDF1BDABA1025E /* Pods-Flamingo.release.xcconfig */,
+				77ABC0806D4603DC8DE6F5A3 /* Pods-Flamingo.debug.xcconfig */,
+				BCEC6BBE52BD1926E5E38C3D /* Pods-Flamingo.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		CB4638638339AB39DB804395 /* Frameworks */ = {
+		A719F296149525B0E0BF5AC0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4EC4B98FE1D429BBECD20BAE /* Pods_Flamingo.framework */,
+				3C90CA8DB76247A573617DA4 /* Pods_Flamingo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,10 +207,10 @@
 			isa = PBXGroup;
 			children = (
 				FA50E795200670D2008C28C1 /* Flamingo */,
-				FA775F5A247D58BD00407E55 /* flamingoUITests */,
+				FA775F5A247D58BD00407E55 /* screenshots */,
 				FA50E794200670D2008C28C1 /* Products */,
 				017225C4C22645DDB97E11F9 /* Pods */,
-				CB4638638339AB39DB804395 /* Frameworks */,
+				A719F296149525B0E0BF5AC0 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -220,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				FA50E793200670D2008C28C1 /* Flamingo.app */,
-				FA775F59247D58BD00407E55 /* flamingoUITests.xctest */,
+				FA775F59247D58BD00407E55 /* screenshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -309,14 +309,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		FA775F5A247D58BD00407E55 /* flamingoUITests */ = {
+		FA775F5A247D58BD00407E55 /* screenshots */ = {
 			isa = PBXGroup;
 			children = (
 				FA775F63247D591000407E55 /* SnapshotHelper.swift */,
 				FA775F5B247D58BD00407E55 /* flamingoUITests.swift */,
 				FA775F5D247D58BD00407E55 /* Info.plist */,
 			);
-			path = flamingoUITests;
+			path = screenshots;
 			sourceTree = "<group>";
 		};
 		FA8886AC247D37AB0060F4C7 /* Core */ = {
@@ -402,12 +402,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA50E7A5200670D2008C28C1 /* Build configuration list for PBXNativeTarget "Flamingo" */;
 			buildPhases = (
-				330B5D1FE2471D1C21F4EE8F /* [CP] Check Pods Manifest.lock */,
+				38E0A6752A2050022A326342 /* [CP] Check Pods Manifest.lock */,
 				FA50E7B3200679AA008C28C1 /* RSwift */,
 				FA50E78F200670D2008C28C1 /* Sources */,
 				FA50E790200670D2008C28C1 /* Frameworks */,
 				FA50E791200670D2008C28C1 /* Resources */,
-				BE444FF2F3997A1F2E20C667 /* [CP] Embed Pods Frameworks */,
+				1C67F7D39E02BF9B8009FB3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -418,9 +418,9 @@
 			productReference = FA50E793200670D2008C28C1 /* Flamingo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FA775F58247D58BD00407E55 /* flamingoUITests */ = {
+		FA775F58247D58BD00407E55 /* screenshots */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FA775F62247D58BD00407E55 /* Build configuration list for PBXNativeTarget "flamingoUITests" */;
+			buildConfigurationList = FA775F62247D58BD00407E55 /* Build configuration list for PBXNativeTarget "screenshots" */;
 			buildPhases = (
 				FA775F55247D58BD00407E55 /* Sources */,
 				FA775F56247D58BD00407E55 /* Frameworks */,
@@ -431,9 +431,9 @@
 			dependencies = (
 				FA775F5F247D58BD00407E55 /* PBXTargetDependency */,
 			);
-			name = flamingoUITests;
+			name = screenshots;
 			productName = flamingoUITests;
-			productReference = FA775F59247D58BD00407E55 /* flamingoUITests.xctest */;
+			productReference = FA775F59247D58BD00407E55 /* screenshots.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -443,7 +443,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1210;
 				ORGANIZATIONNAME = alexiscreuzot;
 				TargetAttributes = {
 					FA50E792200670D2008C28C1 = {
@@ -472,7 +472,7 @@
 			projectRoot = "";
 			targets = (
 				FA50E792200670D2008C28C1 /* Flamingo */,
-				FA775F58247D58BD00407E55 /* flamingoUITests */,
+				FA775F58247D58BD00407E55 /* screenshots */,
 			);
 		};
 /* End PBXProject section */
@@ -513,29 +513,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		330B5D1FE2471D1C21F4EE8F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Flamingo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BE444FF2F3997A1F2E20C667 /* [CP] Embed Pods Frameworks */ = {
+		1C67F7D39E02BF9B8009FB3A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -579,6 +557,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flamingo/Pods-Flamingo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38E0A6752A2050022A326342 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Flamingo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FA50E7B3200679AA008C28C1 /* RSwift */ = {
@@ -716,6 +716,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -776,6 +777,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -806,7 +808,7 @@
 		};
 		FA50E7A6200670D2008C28C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40447B31C403D657D167192A /* Pods-Flamingo.debug.xcconfig */;
+			baseConfigurationReference = 77ABC0806D4603DC8DE6F5A3 /* Pods-Flamingo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -830,7 +832,7 @@
 		};
 		FA50E7A7200670D2008C28C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E4CDA28FE4EDF1BDABA1025E /* Pods-Flamingo.release.xcconfig */;
+			baseConfigurationReference = BCEC6BBE52BD1926E5E38C3D /* Pods-Flamingo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -858,7 +860,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAMD7Q9KYY;
-				INFOPLIST_FILE = flamingoUITests/Info.plist;
+				INFOPLIST_FILE = screenshots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -877,7 +879,7 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZAMD7Q9KYY;
-				INFOPLIST_FILE = flamingoUITests/Info.plist;
+				INFOPLIST_FILE = screenshots/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
@@ -910,7 +912,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FA775F62247D58BD00407E55 /* Build configuration list for PBXNativeTarget "flamingoUITests" */ = {
+		FA775F62247D58BD00407E55 /* Build configuration list for PBXNativeTarget "screenshots" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FA775F60247D58BD00407E55 /* Debug */,
