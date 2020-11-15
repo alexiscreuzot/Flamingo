@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-extension UIViewController : SFSafariViewControllerDelegate{
+extension UIViewController : SFSafariViewControllerDelegate {
     
     @objc func showURL(_ url: URL?) {
         if let url = url {
@@ -35,8 +35,23 @@ extension UIViewController : SFSafariViewControllerDelegate{
                 overlay.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
                 overlay.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
             ])
+            let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(handleTap(_:)))
+            overlay.addGestureRecognizer(tapGesture)
         } else {
             delay(0.02) { self.tryAddingOverlay(to: controller) }
+        }
+    }
+    
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        guard let overlay = sender?.view else { return }
+        self.removeOverlay(overlay)
+    }
+    
+    func removeOverlay(_ overlay: UIView) {
+        UIView.animate(withDuration: 0.3, delay: 0.1) {
+            overlay.alpha = 0
+        } completion: { _ in
+            overlay.removeFromSuperview()
         }
     }
     
@@ -49,13 +64,9 @@ extension UIViewController : SFSafariViewControllerDelegate{
     
     
     public func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
-        
         guard let overlay = controller.view.subviews.last else { return }
-        
-        UIView.animate(withDuration: 0.3, delay: 0.1) {
-            overlay.alpha = 0
-        } completion: { _ in
-            overlay.removeFromSuperview()
-        }
+        self.removeOverlay(overlay)
     }
+    
+    
 }
