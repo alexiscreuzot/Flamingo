@@ -55,6 +55,7 @@
 		FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */; };
 		FAC2E14320C9112000CFF541 /* flamingo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FAC2E14220C9112000CFF541 /* flamingo.ttf */; };
 		FACE2FEA2020C0E4003BBAD0 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */; };
+		FACEFC5F25612E52005ADB4A /* AutoLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACEFC5E25612E52005ADB4A /* AutoLayout+Extensions.swift */; };
 		FAD15549215D0DBD0045001A /* sources.json in Resources */ = {isa = PBXBuildFile; fileRef = FAD15548215D0DBD0045001A /* sources.json */; };
 		FAD1554B215D14AF0045001A /* JSONSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554A215D14AF0045001A /* JSONSerializer.swift */; };
 		FAD1554D215D16A50045001A /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554C215D16A50045001A /* LocalDataService.swift */; };
@@ -132,6 +133,7 @@
 		FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlamingoPost.swift; sourceTree = "<group>"; };
 		FAC2E14220C9112000CFF541 /* flamingo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = flamingo.ttf; sourceTree = "<group>"; };
 		FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Foundation+Extensions.swift"; sourceTree = "<group>"; };
+		FACEFC5E25612E52005ADB4A /* AutoLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AutoLayout+Extensions.swift"; sourceTree = "<group>"; };
 		FAD15548215D0DBD0045001A /* sources.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sources.json; sourceTree = "<group>"; };
 		FAD1554A215D14AF0045001A /* JSONSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONSerializer.swift; sourceTree = "<group>"; };
 		FAD1554C215D16A50045001A /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
@@ -194,11 +196,12 @@
 			isa = PBXGroup;
 			children = (
 				FA8886C3247D3B4A0060F4C7 /* UIColor+Extensions.swift */,
-				FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */,
 				FA2F8852202B677200603EAF /* UIKit+Extensions.swift */,
-				FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */,
 				FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */,
+				FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */,
+				FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */,
 				FAD1554E215D24F60045001A /* Error+Flamingo.swift */,
+				FACEFC5E25612E52005ADB4A /* AutoLayout+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				FAE931E220C9A68000FB0A78 /* TitleSeparatorCell.swift in Sources */,
 				FAE931DD20C992AA00FB0A78 /* SwitchTableCell.swift in Sources */,
 				FAB10E1420213F0C00F60594 /* Preview.swift in Sources */,
+				FACEFC5F25612E52005ADB4A /* AutoLayout+Extensions.swift in Sources */,
 				FA8886C1247D3B0A0060F4C7 /* CoreVC.swift in Sources */,
 				FAB838ED2028D26C00DBFEF7 /* FlamingoPost.swift in Sources */,
 				FAB838E3202893E500DBFEF7 /* ArticleCommentsVC.swift in Sources */,

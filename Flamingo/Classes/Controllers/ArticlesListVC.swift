@@ -393,7 +393,6 @@ import ReadabilityKit
             self.view.layoutIfNeeded()
         }
         
-        
         // Refresh button
         if self.headerImageView.image != nil {
             if contentOffset < startOffset {
