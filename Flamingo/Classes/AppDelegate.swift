@@ -11,29 +11,12 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
+    // MARK: UISceneSession Lifecycle
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Initialize data
-        SourceStore.shared.initializeFromBundleIfNeeded()
-        
-        // Setup appearance
-        ThemeService.shared.updateTheme()
-        ThemeService.shared.styleUIKit()
-        
-        // Screenshot mode
-        if CommandLine.arguments.contains("screenshots") {
-            UIView.setAnimationsEnabled(false)
-            CustomPreferences.hasSetSources = true
-            SourceStore.shared.setAllActivated(true)
-        }
-        
-        // Setup initial view controller
-        if let mainVC = R.storyboard.main.instantiateInitialViewController() {
-            window?.rootViewController = mainVC
-        }
-        
-        return true
+    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
+    
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
 }

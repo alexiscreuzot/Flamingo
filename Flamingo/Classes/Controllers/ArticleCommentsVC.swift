@@ -121,6 +121,7 @@ class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, Co
               let url = URL(string: imageUrlString) else {
             self.headerImageView.image = R.image.flamingoBack()
             self.loaderView.stopAnimating()
+            self.headerImageView.setNeedsDisplay()
             return
         }
         
@@ -132,12 +133,16 @@ class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, Co
                     let img = image ?? R.image.flamingoBack()!
                     let blend = (self.fromPageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
                     self.headerImageView.image = img.blend(image: blend, with: .hardLight)
+                    self.headerImageView.setNeedsDisplay()
+                    self.headerView.setNeedsLayout()
                 }
             } catch {
                 await MainActor.run {
                     self.loaderView.stopAnimating()
                     let blend = (self.fromPageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
                     self.headerImageView.image = R.image.flamingoBack()!.blend(image: blend, with: .hardLight)
+                    self.headerImageView.setNeedsDisplay()
+                    self.headerView.setNeedsLayout()
                 }
             }
         }

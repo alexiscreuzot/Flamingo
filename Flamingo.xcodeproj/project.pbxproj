@@ -38,6 +38,7 @@
 		6EC9E7192F183BF6001B3CB2 /* ArticlesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC9E6D62F183BF6001B3CB2 /* ArticlesListVC.swift */; };
 		6EC9E71A2F183BF6001B3CB2 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC9E6DF2F183BF6001B3CB2 /* String+HTML.swift */; };
 		6EC9E71B2F183BF6001B3CB2 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC9E6E82F183BF6001B3CB2 /* Preview.swift */; };
+		6EC9E71D2F183C50001B3CB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC9E71C2F183C50001B3CB2 /* SceneDelegate.swift */; };
 		FA055AC620C97F85007FB8D3 /* SettingsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */; };
 		FA2F884F202B641A00603EAF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA2F8851202B641A00603EAF /* Localizable.strings */; };
 		FA50E79C200670D2008C28C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA50E79A200670D2008C28C1 /* Main.storyboard */; };
@@ -102,6 +103,7 @@
 		6EC9E6F82F183BF6001B3CB2 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		6EC9E6F92F183BF6001B3CB2 /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
 		6EC9E6FB2F183BF6001B3CB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6EC9E71C2F183C50001B3CB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVC.storyboard; sourceTree = "<group>"; };
 		FA2F8850202B641A00603EAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA50E793200670D2008C28C1 /* Flamingo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flamingo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +261,8 @@
 		6EC9E6FC2F183BF6001B3CB2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6EC9E6FB2F183BF6001B3CB2 /* AppDelegate.swift */,
+				6EC9E71C2F183C50001B3CB2 /* SceneDelegate.swift */,
 				6EC9E6D82F183BF6001B3CB2 /* Controllers */,
 				6EC9E6DC2F183BF6001B3CB2 /* Core */,
 				6EC9E6E62F183BF6001B3CB2 /* Helpers */,
@@ -267,7 +271,6 @@
 				6EC9E6EF2F183BF6001B3CB2 /* Persistence */,
 				6EC9E6F12F183BF6001B3CB2 /* Services */,
 				6EC9E6FA2F183BF6001B3CB2 /* Views */,
-				6EC9E6FB2F183BF6001B3CB2 /* AppDelegate.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				6EC9E7112F183BF6001B3CB2 /* FontIcon.swift in Sources */,
 				6EC9E7122F183BF6001B3CB2 /* Foundation+Extensions.swift in Sources */,
 				6EC9E7132F183BF6001B3CB2 /* MainTabController.swift in Sources */,
+				6EC9E71D2F183C50001B3CB2 /* SceneDelegate.swift in Sources */,
 				6EC9E7142F183BF6001B3CB2 /* PropertyWrappers.swift in Sources */,
 				6EC9E7152F183BF6001B3CB2 /* CustomPreferences.swift in Sources */,
 				6EC9E7162F183BF6001B3CB2 /* UIViewController+Safari.swift in Sources */,

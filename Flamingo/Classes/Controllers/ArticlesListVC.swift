@@ -187,6 +187,8 @@ import SafariServices
             } else {
                 self.headerImageView.image = image.blend(image: blend, with: .hardLight)
             }
+            self.headerImageView.setNeedsDisplay()
+            self.headerView.setNeedsLayout()
             
             break
         }
@@ -282,6 +284,14 @@ import SafariServices
                 
                 await MainActor.run {
                     self.postPreviews[post.id] = preview
+                    
+                    // Refresh the cell if it's visible to show the new summary/excerpt
+                    if let index = self.posts.firstIndex(where: { $0.id == post.id }) {
+                        let indexPath = IndexPath(row: index, section: 0)
+                        if self.tableView.indexPathsForVisibleRows?.contains(indexPath) == true {
+                            self.tableView.reloadRows(at: [indexPath], with: .none)
+                        }
+                    }
                 }
                 
                 if let urlString = preview.lead_image_url,
