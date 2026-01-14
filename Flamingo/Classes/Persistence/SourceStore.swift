@@ -145,13 +145,4 @@ final class SourceStore {
         }
     }
     
-    // MARK: - Export
-    
-    func toJSON() -> String {
-        guard let data = try? encoder.encode(sources),
-              let json = String(data: data, encoding: .utf8) else {
-            return "[]"
-        }
-        return json
-    }
 }

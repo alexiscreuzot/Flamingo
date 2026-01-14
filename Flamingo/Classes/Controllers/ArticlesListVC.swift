@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-@objc class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellDelegate {
+@objc class ArticleListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, ArticleDefaultCellDelegate {
     
     enum State {
         case loading

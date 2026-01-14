@@ -33,9 +33,9 @@ class MainTabController : UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewControllers = [CoreNVC(rootViewController: topController),
-                                CoreNVC(rootViewController: newsController),
-                                CoreNVC(rootViewController: settingsController)]
+        self.viewControllers = [UINavigationController(rootViewController: topController),
+                                UINavigationController(rootViewController: newsController),
+                                UINavigationController(rootViewController: settingsController)]
         
         self.delegate = self
         self.setupTabBar()

@@ -129,3 +129,10 @@ enum R {
 // MARK: - Convenience Alias
 
 let i18n = R.string.localizable.self
+
+// MARK: - Custom Colors
+
+enum CustomColor {
+    static let primary = R.color.primary() ?? UIColor.systemPink
+    static let secondary = R.color.secondary() ?? UIColor.systemGray
+}
