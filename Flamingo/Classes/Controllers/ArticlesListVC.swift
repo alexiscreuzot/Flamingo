@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ArticlesListVC.swift
 //  Flamingo
 //
 //  Created by Alexis Creuzot on 10/01/2018.
@@ -7,12 +7,7 @@
 //
 
 import UIKit
-import HNScraper
-import SDWebImage
 import SafariServices
-import Moya
-import RealmSwift
-import ReadabilityKit
 
 @objc class ArticleListVC: FluidController, UITableViewDataSource, ArticleDefaultCellDelegate {
     
@@ -40,12 +35,10 @@ import ReadabilityKit
     @IBOutlet var stateLabel : UILabel!
     @IBOutlet var refreshButton : UIButton!
     
-    let realm = try! Realm()
     let maskLayer = CAShapeLayer()
     
-    var pageType: HNScraper.PostListPageName = .front
+    var pageType: HNPageType = .front
     var animator: UIViewPropertyAnimator?
-    var linkForMore : String?
     var posts = [HNPost]()
     var postPreviews = [String : Preview]()
     var imageQueue = Set<URL>()
@@ -169,7 +162,6 @@ import ReadabilityKit
     func updateUI() {
         switch currentState {
         case .loading :
-            //            self.tableView.setContentOffset(CGPoint(x:0, y:-self.tableView.contentInset.top), animated: true)
             self.tableView.alpha = 0
             self.stateLabel.text = nil
             self.refreshButton.alpha = 0
@@ -234,9 +226,8 @@ import ReadabilityKit
             return
         }
         
-        self.linkForMore = nil
         self.headerImageView.image = nil
-        self.requestNextPage()
+        self.requestPosts()
         self.currentState = .loading
     }
     
@@ -245,116 +236,108 @@ import ReadabilityKit
     func addSourceFromPosts(_ posts: [HNPost]) {
         let newSources: [Source] = posts.compactMap {
             guard !$0.urlDomain.isEmpty else { return nil }
-            return Source(domain: $0.urlDomain, activated:true)
+            return Source(domain: $0.urlDomain, activated: true)
         }
-        
-        try! realm.write() {
-            realm.add(newSources, update: .all)
-        }
+        SourceStore.shared.addOrUpdate(newSources)
     }
     
-    func requestNextPage() {
-        if let linkForMore = linkForMore {
-            HNScraper.shared.getMoreItems(linkForMore: linkForMore) { (posts, linkForMore, error) in
-                if let error = error {
-                    self.currentState = .error(error)
-                    return
-                }
+    func requestPosts() {
+        Task {
+            do {
+                let fetchedPosts = try await HNClient.shared.getPostsList(page: self.pageType)
                 
-                let filteredPosts = posts.filter({ post -> Bool in
+                let filteredPosts = fetchedPosts.filter({ post -> Bool in
                     return Source.isAllowed(domain: post.urlDomain)
                 })
                 
-                self.addSourceFromPosts(filteredPosts)
-                self.addPosts(filteredPosts, linkForMore: linkForMore)
-            }
-        } else {
-            HNScraper.shared.getPostsList(page: self.pageType) { (posts, linkForMore, error) in
-                if let error = error {
-                    self.currentState = .error(error)
-                    return
-                }
-                
-                let filteredPosts = posts.filter({ post -> Bool in
-                    return Source.isAllowed(domain: post.urlDomain)
-                })
-                
-                if filteredPosts.count == 0 {
-                    self.currentState = .error(FlamingoError.nothingToShow.error)
+                if filteredPosts.isEmpty {
+                    await MainActor.run {
+                        self.currentState = .error(FlamingoError.nothingToShow.error)
+                    }
                     return
                 }
                 
                 self.addSourceFromPosts(filteredPosts)
-                self.createFeed(filteredPosts, linkForMore: linkForMore)
+                
+                await MainActor.run {
+                    self.posts = filteredPosts
+                    self.loadPreviews()
+                }
+            } catch {
+                await MainActor.run {
+                    self.currentState = .error(error)
+                }
             }
         }
-    }
-    
-    func createFeed(_ posts: [HNPost], linkForMore: String?) {
-        self.linkForMore = linkForMore
-        self.posts = posts.filter({ post -> Bool in
-            return Source.isAllowed(domain: post.urlDomain)
-        })
-        self.loadPreviews()
-    }
-    
-    func addPosts(_ posts: [HNPost], linkForMore: String?) {
-        self.linkForMore = linkForMore
-        let addedPosts = posts.filter({ post -> Bool in
-            return Source.isAllowed(domain: post.urlDomain)
-        })
-        self.posts.append(contentsOf: addedPosts)
-        self.tableView.reloadData()
     }
     
     func loadPreviews() {
         for post in posts {
             guard let url = post.url else { continue }
             
-            Readability.parse(url: url, completion: { data in
-                guard let data = data else { return }
+            Task {
+                guard let data = await ReadabilityParser.shared.parse(url: url) else { return }
                 
-                let preview = Preview.init(data: data)
-                self.postPreviews[post.id] = preview
+                let preview = Preview(data: data)
                 
-                if  let urlString = preview.lead_image_url,
-                    !urlString.contains("ycombinator"), // Don't like those
-                    let url = URL(string:urlString) {
-                    self.imageQueue.insert(url)
-                    self.downloadImage(url, post: post)
+                await MainActor.run {
+                    self.postPreviews[post.id] = preview
                 }
-            })
+                
+                if let urlString = preview.lead_image_url,
+                   !urlString.contains("ycombinator"),
+                   let imageURL = URL(string: urlString) {
+                    _ = await MainActor.run {
+                        self.imageQueue.insert(imageURL)
+                    }
+                    await self.downloadImage(imageURL, post: post)
+                }
+            }
         }
     }
     
-    func downloadImage(_ url: URL, post: HNPost) {
-        
-        SDWebImageDownloader.shared.downloadImage(with: url, options: [.allowInvalidSSLCertificates], progress: nil) { (image, _, _, _) in
-            
-            guard self.headerImageView.image == nil else {
+    func downloadImage(_ url: URL, post: HNPost) async {
+        do {
+            guard let image = try await ImageLoader.shared.loadImage(from: url) else {
+                await MainActor.run {
+                    self.imageQueue.remove(url)
+                    self.checkImageQueueEmpty()
+                }
                 return
             }
             
-            // Check for a good enough image quality
-            if  let image = image,
-                image.size.width >= 750 {
+            await MainActor.run {
+                guard self.headerImageView.image == nil else { return }
                 
-                guard let oldIndex = (self.posts.firstIndex{$0 === post}) else { return }
-                SDWebImageDownloader.shared.cancelAllDownloads()
-                
-                if oldIndex != 0 {
-                    self.posts.rearrange(from: oldIndex, to: 0)
+                // Check for a good enough image quality
+                if image.size.width >= 750 {
+                    guard let oldIndex = (self.posts.firstIndex { $0.id == post.id }) else { return }
+                    
+                    Task {
+                        await ImageLoader.shared.cancelAllDownloads()
+                    }
+                    
+                    if oldIndex != 0 {
+                        self.posts.rearrange(from: oldIndex, to: 0)
+                    }
+                    
+                    self.currentState = .loaded(headerImage: image)
+                } else {
+                    self.imageQueue.remove(url)
+                    self.checkImageQueueEmpty()
                 }
-                
-                self.currentState = .loaded(headerImage: image)
-            } else {
+            }
+        } catch {
+            await MainActor.run {
                 self.imageQueue.remove(url)
+                self.checkImageQueueEmpty()
             }
-            
-            // In case there isn't anything left to load
-            if self.imageQueue.count == 0 {
-                self.currentState = .loaded(headerImage: R.image.flamingoBack()!)
-            }
+        }
+    }
+    
+    private func checkImageQueueEmpty() {
+        if self.imageQueue.isEmpty && self.headerImageView.image == nil {
+            self.currentState = .loaded(headerImage: R.image.flamingoBack()!)
         }
     }
     
@@ -424,15 +407,16 @@ import ReadabilityKit
         
         let fpost = FlamingoPost(hnPost: post, preview: prev, row: indexPath.row)
         let cell : ArticleDefaultCell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.articleDefaultCell,
-                                                                      for: indexPath)!
+                                                                      for: indexPath) as! ArticleDefaultCell
         cell.setPost(fpost)
         cell.delegate = self
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let post = self.posts[indexPath.row]
+        var post = self.posts[indexPath.row]
         post.isRead = true
+        self.posts[indexPath.row] = post
         self.showURL(post.url)
         tableView.reloadRows(at: [indexPath], with: .none)
     }

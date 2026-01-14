@@ -6,26 +6,17 @@
 //  Copyright © 2018 alexiscreuzot. All rights reserved.
 //
 
-import Foundation
-import PluggableAppDelegate
-import RealmSwift
+import UIKit
 
 final class LocalDataService: NSObject, ApplicationService {
     
     static let shared = LocalDataService()
+    var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
-        var config = Realm.Configuration()
-        config.deleteRealmIfMigrationNeeded = true
-        Realm.Configuration.defaultConfiguration = config
-        
         // Init sources if needed
-        let realm = try! Realm()
-        let localSources = realm.objects(Source.self)
-        if localSources.isEmpty {
-            JSONSerializer.serializeSources()
-        }
+        SourceStore.shared.initializeFromBundleIfNeeded()
         
         if CommandLine.arguments.contains("screenshots") {
             self.prepareScreenshots()
@@ -38,13 +29,8 @@ final class LocalDataService: NSObject, ApplicationService {
     
     func prepareScreenshots() {
         UIView.setAnimationsEnabled(false)
-        let realm = try! Realm()
         CustomPreferences.hasSetSources = true
-        try! realm.write {
-            for source in realm.objects(Source.self) {
-                source.activated = true
-            }
-        }
+        SourceStore.shared.setAllActivated(true)
     }
     
 }

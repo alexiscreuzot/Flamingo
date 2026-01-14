@@ -9,7 +9,42 @@
 import UIKit
 import SafariServices
 
-extension UIViewController : SFSafariViewControllerDelegate {
+// Helper class to handle Safari delegate callbacks
+private class SafariDelegate: NSObject, SFSafariViewControllerDelegate {
+    weak var viewController: UIViewController?
+    weak var overlay: UIView?
+    
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
+        guard let overlay = controller.view.subviews.last else { return }
+        removeOverlay(overlay)
+    }
+    
+    func removeOverlay(_ overlay: UIView) {
+        UIView.animate(withDuration: 0.3, delay: 0.1) {
+            overlay.alpha = 0
+        } completion: { _ in
+            overlay.removeFromSuperview()
+        }
+    }
+}
+
+// Store delegates to keep them alive
+private var safariDelegateKey: UInt8 = 0
+
+extension UIViewController {
+    
+    private var safariDelegate: SafariDelegate? {
+        get { objc_getAssociatedObject(self, &safariDelegateKey) as? SafariDelegate }
+        set { objc_setAssociatedObject(self, &safariDelegateKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
     
     @objc func showURL(_ url: URL?) {
         if let url = url {
@@ -17,7 +52,11 @@ extension UIViewController : SFSafariViewControllerDelegate {
             config.entersReaderIfAvailable = true
             config.barCollapsingEnabled = true
             let vc = SFSafariViewController(url: url, configuration: config)
-            vc.delegate = self
+            
+            let delegate = SafariDelegate(viewController: self)
+            self.safariDelegate = delegate
+            vc.delegate = delegate
+            
             self.present(vc, animated: true, completion: nil)
             self.tryAddingOverlay(to: vc)
         }
@@ -35,38 +74,23 @@ extension UIViewController : SFSafariViewControllerDelegate {
                 overlay.bottomAnchor.constraint(equalTo: superview.bottomAnchor),
                 overlay.trailingAnchor.constraint(equalTo: superview.trailingAnchor)
             ])
-            let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(handleTap(_:)))
+            let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(handleOverlayTap(_:)))
             overlay.addGestureRecognizer(tapGesture)
         } else {
             delay(0.02) { self.tryAddingOverlay(to: controller) }
         }
     }
     
-    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+    @objc private func handleOverlayTap(_ sender: UITapGestureRecognizer? = nil) {
         guard let overlay = sender?.view else { return }
-        self.removeOverlay(overlay)
+        removeOverlay(overlay)
     }
     
-    func removeOverlay(_ overlay: UIView) {
+    private func removeOverlay(_ overlay: UIView) {
         UIView.animate(withDuration: 0.3, delay: 0.1) {
             overlay.alpha = 0
         } completion: { _ in
             overlay.removeFromSuperview()
         }
     }
-    
-    // MARK: - SFSafariViewControllerDelegate
-    
-    public func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-    
-    public func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
-        guard let overlay = controller.view.subviews.last else { return }
-        self.removeOverlay(overlay)
-    }
-    
-    
 }

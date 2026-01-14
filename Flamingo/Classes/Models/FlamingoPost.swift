@@ -7,24 +7,28 @@
 //
 
 import Foundation
-import HNScraper
+import UIKit
 
 struct FlamingoPost {
     
-    var hnPost : HNPost!
-    var preview : Preview?
-    var row : Int
-    var isRead: Bool = false {
-        didSet {
-            hnPost.isRead = isRead
+    var hnPost: HNPost
+    var preview: Preview?
+    var row: Int
+    var isRead: Bool {
+        get {
+            return hnPost.isRead
+        }
+        set {
+            var mutablePost = hnPost
+            mutablePost.isRead = newValue
+            hnPost = mutablePost
         }
     }
     
-    init(hnPost: HNPost, preview: Preview? = nil, row : Int) {
+    init(hnPost: HNPost, preview: Preview? = nil, row: Int) {
         self.hnPost = hnPost
         self.preview = preview
         self.row = row
-        self.isRead = hnPost.isRead //cache it for smoothest scrolling
     }
     
     func infosAttributedString(attributes: [NSAttributedString.Key : Any], withPointSize: CGFloat, withComments: Bool) -> NSAttributedString {
@@ -66,34 +70,4 @@ struct FlamingoPost {
         return commentsAttString
     }
 
-}
-
-/// Add the read persistency on HNPost
-extension HNPost {
-
-    var isRead: Bool {
-        get {
-            guard let readIds = UserDefaults.standard.value(forKey: String.readStatusKey) as? Array<String> else {
-                return false    //fail gracefully (previous behavior)
-            }
-
-            return readIds.contains(id)
-        }
-        set {
-            guard var readIds = UserDefaults.standard.value(forKey: String.readStatusKey) as? Array<String> else {
-                UserDefaults.standard.set([id], forKey: String.readStatusKey)
-                return
-            }
-
-            if !readIds.contains(id) {
-                readIds.append(id)
-                UserDefaults.standard.set(readIds, forKey: String.readStatusKey)
-            }
-        }
-    }
-}
-
-private extension String {
-
-  static let readStatusKey = "read_status_key"
 }

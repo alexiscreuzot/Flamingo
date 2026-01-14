@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import RealmSwift
-import PluggableAppDelegate
 
-@UIApplicationMain
+@main
 class AppDelegate: PluggableApplicationDelegate {
     
     override var services: [ApplicationService] {

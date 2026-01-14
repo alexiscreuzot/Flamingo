@@ -7,12 +7,9 @@
 //
 
 import Foundation
-import Mapper
-import ReadabilityKit
 
-class Preview  {
-    let title: String
-    
+class Preview {
+    let title: String?
     let excerpt: String?
     let content: String?
     let author: String?
@@ -22,13 +19,13 @@ class Preview  {
     init(data: ReadabilityData) {
         title = data.title
         excerpt = data.description
-        content =  data.text
+        content = data.text
         author = nil
         lead_image_url = data.topImage
         word_count = data.text?.count
     }
     
-    var wordCount : Int? {
+    var wordCount: Int? {
         if let word_count = word_count, word_count > 10 {
             return word_count
         } else if let computedWordCount = content?.tagless.wordCount {
@@ -38,7 +35,7 @@ class Preview  {
         }
     }
 
-    var readTimeInMinutes : Int? {
+    var readTimeInMinutes: Int? {
         guard let wordCount = self.wordCount else {
             return nil
         }

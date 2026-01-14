@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 enum SettingsCellIdentifier : SimpleCellIdentifier {
     case themeIdentifier
@@ -17,8 +16,6 @@ class SettingsVC : UIViewController {
     
     @IBOutlet var tableView : UITableView!
     var datasource = [PrototypeTableCellContent]()
-    
-    let realm = try! Realm()
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return CustomPreferences.colorTheme.statusBarStyle
@@ -42,7 +39,7 @@ class SettingsVC : UIViewController {
     }
     
     func reloadData() {
-        let sources = realm.objects(Source.self).sorted(byKeyPath: "domain")
+        let sources = SourceStore.shared.sortedSources()
          
         self.datasource = [PrototypeTableCellContent]()
         
@@ -71,11 +68,7 @@ class SettingsVC : UIViewController {
                                              isOn: isOn,
                                              switchAction: { isOn in
                                                 CustomPreferences.hasSetSources = true
-                                                try! self.realm.write {
-                                                    for source in sources {
-                                                        source.activated = isOn
-                                                    }
-                                                }
+                                                SourceStore.shared.setAllActivated(isOn)
                                                 self.reloadData()
         })
         switchAllContent.tint = UIColor.systemGreen
@@ -87,10 +80,7 @@ class SettingsVC : UIViewController {
                                                  isOn: source.activated,
                                                  switchAction: { isOn in
                                                     CustomPreferences.hasSetSources = true
-                                                    try! self.realm.write {
-                                                        source.activated = isOn
-                                                    }
-                                                    
+                                                    SourceStore.shared.updateActivation(domain: source.domain, activated: isOn)
             })
             return content
         })

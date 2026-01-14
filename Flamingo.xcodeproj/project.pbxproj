@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6219E8B13E90D3989CDE8542 /* Pods_Flamingo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C90CA8DB76247A573617DA4 /* Pods_Flamingo.framework */; };
 		FA055AC620C97F85007FB8D3 /* SettingsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */; };
 		FA055AC820C97FA0007FB8D3 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA055AC720C97FA0007FB8D3 /* SettingsVC.swift */; };
 		FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */; };
@@ -17,7 +16,6 @@
 		FA50E79C200670D2008C28C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA50E79A200670D2008C28C1 /* Main.storyboard */; };
 		FA50E79E200670D2008C28C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA50E79D200670D2008C28C1 /* Assets.xcassets */; };
 		FA50E7A1200670D2008C28C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA50E79F200670D2008C28C1 /* LaunchScreen.storyboard */; };
-		FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E7B420067A24008C28C1 /* R.generated.swift */; };
 		FA50E7BD20067ABB008C28C1 /* ArticleDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */; };
 		FA775F5C247D58BD00407E55 /* flamingoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA775F5B247D58BD00407E55 /* flamingoUITests.swift */; };
 		FA775F64247D591000407E55 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA775F63247D591000407E55 /* SnapshotHelper.swift */; };
@@ -43,7 +41,6 @@
 		FA8886DB247D40960060F4C7 /* material-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA8886D2247D40960060F4C7 /* material-icons.ttf */; };
 		FAA4E4262007829E00D2D88C /* ArticlesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA50E798200670D2008C28C1 /* ArticlesListVC.swift */; };
 		FAB10E1420213F0C00F60594 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1320213F0C00F60594 /* Preview.swift */; };
-		FAB10E1B20214C2600F60594 /* Response+ModelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */; };
 		FAB2599B20C728BB00B94ECA /* ArticleList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB2599A20C728BB00B94ECA /* ArticleList.storyboard */; };
 		FAB2599D20C728CC00B94ECA /* ArticleComments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB2599C20C728CC00B94ECA /* ArticleComments.storyboard */; };
 		FAB2599F20C72C6A00B94ECA /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2599E20C72C6A00B94ECA /* MainTabController.swift */; };
@@ -61,11 +58,19 @@
 		FAD1554D215D16A50045001A /* LocalDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554C215D16A50045001A /* LocalDataService.swift */; };
 		FAD1554F215D24F60045001A /* Error+Flamingo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1554E215D24F60045001A /* Error+Flamingo.swift */; };
 		FAD15551215D36E70045001A /* SimpleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD15550215D36E70045001A /* SimpleTableCell.swift */; };
-		FAE931D820C991FE00FB0A78 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931D720C991FE00FB0A78 /* Source.swift */; };
 		FAE931DB20C9929F00FB0A78 /* PrototypeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */; };
 		FAE931DD20C992AA00FB0A78 /* SwitchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */; };
 		FAE931E220C9A68000FB0A78 /* TitleSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE931E120C9A68000FB0A78 /* TitleSeparatorCell.swift */; };
 		FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEED4B3203AE85E00E0DCA0 /* FluidController.swift */; };
+		NEW00001 /* HNClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEW00011 /* HNClient.swift */; };
+		NEW00002 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEW00012 /* ImageLoader.swift */; };
+		NEW00003 /* ReadabilityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEW00013 /* ReadabilityParser.swift */; };
+		NEW00004 /* SourceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEW00014 /* SourceStore.swift */; };
+		NEW00005 /* AppServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEW00015 /* AppServices.swift */; };
+		NEW00006 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEW00016 /* Resources.swift */; };
+		NEW00007 /* AttributedMarkup.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEW00017 /* AttributedMarkup.swift */; };
+		NEW00008 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEW00018 /* String+HTML.swift */; };
+		NEW00009 /* LinkLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = NEW00019 /* LinkLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,9 +84,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3C90CA8DB76247A573617DA4 /* Pods_Flamingo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flamingo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		77ABC0806D4603DC8DE6F5A3 /* Pods-Flamingo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.debug.xcconfig"; path = "Target Support Files/Pods-Flamingo/Pods-Flamingo.debug.xcconfig"; sourceTree = "<group>"; };
-		BCEC6BBE52BD1926E5E38C3D /* Pods-Flamingo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flamingo.release.xcconfig"; path = "Target Support Files/Pods-Flamingo/Pods-Flamingo.release.xcconfig"; sourceTree = "<group>"; };
 		FA055AC520C97F85007FB8D3 /* SettingsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsVC.storyboard; sourceTree = "<group>"; };
 		FA055AC720C97FA0007FB8D3 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Safari.swift"; sourceTree = "<group>"; };
@@ -94,7 +96,6 @@
 		FA50E79D200670D2008C28C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA50E7A0200670D2008C28C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA50E7A2200670D2008C28C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA50E7B420067A24008C28C1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDefaultCell.swift; sourceTree = "<group>"; };
 		FA775F59247D58BD00407E55 /* screenshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = screenshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA775F5B247D58BD00407E55 /* flamingoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flamingoUITests.swift; sourceTree = "<group>"; };
@@ -121,7 +122,6 @@
 		FA8886D1247D40960060F4C7 /* material-icons.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "material-icons.svg"; sourceTree = "<group>"; };
 		FA8886D2247D40960060F4C7 /* material-icons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "material-icons.ttf"; sourceTree = "<group>"; };
 		FAB10E1320213F0C00F60594 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
-		FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+ModelMapper.swift"; sourceTree = "<group>"; };
 		FAB2599A20C728BB00B94ECA /* ArticleList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleList.storyboard; sourceTree = "<group>"; };
 		FAB2599C20C728CC00B94ECA /* ArticleComments.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleComments.storyboard; sourceTree = "<group>"; };
 		FAB2599E20C72C6A00B94ECA /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
@@ -139,11 +139,19 @@
 		FAD1554C215D16A50045001A /* LocalDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataService.swift; sourceTree = "<group>"; };
 		FAD1554E215D24F60045001A /* Error+Flamingo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Flamingo.swift"; sourceTree = "<group>"; };
 		FAD15550215D36E70045001A /* SimpleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTableCell.swift; sourceTree = "<group>"; };
-		FAE931D720C991FE00FB0A78 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		FAE931DA20C9929F00FB0A78 /* PrototypeTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeTableCell.swift; sourceTree = "<group>"; };
 		FAE931DC20C992AA00FB0A78 /* SwitchTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchTableCell.swift; sourceTree = "<group>"; };
 		FAE931E120C9A68000FB0A78 /* TitleSeparatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleSeparatorCell.swift; sourceTree = "<group>"; };
 		FAEED4B3203AE85E00E0DCA0 /* FluidController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidController.swift; sourceTree = "<group>"; };
+		NEW00011 /* HNClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNClient.swift; sourceTree = "<group>"; };
+		NEW00012 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		NEW00013 /* ReadabilityParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadabilityParser.swift; sourceTree = "<group>"; };
+		NEW00014 /* SourceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceStore.swift; sourceTree = "<group>"; };
+		NEW00015 /* AppServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServices.swift; sourceTree = "<group>"; };
+		NEW00016 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		NEW00017 /* AttributedMarkup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributedMarkup.swift; sourceTree = "<group>"; };
+		NEW00018 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		NEW00019 /* LinkLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +159,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6219E8B13E90D3989CDE8542 /* Pods_Flamingo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,23 +172,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		017225C4C22645DDB97E11F9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				77ABC0806D4603DC8DE6F5A3 /* Pods-Flamingo.debug.xcconfig */,
-				BCEC6BBE52BD1926E5E38C3D /* Pods-Flamingo.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		A719F296149525B0E0BF5AC0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3C90CA8DB76247A573617DA4 /* Pods_Flamingo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		FA0C8FE32024A77400818EB4 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,9 +189,9 @@
 				FA2F8852202B677200603EAF /* UIKit+Extensions.swift */,
 				FA27A418202B247D00E28CB6 /* UIViewController+Safari.swift */,
 				FACE2FE92020C0E4003BBAD0 /* Foundation+Extensions.swift */,
-				FAB10E1A20214C2600F60594 /* Response+ModelMapper.swift */,
 				FAD1554E215D24F60045001A /* Error+Flamingo.swift */,
 				FACEFC5E25612E52005ADB4A /* AutoLayout+Extensions.swift */,
+				NEW00018 /* String+HTML.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -212,8 +202,6 @@
 				FA50E795200670D2008C28C1 /* Flamingo */,
 				FA775F5A247D58BD00407E55 /* screenshots */,
 				FA50E794200670D2008C28C1 /* Products */,
-				017225C4C22645DDB97E11F9 /* Pods */,
-				A719F296149525B0E0BF5AC0 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -231,7 +219,6 @@
 		FA50E795200670D2008C28C1 /* Flamingo */ = {
 			isa = PBXGroup;
 			children = (
-				FA50E7B420067A24008C28C1 /* R.generated.swift */,
 				FA50E7AE200677EE008C28C1 /* Classes */,
 				FA50E7B620067A3E008C28C1 /* Storyboards */,
 				FA50E7AC200677D2008C28C1 /* Resources */,
@@ -256,6 +243,7 @@
 				FA8886C5247D3E390060F4C7 /* PropertyWrappers.swift */,
 				FAD1554A215D14AF0045001A /* JSONSerializer.swift */,
 				FAB838E82028B70700DBFEF7 /* FontIcon.swift */,
+				NEW00017 /* AttributedMarkup.swift */,
 				FA2F8854202B679900603EAF /* Extensions */,
 			);
 			path = Helpers;
@@ -285,6 +273,8 @@
 				FA50E7A8200677AA008C28C1 /* Controllers */,
 				FA50E7B720067A5F008C28C1 /* Views */,
 				FA50E7AA200677B5008C28C1 /* Helpers */,
+				NEWGRP01 /* Networking */,
+				NEWGRP02 /* Persistence */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -308,6 +298,7 @@
 				FAEED4B3203AE85E00E0DCA0 /* FluidController.swift */,
 				FA50E7BC20067ABB008C28C1 /* ArticleDefaultCell.swift */,
 				FAB838E4202899AF00DBFEF7 /* CommentCell.swift */,
+				NEW00019 /* LinkLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -331,6 +322,8 @@
 				FA8886B0247D37AB0060F4C7 /* CustomError.swift */,
 				FA8886B1247D37AB0060F4C7 /* CustomFont.swift */,
 				FA8886B2247D37AB0060F4C7 /* CustomPreferences.swift */,
+				NEW00015 /* AppServices.swift */,
+				NEW00016 /* Resources.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -372,7 +365,6 @@
 			children = (
 				FAB10E1320213F0C00F60594 /* Preview.swift */,
 				FAB838EC2028D26C00DBFEF7 /* FlamingoPost.swift */,
-				FAE931D720C991FE00FB0A78 /* Source.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -398,6 +390,24 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		NEWGRP01 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				NEW00011 /* HNClient.swift */,
+				NEW00012 /* ImageLoader.swift */,
+				NEW00013 /* ReadabilityParser.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		NEWGRP02 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				NEW00014 /* SourceStore.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -405,12 +415,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA50E7A5200670D2008C28C1 /* Build configuration list for PBXNativeTarget "Flamingo" */;
 			buildPhases = (
-				38E0A6752A2050022A326342 /* [CP] Check Pods Manifest.lock */,
-				FA50E7B3200679AA008C28C1 /* RSwift */,
 				FA50E78F200670D2008C28C1 /* Sources */,
 				FA50E790200670D2008C28C1 /* Frameworks */,
 				FA50E791200670D2008C28C1 /* Resources */,
-				1C67F7D39E02BF9B8009FB3A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -515,93 +522,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1C67F7D39E02BF9B8009FB3A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Flamingo/Pods-Flamingo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Attributed/Attributed.framework",
-				"${BUILT_PRODUCTS_DIR}/HNScraper/HNScraper.framework",
-				"${BUILT_PRODUCTS_DIR}/HTMLString/HTMLString.framework",
-				"${BUILT_PRODUCTS_DIR}/Ji/Ji.framework",
-				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/PluggableAppDelegate/PluggableAppDelegate.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/ReadabilityKit/ReadabilityKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Attributed.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HNScraper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HTMLString.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ji.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PluggableAppDelegate.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReadabilityKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Flamingo/Pods-Flamingo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		38E0A6752A2050022A326342 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Flamingo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FA50E7B3200679AA008C28C1 /* RSwift */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$TEMP_DIR/rswift-lastrun",
-			);
-			name = RSwift;
-			outputPaths = (
-				"$SRCROOT/Flamingo/R.generated.swift",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Flamingo/R.generated.swift\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		FA50E78F200670D2008C28C1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -618,12 +538,10 @@
 				FAD1554D215D16A50045001A /* LocalDataService.swift in Sources */,
 				FA27A419202B247D00E28CB6 /* UIViewController+Safari.swift in Sources */,
 				FAD1554F215D24F60045001A /* Error+Flamingo.swift in Sources */,
-				FA50E7B520067A24008C28C1 /* R.generated.swift in Sources */,
 				FAEED4B4203AE85E00E0DCA0 /* FluidController.swift in Sources */,
 				FAD15551215D36E70045001A /* SimpleTableCell.swift in Sources */,
 				FA8886B4247D37AB0060F4C7 /* CustomNotifications.swift in Sources */,
 				FAE931DB20C9929F00FB0A78 /* PrototypeTableCell.swift in Sources */,
-				FAE931D820C991FE00FB0A78 /* Source.swift in Sources */,
 				FA50E797200670D2008C28C1 /* AppDelegate.swift in Sources */,
 				FA8886C2247D3B0A0060F4C7 /* CoreNVC.swift in Sources */,
 				FA8886B5247D37AB0060F4C7 /* CustomColors.swift in Sources */,
@@ -641,10 +559,18 @@
 				FAB32CF22163C046003EE9C4 /* ThemeService.swift in Sources */,
 				FA8886BA247D37E90060F4C7 /* MaterialIcon.swift in Sources */,
 				FA8886B6247D37AB0060F4C7 /* CustomError.swift in Sources */,
-				FAB10E1B20214C2600F60594 /* Response+ModelMapper.swift in Sources */,
 				FAA4E4262007829E00D2D88C /* ArticlesListVC.swift in Sources */,
 				FA8886B7247D37AB0060F4C7 /* CustomFont.swift in Sources */,
 				FAB838EB2028CFF500DBFEF7 /* Constants.swift in Sources */,
+				NEW00001 /* HNClient.swift in Sources */,
+				NEW00002 /* ImageLoader.swift in Sources */,
+				NEW00003 /* ReadabilityParser.swift in Sources */,
+				NEW00004 /* SourceStore.swift in Sources */,
+				NEW00005 /* AppServices.swift in Sources */,
+				NEW00006 /* Resources.swift in Sources */,
+				NEW00007 /* AttributedMarkup.swift in Sources */,
+				NEW00008 /* String+HTML.swift in Sources */,
+				NEW00009 /* LinkLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,7 +738,6 @@
 		};
 		FA50E7A6200670D2008C28C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 77ABC0806D4603DC8DE6F5A3 /* Pods-Flamingo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -836,7 +761,6 @@
 		};
 		FA50E7A7200670D2008C28C1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BCEC6BBE52BD1926E5E38C3D /* Pods-Flamingo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

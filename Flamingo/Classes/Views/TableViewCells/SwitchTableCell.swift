@@ -51,7 +51,7 @@ class SwitchTableCell: PrototypeTableCell {
             if let tint = content.tint {
                 self.swithView.onTintColor = tint
             } else {
-                self.swithView.onTintColor = R.color.primary()!
+                self.swithView.onTintColor = CustomColor.primary
             }
             self.swithView.setOn(content.isOn, animated: false)
         }

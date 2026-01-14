@@ -8,8 +8,6 @@
 
 import Foundation
 import UIKit
-import HNScraper
-import SDWebImage
 import SafariServices
 
 class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, CommentCellDelegate {
@@ -60,7 +58,7 @@ class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, Co
     var heightsDict = [String: CGFloat]()
     var isFirstLayout = true
     var isPerformingCollapse = false
-    var fromPageType: HNScraper.PostListPageName = .front
+    var fromPageType: HNPageType = .front
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return CustomPreferences.colorTheme.statusBarStyle
@@ -70,7 +68,6 @@ class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, Co
         super.viewDidLoad()
 
         self.setNavigationBar(type: .clear)
-//        self.navigationController?.setNavigationBarHidden(true, animated: false)
 
         // Top bar
         self.statusBarTopConstraint.constant = self.topBarHeight
@@ -101,8 +98,6 @@ class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, Co
         
         self.fetchHeaderImage()
         self.refreshComments()
-        
-        
     }
     
     
@@ -122,35 +117,50 @@ class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, Co
     // MARK: - Networking
     
     func fetchHeaderImage() {
-        guard   let imageUrlString = post.preview?.lead_image_url,
-                let url = URL(string: imageUrlString) else {
-                    self.headerImageView.image = R.image.flamingoBack()
-                    self.loaderView.stopAnimating()
+        guard let imageUrlString = post.preview?.lead_image_url,
+              let url = URL(string: imageUrlString) else {
+            self.headerImageView.image = R.image.flamingoBack()
+            self.loaderView.stopAnimating()
             return
         }
         
-        SDWebImageDownloader.shared.downloadImage(with: url, options: [.allowInvalidSSLCertificates], progress: nil) { (image, _, _, _) in
-            self.loaderView.stopAnimating()
-            
-                     let img = image ?? R.image.flamingoBack()!
-                     let blend = (self.fromPageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
-                     self.headerImageView.image = img.blend(image: blend, with: .hardLight)
+        Task {
+            do {
+                let image = try await ImageLoader.shared.loadImage(from: url)
+                await MainActor.run {
+                    self.loaderView.stopAnimating()
+                    let img = image ?? R.image.flamingoBack()!
+                    let blend = (self.fromPageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
+                    self.headerImageView.image = img.blend(image: blend, with: .hardLight)
+                }
+            } catch {
+                await MainActor.run {
+                    self.loaderView.stopAnimating()
+                    let blend = (self.fromPageType == .front) ? R.image.color_gradient()! : R.image.color_gradient_blue()!
+                    self.headerImageView.image = R.image.flamingoBack()!.blend(image: blend, with: .hardLight)
+                }
+            }
         }
     }
     
     func refreshComments() {
         self.currentState = .loading
         
-        HNScraper.shared.getComments(ForPost: post.hnPost, buildHierarchy: false) { (_, comments, error) in
-            if let error = error  {
-                self.currentState = .error(error)
-                return
-            }
-            self.comments = comments
-            if !self.comments.isEmpty {
-                self.currentState = .loaded
-            } else {
-                self.currentState = .error(FlamingoError.nothingToShow.error)
+        Task {
+            do {
+                let fetchedComments = try await HNClient.shared.getComments(forPostId: post.hnPost.id)
+                await MainActor.run {
+                    self.comments = fetchedComments
+                    if !self.comments.isEmpty {
+                        self.currentState = .loaded
+                    } else {
+                        self.currentState = .error(FlamingoError.nothingToShow.error)
+                    }
+                }
+            } catch {
+                await MainActor.run {
+                    self.currentState = .error(error)
+                }
             }
         }
     }
@@ -188,7 +198,7 @@ class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, Co
     
     func collapsableUnder(comment: HNComment) -> [HNComment] {
         var collapsableComments = [HNComment]()
-        let baseLevel = comment.level ?? 0
+        let baseLevel = comment.level
         var isUnder = false
         for com in self.comments {
             if !isUnder {
@@ -262,7 +272,7 @@ class ArticleCommentsVC : CoreVC, UITableViewDataSource, UITableViewDelegate, Co
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let comment = self.filteredComments[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.commentCell, for: indexPath)!
+        let cell = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.commentCell, for: indexPath) as! CommentCell
         let isCollapser = self.isCollapser(comment: comment)
         cell.setComment(comment, isCollapser: isCollapser)
         cell.delegate = self

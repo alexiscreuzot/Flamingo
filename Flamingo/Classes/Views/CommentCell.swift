@@ -1,23 +1,18 @@
 //
-//  File.swift
+//  CommentCell.swift
 //  Flamingo
 //
 //  Created by Alexis Creuzot on 05/02/2018.
 //  Copyright © 2018 alexiscreuzot. All rights reserved.
 //
 
-
 import UIKit
-import HNScraper
-import HTMLString
-import Attributed
-import TTTAttributedLabel
 
 protocol CommentCellDelegate {
     func commentCell(_ cell: CommentCell, didSelect url: URL)
 }
 
-class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
+class CommentCell: UITableViewCell, LinkLabelDelegate {
     
     static let MaxLevels : Int = 6
     static let LevelOffset : CGFloat = 10
@@ -27,7 +22,7 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
     @IBOutlet var holderView : UIView!
     @IBOutlet var topLabel : UILabel!
     @IBOutlet var createdLabel : UILabel!
-    @IBOutlet var bodyTextLabel : TTTAttributedLabel!
+    @IBOutlet var bodyTextLabel : LinkLabel!
     
     var levelViews = [UIView]()
     var delegate: CommentCellDelegate?
@@ -37,9 +32,9 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
         
         self.selectedBackgroundView = UIView()
         
-        self.bodyTextLabel.enabledTextCheckingTypes = NSTextCheckingResult.CheckingType.link.rawValue
+        self.bodyTextLabel.enabledTextCheckingTypes = .link
         self.bodyTextLabel.delegate = self
-        self.bodyTextLabel.linkAttributes = [NSAttributedString.Key.foregroundColor: CustomColor.primary]
+        self.bodyTextLabel.linkAttributes = [.foregroundColor: CustomColor.primary]
         
         // Create levels
         for _ in 1...CommentCell.MaxLevels {
@@ -100,9 +95,9 @@ class CommentCell: UITableViewCell, TTTAttributedLabelDelegate {
         self.bodyTextLabel.setText(contentAttString)
     }
     
-    // MARK: - TTTAttributedLabelDelegate
+    // MARK: - LinkLabelDelegate
     
-    func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL!) {
+    func linkLabel(_ label: LinkLabel, didSelectLinkWith url: URL) {
         self.delegate?.commentCell(self, didSelect: url)
     }
 

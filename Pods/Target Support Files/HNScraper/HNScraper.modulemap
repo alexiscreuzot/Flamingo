@@ -1,6 +1,0 @@
-framework module HNScraper {
-  umbrella header "HNScraper-umbrella.h"
-
-  export *
-  module * { export * }
-}

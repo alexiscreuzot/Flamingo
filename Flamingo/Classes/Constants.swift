@@ -8,7 +8,7 @@
 
 import Foundation
 
-let i18n = R.string.localizable.self
+// i18n is now defined in Resources.swift
 
 struct Colors {
     

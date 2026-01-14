@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import HNScraper
 
 protocol ArticleDefaultCellDelegate {
     func articleCell(_ cell: ArticleDefaultCell, didSelect post: FlamingoPost)
@@ -29,9 +28,6 @@ class ArticleDefaultCell: UITableViewCell {
     var post : FlamingoPost?
     var delegate: ArticleDefaultCellDelegate?
     let maskLayer = CAShapeLayer()
-    var is3DTouchAvailable: Bool {
-        return traitCollection.forceTouchCapability == .available
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
